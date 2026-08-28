@@ -1,18 +1,18 @@
 {
   "date": "2026-08-28",
-  "generated": "14:13 BST",
+  "generated": "15:38 BST",
   "risk": {
-    "score": 63,
+    "score": 64,
     "band": "HIGH",
     "band_note": "Major scheduled event. Wide, fast moves and poor fills likely.",
-    "expected_range_usd": 89.3,
-    "atr14": 67.54,
-    "vol_ratio": 0.84,
+    "expected_range_usd": 94.6,
+    "atr14": 71.09,
+    "vol_ratio": 0.87,
     "components": {
       "headline_event": 56,
       "breadth": 6,
       "clustering": 5,
-      "volatility": -4
+      "volatility": -3
     },
     "material_events": 3,
     "top_weight": 8
@@ -153,20 +153,12 @@
   ],
   "news": [
     {
-      "source": "Yahoo Gold",
-      "title": "Gold Holds Near $4,600 as Investors Focus on Fed Rate-Hike Path",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/gold-holds-near-4-600-233418705.html?.tsrc=rss",
-      "published": "2026-08-27T23:34:18+00:00",
-      "summary": "Gold steadied near $4,600 an ounce as investors weighed the outlook for US interest rates ahead of a key speech by Federal Reserve Chairman Kevin Warsh.",
-      "relevance": 15
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Stocks rise ahead of Fed chair's policy speech",
-      "link": "https://finance.yahoo.com/economy/policy/articles/most-asian-stocks-advance-attention-023917672.html?.tsrc=rss",
-      "published": "2026-08-28T11:46:52+00:00",
-      "summary": "Stocks mostly rose Friday as investors awaited a key speech by US Federal Reserve Chair Kevin Warsh for clues about the outlook for interest rates amid elevated inflation.\"The market will want to see some evidence that Warsh has a plan on how to tackle inflationary pressures and will also be hungry for visibility on the likely trajectory of interest rates,\" said Dan Coatsworth, head of markets at",
-      "relevance": 14
+      "source": "CNBC Economy",
+      "title": "Fed Chairman Warsh expresses concern about inflation, advocates for 'quieter' central bank",
+      "link": "https://www.cnbc.com/2026/08/28/kevin-warsh-jackson-hole-federal-reserve-inflation.html",
+      "published": "2026-08-28T14:38:07+00:00",
+      "summary": "He used the speech to outline his philosophy on policymaking while carefully sidestepping any signals",
+      "relevance": 13
     },
     {
       "source": "Yahoo Gold",
@@ -175,6 +167,14 @@
       "published": "2026-08-28T09:29:21+00:00",
       "summary": "Gold prices were broadly unchanged on Friday as investors awaited Federal Reserve Chair Kevin Warsh\u2019s speech at the Jackson Hole symposium for indications on the outlook for U. S.",
       "relevance": 12
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "2-year Treasury yield jumps as Warsh says Fed may 'have work to do'",
+      "link": "https://www.cnbc.com/2026/08/28/treasury-yields-jackson-hole.html",
+      "published": "2026-08-28T14:32:01+00:00",
+      "summary": "Global investors assessed the highly anticipated keynote speech from Federal Reserve Chair Kevin Warsh at Jackson Hole.",
+      "relevance": 11
     },
     {
       "source": "MarketWatch",
@@ -209,11 +209,11 @@
       "relevance": 8
     },
     {
-      "source": "CNBC Top News",
-      "title": "Fed Chairman Kevin Warsh delivers his key Jackson Hole speech Friday. Here's what to expect",
-      "link": "https://www.cnbc.com/2026/08/27/fed-chairman-kevin-warsh-delivers-his-key-jackson-hole-speech-friday.html",
-      "published": "2026-08-28T11:39:47+00:00",
-      "summary": "Prior Fed chairs have used the speech as an opportunity to lay out broad policy frameworks and intentions.",
+      "source": "Fed Speeches",
+      "title": "Warsh, In Our Time",
+      "link": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "published": "2026-08-28T14:00:00+00:00",
+      "summary": "Speech At \u201cFinancial Innovation: Implications for Payments and Policy,\u201d an economic policy symposium sponsored by the Federal Reserve Bank of Kansas City, Jackson Hole, Wyoming",
       "relevance": 8
     },
     {
@@ -231,14 +231,6 @@
       "published": "2026-08-28T10:49:51+00:00",
       "summary": "Gold miners jumped 43% in August, on track for their best month on record, as the debasement trade pulled money toward alternative assets.",
       "relevance": 6
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Cygnus Metals Limited: Drilling Results Update",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/cygnus-metals-limited-drilling-results-232600014.html?.tsrc=rss",
-      "published": "2026-08-27T23:26:00+00:00",
-      "summary": "First drilling at Copper Rand has returned intersections including 20.3m at 4.2g/t AuEq; In addition, the maiden drill program at Gwillim has intersected gold mineralisation in all holesChibougamau Copper-Gold Project, Canada HIGHLIGHTS: Results from Copper Rand come from step out drilling surrounding the historic mine which produced 14.9Mt at 3.9% CuEq for 268kt Cu and 1.3Moz Au1Copper Rand sits",
-      "relevance": 4
     },
     {
       "source": "Yahoo Gold",
@@ -273,6 +265,14 @@
       "relevance": 4
     },
     {
+      "source": "Yahoo Gold",
+      "title": "Jefferies says India's gold holdings could add up to 100 basis points to GDP growth",
+      "link": "https://www.proactiveinvestors.com/companies/news/1097786/jefferies-says-india-s-gold-holdings-could-add-up-to-100-basis-points-to-gdp-growth-1097786.html?.tsrc=rss",
+      "published": "2026-08-28T13:30:00+00:00",
+      "summary": "Jefferies, the investment bank, has said rising gold prices could provide a significant, largely overlooked boost to India's economy through household wealth effects. Indian households hold an estimated $4 trillion in gold, roughly four times the value held in equities, according to...",
+      "relevance": 4
+    },
+    {
       "source": "Federal Reserve",
       "title": "Federal Reserve Board issues enforcement action with former employee of Banco Popular de Puerto Rico",
       "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260827a.htm",
@@ -291,8 +291,8 @@
   ],
   "gold": {
     "symbol": "GC=F",
-    "last": 4651.89990234375,
-    "change_pct": 0.9154544817071169
+    "last": 4581.10009765625,
+    "change_pct": -0.6204329228467568
   },
   "base_rates": {},
   "context": {
