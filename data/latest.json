@@ -1,0 +1,580 @@
+{
+  "date": "2026-08-28",
+  "generated": "14:13 BST",
+  "risk": {
+    "score": 63,
+    "band": "HIGH",
+    "band_note": "Major scheduled event. Wide, fast moves and poor fills likely.",
+    "expected_range_usd": 89.3,
+    "atr14": 67.54,
+    "vol_ratio": 0.84,
+    "components": {
+      "headline_event": 56,
+      "breadth": 6,
+      "clustering": 5,
+      "volatility": -4
+    },
+    "material_events": 3,
+    "top_weight": 8
+  },
+  "events": [
+    {
+      "title": "FOMC Member Hammack Speaks",
+      "currency": "USD",
+      "utc": "2026-08-28T13:00:00+00:00",
+      "local_time": "14:00",
+      "local_dt": "2026-08-28 14:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 3
+    },
+    {
+      "title": "Chicago PMI",
+      "currency": "USD",
+      "utc": "2026-08-28T13:45:00+00:00",
+      "local_time": "14:45",
+      "local_dt": "2026-08-28 14:45:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "57.9",
+      "previous": "57.6",
+      "actual": "",
+      "weight": 1
+    },
+    {
+      "title": "Fed Chairman Warsh Speaks",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 8
+    },
+    {
+      "title": "Prelim Benchmark Payrolls Revision",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "",
+      "previous": "-911K",
+      "actual": "",
+      "weight": 6
+    },
+    {
+      "title": "Revised UoM Consumer Sentiment",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "51.0",
+      "previous": "51.0",
+      "actual": "",
+      "weight": 3
+    },
+    {
+      "title": "Revised UoM Inflation Expectations",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "",
+      "previous": "4.3%",
+      "actual": "",
+      "weight": 4
+    }
+  ],
+  "yesterday_events": [
+    {
+      "title": "Unemployment Claims",
+      "currency": "USD",
+      "utc": "2026-08-27T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-08-27 13:30:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "208K",
+      "previous": "206K",
+      "actual": "",
+      "weight": 4
+    },
+    {
+      "title": "Goods Trade Balance",
+      "currency": "USD",
+      "utc": "2026-08-27T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-08-27 13:30:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "-100.8B",
+      "previous": "-101.5B",
+      "actual": "",
+      "weight": 1
+    },
+    {
+      "title": "Prelim Wholesale Inventories m/m",
+      "currency": "USD",
+      "utc": "2026-08-27T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-08-27 13:30:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "0.2%",
+      "previous": "0.2%",
+      "actual": "",
+      "weight": 1
+    },
+    {
+      "title": "Natural Gas Storage",
+      "currency": "USD",
+      "utc": "2026-08-27T14:30:00+00:00",
+      "local_time": "15:30",
+      "local_dt": "2026-08-27 15:30:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "19B",
+      "previous": "16B",
+      "actual": "",
+      "weight": 1
+    }
+  ],
+  "news": [
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold Holds Near $4,600 as Investors Focus on Fed Rate-Hike Path",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/gold-holds-near-4-600-233418705.html?.tsrc=rss",
+      "published": "2026-08-27T23:34:18+00:00",
+      "summary": "Gold steadied near $4,600 an ounce as investors weighed the outlook for US interest rates ahead of a key speech by Federal Reserve Chairman Kevin Warsh.",
+      "relevance": 15
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Stocks rise ahead of Fed chair's policy speech",
+      "link": "https://finance.yahoo.com/economy/policy/articles/most-asian-stocks-advance-attention-023917672.html?.tsrc=rss",
+      "published": "2026-08-28T11:46:52+00:00",
+      "summary": "Stocks mostly rose Friday as investors awaited a key speech by US Federal Reserve Chair Kevin Warsh for clues about the outlook for interest rates amid elevated inflation.\"The market will want to see some evidence that Warsh has a plan on how to tackle inflationary pressures and will also be hungry for visibility on the likely trajectory of interest rates,\" said Dan Coatsworth, head of markets at",
+      "relevance": 14
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold prices steady as investors await Warsh\u2019s Jackson Hole speech",
+      "link": "https://investorshub.advfn.com/market-news/article/35276/gold-prices-steady-as-investors-await-warshs-jackson-hole-speech?.tsrc=rss",
+      "published": "2026-08-28T09:29:21+00:00",
+      "summary": "Gold prices were broadly unchanged on Friday as investors awaited Federal Reserve Chair Kevin Warsh\u2019s speech at the Jackson Hole symposium for indications on the outlook for U. S.",
+      "relevance": 12
+    },
+    {
+      "source": "MarketWatch",
+      "title": "How a plan to fix a $326 billion hole on bank balance sheets could underpin a Warsh and Bessent Treasury twist",
+      "link": "https://www.marketwatch.com/story/how-bank-of-america-and-three-other-lenders-could-win-big-from-scott-bessents-and-kevin-warshs-bond-market-mechanations-4e56b581?mod=mw_rss_topstories",
+      "published": "2026-08-28T12:44:00+00:00",
+      "summary": "It looks like Federal Reserve Chair Kevin Warsh and Treasury Secretary Scott Bessent are acting in a coordinated way to reduce long-term bond yields, according to Citrini Research.",
+      "relevance": 10
+    },
+    {
+      "source": "CNBC Economy",
+      "title": "Fed's Hammack says 'now is the time to act' on raising interest rates",
+      "link": "https://www.cnbc.com/2026/08/27/feds-hammack-says-now-is-the-time-to-act-on-raising-interest-rates.html",
+      "published": "2026-08-27T17:31:09+00:00",
+      "summary": "She still thinks the Fed needs to take action against inflation that is straining household budgets.",
+      "relevance": 9
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold prices today, Friday, August 28, 2026: Gold steady as markets prepare for Warsh speech",
+      "link": "https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-august-28-2026-gold-steady-as-markets-prepare-for-warsh-speech-115654858.html?.tsrc=rss",
+      "published": "2026-08-28T11:56:54+00:00",
+      "summary": "Gold opened at $4,656 per troy ounce on Friday, August 28, 2026, down 0.2% from Thursday's closing price. The price of gold is pretty steady this morning at $4,650.90 per troy ounce as of 7:43 a.m. ET.",
+      "relevance": 9
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "US Dollar Price Forecast: Warsh Looms as DXY Rebounds, EUR/USD Pulls Back; GBPUSD Key Levels",
+      "link": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-price-forecast-warsh-055644863.html?.tsrc=rss",
+      "published": "2026-08-28T05:56:44+00:00",
+      "summary": "The dollar approaches a key breakout level as traders await Warsh, while EUR/USD tests Fibonacci support and GBP/USD loses channel support.",
+      "relevance": 8
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Fed Chairman Kevin Warsh delivers his key Jackson Hole speech Friday. Here's what to expect",
+      "link": "https://www.cnbc.com/2026/08/27/fed-chairman-kevin-warsh-delivers-his-key-jackson-hole-speech-friday.html",
+      "published": "2026-08-28T11:39:47+00:00",
+      "summary": "Prior Fed chairs have used the speech as an opportunity to lay out broad policy frameworks and intentions.",
+      "relevance": 8
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold Supported by U.S. Debt Worries",
+      "link": "https://finance.yahoo.com/m/d5a22af3-05f8-3691-a712-a8d91a459245/gold-supported-by-u.s.-debt.html?.tsrc=rss",
+      "published": "2026-08-28T09:18:40+00:00",
+      "summary": "Gold prices remained supported as investors fret about U.S. fiscal issues, ANZ analysts wrote. Investors are buying gold as they seek protection from runaway budget deficits and a weaker dollar, they added.",
+      "relevance": 7
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold Mining Stocks Are Up 43% in August \u2014 Their Strongest Month on Record",
+      "link": "https://beincrypto.com/gold-miners-record-month-chip-stocks/?.tsrc=rss",
+      "published": "2026-08-28T10:49:51+00:00",
+      "summary": "Gold miners jumped 43% in August, on track for their best month on record, as the debasement trade pulled money toward alternative assets.",
+      "relevance": 6
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Cygnus Metals Limited: Drilling Results Update",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/cygnus-metals-limited-drilling-results-232600014.html?.tsrc=rss",
+      "published": "2026-08-27T23:26:00+00:00",
+      "summary": "First drilling at Copper Rand has returned intersections including 20.3m at 4.2g/t AuEq; In addition, the maiden drill program at Gwillim has intersected gold mineralisation in all holesChibougamau Copper-Gold Project, Canada HIGHLIGHTS: Results from Copper Rand come from step out drilling surrounding the historic mine which produced 14.9Mt at 3.9% CuEq for 268kt Cu and 1.3Moz Au1Copper Rand sits",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Tocvan Announces New Surface Mineralization in Several Zones at Gran Pilar Gold-Silver Project",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/tocvan-announces-surface-mineralization-several-060500512.html?.tsrc=rss",
+      "published": "2026-08-28T06:05:00+00:00",
+      "summary": "Expansion of Bojorquez Target and Discovery of New Zone 4 km North of Main Zone within Central Corridor, Exploration OngoingHERMOSILLO, MX / ACCESS Newswire / August 28, 2026 / (the \"Company\" or \"Tocvan\") (CSE:TOC)(OTCQB:TCVNF)(WKN:TV3/A2PE64) is pleased to announce new surface exploration results outlining additional gold-silver mineralization across multiple zones at its 100%-owned Gran Pilar Go",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Pirate Gold Intersects 30.6 g/t Au over 1.35m and 4.25 g/t Au over 6.65m at Moosehead; Identifies New Gold Structure",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/pirate-gold-intersects-30-6-080500775.html?.tsrc=rss",
+      "published": "2026-08-28T08:05:00+00:00",
+      "summary": "Eastern Trend shallow drilling continues to deliver high-grade assay results along its southern extension with 30.6g/t Au over 1.35m including 89.7g/t Au over 0.40m in PGC-26-112Western Trend drilling down plunge of the surface vein exposure yielded 4.25g/t Au over 6.65m including 40.8g/t Au over 0.50m in PGC-26-087Caribou Fault Zone is a newly identified parallel fault structure to the Eastern an",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "NYPD investigates gold bar scam that has stolen more than $100 million from retirees.",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/nypd-investigates-gold-bar-scam-101500667.html?.tsrc=rss",
+      "published": "2026-08-28T10:15:00+00:00",
+      "summary": "The FBI recorded 525 gold courier complaints totaling $219 million in reported losses.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Participation in the Dos Amigos Copper-Gold Project in Chile through an Investment in Canada's Tintina Mines",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/participation-dos-amigos-copper-gold-120000309.html?.tsrc=rss",
+      "published": "2026-08-28T12:00:00+00:00",
+      "summary": "Sumitomo Corporation (Head Office: Chiyoda-ku, Tokyo; Representative Director, President and Chief Executive Officer: Shingo Ueno) has participated in the Dos Amigos copper-gold project (hereinafter the \"Project\") in the Atacama Region of Chile through a special purpose vehicle (SPV) funded with the G Mining Group, on a 50:50 basis, under its strategic partnership. The SPV subscribed for approxima",
+      "relevance": 4
+    },
+    {
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board issues enforcement action with former employee of Banco Popular de Puerto Rico",
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260827a.htm",
+      "published": "2026-08-27T15:00:00+00:00",
+      "summary": "Federal Reserve Board issues enforcement action with former employee of Banco Popular de Puerto Rico",
+      "relevance": 3
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "UAE \u2018spy sheikh\u2019 backs 49% stake in Trump family\u2019s crypto bank venture, WSJ reports",
+      "link": "https://www.cnbc.com/2026/08/27/uae-spy-sheikh-trump-family-crypto-bank.html",
+      "published": "2026-08-27T21:22:08+00:00",
+      "summary": "World Liberty\u2019s proposed trust bank has preliminary federal approval as the Trump-backed crypto venture deepens its ties to a senior UAE official.",
+      "relevance": 3
+    }
+  ],
+  "gold": {
+    "symbol": "GC=F",
+    "last": 4651.89990234375,
+    "change_pct": 0.9154544817071169
+  },
+  "base_rates": {},
+  "context": {
+    "FOMC Member Hammack Speaks": {
+      "profile": {
+        "name": "FOMC Member Speaks",
+        "what": "Remarks from a regional Fed president or governor.",
+        "who": "Federal Reserve",
+        "why_gold": "Mostly background, but a known hawk turning dovish - or the reverse - is a genuine signal, and voting members matter more than non-voters.",
+        "watch": "Whether the speaker votes this year, and whether they are departing from their usual stance.",
+        "gotchas": "Several speakers a day is normal and almost always noise. Treat as background unless the tone genuinely shifts.",
+        "prior_move_usd": "2-10"
+      },
+      "fomc": {
+        "next": "2026-09-16",
+        "last": "2026-07-29",
+        "is_today": false,
+        "days_away": 19,
+        "has_projections": true
+      },
+      "fomc_gold_history": [
+        {
+          "date": "2026-07-29",
+          "range": 16.8,
+          "move": 16.6,
+          "next_day": 65.4,
+          "held": true
+        },
+        {
+          "date": "2026-06-17",
+          "range": 81.0,
+          "move": 19.9,
+          "next_day": -134.8,
+          "held": false
+        },
+        {
+          "date": "2026-04-29",
+          "range": 85.9,
+          "move": -53.4,
+          "next_day": 69.5,
+          "held": false
+        },
+        {
+          "date": "2026-03-18",
+          "range": 127.9,
+          "move": -59.7,
+          "next_day": -289.2,
+          "held": true
+        },
+        {
+          "date": "2026-01-28",
+          "range": 0.0,
+          "move": 0.0,
+          "next_day": 16.8,
+          "held": null
+        },
+        {
+          "date": "2025-12-10",
+          "range": 50.9,
+          "move": -12.6,
+          "next_day": 89.1,
+          "held": false
+        },
+        {
+          "date": "2025-10-29",
+          "range": 0.0,
+          "move": 0.0,
+          "next_day": 17.6,
+          "held": null
+        },
+        {
+          "date": "2025-09-17",
+          "range": 23.6,
+          "move": 12.8,
+          "next_day": -38.1,
+          "held": false
+        }
+      ],
+      "fomc_gold_summary": {
+        "samples": 8,
+        "avg_abs_move": 21.88,
+        "avg_range": 48.26,
+        "biggest": 59.7,
+        "held_pct": 33
+      }
+    },
+    "Chicago PMI": {
+      "profile": null
+    },
+    "Fed Chairman Warsh Speaks": {
+      "profile": {
+        "name": "Fed Chair Speaks",
+        "what": "Any scheduled appearance by the Fed Chair - testimony, conference remarks, or a moderated Q&A.",
+        "who": "Federal Reserve",
+        "why_gold": "The Chair sets the policy narrative between meetings. A single sentence on the balance of risks can move the rate curve as much as a data release.",
+        "watch": "Whether the venue allows questions. Prepared remarks are usually safe; unscripted Q&A is where the surprises come from.",
+        "gotchas": "No forecast number exists, so nothing is priced in. The risk is pure tone, which makes it hard to hedge and easy to get run over by.",
+        "prior_move_usd": "10-35, very wide distribution"
+      },
+      "readings": null,
+      "fomc": {
+        "next": "2026-09-16",
+        "last": "2026-07-29",
+        "is_today": false,
+        "days_away": 19,
+        "has_projections": true
+      },
+      "fomc_gold_history": [
+        {
+          "date": "2026-07-29",
+          "range": 16.8,
+          "move": 16.6,
+          "next_day": 65.4,
+          "held": true
+        },
+        {
+          "date": "2026-06-17",
+          "range": 81.0,
+          "move": 19.9,
+          "next_day": -134.8,
+          "held": false
+        },
+        {
+          "date": "2026-04-29",
+          "range": 85.9,
+          "move": -53.4,
+          "next_day": 69.5,
+          "held": false
+        },
+        {
+          "date": "2026-03-18",
+          "range": 127.9,
+          "move": -59.7,
+          "next_day": -289.2,
+          "held": true
+        },
+        {
+          "date": "2026-01-28",
+          "range": 0.0,
+          "move": 0.0,
+          "next_day": 16.8,
+          "held": null
+        },
+        {
+          "date": "2025-12-10",
+          "range": 50.9,
+          "move": -12.6,
+          "next_day": 89.1,
+          "held": false
+        },
+        {
+          "date": "2025-10-29",
+          "range": 0.0,
+          "move": 0.0,
+          "next_day": 17.6,
+          "held": null
+        },
+        {
+          "date": "2025-09-17",
+          "range": 23.6,
+          "move": 12.8,
+          "next_day": -38.1,
+          "held": false
+        }
+      ],
+      "fomc_gold_summary": {
+        "samples": 8,
+        "avg_abs_move": 21.88,
+        "avg_range": 48.26,
+        "biggest": 59.7,
+        "held_pct": 33
+      }
+    },
+    "Prelim Benchmark Payrolls Revision": {
+      "profile": {
+        "name": "Benchmark Payrolls Revision",
+        "what": "Annual re-benchmarking of the payroll survey against actual tax records, which can rewrite a whole year of job growth in one line.",
+        "who": "Bureau of Labor Statistics, preliminary in late summer, final in February",
+        "why_gold": "A large downward revision means the labour market was weaker than the Fed thought all along, which is dovish and gold-positive.",
+        "watch": "The size of the revision against the prior year's figure. Six figures is a serious number.",
+        "gotchas": "Once-a-year event that most calendars underrate. It can reprice the whole rate path in a single print.",
+        "prior_move_usd": "15-40"
+      },
+      "readings": null
+    },
+    "Revised UoM Consumer Sentiment": {
+      "profile": {
+        "name": "UoM Consumer Sentiment",
+        "what": "Michigan's household survey, released in preliminary and revised form at 15:00 UK.",
+        "who": "University of Michigan, monthly",
+        "why_gold": "The sentiment number is minor. The inflation-expectations component attached to it is not.",
+        "watch": "The 1-year and 5-10 year inflation expectations. The Fed watches the long-run figure closely, so a jump there is a genuine rate signal.",
+        "gotchas": "Small sample, frequently revised, and prone to reflecting petrol prices more than anything else.",
+        "prior_move_usd": "3-12"
+      }
+    },
+    "Revised UoM Inflation Expectations": {
+      "profile": {
+        "name": "UoM Consumer Sentiment",
+        "what": "Michigan's household survey, released in preliminary and revised form at 15:00 UK.",
+        "who": "University of Michigan, monthly",
+        "why_gold": "The sentiment number is minor. The inflation-expectations component attached to it is not.",
+        "watch": "The 1-year and 5-10 year inflation expectations. The Fed watches the long-run figure closely, so a jump there is a genuine rate signal.",
+        "gotchas": "Small sample, frequently revised, and prone to reflecting petrol prices more than anything else.",
+        "prior_move_usd": "3-12"
+      },
+      "readings": null
+    }
+  },
+  "fomc": {
+    "status": {
+      "next": "2026-09-16",
+      "last": "2026-07-29",
+      "is_today": false,
+      "days_away": 19,
+      "has_projections": true
+    },
+    "source": "federalreserve.gov",
+    "gold_history": [
+      {
+        "date": "2026-07-29",
+        "range": 16.8,
+        "move": 16.6,
+        "next_day": 65.4,
+        "held": true
+      },
+      {
+        "date": "2026-06-17",
+        "range": 81.0,
+        "move": 19.9,
+        "next_day": -134.8,
+        "held": false
+      },
+      {
+        "date": "2026-04-29",
+        "range": 85.9,
+        "move": -53.4,
+        "next_day": 69.5,
+        "held": false
+      },
+      {
+        "date": "2026-03-18",
+        "range": 127.9,
+        "move": -59.7,
+        "next_day": -289.2,
+        "held": true
+      },
+      {
+        "date": "2026-01-28",
+        "range": 0.0,
+        "move": 0.0,
+        "next_day": 16.8,
+        "held": null
+      },
+      {
+        "date": "2025-12-10",
+        "range": 50.9,
+        "move": -12.6,
+        "next_day": 89.1,
+        "held": false
+      },
+      {
+        "date": "2025-10-29",
+        "range": 0.0,
+        "move": 0.0,
+        "next_day": 17.6,
+        "held": null
+      },
+      {
+        "date": "2025-09-17",
+        "range": 23.6,
+        "move": 12.8,
+        "next_day": -38.1,
+        "held": false
+      }
+    ],
+    "gold_summary": {
+      "samples": 8,
+      "avg_abs_move": 21.88,
+      "avg_range": 48.26,
+      "biggest": 59.7,
+      "held_pct": 33
+    }
+  }
+}
