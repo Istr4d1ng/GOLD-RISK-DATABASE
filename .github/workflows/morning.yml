@@ -1,0 +1,37 @@
+name: Morning report
+
+on:
+  schedule:
+    # 05:30 UTC on weekdays = 06:30 UK in summer, 05:30 UK in winter.
+    - cron: "30 5 * * 1-5"
+  workflow_dispatch:      # lets you run it on demand from the GitHub app
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build today's report
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/morning.py
+
+      - name: Commit output
+        run: |
+          git config user.name  "gold-risk-bot"
+          git config user.email "actions@github.com"
+          git add data docs
+          git diff --staged --quiet || git commit -m "morning report $(date -u +%Y-%m-%d)"
+          git push

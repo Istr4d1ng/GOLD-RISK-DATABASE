@@ -1,0 +1,160 @@
+{
+  "date": "2026-08-28",
+  "generated": "08:34 BST",
+  "risk": {
+    "score": 67,
+    "band": "HIGH",
+    "band_note": "Major scheduled event. Wide, fast moves and poor fills likely.",
+    "expected_range_usd": 57.0,
+    "atr14": 42.16,
+    "vol_ratio": 0.99,
+    "components": {
+      "headline_event": 56,
+      "breadth": 6,
+      "clustering": 5,
+      "volatility": 0
+    },
+    "material_events": 3,
+    "top_weight": 8
+  },
+  "events": [
+    {
+      "title": "FOMC Member Hammack Speaks",
+      "currency": "USD",
+      "utc": "2026-08-28T13:00:00+00:00",
+      "local_time": "14:00",
+      "local_dt": "2026-08-28 14:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 3
+    },
+    {
+      "title": "Chicago PMI",
+      "currency": "USD",
+      "utc": "2026-08-28T13:45:00+00:00",
+      "local_time": "14:45",
+      "local_dt": "2026-08-28 14:45:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "57.9",
+      "previous": "57.6",
+      "actual": "",
+      "weight": 1
+    },
+    {
+      "title": "Fed Chairman Warsh Speaks",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 8
+    },
+    {
+      "title": "Prelim Benchmark Payrolls Revision",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "",
+      "previous": "-911K",
+      "actual": "",
+      "weight": 6
+    },
+    {
+      "title": "Revised UoM Consumer Sentiment",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "51.0",
+      "previous": "51.0",
+      "actual": "",
+      "weight": 3
+    },
+    {
+      "title": "Revised UoM Inflation Expectations",
+      "currency": "USD",
+      "utc": "2026-08-28T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-08-28 15:00:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "",
+      "previous": "4.3%",
+      "actual": "",
+      "weight": 4
+    }
+  ],
+  "yesterday_events": [
+    {
+      "title": "Unemployment Claims",
+      "currency": "USD",
+      "utc": "2026-08-27T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-08-27 13:30:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "208K",
+      "previous": "206K",
+      "actual": "",
+      "weight": 4
+    },
+    {
+      "title": "Goods Trade Balance",
+      "currency": "USD",
+      "utc": "2026-08-27T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-08-27 13:30:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "-100.8B",
+      "previous": "-101.5B",
+      "actual": "",
+      "weight": 1
+    }
+  ],
+  "news": [
+    {
+      "source": "Federal Reserve",
+      "title": "Fed officials signal patience on rate cuts as inflation cools",
+      "link": "https://example.invalid/1",
+      "published": "",
+      "relevance": 9,
+      "summary": "Policymakers said they want more evidence before easing."
+    },
+    {
+      "source": "CNBC Economy",
+      "title": "Dollar slips as traders price a September cut",
+      "link": "https://example.invalid/2",
+      "published": "",
+      "relevance": 8,
+      "summary": "The dollar index fell for a third session."
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold holds near record as yields retreat",
+      "link": "https://example.invalid/3",
+      "published": "",
+      "relevance": 10,
+      "summary": "Bullion steadied with the 10-year yield lower."
+    }
+  ],
+  "gold": {
+    "symbol": "GC=F (fixture)",
+    "last": 3420.5137907966164,
+    "change_pct": 0.3164391666063256
+  },
+  "base_rates": {}
+}
