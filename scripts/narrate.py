@@ -26,6 +26,13 @@ Write four short sections, in plain British English, no bullet-point padding:
    and which times deserve attention.
 4. VERDICT - two or three sentences on the day's character.
 
+You are also given, for each event: a curated profile (what it is, why gold
+cares, what to watch, the usual catch), its recent published readings, and where
+the calendar sits in the FOMC meeting cycle. Use that context - explain the
+mechanism, not just the direction - and prefer the measured base rates in
+`historical_base_rates` and `fomc` over the rough prior figures in the profiles
+whenever both are present, saying which you are using.
+
 Be concrete and quantitative where the data supports it. Never invent numbers,
 prices, or events that are not in the input. If the data is thin, say so.
 Do not give trading advice or tell the reader what position to take."""
@@ -75,6 +82,31 @@ def _template(payload):
                      "is left to drift on positioning, the dollar and any "
                      "unscheduled headline.\n")
 
+    fomc = payload.get("fomc") or {}
+    st = fomc.get("status") or {}
+    if st.get("next"):
+        if st.get("is_today"):
+            parts.append("The FOMC decides today - the statement lands at 19:00 UK "
+                         "and the press conference at 19:30, and those two often "
+                         "pull gold in opposite directions.\n")
+        else:
+            sep = " and carries the dot plot" if st.get("has_projections") else ""
+            parts.append(f"### FOMC cycle\n\nThe next FOMC meeting is "
+                         f"{st['next']}, {st.get('days_away')} days away{sep}. "
+                         "Gold's sensitivity to inflation and labour data rises as "
+                         "a meeting approaches, because each print moves the odds "
+                         "on that specific decision.\n")
+
+    ctx = payload.get("context") or {}
+    briefs = [(e, ctx.get(e["title"], {}).get("profile"))
+              for e in ev if e["weight"] >= config.MATERIAL_WEIGHT]
+    briefs = [(e, p) for e, p in briefs if p]
+    if briefs:
+        parts.append("### What each one actually is\n")
+        for e, prof in briefs[:4]:
+            parts.append(f"**{e['local_time']} - {prof['name']}.** {prof['what']} "
+                         f"{prof['why_gold']} Watch: {prof['watch']}\n")
+
     parts.append(f"### Verdict\n\n{risk['band_note']} Risk score {risk['score']}"
                  f"/100 ({risk['band']}). Expected daily range around "
                  f"${risk.get('expected_range_usd') or 0:,.1f}.\n")
@@ -98,6 +130,16 @@ def _gemini(payload, key):
         "news": [{"title": n["title"], "source": n["source"],
                   "summary": n["summary"]} for n in payload["news"][:15]],
         "historical_base_rates": payload.get("base_rates", {}),
+        "event_context": {
+            t: {
+                "profile": {k: v for k, v in (c.get("profile") or {}).items()
+                            if k in ("name", "what", "why_gold", "watch",
+                                     "gotchas", "prior_move_usd")},
+                "recent_readings": (c.get("readings") or {}).get("points"),
+            }
+            for t, c in (payload.get("context") or {}).items()
+        },
+        "fomc": payload.get("fomc"),
     }
     body = {
         "systemInstruction": {"parts": [{"text": SYSTEM}]},

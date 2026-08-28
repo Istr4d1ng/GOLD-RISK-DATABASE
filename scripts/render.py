@@ -109,11 +109,153 @@ def _news_list(news):
     return f'<ul class="news">{"".join(items)}</ul>'
 
 
+
+def _pct(v):
+    return "&ndash;" if v is None else f"{v:+.2f}%"
+
+
+def _signed(v):
+    return "&ndash;" if v is None else f"{v:+.2f}"
+
+
+def _readings_block(r):
+    if not r or not r.get("points"):
+        return ""
+    pts = r["points"]
+    vals = [p["value"] for p in pts]
+    lo, hi = min(vals), max(vals)
+    span = (hi - lo) or 1
+    bars = "".join(
+        f'<span class="spark" style="height:{6 + 30 * (v - lo) / span:.0f}px" '
+        f'title="{html.escape(str(p["date"]))}: {v}"></span>'
+        for p, v in zip(pts, vals))
+    rows = "".join(
+        f'<tr><td>{html.escape(p["date"])}</td><td class="num">{p["value"]}</td>'
+        f'<td class="num muted">'
+        f'{_pct(p.get("change"))}'
+        f'</td></tr>' for p in reversed(pts))
+    return f"""
+<div class="readings">
+  <div class="rlabel">{html.escape(r["label"])}
+    <span class="muted">&middot; FRED {html.escape(r["series"])}</span></div>
+  <div class="sparks">{bars}</div>
+  <table class="mini"><tbody>{rows}</tbody></table>
+</div>"""
+
+
+def _fomc_history_table(rows):
+    if not rows:
+        return ""
+    body = "".join(
+        f'<tr><td>{html.escape(r["date"])}</td>'
+        f'<td class="num {"up" if r["move"] >= 0 else "down"}">{r["move"]:+.2f}</td>'
+        f'<td class="num">{r["range"]:.2f}</td>'
+        f'<td class="num {"up" if (r["next_day"] or 0) >= 0 else "down"}">'
+        f'{_signed(r.get("next_day"))}</td>'
+        f'</tr>' for r in rows)
+    return f"""
+<table class="mini wide">
+  <thead><tr><th>Decision day</th><th>Gold O&rarr;C</th><th>Day range</th>
+             <th>Next day</th></tr></thead>
+  <tbody>{body}</tbody></table>"""
+
+
+def _event_details(events, ctx, base_rates, classified):
+    blocks = []
+    for e in events:
+        if e["weight"] < config.MATERIAL_WEIGHT:
+            continue
+        c = ctx.get(e["title"], {})
+        prof = c.get("profile")
+        inner = []
+        if prof:
+            inner.append(f'<p class="lead">{html.escape(prof["what"])}</p>')
+            inner.append('<dl class="facts">')
+            for k, v in (("Published by", prof["who"]),
+                         ("Why gold cares", prof["why_gold"]),
+                         ("What to watch", prof["watch"]),
+                         ("The catch", prof["gotchas"]),
+                         ("Rough prior expectation",
+                          "$" + prof["prior_move_usd"])):
+                inner.append(f"<dt>{k}</dt><dd>{html.escape(v)}</dd>")
+            inner.append("</dl>")
+        else:
+            cl = classified.get(e["title"], {})
+            inner.append(f'<p class="lead">{html.escape(cl.get("expectation",""))}</p>')
+            inner.append(f'<p class="muted">{html.escape(cl.get("direction",""))}</p>')
+
+        inner.append(_readings_block(c.get("readings")))
+
+        bs = base_rates.get(e["title"])
+        if bs:
+            inner.append(
+                f'<p class="measured"><strong>Measured here:</strong> median 1h gold '
+                f'move ${bs["median_move_1h"]}, max ${bs["max_move_1h"]}, '
+                f'n={bs["samples"]}, {bs["sustained_rate"]}% held into the close.</p>')
+        else:
+            inner.append('<p class="muted small">No measured history yet - this '
+                         'event has not been logged enough times. The figures above '
+                         'are a prior, not a statistic.</p>')
+
+        fh = c.get("fomc_gold_summary")
+        if fh:
+            inner.append(
+                f'<p class="measured"><strong>Gold on the last {fh["samples"]} FOMC '
+                f'decision days:</strong> average move ${fh["avg_abs_move"]}, '
+                f'average range ${fh["avg_range"]}, biggest ${fh["biggest"]}'
+                + (f', {fh["held_pct"]}% carried into the next day.'
+                   if fh.get("held_pct") is not None else '.') + '</p>')
+            inner.append(_fomc_history_table(c.get("fomc_gold_history")))
+
+        name = prof["name"] if prof else e["title"]
+        dot = FOLDER_COLOURS.get(e["folder"], "#6b7280")
+        blocks.append(f"""
+<details>
+  <summary><span class="dot" style="background:{dot}"></span>
+    <strong>{e['local_time']}</strong> {html.escape(name)}
+    <span class="muted small">&mdash; {html.escape(e['title'])}</span></summary>
+  <div class="detail">{''.join(inner)}</div>
+</details>""")
+    if not blocks:
+        return '<p class="muted">Nothing material enough to brief today.</p>'
+    return "".join(blocks)
+
+
+def _fomc_card(fomc):
+    if not fomc or not fomc.get("status", {}).get("next"):
+        return ""
+    st = fomc["status"]
+    gs = fomc.get("gold_summary")
+    today_flag = ('<p class="measured"><strong>Today is a decision day.</strong></p>'
+                  if st.get("is_today") else "")
+    sep = " &middot; with projections (dot plot)" if st.get("has_projections") else ""
+    summary = ""
+    if gs:
+        summary = (f'<div class="stat"><span class="k">Gold on the last '
+                   f'{gs["samples"]} decision days</span><span class="v">'
+                   f'avg ${gs["avg_abs_move"]} move, ${gs["avg_range"]} range</span></div>')
+    return f"""
+<section class="card">
+  <h2>FOMC cycle</h2>
+  {today_flag}
+  <div class="stat"><span class="k">Next meeting</span>
+    <span class="v">{html.escape(st['next'])} &middot; {st.get('days_away')} days{sep}</span></div>
+  <div class="stat"><span class="k">Last meeting</span>
+    <span class="v">{html.escape(str(st.get('last')))}</span></div>
+  {summary}
+  {_fomc_history_table(fomc.get('gold_history'))}
+  <p class="muted small" style="margin-top:10px">Calendar source: {html.escape(fomc.get('source',''))}.</p>
+</section>"""
+
+
 def build_page(payload, narrative, archive=None):
     risk = payload["risk"]
     events = payload["events"]
     classified = payload.get("classified", {})
     gold = payload.get("gold", {})
+    ctx = payload.get("context") or {}
+    fomc = payload.get("fomc")
+    base_rates = payload.get("base_rates") or {}
     band = risk["band"]
     colour = BAND_COLOURS.get(band, "#6b7280")
     comp = risk["components"]
@@ -207,6 +349,31 @@ def build_page(payload, narrative, archive=None):
     align-items:center; font-size:12.5px; color:var(--muted); }}
   .bar i {{ display:block; height:6px; border-radius:3px; background:var(--accent);
     min-width:2px; }}
+  details {{ border-top:1px solid var(--line); }}
+  details:first-of-type {{ border-top:none; }}
+  summary {{ cursor:pointer; padding:12px 0; font-size:14.5px; list-style:none;
+    display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }}
+  summary::-webkit-details-marker {{ display:none; }}
+  summary::before {{ content:"+"; color:var(--muted); font-weight:700;
+    margin-right:4px; }}
+  details[open] summary::before {{ content:"\2212"; }}
+  .detail {{ padding:2px 0 18px 22px; font-size:14px; }}
+  .detail .lead {{ margin:0 0 12px; }}
+  dl.facts {{ margin:0 0 14px; display:grid; grid-template-columns:auto 1fr;
+    gap:6px 14px; font-size:13.5px; }}
+  dl.facts dt {{ color:var(--muted); white-space:nowrap; }}
+  dl.facts dd {{ margin:0; }}
+  .measured {{ background:var(--track); border-radius:8px; padding:10px 12px;
+    font-size:13.5px; margin:12px 0; }}
+  .readings {{ margin:14px 0; }}
+  .rlabel {{ font-size:12.5px; color:var(--fg); margin-bottom:6px; }}
+  .sparks {{ display:flex; align-items:flex-end; gap:3px; height:38px;
+    margin-bottom:8px; }}
+  .spark {{ flex:1; max-width:26px; background:var(--accent); opacity:.65;
+    border-radius:2px 2px 0 0; }}
+  table.mini {{ font-size:12.5px; min-width:0; }}
+  table.mini td, table.mini th {{ padding:5px 14px 5px 0; }}
+  table.mini.wide {{ width:100%; margin-top:8px; }}
   .bar u {{ display:block; height:6px; border-radius:3px; background:var(--track); }}
 </style>
 </head>
@@ -244,6 +411,13 @@ def build_page(payload, narrative, archive=None):
   <h2>Today&rsquo;s USD calendar &mdash; UK time</h2>
   {_events_table(events, classified)}
 </section>
+
+<section class="card">
+  <h2>Event briefings &mdash; what each one is and what it does to gold</h2>
+  {_event_details(events, ctx, base_rates, classified)}
+</section>
+
+{_fomc_card(fomc)}
 
 <section class="card analysis">
   <h2>Analysis</h2>

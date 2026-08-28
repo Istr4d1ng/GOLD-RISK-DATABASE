@@ -44,6 +44,35 @@ sources.fetch_news = lambda hours=36, limit=25: [
      "summary": "Bullion steadied with the 10-year yield lower."},
 ]
 
+# stub the context layer's two network calls
+import context                                    # noqa: E402
+
+FOMC_PAGE = b"""<h4>2026 FOMC Meetings</h4>
+January 27-28 | Minutes: February 18
+March 17-18 | Minutes: April 8
+April 28-29 | Minutes: May 20
+June 16-17 | Minutes: July 8
+July 28-29 | Minutes: August 19
+September 15-16 | Minutes: October 7
+October 27-28 | Minutes: November 18
+December 8-9 | Minutes: December 30
+"""
+_real_get = sources._get
+sources._get = lambda url, **kw: (FOMC_PAGE if "fomccalendar" in url
+                                  else _real_get(url, **kw))
+
+
+def fake_fred(series_id, years=3):
+    base = {"CPIAUCSL": 320.0, "PCEPILFE": 128.0, "PAYEMS": 160000.0,
+            "UNRATE": 4.2, "ICSA": 220000.0, "UMCSENT": 51.0, "MICH": 4.3}.get(series_id, 100.0)
+    out = []
+    for i in range(30):
+        out.append((f"2026-{(i % 12) + 1:02d}-01", round(base * (1 + i * 0.002), 2)))
+    return out
+
+
+context.fred_series = fake_fred
+
 import morning                                    # noqa: E402
 import risk as riskmod                            # noqa: E402
 
@@ -105,5 +134,45 @@ fake_hist = [{"event": "Core PCE Price Index m/m", "move_1h": v, "persistence": 
 br = riskmod.base_rate("Core PCE Price Index m/m", fake_hist)
 assert br["samples"] == 5 and br["median_move_1h"] == 12.4 and br["sustained_rate"] == 60, br
 print(f"ok  base rates compute   (median ${br['median_move_1h']}, {br['sustained_rate']}% held)")
+
+# --- event context layer ---------------------------------------------------
+ctx = latest["context"]
+warsh_ctx = ctx["Fed Chairman Warsh Speaks"]
+assert warsh_ctx["profile"]["name"] == "Fed Chair Speaks", warsh_ctx["profile"]
+assert "opportunity cost" in warsh_ctx["profile"]["why_gold"] or \
+       "narrative" in warsh_ctx["profile"]["why_gold"]
+print("ok  profile attached      (Fed Chair Speaks)")
+
+assert "Fed Chair Speaks" in html and "What to watch" in html
+assert "Why gold cares" in html
+print("ok  briefing card rendered")
+
+fomc = latest["fomc"]
+assert fomc["source"] == "federalreserve.gov", fomc["source"]
+assert fomc["status"]["next"] == "2026-09-16", fomc["status"]
+assert fomc["status"]["days_away"] == 19, fomc["status"]
+assert fomc["status"]["has_projections"] is True
+print(f"ok  FOMC calendar scraped (next {fomc['status']['next']}, "
+      f"{fomc['status']['days_away']} days, dot plot)")
+assert "FOMC cycle" in html and "Next meeting" in html
+print("ok  FOMC cycle card")
+
+gs = fomc.get("gold_summary")
+assert gs and gs["samples"] >= 2, gs
+print(f"ok  gold measured on past decision days (n={gs['samples']}, "
+      f"avg ${gs['avg_abs_move']})")
+
+uom = ctx["Revised UoM Inflation Expectations"]
+assert uom["readings"] and len(uom["readings"]["points"]) == 8, uom["readings"]
+assert uom["readings"]["series"] == "MICH", uom["readings"]
+assert "FRED" in html and "spark" in html
+print("ok  recent readings series (8 points + sparkline)")
+
+assert not ctx["Chicago PMI"].get("readings"), "immaterial event fetched a series"
+print("ok  no readings fetched for immaterial events")
+
+assert "## Event briefings" in md and "Why gold cares" in md
+assert "## FOMC cycle" in md
+print("ok  briefings in markdown archive")
 
 print("\nALL CHECKS PASSED")

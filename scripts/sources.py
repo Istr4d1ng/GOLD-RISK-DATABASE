@@ -155,11 +155,11 @@ def fetch_stooq_daily(symbol="xauusd"):
     return bars
 
 
-def gold_daily():
+def gold_daily(rng="2y"):
     """Daily gold bars from whichever free source answers first."""
     for sym in config.GOLD_SYMBOLS:
         try:
-            bars = fetch_chart(sym, "1d", "6mo")
+            bars = fetch_chart(sym, "1d", rng)
             if len(bars) > 30:
                 return sym, bars
         except Exception:                   # noqa: BLE001

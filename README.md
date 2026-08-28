@@ -21,6 +21,8 @@ each event, so the answers get better the longer it runs.
 | `scripts/config.py` | Every tunable: event weights, feeds, risk bands |
 | `scripts/sources.py` | Calendar, news and price fetching (standard library only) |
 | `scripts/risk.py` | The 0-100 risk score and the historical base-rate lookup |
+| `scripts/context.py` | Event profiles, FRED readings, FOMC calendar and cycle |
+| `data/event_profiles.json` | Curated briefing for each major USD release |
 | `scripts/narrate.py` | The written analysis (template, or a model if you add a key) |
 | `scripts/render.py` | Builds the dashboard page |
 | `scripts/morning.py` | Weekday 06:30 UK: builds the report |
@@ -31,7 +33,8 @@ each event, so the answers get better the longer it runs.
 
 **Data sources, all free and keyless:** the ForexFactory calendar feed
 (published by FairEconomy), public RSS from the Federal Reserve, US Treasury,
-BLS, CNBC, MarketWatch and Yahoo, and free Yahoo/Stooq price data.
+BLS, CNBC, MarketWatch and Yahoo, free Yahoo/Stooq price data, FRED CSV
+downloads for historical readings, and the Fed's own FOMC calendar page.
 
 ### The risk score
 
@@ -44,6 +47,34 @@ came from:
 - **Clustering** (0 or 5) - two heavyweight prints at the same minute is worse
   than the same two spread across the day
 - **Volatility** (-5 to +10) - current 14-day ATR against its 60-day average
+
+### What you get on each event
+
+Every material release on the day expands into a briefing:
+
+- **What it is** - who publishes it, how often, at what UK time
+- **Why gold cares** - the actual transmission mechanism, not just "dollar up,
+  gold down". For the FOMC that is the real-rate opportunity cost; for payrolls
+  it is the labour half of the mandate feeding the rate path
+- **What to watch** - the sub-component that actually carries the information
+  (core m/m rather than headline CPI, the control group in retail sales, the
+  1-year inflation expectation in the Michigan survey)
+- **The catch** - how the event typically misleads people. NFP whipsaws in the
+  first fifteen minutes; the FOMC press conference regularly reverses the
+  statement reaction; PPI only matters next to CPI
+- **Recent readings** - the last eight published values pulled live from FRED,
+  with a sparkline, so you can see the trend the market is extrapolating
+- **Measured history** - once the event has three or more entries in
+  `data/events.csv`, the real median gold move and how often it held
+
+### FOMC cycle tracking
+
+The Fed's meeting calendar is scraped from federalreserve.gov each run (with a
+strict eight-meetings-a-year sanity check, a cache, and a built-in fallback if
+the page changes shape). The dashboard always shows how far away the next
+decision is, whether it carries the dot plot, and what gold actually did on each
+of the last eight decision days - open to close, the day's range, and whether
+the move carried into the next session.
 
 ### The bit that compounds
 
@@ -117,6 +148,9 @@ also best-effort and can run a few minutes late when it is busy.
   base rate, so after roughly fifty logged events the "short or long lasting"
   answer stops being a guess and starts being a statistic. Early reports will
   be thinner on that question than on the rest.
+- **The `prior_move_usd` figures in the profiles are opinion**, not measurement.
+  They are labelled as priors on the page and get superseded by the measured
+  base rate as soon as the event has been logged three times.
 - **Event weights are a starting opinion**, not truth. They are all in
   `config.py` and should be revised once the CSV disagrees with them.
 - Free price feeds occasionally rate-limit. The code retries and falls back

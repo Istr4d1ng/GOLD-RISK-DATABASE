@@ -1,0 +1,198 @@
+{
+  "_note": "Curated context for the USD events that actually move gold. 'prior_move_usd' is a rough starting expectation only - it is superseded by the measured base rate in data/events.csv once that event has 3+ logged instances.",
+  "profiles": {
+    "federal funds rate": {
+      "name": "FOMC Rate Decision",
+      "what": "The Federal Open Market Committee sets the target range for the federal funds rate. Announced at 19:00 UK (14:00 ET), followed 30 minutes later by the Chair's press conference.",
+      "who": "Federal Reserve, eight scheduled meetings a year",
+      "why_gold": "Gold pays no interest, so its opportunity cost is the real yield on cash and Treasuries. Anything that lowers expected real rates raises gold, and vice versa. This is the single most direct transmission channel there is.",
+      "watch": "The decision itself is usually priced in. The move comes from three other things: changes to the statement's language, the dot plot on projection meetings, and the tone of the press conference - which frequently reverses the initial statement reaction.",
+      "gotchas": "Two-leg event. Gold often moves one way on the 19:00 statement and the opposite way during the 19:30 presser. Judging the day on the first ten minutes is how people get caught.",
+      "prior_move_usd": "20-60 on the day, more on projection meetings"
+    },
+    "fomc statement": {"alias_of": "federal funds rate"},
+    "fomc press conference": {"alias_of": "federal funds rate"},
+    "fomc economic projections": {
+      "name": "Summary of Economic Projections (dot plot)",
+      "what": "Every committee member's forecast for growth, unemployment, inflation and the appropriate policy rate. Published four times a year alongside the rate decision.",
+      "who": "Federal Reserve, March / June / September / December",
+      "why_gold": "The dot plot repriced the whole forward rate curve in one release. Gold trades the curve, not the current rate, so a shifted median dot moves it harder than the decision.",
+      "watch": "The median dot for the current and next year, and how many members moved. The longer-run dot matters for the real-rate anchor.",
+      "gotchas": "The dots are not a commitment and the Chair usually says so in the presser, which can unwind the initial move.",
+      "prior_move_usd": "30-70 on the day"
+    },
+    "fomc meeting minutes": {
+      "name": "FOMC Meeting Minutes",
+      "what": "Detailed account of the meeting held three weeks earlier. Released 19:00 UK.",
+      "who": "Federal Reserve, three weeks after each meeting",
+      "why_gold": "Reveals the spread of opinion behind a decision the market has already traded. Matters most when the vote looked closer than the statement implied.",
+      "watch": "Phrases signalling how many members wanted a different outcome, and any discussion of the balance sheet.",
+      "gotchas": "Stale by construction - if the data has moved since the meeting, the minutes are often ignored entirely.",
+      "prior_move_usd": "8-20"
+    },
+    "cpi m/m": {
+      "name": "Consumer Price Index",
+      "what": "Headline and core consumer inflation, month on month and year on year. Released 13:30 UK (08:30 ET).",
+      "who": "Bureau of Labor Statistics, monthly, usually mid-month",
+      "why_gold": "The most reliable single driver of Fed expectations, and therefore of gold. A hot print lifts real yields and the dollar and knocks gold; a cool one does the reverse.",
+      "watch": "Core m/m is what the market trades - headline is noisier because of energy. A 0.1pp surprise against forecast is enough to move the metal.",
+      "gotchas": "Gold's first move is sometimes reversed within the hour if the internals (shelter, supercore) contradict the headline.",
+      "prior_move_usd": "15-40 within the hour"
+    },
+    "core cpi m/m": {"alias_of": "cpi m/m"},
+    "cpi y/y": {"alias_of": "cpi m/m"},
+    "core pce price index": {
+      "name": "Core PCE Price Index",
+      "what": "The Fed's preferred inflation gauge, stripped of food and energy. Released 13:30 UK.",
+      "who": "Bureau of Economic Analysis, monthly",
+      "why_gold": "It is the measure the Fed's 2% target is actually written against, so it carries more policy weight than CPI even though it moves markets less.",
+      "watch": "The m/m figure to two decimal places, and the three- and six-month annualised runs that commentators compute from it.",
+      "gotchas": "Largely predictable from the CPI and PPI released earlier in the month, so the surprise is usually small - which is exactly why a surprise here hits hard.",
+      "prior_move_usd": "10-30"
+    },
+    "pce price index": {"alias_of": "core pce price index"},
+    "non-farm employment change": {
+      "name": "Non-Farm Payrolls",
+      "what": "Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month.",
+      "who": "Bureau of Labor Statistics, monthly",
+      "why_gold": "Labour market strength is the other half of the Fed's mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it.",
+      "watch": "Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.",
+      "gotchas": "The most whipsaw-prone release on the calendar. The first move is frequently wrong, and the first fifteen minutes routinely reverse.",
+      "prior_move_usd": "20-50 within the hour"
+    },
+    "average hourly earnings": {"alias_of": "non-farm employment change"},
+    "unemployment rate": {"alias_of": "non-farm employment change"},
+    "adp non-farm employment change": {
+      "name": "ADP Employment Change",
+      "what": "Private payroll processor's estimate of job creation, released two days before NFP at 13:15 UK.",
+      "who": "ADP Research Institute, monthly",
+      "why_gold": "Traded as a preview of NFP, though its correlation with the official number is poor.",
+      "watch": "Only really matters when it diverges wildly from the NFP forecast.",
+      "gotchas": "A bad predictor. Moves gold briefly, then gets forgotten by Friday.",
+      "prior_move_usd": "5-15"
+    },
+    "benchmark payrolls revision": {
+      "name": "Benchmark Payrolls Revision",
+      "what": "Annual re-benchmarking of the payroll survey against actual tax records, which can rewrite a whole year of job growth in one line.",
+      "who": "Bureau of Labor Statistics, preliminary in late summer, final in February",
+      "why_gold": "A large downward revision means the labour market was weaker than the Fed thought all along, which is dovish and gold-positive.",
+      "watch": "The size of the revision against the prior year's figure. Six figures is a serious number.",
+      "gotchas": "Once-a-year event that most calendars underrate. It can reprice the whole rate path in a single print.",
+      "prior_move_usd": "15-40"
+    },
+    "core ppi m/m": {
+      "name": "Producer Price Index",
+      "what": "Inflation at the wholesale level, released 13:30 UK.",
+      "who": "Bureau of Labor Statistics, monthly",
+      "why_gold": "A leading indicator for consumer inflation, and several PPI components feed straight into the PCE calculation, so analysts revise their PCE estimates within minutes of it.",
+      "watch": "The health-care and portfolio-management components, because those are the ones that map into core PCE.",
+      "gotchas": "Usually a minor event unless it lands the day before or after CPI.",
+      "prior_move_usd": "5-20"
+    },
+    "ppi m/m": {"alias_of": "core ppi m/m"},
+    "core retail sales": {
+      "name": "Retail Sales",
+      "what": "Monthly change in receipts at retail stores. Released 13:30 UK.",
+      "who": "US Census Bureau, monthly",
+      "why_gold": "The cleanest read on whether the consumer - roughly 70% of the US economy - is still spending. Feeds growth expectations and therefore the rate path.",
+      "watch": "The control group, which strips autos, petrol, building materials and food services. That is the number that feeds GDP.",
+      "gotchas": "Not adjusted for inflation, so a hot print during high inflation can mean less than it looks.",
+      "prior_move_usd": "8-25"
+    },
+    "retail sales m/m": {"alias_of": "core retail sales"},
+    "ism manufacturing pmi": {
+      "name": "ISM Manufacturing PMI",
+      "what": "Survey of purchasing managers. Above 50 means expansion. Released 15:00 UK.",
+      "who": "Institute for Supply Management, first business day of the month",
+      "why_gold": "A timely growth signal that arrives before the hard data. Weakness feeds recession pricing, which is usually gold-supportive.",
+      "watch": "The prices-paid and new-orders sub-indices carry more information than the headline.",
+      "gotchas": "Manufacturing is a small share of US output, so the survey overstates its own importance.",
+      "prior_move_usd": "8-20"
+    },
+    "ism services pmi": {
+      "name": "ISM Services PMI",
+      "what": "The services-sector equivalent, covering the bulk of the US economy. Released 15:00 UK.",
+      "who": "Institute for Supply Management, third business day of the month",
+      "why_gold": "More economically meaningful than the manufacturing survey and consequently a bigger mover when it surprises.",
+      "watch": "Prices paid, as a services-inflation signal, and employment as an NFP hint.",
+      "gotchas": "Noisier month to month than its manufacturing counterpart.",
+      "prior_move_usd": "10-25"
+    },
+    "unemployment claims": {
+      "name": "Initial Jobless Claims",
+      "what": "New unemployment benefit filings in the prior week. Released every Thursday at 13:30 UK.",
+      "who": "Department of Labor, weekly",
+      "why_gold": "The highest-frequency labour signal available. Individually minor, but a trend of rising claims shifts the whole rate narrative.",
+      "watch": "The four-week moving average rather than the weekly print, and continuing claims for whether people are finding new work.",
+      "gotchas": "Distorted by holidays, weather and state-level administrative quirks. One bad week means nothing.",
+      "prior_move_usd": "3-10"
+    },
+    "advance gdp q/q": {
+      "name": "GDP",
+      "what": "Quarterly economic growth, annualised. Released 13:30 UK in three passes - advance, second, third.",
+      "who": "Bureau of Economic Analysis, quarterly",
+      "why_gold": "Matters for the growth half of the picture, but it is backward-looking by up to four months.",
+      "watch": "The advance reading is the only one that reliably moves anything. Later revisions rarely register.",
+      "gotchas": "Gold typically shrugs off GDP unless the miss is large or it confirms an existing recession narrative.",
+      "prior_move_usd": "5-15"
+    },
+    "prelim gdp q/q": {"alias_of": "advance gdp q/q"},
+    "final gdp q/q": {"alias_of": "advance gdp q/q"},
+    "fed chair": {
+      "name": "Fed Chair Speaks",
+      "what": "Any scheduled appearance by the Fed Chair - testimony, conference remarks, or a moderated Q&A.",
+      "who": "Federal Reserve",
+      "why_gold": "The Chair sets the policy narrative between meetings. A single sentence on the balance of risks can move the rate curve as much as a data release.",
+      "watch": "Whether the venue allows questions. Prepared remarks are usually safe; unscripted Q&A is where the surprises come from.",
+      "gotchas": "No forecast number exists, so nothing is priced in. The risk is pure tone, which makes it hard to hedge and easy to get run over by.",
+      "prior_move_usd": "10-35, very wide distribution"
+    },
+    "fed chairman": {"alias_of": "fed chair"},
+    "fomc member": {
+      "name": "FOMC Member Speaks",
+      "what": "Remarks from a regional Fed president or governor.",
+      "who": "Federal Reserve",
+      "why_gold": "Mostly background, but a known hawk turning dovish - or the reverse - is a genuine signal, and voting members matter more than non-voters.",
+      "watch": "Whether the speaker votes this year, and whether they are departing from their usual stance.",
+      "gotchas": "Several speakers a day is normal and almost always noise. Treat as background unless the tone genuinely shifts.",
+      "prior_move_usd": "2-10"
+    },
+    "treasury sec": {
+      "name": "Treasury Secretary Speaks",
+      "what": "Remarks from the US Treasury Secretary.",
+      "who": "US Treasury",
+      "why_gold": "Moves gold through the dollar and through issuance expectations rather than through rates - comments on currency policy or debt supply are the ones that land.",
+      "watch": "Anything on dollar policy, tariffs, or the debt issuance mix.",
+      "gotchas": "Unscheduled and unpredictable in content.",
+      "prior_move_usd": "3-15"
+    },
+    "consumer confidence": {
+      "name": "CB Consumer Confidence",
+      "what": "Survey of household sentiment about business and labour conditions. Released 15:00 UK.",
+      "who": "The Conference Board, monthly",
+      "why_gold": "A soft indicator of future spending. Rarely moves gold on its own.",
+      "watch": "The labour differential - jobs plentiful minus jobs hard to get - which tracks the unemployment rate.",
+      "gotchas": "Sentiment surveys have decoupled from actual spending behaviour for years now.",
+      "prior_move_usd": "2-8"
+    },
+    "uom consumer sentiment": {
+      "name": "UoM Consumer Sentiment",
+      "what": "Michigan's household survey, released in preliminary and revised form at 15:00 UK.",
+      "who": "University of Michigan, monthly",
+      "why_gold": "The sentiment number is minor. The inflation-expectations component attached to it is not.",
+      "watch": "The 1-year and 5-10 year inflation expectations. The Fed watches the long-run figure closely, so a jump there is a genuine rate signal.",
+      "gotchas": "Small sample, frequently revised, and prone to reflecting petrol prices more than anything else.",
+      "prior_move_usd": "3-12"
+    },
+    "uom inflation expectations": {"alias_of": "uom consumer sentiment"},
+    "jolts job openings": {
+      "name": "JOLTS Job Openings",
+      "what": "Job openings, hires and quits. Released 15:00 UK, roughly six weeks in arrears.",
+      "who": "Bureau of Labor Statistics, monthly",
+      "why_gold": "The vacancy-to-unemployed ratio is a labour-tightness gauge the Fed has cited directly.",
+      "watch": "The quits rate, as a measure of worker confidence.",
+      "gotchas": "Very stale by release, and the response rate has been falling for years.",
+      "prior_move_usd": "3-12"
+    }
+  }
+}

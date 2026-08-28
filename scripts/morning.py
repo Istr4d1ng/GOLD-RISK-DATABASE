@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import config
+import context
 import narrate
 import render
 import risk as riskmod
@@ -44,9 +45,11 @@ def main():
     # Prices
     atr14 = atr_avg = None
     gold = {}
+    daily_bars = []
     daily = safe(sources.gold_daily, None, "gold daily")
     if daily:
         symbol, bars = daily
+        daily_bars = bars
         atr14 = sources.atr(bars, 14)
         atr_avg = sources.atr(bars, 60) or atr14
         last, chg = bars[-1]["c"], None
@@ -63,6 +66,14 @@ def main():
     classified = {e["title"]: riskmod.classify_event(e, history) for e in events}
     base_rates = {t: c["history"] for t, c in classified.items() if c["history"]}
 
+    # Event context: what each release is, and what it has done before.
+    ctx, fomc = safe(lambda: context.enrich(events, today, daily_bars),
+                     ({}, None), "event context")
+    if fomc:
+        print(f"[morning] FOMC calendar via {fomc['source']}; "
+              f"next meeting {fomc['status'].get('next')} "
+              f"({fomc['status'].get('days_away')} days)")
+
     payload = {
         "date": today.isoformat(),
         "generated": now.strftime("%H:%M %Z"),
@@ -73,6 +84,8 @@ def main():
         "gold": gold,
         "classified": classified,
         "base_rates": base_rates,
+        "context": ctx,
+        "fomc": fomc,
     }
 
     narrative, mode = narrate.write_up(payload)
@@ -101,6 +114,62 @@ def main():
                          f"{e['weight']} | {e['forecast'] or '-'} | {e['previous'] or '-'} |")
     else:
         lines.append("_No USD events scheduled._")
+
+    # --- per-event briefings ----------------------------------------------
+    briefed = [e for e in events if e["weight"] >= config.MATERIAL_WEIGHT]
+    if briefed:
+        lines += ["", "## Event briefings", ""]
+        for e in briefed:
+            c = ctx.get(e["title"], {})
+            prof = c.get("profile")
+            lines.append(f"### {e['local_time']} - {e['title']}")
+            lines.append("")
+            if prof:
+                lines += [f"**{prof['name']}** - {prof['what']}", "",
+                          f"- _Published by:_ {prof['who']}",
+                          f"- _Why gold cares:_ {prof['why_gold']}",
+                          f"- _What to watch:_ {prof['watch']}",
+                          f"- _Catch:_ {prof['gotchas']}",
+                          f"- _Rough prior expectation:_ ${prof['prior_move_usd']}"]
+            else:
+                cl = classified.get(e["title"], {})
+                lines.append(cl.get("expectation", ""))
+                lines.append("")
+                lines.append(cl.get("direction", ""))
+            r = c.get("readings")
+            if r and r.get("points"):
+                lines += ["", f"Recent readings - {r['label']} (FRED {r['series']}):", ""]
+                for pt in r["points"]:
+                    chg = (f" ({pt['change']:+.2f}% m/m)"
+                           if pt.get("change") is not None else "")
+                    lines.append(f"- {pt['date']}: {pt['value']}{chg}")
+            bs = base_rates.get(e["title"])
+            if bs:
+                lines += ["", f"Measured in this database: median 1h gold move "
+                              f"${bs['median_move_1h']}, max ${bs['max_move_1h']}, "
+                              f"n={bs['samples']}, {bs['sustained_rate']}% held into the close."]
+            fh = c.get("fomc_gold_summary")
+            if fh:
+                lines += ["", f"Gold on the last {fh['samples']} FOMC decision days: "
+                              f"average move ${fh['avg_abs_move']}, average range "
+                              f"${fh['avg_range']}, biggest ${fh['biggest']}"
+                              + (f", {fh['held_pct']}% carried into the next day."
+                                 if fh.get("held_pct") is not None else ".")]
+            lines.append("")
+
+    if fomc and fomc.get("status", {}).get("next"):
+        st = fomc["status"]
+        lines += ["", "## FOMC cycle", "",
+                  f"- Next meeting: **{st['next']}**, {st.get('days_away')} days away"
+                  + (" (with projections / dot plot)" if st.get("has_projections") else ""),
+                  f"- Last meeting: {st.get('last')}",
+                  f"- Calendar source: {fomc.get('source')}"]
+        gs = fomc.get("gold_summary")
+        if gs:
+            lines.append(f"- Gold on the last {gs['samples']} decision days: average "
+                         f"move ${gs['avg_abs_move']}, average range ${gs['avg_range']}, "
+                         f"biggest ${gs['biggest']}")
+
     lines += ["", "## Analysis", "", narrative, "", "## News (last 36h)", ""]
     for n in news[:15]:
         lines.append(f"- [{n['title']}]({n['link']}) - {n['source']}")
