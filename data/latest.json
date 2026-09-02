@@ -1,23 +1,77 @@
 {
-  "date": "2026-09-01",
-  "generated": "06:39 BST",
+  "date": "2026-09-02",
+  "generated": "06:40 BST",
   "risk": {
-    "score": 44,
-    "band": "MODERATE",
-    "band_note": "Some scheduled risk. Expect intraday noise around releases.",
-    "expected_range_usd": 93.6,
-    "atr14": 79.29,
-    "vol_ratio": 0.97,
+    "score": 69,
+    "band": "HIGH",
+    "band_note": "Major scheduled event. Wide, fast moves and poor fills likely.",
+    "expected_range_usd": 106.5,
+    "atr14": 77.89,
+    "vol_ratio": 0.95,
     "components": {
-      "headline_event": 42,
-      "breadth": 3,
+      "headline_event": 70,
+      "breadth": 0,
       "clustering": 0,
       "volatility": -1
     },
-    "material_events": 2,
-    "top_weight": 6
+    "material_events": 1,
+    "top_weight": 10
   },
   "events": [
+    {
+      "title": "ADP Non-Farm Employment Change",
+      "currency": "USD",
+      "utc": "2026-09-02T12:15:00+00:00",
+      "local_time": "13:15",
+      "local_dt": "2026-09-02 13:15:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "47K",
+      "previous": "44K",
+      "actual": "",
+      "weight": 10
+    },
+    {
+      "title": "Factory Orders m/m",
+      "currency": "USD",
+      "utc": "2026-09-02T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-09-02 15:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "0.7%",
+      "previous": "-0.3%",
+      "actual": "",
+      "weight": 1
+    },
+    {
+      "title": "Crude Oil Inventories",
+      "currency": "USD",
+      "utc": "2026-09-02T14:30:00+00:00",
+      "local_time": "15:30",
+      "local_dt": "2026-09-02 15:30:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "-0.4M",
+      "previous": "0.1M",
+      "actual": "",
+      "weight": 1
+    },
+    {
+      "title": "Beige Book",
+      "currency": "USD",
+      "utc": "2026-09-02T18:00:00+00:00",
+      "local_time": "19:00",
+      "local_dt": "2026-09-02 19:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 1
+    }
+  ],
+  "yesterday_events": [
     {
       "title": "FOMC Member Barr Speaks",
       "currency": "USD",
@@ -99,9 +153,9 @@
     {
       "title": "RCM/TIPP Economic Optimism",
       "currency": "USD",
-      "utc": "2026-09-01T14:10:00+00:00",
-      "local_time": "15:10",
-      "local_dt": "2026-09-01 15:10:00+01:00",
+      "utc": "2026-09-01T14:04:00+00:00",
+      "local_time": "15:04",
+      "local_dt": "2026-09-01 15:04:00+01:00",
       "impact": "Low",
       "folder": "YELLOW",
       "forecast": "46.2",
@@ -136,299 +190,178 @@
       "weight": 1
     }
   ],
-  "yesterday_events": [],
   "news": [
     {
       "source": "Yahoo Gold",
-      "title": "Bitcoin Is Trading Like Gold, Not the Nasdaq \u2014 And Right Now That's the Problem",
-      "link": "https://beincrypto.com/gold-price-bitcoin-debasement-trade-pause/?.tsrc=rss",
-      "published": "2026-08-31T13:01:04+00:00",
-      "summary": "Gold price falls 5.6% from Tuesday's high, and Bitcoin retreats from $81,000 as Fed rate hike odds jump after Warsh's speech.",
+      "title": "Sycamine Capital Management Tracks Gold Three-Month High",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/sycamine-capital-management-tracks-gold-175000157.html?.tsrc=rss",
+      "published": "2026-09-01T17:50:00+00:00",
+      "summary": "Bullion reaches a three-month high as the conflict involving Iran, a hawkish Federal Reserve, escalating tariffs and record central bank accumulation reshape safe-haven demand, portfolio allocation and long-term precious metals investment strategy.SINGAPORE / ACCESS Newswire / September 1, 2026 / Gold futures for year-end delivery open at $4,710.",
       "relevance": 15
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Gold ETF Inflows Reverse Course as Warsh\u2019s Hawkish Speech Crushes GLDM\u2019s Summer Rally",
-      "link": "https://247wallst.com/investing/etf/2026/08/31/gold-etf-inflows-reverse-course-as-warshs-hawkish-speech-crushes-gldms-summer-rally/?.tsrc=rss",
-      "published": "2026-08-31T19:20:53+00:00",
-      "summary": "Kevin Warsh just handed gold's summer rally its worst week in months, but the real question is whether one hawkish speech can undo a structural shift that sent European and Asian investors pouring billions into bullion while American buyers sat on the sidelines.",
-      "relevance": 13
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Gold prices surge in August. Will rate hike forecasts rain on gold's parade?",
-      "link": "https://finance.yahoo.com/video/gold-prices-surge-august-rate-200000150.html?.tsrc=rss",
-      "published": "2026-08-31T20:00:00+00:00",
-      "summary": "Gold prices (GC=F) have already surged by over 10% in the month of August. On August's final trading day, Yahoo Finance Senior Business Reporter Ines Ferr\u00e9 examines how this may have been gold's best month since February 2026 while investors anticipate the Federal Reserve to hike interest rates.",
-      "relevance": 13
     },
     {
       "source": "CNBC Top News",
       "title": "Trump says U.S. growth could hit 20%. It\u2019s happened only once since WWII",
       "link": "https://www.cnbc.com/2026/08/31/trump-us-gdp-growth-20-percent-economy.html",
-      "published": "2026-08-31T20:50:01+00:00",
+      "published": "2026-09-01T13:22:11+00:00",
       "summary": "Trump argued rapid growth should not prompt Fed rate hikes, even as inflation remains above the central bank\u2019s 2% target.",
       "relevance": 11
     },
     {
-      "source": "Yahoo Gold",
-      "title": "Gold posts best month since February despite investor concerns over rate hikes",
-      "link": "https://finance.yahoo.com/markets/article/gold-posts-best-month-since-february-despite-investor-concerns-over-rate-hikes-165315959.html?.tsrc=rss",
-      "published": "2026-08-31T16:53:15+00:00",
-      "summary": "Gold saw monthly gains as investors assessed the Fed's next likely move.",
+      "source": "CNBC Economy",
+      "title": "Euro zone inflation is back above 3%. Higher interest rates are likely to follow",
+      "link": "https://www.cnbc.com/2026/09/01/euro-zone-inflation-rate-hike.html",
+      "published": "2026-09-01T10:50:27+00:00",
+      "summary": "The European Central Bank is seen hiking rates in September as the Iran war raises energy costs in the region.",
       "relevance": 10
     },
     {
       "source": "CNBC Top News",
-      "title": "Markets see Warsh endorsing a rate hike in September. Not everyone is convinced",
-      "link": "https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html",
-      "published": "2026-08-31T19:38:38+00:00",
-      "summary": "The path toward the move still looks cluttered.",
+      "title": "10-year yield hits highest since January 2025 as higher oil prices stoke inflation worries",
+      "link": "https://www.cnbc.com/2026/09/01/bonds-treasury-yields-middle-east-tensions.html",
+      "published": "2026-09-01T20:40:30+00:00",
+      "summary": "Treasury yields increased on Tuesday as investors monitored a reignition of tensions in the Middle East.",
+      "relevance": 10
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Fed Governor Barr says he'll support rate hike if inflation doesn't ease",
+      "link": "https://www.cnbc.com/2026/09/01/fed-governor-barr-says-hell-support-rate-hike-if-inflation-doesnt-ease.html",
+      "published": "2026-09-01T14:01:27+00:00",
+      "summary": "The policymaker said he's concerned about \"broader price pressures taking hold\" as inflation has prevailed above the Fed's 2% target.",
+      "relevance": 9
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "RBC forecasts gold could reach $4,929 an ounce by year-end",
+      "link": "https://www.proactiveinvestors.com/companies/news/1097915/rbc-forecasts-gold-could-reach-4-929-an-ounce-by-year-end-1097915.html?.tsrc=rss",
+      "published": "2026-09-01T13:30:00+00:00",
+      "summary": "RBC Capital Markets is leaning towards its high scenario for gold, forecasting a price of $4,929 an ounce by the end of 2026. The bank has maintained the forecasts it published in December, citing a return of investor demand and renewed buying by central banks. Gold has traded mostly...",
       "relevance": 8
     },
     {
-      "source": "MarketWatch",
-      "title": "With Warsh running the Fed, should bond investors be worried?",
-      "link": "https://www.marketwatch.com/story/should-bond-investors-worry-with-warsh-running-the-fed-0a99c5ac?mod=mw_rss_topstories",
-      "published": "2026-08-31T20:55:00+00:00",
-      "summary": "The usually drama-free investment vehicle, U.S. government debt, is now causing some concern.",
-      "relevance": 8
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "TNR Gold Begins Exploration Program on Shotgun Gold Project in Alaska",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/tnr-gold-begins-exploration-program-120000831.html?.tsrc=rss",
-      "published": "2026-08-31T12:00:00+00:00",
-      "summary": "Vancouver, British Columbia--(Newsfile Corp. - August 31, 2026) - TNR Gold Corp. (TSXV: TNR) (\"TNR\", \"TNR Gold\" or the \"Company\") is pleased to announce the start of an exploration program on the Company's Shotgun Gold Project in Alaska.The 2026 field program at the Shotgun and Winchester prospects, located in the Taylor Mountain Quadrangle in Alaska, will follow up the 2022 field program and inve",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Gold prices today, Monday, August 31, 2026: Gold sinks following U.S. strikes on Iran",
-      "link": "https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-monday-august-31-2026-gold-sinks-following-us-strikes-on-iran-123744944.html?.tsrc=rss",
-      "published": "2026-08-31T12:37:44+00:00",
-      "summary": "Gold December futures opened at $4,483.20 per troy ounce on Monday, August 31, 2026, down 1.0% from Friday's closing price. The price of gold is rising this morning at $4,507.20 per troy ounce as of 8:22 a.m. ET.",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Canadian Goldfields Advances 2026 Exploration Program at Miminiska Gold Project",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/canadian-goldfields-advances-2026-exploration-124500529.html?.tsrc=rss",
-      "published": "2026-08-31T12:45:00+00:00",
-      "summary": "VANCOUVER, British Columbia, Aug. 31, 2026 (GLOBE NEWSWIRE) -- Canadian Goldfields Discovery Corp. (TSX-V: CGM, OTCQB: CGMXF) (\u201cCanadian Goldfields\u201d or the \u201cCompany\u201d) is pleased to announce the commencement of its 2026 Fall Exploration Program at the Miminiska Gold Project in northwestern Ontario, including an extensive soil geochemical survey, an airborne magnetic survey and preparations for a wi",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "TNR Gold launches 2026 exploration program at Shotgun gold project in Alaska",
-      "link": "https://www.proactiveinvestors.com/companies/news/1097846/tnr-gold-launches-2026-exploration-program-at-shotgun-gold-project-in-alaska-1097846.html?.tsrc=rss",
-      "published": "2026-08-31T13:26:00+00:00",
-      "summary": "TNR Gold Corp (TSX-V:TNR, FRA:TNW, OTC:TRRXF) has launched its 2026 exploration program at the Shotgun Gold Project in southwestern Alaska, advancing work at the Shotgun and Winchester prospects in the Taylor Mountain Quadrangle. The program builds on 2022 fieldwork and will follow up on...",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "RETRANSMISSION: Gold Runner Exploration Samples Up To 25,306 Grams per Ton Silver With 11.22 Grams per Ton Gold For a Gold Equivalent of 12.7 Ounces per Ton in New 350 Meter Gold Stack Trend on the 100% Controlled Golden Girl Property, Golden Triangle, B.C.",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/retransmission-gold-runner-exploration-samples-200500268.html?.tsrc=rss",
-      "published": "2026-08-31T20:05:00+00:00",
-      "summary": "Vancouver, British Columbia--(Newsfile Corp. - August 31, 2026) - Gold Runner Exploration Inc. (CSE: GRUN) (FSE: CE70) (\"Gold Runner\" or the \"Company\") is pleased to announce initial results for samples assayed up to 25,306 g/t Ag (grams per ton Silver) with 11.2 g/t Au (grams per ton Gold), or 12.7 ounces per ton Gold Equivalent, from the newly discovered 350 meter long and up to 50 meter wide Go",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Patagonia Gold Quarter 2 2026 Financial Results",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/patagonia-gold-quarter-2-2026-213000547.html?.tsrc=rss",
-      "published": "2026-08-31T21:30:00+00:00",
-      "summary": "VANCOUVER, British Columbia, Aug. 31, 2026 (GLOBE NEWSWIRE) -- Patagonia Gold Corp. (\u201cPatagonia\u201d or the \u201cCompany\u201d) (TSXV: PGDC) announces its financial results for the quarter ended June 30, 2026 (\u201cQ2 2026\u201d). The financial statements together with the related management\u2019s discussion and analysis are available on the Company\u2019s website and under the Company\u2019s profile on SEDAR+ at www.sedarplus.ca. H",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Bank of America Spots Major Shift in Gold",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/bank-america-spots-major-shift-014820983.html?.tsrc=rss",
-      "published": "2026-09-01T01:48:20+00:00",
-      "summary": "A broader shift in positioning may be taking hold",
-      "relevance": 4
-    },
-    {
       "source": "CNBC Top News",
-      "title": "Indian PM Modi implores Putin to end Ukraine war amid U.S. tariff threat on Russian oil",
-      "link": "https://www.cnbc.com/2026/09/01/russia-india-ukraine-war-oil-modi-putin.html",
-      "published": "2026-09-01T01:51:28+00:00",
-      "summary": "Indian PM Narendra Modi has urged Russia to end the Ukraine war and to cease hostilities.",
-      "relevance": 4
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "Waiting for homebuying to get more affordable? Here's what to expect in 2027",
-      "link": "https://www.cnbc.com/2026/08/31/what-homebuyers-can-expect-in-2027.html",
-      "published": "2026-08-31T17:16:59+00:00",
-      "summary": "Mortgage rates aren't expected to get much cheaper for homebuyers in 2027, especially if inflation stays high.",
-      "relevance": 3
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "American Airlines announces Trump Accounts matching program",
-      "link": "https://www.cnbc.com/2026/08/31/trump-accounts-american-airlines-matching-program.html",
-      "published": "2026-08-31T17:19:46+00:00",
-      "summary": "To help fund Trump Accounts, American Airlines said it will match the federal $1,000 contribution for employees' children.",
-      "relevance": 3
+      "title": "Global bond yields soar to multi-decade highs as Middle East turmoil reignites inflation fears",
+      "link": "https://www.cnbc.com/2026/09/01/bond-yields-iran-inflation-treasurys-japan-uk.html",
+      "published": "2026-09-01T12:39:23+00:00",
+      "summary": "Bond yields surged across major markets Tuesday as U.S.-Iran hostilities revived energy and inflation risks, with Japan and U.K. yields at multi-decade highs.",
+      "relevance": 5
     },
     {
       "source": "Yahoo Gold",
-      "title": "Stock Market Today, Aug. 31: Stocks Edge Lower as Oil Prices Surge Again",
-      "link": "https://www.fool.com/coverage/stock-market-today/2026/08/31/stock-market-today-aug-31-stocks-edge-lower-as-oil-prices-surge-again/?.tsrc=rss",
-      "published": "2026-08-31T21:27:40+00:00",
-      "summary": "WTI crude climbed above $90 a barrel following U.S. military strikes, stoking inflation and rate-hike concerns, today, Aug. 31, 2026.",
-      "relevance": 3
+      "title": "Newmont shares fall 2.6% as gold prices retreat",
+      "link": "https://investorshub.advfn.com/market-news/article/35383/newmont-shares-fall-2-6-as-gold-prices-retreat?.tsrc=rss",
+      "published": "2026-09-01T13:35:02+00:00",
+      "summary": "Newmont Goldcorp Corp (NYSE:NEM) shares fell 2. 6% in pre-market trading to $122.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold prices dip despite notching best month since Feb.: Why Goldman Sachs still expects a rally",
+      "link": "https://finance.yahoo.com/video/gold-prices-dip-despite-notching-141932305.html?.tsrc=rss",
+      "published": "2026-09-01T14:19:32+00:00",
+      "summary": "Gold (GC=F) prices are under pressure on Tuesday, although August was the precious metal's best month since February. Yahoo Finance Senior Business Reporter Ines Ferr\u00e9 explains what's driving gold's recent market moves.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Bitcoin and Gold Gain as Currency Debasement Fears Surge 750% in Two Weeks",
+      "link": "https://www.ccn.com/news/crypto/bitcoin-gold-currency-debasement-fears-750-percent/?.tsrc=rss",
+      "published": "2026-09-01T15:30:43+00:00",
+      "summary": "The word \u201cdebasement\u201d appeared in 1,533 Bloomberg articles last week, up 750% in two weeks and the third-highest weekly total on record, according to data ...",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Arizona Gold & Silver new Director Yale Simpson sees major upside at Philadelphia Project",
+      "link": "https://finance.yahoo.com/video/arizona-gold-silver-director-yale-154651232.html?.tsrc=rss",
+      "published": "2026-09-01T15:46:51+00:00",
+      "summary": "Arizona Gold and Silver new Director Yale Simpson joined Steve Darling from Proactive to discuss his decision to move from advisor to board member and why he believes the company's Philadelphia Gold Project in Arizona has the potential to become a significant discovery. Simpson, who has worked closely with the company on communications and strategic messaging for several years, said his long-stand",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold's Powerful Rally Runs Into a New Wall",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/golds-powerful-rally-runs-wall-190359442.html?.tsrc=rss",
+      "published": "2026-09-01T19:03:59+00:00",
+      "summary": "Safe-haven demand is losing ground to rising rate expectations",
+      "relevance": 4
     },
     {
       "source": "MarketWatch",
-      "title": "Amazon\u2019s stock slips as the FTC alleges billions of dollars in hidden ad fees",
-      "link": "https://www.marketwatch.com/story/amazons-stock-slips-as-the-ftc-alleges-billions-of-dollars-in-hidden-ad-fees-4ae44ee4?mod=mw_rss_topstories",
-      "published": "2026-08-31T22:24:00+00:00",
-      "summary": "Regulators claim Amazon artificially bumped up floor prices during peak shopping periods, adding surcharges to merchants\u2019 ad spending.",
+      "title": "This could be the 10-year Treasury\u2019s tipping point into the danger zone",
+      "link": "https://www.marketwatch.com/story/this-could-be-the-10-year-treasurys-tipping-point-into-the-danger-zone-891cd45d?mod=mw_rss_topstories",
+      "published": "2026-09-01T20:36:00+00:00",
+      "summary": "An unrelenting rout has global bond yields touching their highest levels since 2008, driving up borrowing costs for households, businesses and world governments.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Austral Gold Appoints Jorge Sanguin as SVP of Operations",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/austral-gold-appoints-jorge-sanguin-232900802.html?.tsrc=rss",
+      "published": "2026-09-01T23:29:00+00:00",
+      "summary": "Sydney, Australia--(Newsfile Corp. - September 1, 2026) - Established gold producer Austral Gold Limited (ASX: AGD) (TSXV: AGLD) (OTCQB: AGLDF) (Austral or the Company) is pleased to announce the appointment of Mr. Jorge Sanguin as Senior Vice President (SVP) of Operations, effective 1 September 2026. Mr. Sanguin will be based in San Juan, Argentina, and will report to the Chief Executive Officer.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "What to Watch: Jewelry Is Booming Despite Hard Times for Luxury \u2014 and Dizzying Gold Prices",
+      "link": "https://wwd.com/accessories-news/jewelry/jewelry-booming-hard-times-luxury-dizzying-gold-prices-1239176947/?.tsrc=rss",
+      "published": "2026-09-02T04:01:00+00:00",
+      "summary": "Luxury consumers of every stripe are pouring their disposable income into fine jewelry as an everyday style statement and an investment in difficult times.",
+      "relevance": 4
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Used cars under $20,000 tend to sell quickly \u2014 but there are trade-offs for buyers",
+      "link": "https://www.cnbc.com/2026/09/01/used-cars-under-20000-sell-quickly-tradeoffs.html",
+      "published": "2026-09-01T15:49:08+00:00",
+      "summary": "The share of used cars listed at under $20,000 has dropped from pre-pandemic levels against a backdrop of high inflation.",
+      "relevance": 3
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Stock Market Midday, Sept. 1: Stocks Slide on Global Bond Sell-Off",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/09/01/stock-market-midday-sept-1-stocks-slide-on-global-bond-sell-off/?.tsrc=rss",
+      "published": "2026-09-01T16:44:45+00:00",
+      "summary": "Brent crude climbs as U.S.-Iran tensions escalate, fueling a broad bond sell-off and inflation concerns today, Sept. 1, 2026.",
       "relevance": 3
     },
     {
       "source": "CNBC Top News",
-      "title": "These emerging markets are favored to get 'a wall of money' from carry trades",
-      "link": "https://www.cnbc.com/2026/09/01/emerging-markets-dollar-carry-trade.html",
-      "published": "2026-09-01T05:12:38+00:00",
-      "summary": "Emerging markets could attract more capital as Treasury bond buyback plans weaken the dollar and support carry trades, analysts say.",
+      "title": "Australia posts second-quarter growth of 2.1%, beating expectations",
+      "link": "https://www.cnbc.com/2026/09/02/australia-gdp-q2-middle-east-rba.html",
+      "published": "2026-09-02T03:05:14+00:00",
+      "summary": "The GDP print will allow the Reserve Bank of Australia room to go ahead with its policy tightening as it seeks to curb inflation.",
       "relevance": 3
     }
   ],
   "gold": {
     "symbol": "GC=F",
-    "last": 4476.2001953125,
-    "change_pct": 1.017808143853597
+    "last": 4363.7998046875,
+    "change_pct": 0.363380972573597
   },
   "base_rates": {},
   "context": {
-    "FOMC Member Barr Speaks": {
+    "ADP Non-Farm Employment Change": {
       "profile": {
-        "name": "FOMC Member Speaks",
-        "what": "Remarks from a regional Fed president or governor.",
-        "who": "Federal Reserve",
-        "why_gold": "Mostly background, but a known hawk turning dovish - or the reverse - is a genuine signal, and voting members matter more than non-voters.",
-        "watch": "Whether the speaker votes this year, and whether they are departing from their usual stance.",
-        "gotchas": "Several speakers a day is normal and almost always noise. Treat as background unless the tone genuinely shifts.",
-        "prior_move_usd": "2-10"
-      },
-      "fomc": {
-        "next": "2026-09-16",
-        "last": "2026-07-29",
-        "is_today": false,
-        "days_away": 15,
-        "has_projections": true
-      },
-      "fomc_gold_history": [
-        {
-          "date": "2026-07-29",
-          "range": 16.8,
-          "move": 16.6,
-          "next_day": 65.4,
-          "held": true
-        },
-        {
-          "date": "2026-06-17",
-          "range": 81.0,
-          "move": 19.9,
-          "next_day": -134.8,
-          "held": false
-        },
-        {
-          "date": "2026-04-29",
-          "range": 85.9,
-          "move": -53.4,
-          "next_day": 69.5,
-          "held": false
-        },
-        {
-          "date": "2026-03-18",
-          "range": 127.9,
-          "move": -59.7,
-          "next_day": -289.2,
-          "held": true
-        },
-        {
-          "date": "2026-01-28",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 16.8,
-          "held": null
-        },
-        {
-          "date": "2025-12-10",
-          "range": 50.9,
-          "move": -12.6,
-          "next_day": 89.1,
-          "held": false
-        },
-        {
-          "date": "2025-10-29",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 17.6,
-          "held": null
-        },
-        {
-          "date": "2025-09-17",
-          "range": 23.6,
-          "move": 12.8,
-          "next_day": -38.1,
-          "held": false
-        }
-      ],
-      "fomc_gold_summary": {
-        "samples": 8,
-        "avg_abs_move": 21.88,
-        "avg_range": 48.26,
-        "biggest": 59.7,
-        "held_pct": 33
-      }
-    },
-    "Final Manufacturing PMI": {
-      "profile": null
-    },
-    "ISM Manufacturing PMI": {
-      "profile": {
-        "name": "ISM Manufacturing PMI",
-        "what": "Survey of purchasing managers. Above 50 means expansion. Released 15:00 UK.",
-        "who": "Institute for Supply Management, first business day of the month",
-        "why_gold": "A timely growth signal that arrives before the hard data. Weakness feeds recession pricing, which is usually gold-supportive.",
-        "watch": "The prices-paid and new-orders sub-indices carry more information than the headline.",
-        "gotchas": "Manufacturing is a small share of US output, so the survey overstates its own importance.",
-        "prior_move_usd": "8-20"
+        "name": "ADP Employment Change",
+        "what": "Private payroll processor's estimate of job creation, released two days before NFP at 13:15 UK.",
+        "who": "ADP Research Institute, monthly",
+        "why_gold": "Traded as a preview of NFP, though its correlation with the official number is poor.",
+        "watch": "Only really matters when it diverges wildly from the NFP forecast.",
+        "gotchas": "A bad predictor. Moves gold briefly, then gets forgotten by Friday.",
+        "prior_move_usd": "5-15"
       },
       "readings": null
     },
-    "ISM Manufacturing Prices": {
+    "Factory Orders m/m": {
       "profile": null
     },
-    "JOLTS Job Openings": {
-      "profile": {
-        "name": "JOLTS Job Openings",
-        "what": "Job openings, hires and quits. Released 15:00 UK, roughly six weeks in arrears.",
-        "who": "Bureau of Labor Statistics, monthly",
-        "why_gold": "The vacancy-to-unemployed ratio is a labour-tightness gauge the Fed has cited directly.",
-        "watch": "The quits rate, as a measure of worker confidence.",
-        "gotchas": "Very stale by release, and the response rate has been falling for years.",
-        "prior_move_usd": "3-12"
-      },
-      "readings": null
-    },
-    "Construction Spending m/m": {
+    "Crude Oil Inventories": {
       "profile": null
     },
-    "RCM/TIPP Economic Optimism": {
-      "profile": null
-    },
-    "Omdia Total Vehicle Sales": {
-      "profile": null
-    },
-    "API Weekly Statistical Bulletin": {
+    "Beige Book": {
       "profile": null
     }
   },
@@ -437,7 +370,7 @@
       "next": "2026-09-16",
       "last": "2026-07-29",
       "is_today": false,
-      "days_away": 15,
+      "days_away": 14,
       "has_projections": true
     },
     "source": "federalreserve.gov",
