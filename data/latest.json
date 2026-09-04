@@ -1,23 +1,64 @@
 {
-  "date": "2026-09-03",
-  "generated": "06:52 BST",
+  "date": "2026-09-04",
+  "generated": "06:39 BST",
   "risk": {
-    "score": 45,
-    "band": "MODERATE",
-    "band_note": "Some scheduled risk. Expect intraday noise around releases.",
-    "expected_range_usd": 99.5,
-    "atr14": 83.8,
-    "vol_ratio": 1.01,
+    "score": 82,
+    "band": "EXTREME",
+    "band_note": "Top-tier event risk. Spreads widen, stops get run, direction is a coin flip on the print.",
+    "expected_range_usd": 127.7,
+    "atr14": 87.2,
+    "vol_ratio": 1.04,
     "components": {
-      "headline_event": 42,
-      "breadth": 3,
-      "clustering": 0,
-      "volatility": 0
+      "headline_event": 70,
+      "breadth": 6,
+      "clustering": 5,
+      "volatility": 1
     },
-    "material_events": 2,
-    "top_weight": 6
+    "material_events": 3,
+    "top_weight": 10
   },
   "events": [
+    {
+      "title": "Average Hourly Earnings m/m",
+      "currency": "USD",
+      "utc": "2026-09-04T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-09-04 13:30:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "0.3%",
+      "previous": "0.1%",
+      "actual": "",
+      "weight": 8
+    },
+    {
+      "title": "Non-Farm Employment Change",
+      "currency": "USD",
+      "utc": "2026-09-04T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-09-04 13:30:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "55K",
+      "previous": "-23K",
+      "actual": "",
+      "weight": 10
+    },
+    {
+      "title": "Unemployment Rate",
+      "currency": "USD",
+      "utc": "2026-09-04T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-09-04 13:30:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "4.1%",
+      "previous": "4.1%",
+      "actual": "",
+      "weight": 8
+    }
+  ],
+  "yesterday_events": [
     {
       "title": "Challenger Job Cuts y/y",
       "currency": "USD",
@@ -162,188 +203,126 @@
       "weight": 3
     }
   ],
-  "yesterday_events": [
-    {
-      "title": "ADP Non-Farm Employment Change",
-      "currency": "USD",
-      "utc": "2026-09-02T12:15:00+00:00",
-      "local_time": "13:15",
-      "local_dt": "2026-09-02 13:15:00+01:00",
-      "impact": "Medium",
-      "folder": "ORANGE",
-      "forecast": "47K",
-      "previous": "44K",
-      "actual": "",
-      "weight": 10
-    },
-    {
-      "title": "Factory Orders m/m",
-      "currency": "USD",
-      "utc": "2026-09-02T14:00:00+00:00",
-      "local_time": "15:00",
-      "local_dt": "2026-09-02 15:00:00+01:00",
-      "impact": "Low",
-      "folder": "YELLOW",
-      "forecast": "0.7%",
-      "previous": "-0.3%",
-      "actual": "",
-      "weight": 1
-    },
-    {
-      "title": "Crude Oil Inventories",
-      "currency": "USD",
-      "utc": "2026-09-02T14:30:00+00:00",
-      "local_time": "15:30",
-      "local_dt": "2026-09-02 15:30:00+01:00",
-      "impact": "Low",
-      "folder": "YELLOW",
-      "forecast": "-0.4M",
-      "previous": "0.1M",
-      "actual": "",
-      "weight": 1
-    },
-    {
-      "title": "Beige Book",
-      "currency": "USD",
-      "utc": "2026-09-02T18:00:00+00:00",
-      "local_time": "19:00",
-      "local_dt": "2026-09-02 19:00:00+01:00",
-      "impact": "Low",
-      "folder": "YELLOW",
-      "forecast": "",
-      "previous": "",
-      "actual": "",
-      "weight": 1
-    }
-  ],
   "news": [
     {
-      "source": "CNBC Top News",
-      "title": "New York Fed's Williams says yield surge due to strong economic prospects",
-      "link": "https://www.cnbc.com/2026/09/02/new-york-feds-williams-says-yield-surge-due-to-strong-economic-prospects.html",
-      "published": "2026-09-02T17:21:59+00:00",
-      "summary": "New York Fed President John Williams said higher Treasury yields reflect a strong economy as he weighs whether another interest rate hike is needed.",
-      "relevance": 14
+      "source": "Yahoo Gold",
+      "title": "Dollar Retreats and Gold Surges on Dovish Fed Waller",
+      "link": "https://www.barchart.com/story/news/4431758/dollar-retreats-and-gold-surges-on-dovish-fed-waller?.tsrc=rss",
+      "published": "2026-09-03T19:34:30+00:00",
+      "summary": "The dollar index (DXY00 ) fell to a 1.5-week low on Thursday and finished down by -0.67%. The dollar tumbled on Thursday on dovish comments from Fed Governor Christopher Waller, who said underlying inflation is better than core numbers suggest and that he will support keeping interest rates steady at...",
+      "relevance": 16
     },
     {
-      "source": "Yahoo Gold",
-      "title": "Gold Futures Edge Up as Treasury Yields Ease",
-      "link": "https://finance.yahoo.com/m/8d3cf7af-6301-36a8-b6dc-9a7392be3642/gold-futures-edge-up-as.html?.tsrc=rss",
-      "published": "2026-09-02T18:42:20+00:00",
-      "summary": "Gold futures snap a three-session losing streak as Treasury yields ease. The market is closely watching for Friday's employment report, where a strong jobs showing could add to Fed rate-hike expectations.",
+      "source": "CNBC Economy",
+      "title": "The big August jobs report is due out Friday. Here's what to expect for what has been a jobless summer",
+      "link": "https://www.cnbc.com/2026/09/03/august-2026-jobs-report-payrolls.html",
+      "published": "2026-09-03T19:38:09+00:00",
+      "summary": "August nonfarm payrolls are expected to rise by 53,000 as a subdued labor market keeps Fed attention focused on inflation.",
       "relevance": 12
     },
     {
+      "source": "CNBC Economy",
+      "title": "Fed Governor Waller indicates he will support holding rates steady at September meeting",
+      "link": "https://www.cnbc.com/2026/09/03/fed-governor-waller-indicates-he-will-support-holding-rates-steady-at-september-meeting.html",
+      "published": "2026-09-03T14:06:52+00:00",
+      "summary": "In remarks that seem to contrast with statements last week from Chairman Kevin Warsh, Waller expressed confidence in the current inflation trends.",
+      "relevance": 11
+    },
+    {
       "source": "Yahoo Gold",
-      "title": "Why Goldgroup Mining Stock Soared on Wednesday",
-      "link": "https://www.fool.com/investing/2026/09/02/why-goldgroup-mining-stock-soared-on-wednesday/?.tsrc=rss",
-      "published": "2026-09-02T21:03:16+00:00",
-      "summary": "Precious metals were having a good day, thanks to renewed hope that the Fed won't be as eager to raise interest rates.",
+      "title": "Stock Market Midday, Sept. 3: Stocks Rally as Treasury Yields Fall, Broadcom Falls Despite Earnings Beat",
+      "link": "https://www.fool.com/coverage/stock-market-today/2026/09/03/stock-market-midday-sept-3-stocks-rally-as-treasury-yields-fall-broadcom-falls-despite-earnings-beat/?.tsrc=rss",
+      "published": "2026-09-03T16:54:03+00:00",
+      "summary": "Markets push upwards as the likelihood of a September rate hike slips slightly, today, Sept. 3, 2026.",
       "relevance": 10
     },
     {
       "source": "Yahoo Gold",
-      "title": "3 Gold Mining Stocks To Own In September 2026",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/3-gold-mining-stocks-own-021505850.html?.tsrc=rss",
-      "published": "2026-09-03T02:15:05+00:00",
-      "summary": "Global 10 year government bond yields have been moving higher, which raises the appeal of assets that can respond directly to inflation pressure. Gold sits at the center of that discussion because many investors view it as a store of value when real returns feel harder to secure. This article looks at three leading gold mining stocks that aim to offer focused exposure to that theme. The three stoc",
-      "relevance": 9
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "10-year U.S. Treasury yield hits highest level since November 2023",
-      "link": "https://www.cnbc.com/2026/09/02/bond-yields-treasurys-inflation.html",
-      "published": "2026-09-02T20:05:39+00:00",
-      "summary": "The 10-year Treasury note yield reached a fresh multiyear high on Wednesday as inflation and debt concerns pressured global government borrowing costs.",
+      "title": "Netherlands Moves Gold From New York to London, Citing Geopolitical Unrest",
+      "link": "https://www.wsj.com/economy/central-banking/netherlands-moves-gold-from-new-york-to-london-citing-geopolitical-unrest-7a095eb8?.tsrc=rss",
+      "published": "2026-09-03T14:50:00+00:00",
+      "summary": "The Dutch central bank said shifting the 78 metric tons of gold, worth $11 billion, would improve its ability to trade the metal in a pinch.",
       "relevance": 8
     },
     {
-      "source": "Yahoo Gold",
-      "title": "Dutch shift gold from US to UK because of \u2018geopolitical unrest\u2019",
-      "link": "https://www.telegraph.co.uk/business/2026/09/02/dutch-shift-gold-from-us-to-uk-because-of-geopolitical-unre/?.tsrc=rss",
-      "published": "2026-09-02T17:54:14+00:00",
-      "summary": "The Netherlands has moved its gold from the US to Britain because of \u201cincreasing geopolitical unrest\u201d.",
+      "source": "CNBC Top News",
+      "title": "The inflation genie could be out of the bottle \u2014 and bond markets are sounding the alarm",
+      "link": "https://www.cnbc.com/2026/09/04/global-bond-selloff-inflation-risk.html",
+      "published": "2026-09-04T05:00:02+00:00",
+      "summary": "Global bond yields have surged as investors assess whether rising debt, tariffs, defense spending and energy shocks could keep inflation higher for longer.",
+      "relevance": 7
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Vance says Fed should lower interest rates: 'Would be nice to have some help'",
+      "link": "https://www.cnbc.com/2026/09/03/vance-fed-interest-rates-trump-bond-yields.html",
+      "published": "2026-09-03T19:18:59+00:00",
+      "summary": "Vice President J.D. Vance's remarks came less than two weeks before the Federal Open Market Committee is set to convene and decide whether to adjust rates.",
       "relevance": 6
     },
     {
+      "source": "CNBC Top News",
+      "title": "Carney claps back at Lutnick, says Canada will resume trade talks 'when the Americans are ready'",
+      "link": "https://www.cnbc.com/2026/09/03/carney-lutnick-trump-trade-canada.html",
+      "published": "2026-09-03T20:42:29+00:00",
+      "summary": "Canada has retaliated against President Donald Trump's 50% tariffs with \"dollar for dollar\" duties on U.S. goods, which are set to take effect next week.",
+      "relevance": 5
+    },
+    {
       "source": "Yahoo Gold",
-      "title": "Newmont Stock Jumps 34.5% in August, and Gold's Rally Could Take It Higher",
-      "link": "https://www.fool.com/investing/2026/09/02/newmont-stock-jumps-345-in-august-and-golds-rally/?.tsrc=rss",
-      "published": "2026-09-02T16:28:12+00:00",
-      "summary": "The rising price of gold wasn't the only reason for the stock's performance in August.",
+      "title": "Lake Victoria Gold Reports High-Grade Gold Intercepts at Imwelo as It Advances Metallurgical Testing",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/lake-victoria-gold-reports-high-161602054.html?.tsrc=rss",
+      "published": "2026-09-03T16:16:02+00:00",
+      "summary": "Lake Victoria Gold Ltd. (TSXV:LVG) (OTCQB:LVGLF) (FSE:E1K) reported high-grade, near-surface gold intercepts from drilling at its Imwelo Gold Project in Tanzania, adding new data to the company\u2019s ongoing work to refine the project\u2019s initial mining area and processing plans. The latest drilling at Area C, the planned initial open-pit area, returned 28.71 grams per tonne [\u2026]",
       "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "TSX miners rally as precious metals stocks dominate top gainers",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tsx-miners-rally-precious-metals-174541970.html?.tsrc=rss",
-      "published": "2026-09-02T17:45:41+00:00",
-      "summary": "Investing.com -- Precious metals stocks led the TSX\u2019s biggest gainers on Wednesday, with shares of silver and gold miners climbing as much as 7.1%, extending a rally that has pushed several stocks to triple-digit gains over the past year.",
+      "title": "Gold rally driven by investment demand, not just Treasury move, says analyst",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/gold-rally-driven-investment-demand-163107026.html?.tsrc=rss",
+      "published": "2026-09-03T16:31:07+00:00",
+      "summary": "Investing.com -- Gold's surge in August was led primarily by investment flows rather than any single catalyst, according to Krishan Gopaul, senior analyst for EMEA at the World Gold Council, who cautioned against pinning the move on the U.S. Treasury's decision to expand its bond buybacks.",
       "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "SONORO GOLD ANNOUNCES MANAGEMENT APPOINTMENTS",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/sonoro-gold-announces-management-appointments-203300517.html?.tsrc=rss",
-      "published": "2026-09-02T20:33:00+00:00",
-      "summary": "VANCOUVER, Canada, Sept. 02, 2026 (GLOBE NEWSWIRE) -- Sonoro Gold Corp. (TSXV: SGO | OTCQB: SMOFF | FRA: 23SP) (\u201cSonoro\u201d or the \u201cCompany\u201d) is pleased to announce the promotion of Oscar Armando Gonz\u00e1lez Pe\u00f1a to Vice President, Exploration, as well as the promotion of Melvin Herdrick to Senior Vice President, Mexico.For the past nine years, Oscar Gonz\u00e1lez has served as Exploration Manager and Chief",
+      "title": "Canadian Gold Resources Increases Qu\u00e9bec Gasp\u00e9 Land Position by 72% Through Strategic Staking Along the Garin River Fault",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/canadian-gold-resources-increases-qu-200500398.html?.tsrc=rss",
+      "published": "2026-09-03T20:05:00+00:00",
+      "summary": "Dieppe, New Brunswick--(Newsfile Corp. - September 3, 2026) - Canadian Gold Resources Ltd. (TSXV: CAN) (\"Canadian Gold\" or the \"Company\") is pleased to announce that it has acquired, through map staking, 195 mineral claims covering approximately 11,164 hectares (27,587 acres) immediately south of the Company's Lac Arsenault and Robidoux properties in Qu\u00e9bec's Gasp\u00e9 Peninsula.The staking expands th",
       "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "Goldgroup Highlights Exploration Potential at Don David",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/goldgroup-highlights-exploration-potential-don-205300527.html?.tsrc=rss",
-      "published": "2026-09-02T20:53:00+00:00",
-      "summary": "Don David: A Producing Asset With a Major Exploration OpportunityVancouver, British Columbia--(Newsfile Corp. - September 2, 2026) - Goldgroup Mining Inc. (TSXV: GORO) (NYSE American: GORO) (FSE: 55G) (\"Goldgroup\" or the \"Company\") is pleased to provide a summary of the exploration potential of its Oaxaca operations and regional land package, held by its Mexican subsidiary, Don David Gold Mexico S",
+      "title": "U.S. Global Investors Reports $3.1 Million in Net Income for Fiscal Year 2026",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/u-global-investors-reports-3-200500110.html?.tsrc=rss",
+      "published": "2026-09-03T20:05:00+00:00",
+      "summary": "SAN ANTONIO, Sept. 03, 2026 (GLOBE NEWSWIRE) -- U.S. Global Investors, Inc. (NASDAQ: GROW) (the \u201cCompany\u201d), a registered investment advisory firm1 with deep expertise in global markets and specialized sectors ranging from gold and natural resources to airlines, aerospace and defense, today announced net income of $3.1 million, or $0.24 per share, for the fiscal year ended June 30, 2026, compared t",
       "relevance": 4
     },
     {
-      "source": "Yahoo Gold",
-      "title": "The Best-Performing Commodity ETFs of 2026: Oil and Broad Baskets Lead the Pack",
-      "link": "http://www.etf.com/sections/news/best-performing-commodity-etfs-2026-oil-and-broad-baskets-lead-pack?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss&.tsrc=rss",
-      "published": "2026-09-02T23:26:17+00:00",
-      "summary": "Commodities have been one of 2026\u2019s strongest asset classes, but the leadership is not where the precious-metals headlines pointed. Crude oil has roughly doubled year to date, broad commodity baskets are up more than 40%, and gold, silver and uranium funds have spent the year consolidating after earlier runs. Here are the best-performing commodity ETFs of 2026, why they have moved and how the top",
+      "source": "MarketWatch",
+      "title": "Goldfish crackers are getting a makeover as new health trends reshape the snack aisle",
+      "link": "https://www.marketwatch.com/story/goldfish-crackers-are-getting-a-makeover-as-new-health-trends-reshape-the-snack-aisle-32e89644?mod=mw_rss_topstories",
+      "published": "2026-09-03T21:54:00+00:00",
+      "summary": "Campbell\u2019s plans to introduce gluten-free, whole-grain and protein-packed versions of Goldfish to meet growing demand for healthy alternatives and combat rising competition.",
       "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Kincora Copper plans 25,000-metre NSW drilling campaign across four projects",
-      "link": "https://www.proactiveinvestors.com/companies/news/1098016/kincora-copper-plans-25-000-metre-nsw-drilling-campaign-across-four-projects-1098016.html?.tsrc=rss",
-      "published": "2026-09-03T00:52:00+00:00",
-      "summary": "Kincora Copper Ltd (TSX-V:KCC, ASX:KCC, OTC:BZDLF) is preparing an extensive spring and summer exploration campaign in New South Wales, with more than 25,000 metres of air-core drilling planned across four projects as it advances a pipeline of porphyry copper-gold targets. The company has...",
-      "relevance": 4
-    },
-    {
-      "source": "CNBC Economy",
-      "title": "Private payrolls rose by 38,000 in August, less than expected, ADP reports",
-      "link": "https://www.cnbc.com/2026/09/02/private-payrolls-rose-by-38000-in-august-fewer-than-expected-adp-reports.html",
-      "published": "2026-09-02T14:30:10+00:00",
-      "summary": "Though job creation held positive, August was the smallest gain since January and reflective of a broader slowdown in the labor market.",
-      "relevance": 3
     },
     {
       "source": "CNBC Top News",
-      "title": "Microsoft to start disclosing Azure quarterly revenue as company consolidates business units",
-      "link": "https://www.cnbc.com/2026/09/02/microsoft-to-disclose-azure-revenue-as-part-of-segment-changes.html",
-      "published": "2026-09-02T22:37:13+00:00",
-      "summary": "Microsoft will begin reporting quarterly Azure revenue in dollars for the first time, providing more clarity about its business that competes with AWS.",
-      "relevance": 3
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "How Equinix has found a niche in the multitrillion-dollar AI data center boom",
-      "link": "https://www.cnbc.com/2026/09/02/equinix-partners-with-nvidia-carves-niche-in-ai-data-center-boom.html",
-      "published": "2026-09-02T22:49:01+00:00",
-      "summary": "Nvidia announced a new data center deal with Equinix and Together AI on Wednesday to help enterprise customers with open-model inference.",
-      "relevance": 3
+      "title": "EU joins U.S. sanctions push on Iran as South Korea weighs Hormuz deployment",
+      "link": "https://www.cnbc.com/2026/09/04/us-iran-war-trump-hormuz-operation-economic-outcast-sanctions-campaign.html",
+      "published": "2026-09-04T04:02:13+00:00",
+      "summary": "The bloc's endorsement came as the Group of 20 finance ministers and central bank governors gathered in Asheville, North Carolina, earlier this week.",
+      "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "Why SSR Mining Stock Was a Winner on Wednesday",
-      "link": "https://www.fool.com/investing/2026/09/02/why-ssr-mining-stock-was-a-winner-on-wednesday/?.tsrc=rss",
-      "published": "2026-09-02T23:52:16+00:00",
-      "summary": "A negative jobs report was positive for precious metals prices.",
-      "relevance": 3
+      "title": "Kinross Gold (TSX:K) Looks Cheap If Gold Strength Keeps Supporting The Story",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/kinross-gold-tsx-k-looks-043757733.html?.tsrc=rss",
+      "published": "2026-09-04T04:37:57+00:00",
+      "summary": "Kinross Gold Stock Performance Snapshot Kinross Gold (TSX:K) has drawn fresh attention after a sharp move over the past month, with the stock returning 31.19% in that period and 19.26% over the past 3 months. Despite a recent 7 day share price return that fell 3.46%, Kinross Gold has seen momentum build over the past month. The company recorded a 30 day share price return of 31.19% and a 1 year to",
+      "relevance": 4
     },
     {
       "source": "CNBC Top News",
@@ -354,311 +333,56 @@
       "relevance": 3
     },
     {
-      "source": "CNBC Top News",
-      "title": "States now must report undocumented immigrants to DHS or risk federal funding, DOJ says",
-      "link": "https://www.cnbc.com/2026/09/02/doj-states-undocumented-immigrants-dhs-funds.html",
-      "published": "2026-09-03T04:39:14+00:00",
-      "summary": "The new DOJ opinion relates to funding states get for Temporary Assistance for Needy Families and the Supplemental Security Income programs.",
+      "source": "Yahoo Gold",
+      "title": "Bitcoin Rally Accelerates After Surprise Fed Signal",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-rally-accelerates-surprise-fed-213646143.html?.tsrc=rss",
+      "published": "2026-09-03T21:36:46+00:00",
+      "summary": "A sudden rate shift just changed crypto's near-term setup",
       "relevance": 3
     }
   ],
   "gold": {
     "symbol": "GC=F",
-    "last": 4474.5,
-    "change_pct": 2.478075261720238
+    "last": 4514.60009765625,
+    "change_pct": 3.39647526744591
   },
   "base_rates": {},
   "context": {
-    "Challenger Job Cuts y/y": {
-      "profile": null
-    },
-    "Unemployment Claims": {
+    "Average Hourly Earnings m/m": {
       "profile": {
-        "name": "Initial Jobless Claims",
-        "what": "New unemployment benefit filings in the prior week. Released every Thursday at 13:30 UK.",
-        "who": "Department of Labor, weekly",
-        "why_gold": "The highest-frequency labour signal available. Individually minor, but a trend of rising claims shifts the whole rate narrative.",
-        "watch": "The four-week moving average rather than the weekly print, and continuing claims for whether people are finding new work.",
-        "gotchas": "Distorted by holidays, weather and state-level administrative quirks. One bad week means nothing.",
-        "prior_move_usd": "3-10"
+        "name": "Non-Farm Payrolls",
+        "what": "Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month.",
+        "who": "Bureau of Labor Statistics, monthly",
+        "why_gold": "Labour market strength is the other half of the Fed's mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it.",
+        "watch": "Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.",
+        "gotchas": "The most whipsaw-prone release on the calendar. The first move is frequently wrong, and the first fifteen minutes routinely reverse.",
+        "prior_move_usd": "20-50 within the hour"
       },
       "readings": null
     },
-    "FOMC Member Waller Speaks": {
+    "Non-Farm Employment Change": {
       "profile": {
-        "name": "FOMC Member Speaks",
-        "what": "Remarks from a regional Fed president or governor.",
-        "who": "Federal Reserve",
-        "why_gold": "Mostly background, but a known hawk turning dovish - or the reverse - is a genuine signal, and voting members matter more than non-voters.",
-        "watch": "Whether the speaker votes this year, and whether they are departing from their usual stance.",
-        "gotchas": "Several speakers a day is normal and almost always noise. Treat as background unless the tone genuinely shifts.",
-        "prior_move_usd": "2-10"
-      },
-      "fomc": {
-        "next": "2026-09-16",
-        "last": "2026-07-29",
-        "is_today": false,
-        "days_away": 13,
-        "has_projections": true
-      },
-      "fomc_gold_history": [
-        {
-          "date": "2026-07-29",
-          "range": 16.8,
-          "move": 16.6,
-          "next_day": 65.4,
-          "held": true
-        },
-        {
-          "date": "2026-06-17",
-          "range": 81.0,
-          "move": 19.9,
-          "next_day": -134.8,
-          "held": false
-        },
-        {
-          "date": "2026-04-29",
-          "range": 85.9,
-          "move": -53.4,
-          "next_day": 69.5,
-          "held": false
-        },
-        {
-          "date": "2026-03-18",
-          "range": 127.9,
-          "move": -59.7,
-          "next_day": -289.2,
-          "held": true
-        },
-        {
-          "date": "2026-01-28",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 16.8,
-          "held": null
-        },
-        {
-          "date": "2025-12-10",
-          "range": 50.9,
-          "move": -12.6,
-          "next_day": 89.1,
-          "held": false
-        },
-        {
-          "date": "2025-10-29",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 17.6,
-          "held": null
-        },
-        {
-          "date": "2025-09-17",
-          "range": 23.6,
-          "move": 12.8,
-          "next_day": -38.1,
-          "held": false
-        }
-      ],
-      "fomc_gold_summary": {
-        "samples": 8,
-        "avg_abs_move": 21.88,
-        "avg_range": 48.26,
-        "biggest": 59.7,
-        "held_pct": 33
-      }
-    },
-    "Revised Nonfarm Productivity q/q": {
-      "profile": null
-    },
-    "Revised Unit Labor Costs q/q": {
-      "profile": null
-    },
-    "Trade Balance": {
-      "profile": null
-    },
-    "Final Services PMI": {
-      "profile": null
-    },
-    "ISM Services PMI": {
-      "profile": {
-        "name": "ISM Services PMI",
-        "what": "The services-sector equivalent, covering the bulk of the US economy. Released 15:00 UK.",
-        "who": "Institute for Supply Management, third business day of the month",
-        "why_gold": "More economically meaningful than the manufacturing survey and consequently a bigger mover when it surprises.",
-        "watch": "Prices paid, as a services-inflation signal, and employment as an NFP hint.",
-        "gotchas": "Noisier month to month than its manufacturing counterpart.",
-        "prior_move_usd": "10-25"
+        "name": "Non-Farm Payrolls",
+        "what": "Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month.",
+        "who": "Bureau of Labor Statistics, monthly",
+        "why_gold": "Labour market strength is the other half of the Fed's mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it.",
+        "watch": "Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.",
+        "gotchas": "The most whipsaw-prone release on the calendar. The first move is frequently wrong, and the first fifteen minutes routinely reverse.",
+        "prior_move_usd": "20-50 within the hour"
       },
       "readings": null
     },
-    "Natural Gas Storage": {
-      "profile": null
-    },
-    "FOMC Member Hammack Speaks": {
+    "Unemployment Rate": {
       "profile": {
-        "name": "FOMC Member Speaks",
-        "what": "Remarks from a regional Fed president or governor.",
-        "who": "Federal Reserve",
-        "why_gold": "Mostly background, but a known hawk turning dovish - or the reverse - is a genuine signal, and voting members matter more than non-voters.",
-        "watch": "Whether the speaker votes this year, and whether they are departing from their usual stance.",
-        "gotchas": "Several speakers a day is normal and almost always noise. Treat as background unless the tone genuinely shifts.",
-        "prior_move_usd": "2-10"
+        "name": "Non-Farm Payrolls",
+        "what": "Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month.",
+        "who": "Bureau of Labor Statistics, monthly",
+        "why_gold": "Labour market strength is the other half of the Fed's mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it.",
+        "watch": "Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.",
+        "gotchas": "The most whipsaw-prone release on the calendar. The first move is frequently wrong, and the first fifteen minutes routinely reverse.",
+        "prior_move_usd": "20-50 within the hour"
       },
-      "fomc": {
-        "next": "2026-09-16",
-        "last": "2026-07-29",
-        "is_today": false,
-        "days_away": 13,
-        "has_projections": true
-      },
-      "fomc_gold_history": [
-        {
-          "date": "2026-07-29",
-          "range": 16.8,
-          "move": 16.6,
-          "next_day": 65.4,
-          "held": true
-        },
-        {
-          "date": "2026-06-17",
-          "range": 81.0,
-          "move": 19.9,
-          "next_day": -134.8,
-          "held": false
-        },
-        {
-          "date": "2026-04-29",
-          "range": 85.9,
-          "move": -53.4,
-          "next_day": 69.5,
-          "held": false
-        },
-        {
-          "date": "2026-03-18",
-          "range": 127.9,
-          "move": -59.7,
-          "next_day": -289.2,
-          "held": true
-        },
-        {
-          "date": "2026-01-28",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 16.8,
-          "held": null
-        },
-        {
-          "date": "2025-12-10",
-          "range": 50.9,
-          "move": -12.6,
-          "next_day": 89.1,
-          "held": false
-        },
-        {
-          "date": "2025-10-29",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 17.6,
-          "held": null
-        },
-        {
-          "date": "2025-09-17",
-          "range": 23.6,
-          "move": 12.8,
-          "next_day": -38.1,
-          "held": false
-        }
-      ],
-      "fomc_gold_summary": {
-        "samples": 8,
-        "avg_abs_move": 21.88,
-        "avg_range": 48.26,
-        "biggest": 59.7,
-        "held_pct": 33
-      }
-    },
-    "FOMC Member Goolsbee Speaks": {
-      "profile": {
-        "name": "FOMC Member Speaks",
-        "what": "Remarks from a regional Fed president or governor.",
-        "who": "Federal Reserve",
-        "why_gold": "Mostly background, but a known hawk turning dovish - or the reverse - is a genuine signal, and voting members matter more than non-voters.",
-        "watch": "Whether the speaker votes this year, and whether they are departing from their usual stance.",
-        "gotchas": "Several speakers a day is normal and almost always noise. Treat as background unless the tone genuinely shifts.",
-        "prior_move_usd": "2-10"
-      },
-      "fomc": {
-        "next": "2026-09-16",
-        "last": "2026-07-29",
-        "is_today": false,
-        "days_away": 13,
-        "has_projections": true
-      },
-      "fomc_gold_history": [
-        {
-          "date": "2026-07-29",
-          "range": 16.8,
-          "move": 16.6,
-          "next_day": 65.4,
-          "held": true
-        },
-        {
-          "date": "2026-06-17",
-          "range": 81.0,
-          "move": 19.9,
-          "next_day": -134.8,
-          "held": false
-        },
-        {
-          "date": "2026-04-29",
-          "range": 85.9,
-          "move": -53.4,
-          "next_day": 69.5,
-          "held": false
-        },
-        {
-          "date": "2026-03-18",
-          "range": 127.9,
-          "move": -59.7,
-          "next_day": -289.2,
-          "held": true
-        },
-        {
-          "date": "2026-01-28",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 16.8,
-          "held": null
-        },
-        {
-          "date": "2025-12-10",
-          "range": 50.9,
-          "move": -12.6,
-          "next_day": 89.1,
-          "held": false
-        },
-        {
-          "date": "2025-10-29",
-          "range": 0.0,
-          "move": 0.0,
-          "next_day": 17.6,
-          "held": null
-        },
-        {
-          "date": "2025-09-17",
-          "range": 23.6,
-          "move": 12.8,
-          "next_day": -38.1,
-          "held": false
-        }
-      ],
-      "fomc_gold_summary": {
-        "samples": 8,
-        "avg_abs_move": 21.88,
-        "avg_range": 48.26,
-        "biggest": 59.7,
-        "held_pct": 33
-      }
+      "readings": null
     }
   },
   "fomc": {
@@ -666,7 +390,7 @@
       "next": "2026-09-16",
       "last": "2026-07-29",
       "is_today": false,
-      "days_away": 13,
+      "days_away": 12,
       "has_projections": true
     },
     "source": "federalreserve.gov",
