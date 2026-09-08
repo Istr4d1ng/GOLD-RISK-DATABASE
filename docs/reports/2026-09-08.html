@@ -7,7 +7,7 @@
 <style>
   :root {
     --bg:#0d0f12; --card:#15181d; --line:#232830; --fg:#e8eaed;
-    --muted:#9aa3af; --track:#232830; --accent:#30a46c;
+    --muted:#9aa3af; --track:#232830; --accent:#f76808;
   }
   @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
@@ -28,6 +28,8 @@
   h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em;
     color:var(--muted); margin:0 0 14px; font-weight:600; }
   h3 { font-size:16px; margin:22px 0 6px; }
+  h3.sub { font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:22px 0 10px; }
   .hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
   .gauge { width:128px; height:128px; flex:none; }
   .gauge-num { font-size:34px; font-weight:700; fill:var(--fg); }
@@ -35,11 +37,14 @@
   .hero-body { flex:1; min-width:220px; }
   .band { display:inline-block; font-size:12px; font-weight:700;
     letter-spacing:.08em; padding:4px 10px; border-radius:999px;
-    background:#30a46c22; color:#30a46c; margin-bottom:8px; }
+    background:#f7680822; color:#f76808; margin-bottom:8px; }
+  .split { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+  .split span { font-size:12px; padding:3px 9px; border-radius:6px;
+    background:var(--track); color:var(--muted); }
   .stat { display:flex; justify-content:space-between; gap:12px;
     padding:7px 0; border-top:1px solid var(--line); font-size:14px; }
   .stat .k { color:var(--muted); }
-  .stat .v { font-variant-numeric:tabular-nums; font-weight:600; }
+  .stat .v { font-variant-numeric:tabular-nums; font-weight:600; text-align:right; }
   .up { color:#30a46c; } .down { color:#e5484d; }
   .scroll { overflow-x:auto; }
   table { width:100%; border-collapse:collapse; font-size:14px; min-width:560px; }
@@ -49,11 +54,14 @@
     vertical-align:top; }
   td.time { font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap; }
   td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
-  tr.major td { background:#30a46c0e; }
+  tr.major td { background:#f768080e; }
   .dot { display:inline-block; width:8px; height:8px; border-radius:50%;
     margin-right:8px; vertical-align:middle; }
+  .pill { font-size:10.5px; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; padding:3px 8px; border-radius:999px;
+    margin-right:8px; white-space:nowrap; }
   .muted { color:var(--muted); } .small { font-size:12.5px; line-height:1.45; }
-  ul.news { list-style:none; padding:0; margin:0; }
+  ul.news { list-style:none; padding:0; margin:8px 0 0; }
   ul.news li { padding:10px 0; border-top:1px solid var(--line); font-size:14.5px; }
   ul.news li:first-child { border-top:none; }
   ul.news a { color:var(--fg); text-decoration:none; }
@@ -68,10 +76,11 @@
   footer { color:var(--muted); font-size:12.5px; text-align:center;
     margin-top:28px; line-height:1.7; }
   .bars { display:grid; gap:6px; margin-top:12px; }
-  .bar { display:grid; grid-template-columns:110px 1fr 34px; gap:10px;
+  .bar { display:grid; grid-template-columns:110px 1fr 40px; gap:10px;
     align-items:center; font-size:12.5px; color:var(--muted); }
   .bar i { display:block; height:6px; border-radius:3px; background:var(--accent);
     min-width:2px; }
+  .bar u { display:block; height:6px; border-radius:3px; background:var(--track); }
   details { border-top:1px solid var(--line); }
   details:first-of-type { border-top:none; }
   summary { cursor:pointer; padding:12px 0; font-size:14.5px; list-style:none;
@@ -82,6 +91,8 @@
   details[open] summary::before { content:"2"; }
   .detail { padding:2px 0 18px 22px; font-size:14px; }
   .detail .lead { margin:0 0 12px; }
+  .also { margin:0 0 10px; font-size:13px; color:var(--muted);
+    border-left:2px solid var(--line); padding-left:10px; }
   dl.facts { margin:0 0 14px; display:grid; grid-template-columns:auto 1fr;
     gap:6px 14px; font-size:13.5px; }
   dl.facts dt { color:var(--muted); white-space:nowrap; }
@@ -91,51 +102,144 @@
   .readings { margin:14px 0; }
   .rlabel { font-size:12.5px; color:var(--fg); margin-bottom:6px; }
   .sparks { display:flex; align-items:flex-end; gap:3px; height:38px;
-    margin-bottom:8px; }
+    margin:10px 0 8px; }
   .spark { flex:1; max-width:26px; background:var(--accent); opacity:.65;
     border-radius:2px 2px 0 0; }
   table.mini { font-size:12.5px; min-width:0; }
   table.mini td, table.mini th { padding:5px 14px 5px 0; }
   table.mini.wide { width:100%; margin-top:8px; }
-  .bar u { display:block; height:6px; border-radius:3px; background:var(--track); }
+  .health { display:grid; gap:8px; }
+  .hrow { display:grid; grid-template-columns:10px 1fr auto; gap:10px;
+    align-items:baseline; font-size:13.5px; }
+  .hdot { width:8px; height:8px; border-radius:50%; }
+  .hdot.on { background:#30a46c; } .hdot.off { background:#e5484d; }
+  @media (max-width:520px) {
+    dl.facts { grid-template-columns:1fr; gap:2px 0; }
+    dl.facts dt { margin-top:8px; }
+    .detail { padding-left:12px; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
   <h1>Gold / USD Daily Risk Database</h1>
-  <span class="date">2026-09-08 &middot; built 06:40 BST</span>
+  <span class="date">2026-09-08 &middot; built 21:35 BST</span>
 </header>
 
 <section class="card">
   <div class="hero">
     
-<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 8 of 100">
+<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 71 of 100">
   <circle cx="64" cy="64" r="52" fill="none" stroke="var(--track)" stroke-width="12"/>
-  <circle cx="64" cy="64" r="52" fill="none" stroke="#30a46c" stroke-width="12"
-          stroke-linecap="round" stroke-dasharray="26.1 326.7"
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#f76808" stroke-width="12"
+          stroke-linecap="round" stroke-dasharray="232.0 326.7"
           transform="rotate(-90 64 64)"/>
-  <text x="64" y="60" text-anchor="middle" class="gauge-num">8</text>
+  <text x="64" y="60" text-anchor="middle" class="gauge-num">71</text>
   <text x="64" y="82" text-anchor="middle" class="gauge-sub">/ 100</text>
 </svg>
     <div class="hero-body">
-      <span class="band">LOW RISK</span>
-      <p style="margin:0 0 10px">Quiet tape. Normal conditions, no scheduled shock.</p>
+      <span class="band">HIGH RISK</span>
+      <div class="split">
+        <span>Scheduled 7/70</span>
+        <span>Unscheduled 66/70</span>
+      </div>
+      <p style="margin:0 0 10px">Major scheduled event. Wide, fast moves and poor fills likely.</p>
       <div class="stat"><span class="k">Expected gold range today</span>
-        <span class="v">$76.1</span></div>
-      <div class="stat"><span class="k">14-day ATR</span>
-        <span class="v">$83.59</span></div>
-      <div class="stat"><span class="k">Volatility vs normal</span>
-        <span class="v">1.05x</span></div>
-      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,469.90 <span class="up">+0.91%</span></span></div>
+        <span class="v">$151.2</span></div>
+      <div class="stat"><span class="k">Range basis</span>
+        <span class="v small">GVZ 27.26 (implied, 1 s.d.)</span></div>
+      <div class="stat"><span class="k">Implied vol (GVZ)</span><span class="v">27.26 &middot; 65th pct of the year</span></div>
+      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,403.80 <span class="down">-0.59%</span></span></div>
     </div>
   </div>
-  <div class="bars">
-    <div class="bar"><span>Headline event</span><u><i style="width:10%"></i></u><span>7</span></div>
-    <div class="bar"><span>Event breadth</span><u><i style="width:0%"></i></u><span>0</span></div>
-    <div class="bar"><span>Clustering</span><u><i style="width:0%"></i></u><span>0</span></div>
-    <div class="bar"><span>Volatility</span><u><i style="width:10%"></i></u><span>+1</span></div>
+  <div class="bars"><div class="bar"><span>Headline event</span><u><i style="width:10%"></i></u><span>+7</span></div><div class="bar"><span>Event breadth</span><u><i style="width:0%"></i></u><span>+0</span></div><div class="bar"><span>Clustering</span><u><i style="width:0%"></i></u><span>+0</span></div><div class="bar"><span>Geopolitical</span><u><i style="width:94%"></i></u><span>+66</span></div><div class="bar"><span>Both at once</span><u><i style="width:13%"></i></u><span>+2</span></div><div class="bar"><span>Volatility</span><u><i style="width:30%"></i></u><span>+3</span></div><div class="bar"><span>Positioning</span><u><i style="width:0%"></i></u><span>+0</span></div></div>
+</section>
+
+
+<section class="card">
+  <h2>Unscheduled risk &mdash; geopolitics</h2>
+  <div class="stat"><span class="k">Level</span>
+    <span class="v" style="color:#e5484d">SEVERE
+      &middot; 66/70</span></div>
+  <p style="margin:12px 0">Multiple severe headlines on a flashpoint gold is highly sensitive to. Treat scheduled data as secondary today.</p>
+  
+<details>
+  <summary><span class="pill" style="background:#e5484d22;color:#e5484d">
+    escalating</span>
+    <strong>China / Taiwan</strong>
+    <span class="muted small">&mdash; 12 headlines, weight 8</span></summary>
+  <div class="detail">
+    <dl class="facts">
+      <dt>Why gold cares</dt><dd>Low frequency, very high severity. A genuine blockade or invasion scenario is the largest single tail risk in the gold market, because it would be a global supply-chain and reserve-currency event simultaneously.</dd>
+      <dt>Working against it</dt><dd>Routine incursions and drills are so frequent they carry almost no information. Gold ignores them, correctly.</dd>
+      <dt>How long it lasts</dt><dd>Drills: nothing. A real blockade: a regime change in gold pricing, not a spike.</dd>
+      <dt>What would escalate it</dt><dd>Quarantine or blockade language, live-fire exercises encircling the island, US carrier movements, or semiconductor export emergencies.</dd>
+    </dl>
+    <ul class="news"><li><a href="https://www.bbc.co.uk/news/articles/ce8e32n8epeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Five killed in Miami plane crash were in two vehicles on ground, investigators say</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.bbc.co.uk/news/videos/c4grd9mg3rvo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Five killed as Amazon cargo plane crashes at Miami airport</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-devastate-homes-displace-families-across-gaza?traffic_source=rss" target="_blank" rel="noopener">Israeli strikes devastate homes, displace families across Gaza</a><span class="src">Al Jazeera &middot; severe</span></li><li><a href="https://www.aljazeera.com/economy/2026/9/8/bombardier-defends-us-manufacturing-amid-trumps-aviation-sales-threat?traffic_source=rss" target="_blank" rel="noopener">Bombardier defends US manufacturing amid Trump’s aviation sales threat</a><span class="src">Al Jazeera &middot; severe</span></li></ul>
   </div>
+</details>
+<details>
+  <summary><span class="pill" style="background:#e5484d22;color:#e5484d">
+    escalating</span>
+    <strong>Wider Middle East</strong>
+    <span class="muted small">&mdash; 14 headlines, weight 7</span></summary>
+  <div class="detail">
+    <dl class="facts">
+      <dt>Why gold cares</dt><dd>Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region&#x27;s conflicts rarely touch US rate expectations directly.</dd>
+      <dt>Working against it</dt><dd>Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.</dd>
+      <dt>How long it lasts</dt><dd>Hours to days. The shortest-lived of the major flashpoints unless it pulls Iran in directly.</dd>
+      <dt>What would escalate it</dt><dd>Direct Iranian involvement, Red Sea shipping disruption, or US forces taking casualties.</dd>
+    </dl>
+    <ul class="news"><li><a href="https://www.bbc.co.uk/news/videos/c62jdyld8myo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Pupils return to West Bank school behind barbed wire to protect against settlers</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-transform-lebanese-city-into-ghost-town?traffic_source=rss" target="_blank" rel="noopener">Israeli strikes transform Lebanese city into ghost town</a><span class="src">Al Jazeera &middot; severe</span></li><li><a href="https://www.bbc.co.uk/news/articles/c4g7zen0vveo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">UK announces sanctions on West Bank settlements prompting furious Israeli response</a><span class="src">BBC World &middot; elevated</span></li><li><a href="https://www.bbc.co.uk/news/articles/cvgy6gd228vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">In West Bank, date farmers weigh impact of UK sanctions on Israeli settlers</a><span class="src">BBC World &middot; elevated</span></li></ul>
+  </div>
+</details>
+<details>
+  <summary><span class="pill" style="background:#e5484d22;color:#e5484d">
+    escalating</span>
+    <strong>US / Israel – Iran</strong>
+    <span class="muted small">&mdash; 8 headlines, weight 10</span></summary>
+  <div class="detail">
+    <dl class="facts">
+      <dt>Why gold cares</dt><dd>The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.</dd>
+      <dt>Working against it</dt><dd>The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold&#x27;s gain. This is why some escalation days produce a far smaller gold move than the headlines imply.</dd>
+      <dt>How long it lasts</dt><dd>Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed&#x27;s reaction function.</dd>
+      <dt>What would escalate it</dt><dd>Direct state-on-state strikes rather than proxies; any interference with shipping in Hormuz; attacks on oil infrastructure; withdrawal from nuclear monitoring.</dd>
+    </dl>
+    <ul class="news"><li><a href="https://www.bbc.co.uk/news/articles/cp849n2nz01o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Saudi Arabia vows to respond after Houthis attack cities and energy facilities</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.cnbc.com/2026/09/08/oil-prices-today-brent-wti-hormuz-iran-war.html" target="_blank" rel="noopener">Oil rises to $99 on report Iran launched second undisclosed attack on U.S. Navy ships</a><span class="src">CNBC World &middot; severe</span></li><li><a href="https://www.cnbc.com/2026/09/08/us-sanctions-iran-airlines-oil-economy-war.html" target="_blank" rel="noopener">U.S. sanctions Iranian airlines in aim to tighten economic squeeze as war spreads, oil rises</a><span class="src">CNBC World &middot; elevated</span></li><li><a href="https://www.cnbc.com/2026/09/08/us-iran-war-trump-hormuz-canada-trade-talks-greenland.html" target="_blank" rel="noopener">Iran Foreign Ministry takes aim at Canada for support of U.S. actions in Strait of Hormuz</a><span class="src">CNBC World &middot; elevated</span></li></ul>
+  </div>
+</details>
+<details>
+  <summary><span class="pill" style="background:#e5484d22;color:#e5484d">
+    escalating</span>
+    <strong>Trade and tariffs</strong>
+    <span class="muted small">&mdash; 4 headlines, weight 5</span></summary>
+  <div class="detail">
+    <dl class="facts">
+      <dt>Why gold cares</dt><dd>Indirect but real. Tariffs are an inflation impulse and a growth drag at once, which is the hardest combination for the Fed and therefore raises uncertainty about the rate path.</dd>
+      <dt>Working against it</dt><dd>Also dollar-positive in the short run, which works against gold. The net effect is genuinely ambiguous and often small.</dd>
+      <dt>How long it lasts</dt><dd>Weeks, when it changes the inflation outlook. Announcement headlines alone rarely stick.</dd>
+      <dt>What would escalate it</dt><dd>Rates above expectations, retaliation, or extension to critical minerals and energy.</dd>
+    </dl>
+    <ul class="news"><li><a href="https://www.bbc.co.uk/news/articles/c8jdev0422jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Carney says US trade war &#x27;will come at a cost&#x27; as Canada strikes back on tariffs</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html" target="_blank" rel="noopener">Canada&#x27;s retaliatory tariffs worth CA$27.6 billion take effect as trade rift with U.S. deepens</a><span class="src">CNBC World &middot; severe</span></li><li><a href="https://www.cnbc.com/2026/09/07/trump-bombardier-cant-sell-in-us-unless-canada-aerospace-giant-builds-there.html" target="_blank" rel="noopener">Bombardier points out U.S. footprint after Trump says aerospace giant must build in America</a><span class="src">CNBC World &middot; severe</span></li><li><a href="https://www.cnbc.com/2026/09/08/pharma-tariffs-trump-generic-drugs-sandoz-cmd-stock.html" target="_blank" rel="noopener">&#x27;Patients pay the tariff&#x27;: Swiss pharma CEO warns of Trump&#x27;s generic drug tariff threat</a><span class="src">CNBC World &middot; elevated</span></li></ul>
+  </div>
+</details>
+<details>
+  <summary><span class="pill" style="background:#f7680822;color:#f76808">
+    active</span>
+    <strong>Russia / Ukraine / NATO</strong>
+    <span class="muted small">&mdash; 4 headlines, weight 8</span></summary>
+  <div class="detail">
+    <dl class="facts">
+      <dt>Why gold cares</dt><dd>Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.</dd>
+      <dt>Working against it</dt><dd>Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day&#x27;s price action.</dd>
+      <dt>How long it lasts</dt><dd>Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.</dd>
+      <dt>What would escalate it</dt><dd>Any Article 5 discussion, strikes on NATO territory, nuclear rhetoric or doctrine change, or new sanctions touching reserves or energy.</dd>
+    </dl>
+    <ul class="news"><li><a href="https://www.bbc.co.uk/news/articles/cn8m1k7p3v7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Ukrainian TV channel building hit by Russian drone as five killed in Kyiv</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.bbc.co.uk/news/articles/cddvzd1z53lo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Hungary expels 10 Russian diplomats as relations worsen</a><span class="src">BBC World &middot; elevated</span></li><li><a href="https://www.aljazeera.com/news/2026/9/8/hungary-expels-russian-diplomats-over-unacceptable-activities?traffic_source=rss" target="_blank" rel="noopener">Hungary expels 10 Russian diplomats, Moscow promises harsh response</a><span class="src">Al Jazeera &middot; elevated</span></li><li><a href="https://www.aljazeera.com/news/2026/9/8/trump-putin-hold-frank-phone-call-as-us-restarts-ukraine-deal-efforts?traffic_source=rss" target="_blank" rel="noopener">Trump, Putin hold ‘frank’ phone call as US restarts Ukraine deal efforts</a><span class="src">Al Jazeera &middot; background</span></li></ul>
+  </div>
+</details>
+  <p class="muted small" style="margin-top:12px">Derived from how loud the news is, not from any assessment of what will happen. It measures attention, which is what moves price in the short run.</p>
 </section>
 
 <section class="card">
@@ -175,6 +279,25 @@
 
 
 <section class="card">
+  <h2>What is driving gold</h2>
+  <div class="stat"><span class="k">US 10-year yield</span><span class="v">4.806 <span class="up">+0.46%</span></span></div><div class="stat"><span class="k">Dollar index</span><span class="v">98.858 <span class="down">-0.30%</span></span></div>
+  <p class="measured"><strong>Gold’s last move came through mixed.</strong> No single driver dominates; the move has more than one cause.</p>
+  
+  <h3 class="sub">Speculative positioning</h3>
+  <div class="stat"><span class="k">Managed money net long</span>
+    <span class="v">136,771 contracts</span></div>
+  <div class="stat"><span class="k">Percentile of last 2 years</span>
+    <span class="v">57th</span></div>
+  <div class="stat"><span class="k">Change over 4 weeks</span>
+    <span class="v">+6,005</span></div>
+  <div class="sparks"><span class="spark" style="height:11px" title="2026-03-10: 98,399"></span><span class="spark" style="height:13px" title="2026-03-17: 102,043"></span><span class="spark" style="height:7px" title="2026-03-24: 91,621"></span><span class="spark" style="height:8px" title="2026-03-31: 92,814"></span><span class="spark" style="height:6px" title="2026-04-07: 90,032"></span><span class="spark" style="height:9px" title="2026-04-14: 95,141"></span><span class="spark" style="height:8px" title="2026-04-21: 92,976"></span><span class="spark" style="height:6px" title="2026-04-28: 89,752"></span><span class="spark" style="height:8px" title="2026-05-05: 94,254"></span><span class="spark" style="height:11px" title="2026-05-12: 98,015"></span><span class="spark" style="height:8px" title="2026-05-19: 93,540"></span><span class="spark" style="height:10px" title="2026-05-26: 97,446"></span><span class="spark" style="height:18px" title="2026-06-02: 112,179"></span><span class="spark" style="height:15px" title="2026-06-09: 105,863"></span><span class="spark" style="height:19px" title="2026-06-16: 113,721"></span><span class="spark" style="height:20px" title="2026-06-23: 115,395"></span><span class="spark" style="height:23px" title="2026-06-30: 120,091"></span><span class="spark" style="height:20px" title="2026-07-07: 116,161"></span><span class="spark" style="height:23px" title="2026-07-14: 120,779"></span><span class="spark" style="height:25px" title="2026-07-21: 124,831"></span><span class="spark" style="height:22px" title="2026-07-28: 119,795"></span><span class="spark" style="height:28px" title="2026-08-04: 130,766"></span><span class="spark" style="height:32px" title="2026-08-11: 137,662"></span><span class="spark" style="height:34px" title="2026-08-18: 141,648"></span><span class="spark" style="height:36px" title="2026-08-25: 144,747"></span><span class="spark" style="height:32px" title="2026-09-01: 136,771"></span></div>
+  <p class="measured">Positioning is unremarkable, so events should move gold roughly in line with their own weight rather than being amplified.</p>
+  <p class="muted small">CFTC, as of 2026-09-01. Published Fridays,
+  reporting the prior Tuesday &mdash; always several days stale.</p>
+</section>
+
+
+<section class="card">
   <h2>FOMC cycle</h2>
   
   <div class="stat"><span class="k">Next meeting</span>
@@ -192,36 +315,51 @@
 
 <section class="card analysis">
   <h2>Analysis</h2>
-  <h4>Yesterday</h4>
+  <h4>Unscheduled risk &amp;mdash; SEVERE</h4>
+<p>Multiple severe headlines on a flashpoint gold is highly sensitive to. Treat scheduled data as secondary today.</p>
+<p><strong>China / Taiwan</strong> is the live one, escalating on 12 headlines in the last 48 hours. Low frequency, very high severity. A genuine blockade or invasion scenario is the largest single tail risk in the gold market, because it would be a global supply-chain and reserve-currency event simultaneously.</p>
+<p><em>Working against it:</em> Routine incursions and drills are so frequent they carry almost no information. Gold ignores them, correctly.</p>
+<p><em>How long this usually lasts:</em> Drills: nothing. A real blockade: a regime change in gold pricing, not a spike.</p>
+<h4>Yesterday</h4>
 <p>The USD stories carrying the most weight into today:</p>
 <ul>
-<li><strong>Gold Holds Decline as Traders Weigh Prospects for Fed Rate Hike</strong> (Yahoo Gold)</li>
-<li><strong>Gold Falls Below $4,400 as U.S. Jobs Data Keeps Fed Rate Hike Expectations Elevated</strong> (Yahoo Gold)</li>
-<li><strong>US Dollar Price Forecast: Strong Jobs Revive Fed Hike Bets as ECB Decision Looms</strong> (Yahoo Gold)</li>
-<li><strong>Treasury yields face 4.8% test as fiscal risks threaten to spill into other assets</strong> (CNBC Top News)</li>
-<li><strong>Far-right AfD landslide in German state piles pressure on federal government</strong> (CNBC Top News)</li>
+<li><strong>China Adds 650,000 Ounces of Gold in Biggest Monthly Buy Since 2023</strong> (Yahoo Gold)</li>
+<li><strong>InvestingIn.Gold Publishes New Gold IRA Case Study as Retirement Investors Reassess Portfolio Diversification in 2026</strong> (Yahoo Gold)</li>
+<li><strong>Stocks are stumbling after Labor Day. This year’s easy gains may be over.</strong> (MarketWatch)</li>
+<li><strong>Canadian Dollar Faces Pullback on Trade Tension Risks Before Resuming Gains, National Bank Says</strong> (Yahoo Gold)</li>
+<li><strong>Sitka Drills 159.2 Metres of 1.14 g/t Gold, Including 7.3 Metres of 8.89 g/t Gold, Within 256.9 Metres of 0.84 g/t Gold, Intercepts 13.9 Metres of 0.383% WO3 (Tungsten Trioxide) and Continues to Expand the Rhosgobel Deposit Along Strike and at Depth at Its RC Gold Project, Yukon</strong> (Yahoo Gold)</li>
 </ul>
-<p>Gold closed the prior session at $4,469.90, +0.91% on the day. 14-day ATR is $83.59, which is the yardstick for whether today&#x27;s move is normal or not.</p>
+<p>Gold&#x27;s last move came through <strong>mixed</strong>. No single driver dominates; the move has more than one cause.</p>
+<p>Gold closed the prior session at $4,403.80, -0.59% on the day. 14-day ATR is $85.41, which is the yardstick for whether today&#x27;s move is normal or not.</p>
 <h4>Today</h4>
 <p>Nothing material on the USD calendar. Gold is left to drift on positioning, the dollar and any unscheduled headline.</p>
 <h4>FOMC cycle</h4>
 <p>The next FOMC meeting is 2026-09-16, 8 days away and carries the dot plot. Gold&#x27;s sensitivity to inflation and labour data rises as a meeting approaches, because each print moves the odds on that specific decision.</p>
 <h4>Verdict</h4>
-<p>Quiet tape. Normal conditions, no scheduled shock. Risk score 8/100 (LOW). Expected daily range around $76.1.</p>
+<p>Major scheduled event. Wide, fast moves and poor fills likely. Risk score 71/100 (HIGH). Expected daily range around $151.2, from GVZ 27.26 (implied, 1 s.d.).</p>
 <p><em>Written by the deterministic template. Add a GEMINI_API_KEY secret to get a reasoned write-up instead.</em></p>
 </section>
 
 <section class="card">
   <h2>USD news &mdash; last 36 hours</h2>
-  <ul class="news"><li><a href="https://finance.yahoo.com/markets/commodities/articles/gold-holds-decline-traders-weigh-232846552.html?.tsrc=rss" target="_blank" rel="noopener">Gold Holds Decline as Traders Weigh Prospects for Fed Rate Hike</a><span class="src">Yahoo Gold</span></li><li><a href="https://investorshub.advfn.com/market-news/article/35748/gold-falls-below-4400-as-u-s-jobs-data-keeps-fed-rate-hike-expectations-elevated?.tsrc=rss" target="_blank" rel="noopener">Gold Falls Below $4,400 as U.S. Jobs Data Keeps Fed Rate Hike Expectations Elevated</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/currencies/articles/us-dollar-price-forecast-strong-081231126.html?.tsrc=rss" target="_blank" rel="noopener">US Dollar Price Forecast: Strong Jobs Revive Fed Hike Bets as ECB Decision Looms</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/07/us-treasury-yields-markets-scott-bessent.html" target="_blank" rel="noopener">Treasury yields face 4.8% test as fiscal risks threaten to spill into other assets</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/07/afd-germany-economy-merz.html" target="_blank" rel="noopener">Far-right AfD landslide in German state piles pressure on federal government</a><span class="src">CNBC Top News</span></li><li><a href="https://beincrypto.com/sugar-price-rally-bitcoin-gold-august/?.tsrc=rss" target="_blank" rel="noopener">A Better Trade Than Bitcoin or Gold in 2026 Is Sitting in Your Kitchen</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/crypto/articles/bitcoin-no-label-closest-rival-151524969.html?.tsrc=rss" target="_blank" rel="noopener">Bitcoin Has No Label but Its Closest Rival Is Gold, BlackRock Exec Says</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.thestreet.com/crypto/markets/ripple-ceo-blasts-11-billion-gold-transfer?.tsrc=rss" target="_blank" rel="noopener">Ripple CEO blasts $11 billion gold transfer</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/07/trump-truth-social-ai-images-posting-spree.html" target="_blank" rel="noopener">Trump says he&#x27;s made &#x27;Hundreds of Billions of Dollars on Stocks&#x27; for the U.S., in stream of AI posts</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/07/here-are-the-3-big-things-were-watching-in-this-holiday-shortened-trading-week.html" target="_blank" rel="noopener">Here are the 3 big things we&#x27;re watching in this holiday-shortened trading week</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/08/novartis-cholesterol-setback-drug-race-eli-lilly-amgen.html" target="_blank" rel="noopener">Cholesterol drug setback casts doubt over multibillion-dollar race</a><span class="src">CNBC Top News</span></li></ul>
+  <ul class="news"><li><a href="https://finance.yahoo.com/markets/commodities/articles/china-adds-650-000-ounces-190000241.html?.tsrc=rss" target="_blank" rel="noopener">China Adds 650,000 Ounces of Gold in Biggest Monthly Buy Since 2023</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/investingin-gold-publishes-gold-ira-131500930.html?.tsrc=rss" target="_blank" rel="noopener">InvestingIn.Gold Publishes New Gold IRA Case Study as Retirement Investors Reassess Portfolio Diversification in 2026</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.marketwatch.com/story/stocks-are-stumbling-after-labor-day-why-the-easy-gains-of-2026-may-be-over-1d31fa69?mod=mw_rss_topstories" target="_blank" rel="noopener">Stocks are stumbling after Labor Day. This year’s easy gains may be over.</a><span class="src">MarketWatch</span></li><li><a href="https://finance.yahoo.com/markets/currencies/articles/canadian-dollar-faces-pullback-trade-142321352.html?.tsrc=rss" target="_blank" rel="noopener">Canadian Dollar Faces Pullback on Trade Tension Risks Before Resuming Gains, National Bank Says</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/sitka-drills-159-2-metres-123000344.html?.tsrc=rss" target="_blank" rel="noopener">Sitka Drills 159.2 Metres of 1.14 g/t Gold, Including 7.3 Metres of 8.89 g/t Gold, Within 256.9 Metres of 0.84 g/t Gold, Intercepts 13.9 Metres of 0.383% WO3 (Tungsten Trioxide) and Continues to Expand the Rhosgobel Deposit Along Strike and at Depth at Its RC Gold Project, Yukon</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/kinross-gold-stock-13-month-123000576.html?.tsrc=rss" target="_blank" rel="noopener">Kinross Gold Stock Up 13% in a Month: What Should Investors Do Now?</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/axel-merk-calls-asa-board-123000619.html?.tsrc=rss" target="_blank" rel="noopener">Axel Merk Calls on ASA Board to Give Shareholders Liquidity at Nav Before Saba BDC Conversion</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/grizzly-extends-gold-silver-mineralization-130000999.html?.tsrc=rss" target="_blank" rel="noopener">Grizzly Extends Gold-Silver Mineralization at Midway Mine Area and Identifies New Gold Occurrence at Sappho Critical Minerals Target Area Greenwood, BC</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/golden-cariboo-deliver-mineral-estimate-130000531.html?.tsrc=rss" target="_blank" rel="noopener">Golden Cariboo to Deliver Mineral Resource Estimate</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/arc-mineral-royalties-commences-trading-133000073.html?.tsrc=rss" target="_blank" rel="noopener">Arc Mineral Royalties Commences Trading Following Completion of Change of Business</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/gold-x2-commences-trading-nyse-140000618.html?.tsrc=rss" target="_blank" rel="noopener">Gold X2 Commences Trading on the NYSE American Under Ticker &quot;AUXX&quot;</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/08/pharma-tariffs-trump-generic-drugs-sandoz-cmd-stock.html" target="_blank" rel="noopener">&#x27;Patients pay the tariff&#x27;: Swiss pharma CEO warns of Trump&#x27;s generic drug tariff threat</a><span class="src">CNBC Top News</span></li></ul>
+</section>
+
+
+
+
+<section class="card">
+  <h2>Data health</h2>
+  
+  <div class="health"><div class="hrow"><span class="hdot on"></span><span>ForexFactory calendar</span><span class="muted small">80 entries this week</span></div><div class="hrow"><span class="hdot on"></span><span>Gold daily prices</span><span class="muted small">GC=F, 503 bars</span></div><div class="hrow"><span class="hdot on"></span><span>GVZ implied volatility</span><span class="muted small">GVZ 27.26, 65th pct</span></div><div class="hrow"><span class="hdot on"></span><span>Drivers (DXY, yields, TIPS)</span><span class="muted small">DXY, US10Y</span></div><div class="hrow"><span class="hdot on"></span><span>CFTC positioning</span><span class="muted small">net 136,771 as of 2026-09-01</span></div><div class="hrow"><span class="hdot on"></span><span>USD news feeds</span><span class="muted small">20 relevant headlines</span></div><div class="hrow"><span class="hdot on"></span><span>Geopolitical feeds</span><span class="muted small">SEVERE (66), 42 headlines</span></div><div class="hrow"><span class="hdot on"></span><span>Event context / FOMC calendar</span><span class="muted small">FOMC via federalreserve.gov</span></div></div>
 </section>
 
 <section class="card"><h2>Archive</h2><div class="archive"><a href="reports/2026-09-08.html">2026-09-08</a><a href="reports/2026-09-07.html">2026-09-07</a><a href="reports/2026-09-04.html">2026-09-04</a><a href="reports/2026-09-03.html">2026-09-03</a><a href="reports/2026-09-02.html">2026-09-02</a><a href="reports/2026-09-01.html">2026-09-01</a><a href="reports/2026-08-31.html">2026-08-31</a><a href="reports/2026-08-28.html">2026-08-28</a></div></section>
 
 <footer>
-  Generated automatically from the ForexFactory calendar feed, public RSS and free
-  price data.<br>Information only &mdash; not trading advice, and the risk score is a
-  model, not a forecast.
+  Built automatically from the ForexFactory calendar feed, public RSS, FRED, CFTC
+  and free price data.<br>Information only &mdash; not trading advice, and the risk
+  score is a model, not a forecast.
 </footer>
 </div>
 </body>

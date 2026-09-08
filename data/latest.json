@@ -1,20 +1,27 @@
 {
   "date": "2026-09-08",
-  "generated": "06:40 BST",
+  "generated": "21:35 BST",
   "risk": {
-    "score": 8,
-    "band": "LOW",
-    "band_note": "Quiet tape. Normal conditions, no scheduled shock.",
-    "expected_range_usd": 76.1,
-    "atr14": 83.59,
-    "vol_ratio": 1.05,
+    "score": 71,
+    "band": "HIGH",
+    "band_note": "Major scheduled event. Wide, fast moves and poor fills likely.",
+    "expected_range_usd": 151.2,
+    "range_source": "GVZ 27.26 (implied, 1 s.d.)",
+    "atr14": 85.41,
+    "vol_ratio": 0.27,
+    "scheduled": 7,
+    "unscheduled": 66,
     "components": {
       "headline_event": 7,
       "breadth": 0,
       "clustering": 0,
-      "volatility": 1
+      "geopolitical": 66,
+      "both_at_once": 2,
+      "volatility": 3,
+      "positioning": 0
     },
     "material_events": 0,
+    "releases": 0,
     "top_weight": 1
   },
   "events": [
@@ -29,7 +36,8 @@
       "forecast": "99.4",
       "previous": "99.8",
       "actual": "",
-      "weight": 1
+      "weight": 1,
+      "release": "2026-09-08 11:00"
     },
     {
       "title": "Consumer Credit m/m",
@@ -42,9 +50,11 @@
       "forecast": "11.9B",
       "previous": "14.2B",
       "actual": "",
-      "weight": 1
+      "weight": 1,
+      "release": "2026-09-08 20:00"
     }
   ],
+  "groups": [],
   "yesterday_events": [
     {
       "title": "Bank Holiday",
@@ -57,89 +67,154 @@
       "forecast": "",
       "previous": "",
       "actual": "",
-      "weight": 0
+      "weight": 0,
+      "release": "2026-09-07 13:00"
     }
   ],
   "news": [
     {
       "source": "Yahoo Gold",
-      "title": "Gold Holds Decline as Traders Weigh Prospects for Fed Rate Hike",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/gold-holds-decline-traders-weigh-232846552.html?.tsrc=rss",
-      "published": "2026-09-06T23:28:46+00:00",
-      "summary": "Gold held a decline, after stronger-than-expected US payrolls data raised the prospects for an interest-rate hike as early as next week.",
-      "relevance": 13
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Gold Falls Below $4,400 as U.S. Jobs Data Keeps Fed Rate Hike Expectations Elevated",
-      "link": "https://investorshub.advfn.com/market-news/article/35748/gold-falls-below-4400-as-u-s-jobs-data-keeps-fed-rate-hike-expectations-elevated?.tsrc=rss",
-      "published": "2026-09-07T10:14:12+00:00",
-      "summary": "Gold prices fell below $4,400 an ounce on Monday as stronger-than-expected U. S.",
+      "title": "China Adds 650,000 Ounces of Gold in Biggest Monthly Buy Since 2023",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/china-adds-650-000-ounces-190000241.html?.tsrc=rss",
+      "published": "2026-09-08T19:00:00+00:00",
+      "summary": "China's central bank added 650,000 ounces of gold in August, its biggest monthly buy since 2023, even as rate-hike bets pressure bullion.",
       "relevance": 10
     },
     {
       "source": "Yahoo Gold",
-      "title": "US Dollar Price Forecast: Strong Jobs Revive Fed Hike Bets as ECB Decision Looms",
-      "link": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-price-forecast-strong-081231126.html?.tsrc=rss",
-      "published": "2026-09-07T08:12:31+00:00",
-      "summary": "Strong U.S. jobs revive Fed hike bets as DXY stalls, while ECB and BoE tightening risks support the euro and pound ahead of key inflation data.",
-      "relevance": 9
+      "title": "InvestingIn.Gold Publishes New Gold IRA Case Study as Retirement Investors Reassess Portfolio Diversification in 2026",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/investingin-gold-publishes-gold-ira-131500930.html?.tsrc=rss",
+      "published": "2026-09-08T13:15:00+00:00",
+      "summary": "New York, NY, Sept. 08, 2026 (GLOBE NEWSWIRE) -- InvestingIn.Gold has released a new case study examining how recent trends in the global gold market may be influencing retirement investors considering Gold IRAs. The analysis explores whether changing investment flows, continued central bank demand, and evolving market conditions are encouraging Americans to revisit precious metals as part of long",
+      "relevance": 6
     },
     {
-      "source": "CNBC Top News",
-      "title": "Treasury yields face 4.8% test as fiscal risks threaten to spill into other assets",
-      "link": "https://www.cnbc.com/2026/09/07/us-treasury-yields-markets-scott-bessent.html",
-      "published": "2026-09-07T02:01:52+00:00",
-      "summary": "Treasury yields face a test at 4.8%, with a sustained move above that potentially creating \"meaningful problems\" for other asset classes, said Miller Tabak.",
+      "source": "MarketWatch",
+      "title": "Stocks are stumbling after Labor Day. This year\u2019s easy gains may be over.",
+      "link": "https://www.marketwatch.com/story/stocks-are-stumbling-after-labor-day-why-the-easy-gains-of-2026-may-be-over-1d31fa69?mod=mw_rss_topstories",
+      "published": "2026-09-08T18:58:00+00:00",
+      "summary": "Stocks might soon need to adapt to the Federal Reserve\u2019s first rate hike since 2023.",
+      "relevance": 6
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Canadian Dollar Faces Pullback on Trade Tension Risks Before Resuming Gains, National Bank Says",
+      "link": "https://finance.yahoo.com/markets/currencies/articles/canadian-dollar-faces-pullback-trade-142321352.html?.tsrc=rss",
+      "published": "2026-09-08T14:23:21+00:00",
+      "summary": "The Canadian dollar is expected to resume its upward trend in 2027, with the forecast against the US",
       "relevance": 5
     },
     {
-      "source": "CNBC Top News",
-      "title": "Far-right AfD landslide in German state piles pressure on federal government",
-      "link": "https://www.cnbc.com/2026/09/07/afd-germany-economy-merz.html",
-      "published": "2026-09-07T17:04:21+00:00",
-      "summary": "The \"extraordinary\" result may be the \"most consequential German state-election result of the postwar era,\" according to analysts.",
-      "relevance": 5
-    },
-    {
       "source": "Yahoo Gold",
-      "title": "A Better Trade Than Bitcoin or Gold in 2026 Is Sitting in Your Kitchen",
-      "link": "https://beincrypto.com/sugar-price-rally-bitcoin-gold-august/?.tsrc=rss",
-      "published": "2026-09-07T08:30:37+00:00",
-      "summary": "Raw sugar logged its biggest monthly gain since 2010 in August, outpacing the S&P 500 as Bitcoin and gold set the pace.",
+      "title": "Sitka Drills 159.2 Metres of 1.14 g/t Gold, Including 7.3 Metres of 8.89 g/t Gold, Within 256.9 Metres of 0.84 g/t Gold, Intercepts 13.9 Metres of 0.383% WO3 (Tungsten Trioxide) and Continues to Expand the Rhosgobel Deposit Along Strike and at Depth at Its RC Gold Project, Yukon",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/sitka-drills-159-2-metres-123000344.html?.tsrc=rss",
+      "published": "2026-09-08T12:30:00+00:00",
+      "summary": "New assay results extend gold and tungsten mineralization 350 m east of the easternmost drilling completed in 2025, with additional drilling (assays pending) continuing to intersect RIRGS gold mineralization a further 60 m to the eastDrilling to date at Rhosgobel has traced near-surface RIRGS mineralization across a strike length of approximately 1.6 km (see Figure 1). The deposit remains open alo",
       "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "Bitcoin Has No Label but Its Closest Rival Is Gold, BlackRock Exec Says",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-no-label-closest-rival-151524969.html?.tsrc=rss",
-      "published": "2026-09-07T15:15:24+00:00",
-      "summary": "Bitcoin as a portfolio diversifier and hedge against rising government debt and currency debasement, according to BlackRock Inc. Global Head of Digital Assets Robbie Mitchnick. How ETFs Build Long-Term Investor Base Speaking on the Crypto Prime podcast on Sep. 5,...",
+      "title": "Kinross Gold Stock Up 13% in a Month: What Should Investors Do Now?",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/kinross-gold-stock-13-month-123000576.html?.tsrc=rss",
+      "published": "2026-09-08T12:30:00+00:00",
+      "summary": "KGC's 13% gain reflects stronger gold prices and earnings, but rising costs and falling estimates cloud its outlook.",
       "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "Ripple CEO blasts $11 billion gold transfer",
-      "link": "https://www.thestreet.com/crypto/markets/ripple-ceo-blasts-11-billion-gold-transfer?.tsrc=rss",
-      "published": "2026-09-07T21:17:44+00:00",
-      "summary": "Ripple CEO Brad Garlinghouse slams the global finance system for slow movement of assets like gold.",
+      "title": "Axel Merk Calls on ASA Board to Give Shareholders Liquidity at Nav Before Saba BDC Conversion",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/axel-merk-calls-asa-board-123000619.html?.tsrc=rss",
+      "published": "2026-09-08T12:30:00+00:00",
+      "summary": "Investors should tell the Board now: liquidity first, restructuring laterPALO ALTO, Calif., Sept. 08, 2026 (GLOBE NEWSWIRE) -- Axel Merk, a shareholder of more than 300,000 shares of ASA Gold and Precious Metals Limited (NYSE: ASA), today called on ASA\u2019s Board to provide shareholders with a meaningful opportunity to exit at or near net asset value (NAV) before asking them to approve the proposed c",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Grizzly Extends Gold-Silver Mineralization at Midway Mine Area and Identifies New Gold Occurrence at Sappho Critical Minerals Target Area Greenwood, BC",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/grizzly-extends-gold-silver-mineralization-130000999.html?.tsrc=rss",
+      "published": "2026-09-08T13:00:00+00:00",
+      "summary": "Edmonton, Alberta--(Newsfile Corp. - September 8, 2026) - Grizzly Discoveries Inc. (TSXV: GZD) (FSE: G6H) (OTCQB: GZDIF) (\"Grizzly\" or the \"Company\") is pleased to announce that preliminary results for a Phase 2 sampling program conducted in June 2026 to follow up trenching conducted at the Midway Precious Metals and Critical Minerals Target and Induced Polarization (\"IP\") chargeability results at",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Golden Cariboo to Deliver Mineral Resource Estimate",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/golden-cariboo-deliver-mineral-estimate-130000531.html?.tsrc=rss",
+      "published": "2026-09-08T13:00:00+00:00",
+      "summary": "VANCOUVER, BC - September 8, 2026 (NEWMEDIAWIRE) - Golden Cariboo Resources Ltd. (the \"Company\") (CSE:GCC) (OTC:GCCFF) (WKN:A402CQ) (FSE:3TZ) provides an update on its inaugural Mineral Resource Estimate (\"MRE\") for the Quesnelle Gold Quartz Mine Pro...",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Arc Mineral Royalties Commences Trading Following Completion of Change of Business",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/arc-mineral-royalties-commences-trading-133000073.html?.tsrc=rss",
+      "published": "2026-09-08T13:30:00+00:00",
+      "summary": "Arc Mineral Royalties launches with a compelling cornerstone gold royalty, C$12 million financing, and proven royalty management team, supported by a strategic partnership with Karri Capital Partners, led by Steve Parsons, Michael Naylor and Sam Brooks-whose track records include Bellevue Gold, FireFly Metals, and Andean SilverOttawa, Ontario--(Newsfile Corp. - September 8, 2026) - Arc Mineral Roy",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold X2 Commences Trading on the NYSE American Under Ticker \"AUXX\"",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/gold-x2-commences-trading-nyse-140000618.html?.tsrc=rss",
+      "published": "2026-09-08T14:00:00+00:00",
+      "summary": "Vancouver, British Columbia--(Newsfile Corp. - September 8, 2026) - Gold X2 Mining Inc. (NYSE American: AUXX) (TSXV: AUXX) (FSE: DF80) (\"Gold X2\" or the \"Company\") is pleased to announce that its common shares (the \"Common Shares\") have commenced trading today on the NYSE American LLC (the \"NYSE American\") under the symbol \"AUXX\". The Common Shares will continue trading on the TSX Venture Exchange",
       "relevance": 4
     },
     {
       "source": "CNBC Top News",
-      "title": "Trump says he's made 'Hundreds of Billions of Dollars on Stocks' for the U.S., in stream of AI posts",
-      "link": "https://www.cnbc.com/2026/09/07/trump-truth-social-ai-images-posting-spree.html",
-      "published": "2026-09-07T12:09:41+00:00",
-      "summary": "U.S. President Donald Trump posted a stream of AI-generated images and a series of sweeping and unverified claims on Truth Social on Sunday",
-      "relevance": 3
+      "title": "'Patients pay the tariff': Swiss pharma CEO warns of Trump's generic drug tariff threat",
+      "link": "https://www.cnbc.com/2026/09/08/pharma-tariffs-trump-generic-drugs-sandoz-cmd-stock.html",
+      "published": "2026-09-08T14:04:15+00:00",
+      "summary": "Sandoz CEO Richard Saynor warns steep U.S. tariffs on imported generic drugs could force manufacturers to raise prices or cut supply.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Why Gold Will Outperform Silver in 2027",
+      "link": "https://www.fool.com/investing/2026/09/08/why-gold-will-outperform-silver-in-2027/?.tsrc=rss",
+      "published": "2026-09-08T14:20:00+00:00",
+      "summary": "Commodities investors constructing 2027 shopping lists may want to go for gold over second-place silver.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "SSRM Advances With Marigold Growth Initiatives: Can They Aid Upside?",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/ssrm-advances-marigold-growth-initiatives-153900635.html?.tsrc=rss",
+      "published": "2026-09-08T15:39:00+00:00",
+      "summary": "SSR Mining advances Marigold growth initiatives and exploration as higher grades are expected to drive H2 production upside.",
+      "relevance": 4
     },
     {
       "source": "CNBC Top News",
-      "title": "Here are the 3 big things we're watching in this holiday-shortened trading week",
-      "link": "https://www.cnbc.com/2026/09/07/here-are-the-3-big-things-were-watching-in-this-holiday-shortened-trading-week.html",
-      "published": "2026-09-07T23:31:25+00:00",
-      "summary": "The week will be dominated by inflation data. Plus, Apple's new CEO has his first big test.",
-      "relevance": 3
+      "title": "UK announces new Israeli settlement sanctions, despite U.S. warning of economic consequences",
+      "link": "https://www.cnbc.com/2026/09/08/uk-israel-sanctions-miliband-florida-trump.html",
+      "published": "2026-09-08T15:47:26+00:00",
+      "summary": "U.S. officials have warned the U.K. of potential economic consequences if it moves ahead with sanctions targeting Israeli settlements in the West Bank.",
+      "relevance": 4
+    },
+    {
+      "source": "CNBC Economy",
+      "title": "Canada's retaliatory tariffs worth CA$27.6 billion take effect as trade rift with U.S. deepens",
+      "link": "https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html",
+      "published": "2026-09-08T17:11:11+00:00",
+      "summary": "Duties on Canadian imports of U.S. steel and aluminum products have doubled to 50% as a trade war between Washington and Ottawa intensifies.",
+      "relevance": 4
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "U.S. sanctions Iranian airlines in aim to tighten economic squeeze as war spreads, oil rises",
+      "link": "https://www.cnbc.com/2026/09/08/us-sanctions-iran-airlines-oil-economy-war.html",
+      "published": "2026-09-08T17:37:49+00:00",
+      "summary": "The latest U.S. action under \"Operation Economic Outcast\" targets all Iranian airlines that were not already facing sanctions.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Why SSR Mining Stock Surged 45% in August",
+      "link": "https://www.fool.com/investing/2026/09/08/why-ssr-mining-stock-surged-45-in-august/?.tsrc=rss",
+      "published": "2026-09-08T18:27:55+00:00",
+      "summary": "The gold stock is on a run after wiping out debt and bringing back its dividend. It just hit a 52-week high.",
+      "relevance": 4
     },
     {
       "source": "CNBC Top News",
@@ -148,12 +223,734 @@
       "published": "2026-09-08T05:00:01+00:00",
       "summary": "Novartis\u2019 failure raises the stakes for Amgen and Eli Lilly in the race to turn lower Lp(a) levels into fewer heart attacks and strokes.",
       "relevance": 3
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Trump says he's made 'Hundreds of Billions of Dollars on Stocks' for the U.S., in stream of AI posts",
+      "link": "https://www.cnbc.com/2026/09/07/trump-truth-social-ai-images-posting-spree.html",
+      "published": "2026-09-08T12:27:29+00:00",
+      "summary": "U.S. President Donald Trump posted a stream of AI-generated images and a series of sweeping and unverified claims on Truth Social on Sunday",
+      "relevance": 3
     }
   ],
   "gold": {
     "symbol": "GC=F",
-    "last": 4469.89990234375,
-    "change_pct": 0.9052349863264049
+    "last": 4403.7998046875,
+    "change_pct": -0.5869339732348056
+  },
+  "implied": {
+    "gvz": 27.26,
+    "percentile_1y": 65,
+    "daily_move_pct": 1.72,
+    "year_low": 16.38,
+    "year_high": 46.02,
+    "daily_move_usd": 75.6,
+    "one_sd_range_usd": 151.2
+  },
+  "drivers": {
+    "DXY": {
+      "label": "Dollar index",
+      "last": 98.858,
+      "change_pct": -0.3,
+      "change_5d_pct": -0.58
+    },
+    "US10Y": {
+      "label": "US 10-year yield",
+      "last": 4.806,
+      "change_pct": 0.46,
+      "change_5d_pct": 1.01
+    }
+  },
+  "attribution": {
+    "channel": "mixed",
+    "note": "No single driver dominates; the move has more than one cause."
+  },
+  "cot": {
+    "as_of": "2026-09-01",
+    "net": 136771,
+    "long": 149721,
+    "short": 12950,
+    "net_pct_oi": 32.9,
+    "percentile_2y": 57,
+    "change_4w": 6005,
+    "samples": 104,
+    "read": "Positioning is unremarkable, so events should move gold roughly in line with their own weight rather than being amplified.",
+    "crowded": false,
+    "history": [
+      {
+        "date": "2026-03-10",
+        "net": 98399
+      },
+      {
+        "date": "2026-03-17",
+        "net": 102043
+      },
+      {
+        "date": "2026-03-24",
+        "net": 91621
+      },
+      {
+        "date": "2026-03-31",
+        "net": 92814
+      },
+      {
+        "date": "2026-04-07",
+        "net": 90032
+      },
+      {
+        "date": "2026-04-14",
+        "net": 95141
+      },
+      {
+        "date": "2026-04-21",
+        "net": 92976
+      },
+      {
+        "date": "2026-04-28",
+        "net": 89752
+      },
+      {
+        "date": "2026-05-05",
+        "net": 94254
+      },
+      {
+        "date": "2026-05-12",
+        "net": 98015
+      },
+      {
+        "date": "2026-05-19",
+        "net": 93540
+      },
+      {
+        "date": "2026-05-26",
+        "net": 97446
+      },
+      {
+        "date": "2026-06-02",
+        "net": 112179
+      },
+      {
+        "date": "2026-06-09",
+        "net": 105863
+      },
+      {
+        "date": "2026-06-16",
+        "net": 113721
+      },
+      {
+        "date": "2026-06-23",
+        "net": 115395
+      },
+      {
+        "date": "2026-06-30",
+        "net": 120091
+      },
+      {
+        "date": "2026-07-07",
+        "net": 116161
+      },
+      {
+        "date": "2026-07-14",
+        "net": 120779
+      },
+      {
+        "date": "2026-07-21",
+        "net": 124831
+      },
+      {
+        "date": "2026-07-28",
+        "net": 119795
+      },
+      {
+        "date": "2026-08-04",
+        "net": 130766
+      },
+      {
+        "date": "2026-08-11",
+        "net": 137662
+      },
+      {
+        "date": "2026-08-18",
+        "net": 141648
+      },
+      {
+        "date": "2026-08-25",
+        "net": 144747
+      },
+      {
+        "date": "2026-09-01",
+        "net": 136771
+      }
+    ]
+  },
+  "geo": {
+    "points": 66,
+    "raw": 16.4,
+    "band": "SEVERE",
+    "note": "Multiple severe headlines on a flashpoint gold is highly sensitive to. Treat scheduled data as secondary today.",
+    "flashpoints": [
+      {
+        "key": "china_taiwan",
+        "name": "China / Taiwan",
+        "weight": 8,
+        "state": "escalating",
+        "headlines": 12,
+        "severe": 6,
+        "elevated": 0,
+        "calming": 0,
+        "score": 55.2,
+        "why_gold": "Low frequency, very high severity. A genuine blockade or invasion scenario is the largest single tail risk in the gold market, because it would be a global supply-chain and reserve-currency event simultaneously.",
+        "counterweight": "Routine incursions and drills are so frequent they carry almost no information. Gold ignores them, correctly.",
+        "typical_duration": "Drills: nothing. A real blockade: a regime change in gold pricing, not a spike.",
+        "escalation_markers": "Quarantine or blockade language, live-fire exercises encircling the island, US carrier movements, or semiconductor export emergencies.",
+        "top": [
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "severe",
+            "score": 8.0,
+            "matched": [
+              "pla"
+            ],
+            "source": "BBC World",
+            "title": "Five killed in Miami plane crash were in two vehicles on ground, investigators say",
+            "link": "https://www.bbc.co.uk/news/articles/ce8e32n8epeo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T16:38:03+00:00",
+            "summary": "Investigators described the scene as \"utter devastation\" after a Boeing 767-300 overshot the runway at Miami airport."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "severe",
+            "score": 8.0,
+            "matched": [
+              "pla"
+            ],
+            "source": "BBC World",
+            "title": "Five killed as Amazon cargo plane crashes at Miami airport",
+            "link": "https://www.bbc.co.uk/news/videos/c4grd9mg3rvo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-07T05:37:28+00:00",
+            "summary": "Video footage shows the aircraft burst into flames in Sunday's deadly incident."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "severe",
+            "score": 8.0,
+            "matched": [
+              "pla"
+            ],
+            "source": "Al Jazeera",
+            "title": "Israeli strikes devastate homes, displace families across Gaza",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-devastate-homes-displace-families-across-gaza?traffic_source=rss",
+            "published": "2026-09-08T17:04:28+00:00",
+            "summary": "Israeli strikes hit several areas across Gaza, destroying homes in Khan Younis and sending thick smoke over Bureij camp."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "severe",
+            "score": 8.0,
+            "matched": [
+              "pla"
+            ],
+            "source": "Al Jazeera",
+            "title": "Bombardier defends US manufacturing amid Trump\u2019s aviation sales threat",
+            "link": "https://www.aljazeera.com/economy/2026/9/8/bombardier-defends-us-manufacturing-amid-trumps-aviation-sales-threat?traffic_source=rss",
+            "published": "2026-09-08T17:04:10+00:00",
+            "summary": "Bombardier defends its US presence, stating its planes already feature components made in Texas and California."
+          }
+        ]
+      },
+      {
+        "key": "middle_east",
+        "name": "Wider Middle East",
+        "weight": 7,
+        "state": "escalating",
+        "headlines": 14,
+        "severe": 2,
+        "elevated": 5,
+        "calming": 0,
+        "score": 38.85,
+        "why_gold": "Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region's conflicts rarely touch US rate expectations directly.",
+        "counterweight": "Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.",
+        "typical_duration": "Hours to days. The shortest-lived of the major flashpoints unless it pulls Iran in directly.",
+        "escalation_markers": "Direct Iranian involvement, Red Sea shipping disruption, or US forces taking casualties.",
+        "top": [
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "severe",
+            "score": 7.0,
+            "matched": [
+              "israel",
+              "west bank"
+            ],
+            "source": "BBC World",
+            "title": "Pupils return to West Bank school behind barbed wire to protect against settlers",
+            "link": "https://www.bbc.co.uk/news/videos/c62jdyld8myo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T06:58:02+00:00",
+            "summary": "Six people, including three pupils at the Palestinian school, have been killed in al-Mughayyir this year, in a surge of Israeli settler-related violence."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "severe",
+            "score": 7.0,
+            "matched": [
+              "israel",
+              "lebanon"
+            ],
+            "source": "Al Jazeera",
+            "title": "Israeli strikes transform Lebanese city into ghost town",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-transform-lebanese-city-into-ghost-town?traffic_source=rss",
+            "published": "2026-09-08T16:19:52+00:00",
+            "summary": "Nabatieh, once southern Lebanon\u2019s economic centre, is now a ghost town as Israel intensifies attacks."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "elevated",
+            "score": 3.5,
+            "matched": [
+              "israel",
+              "west bank"
+            ],
+            "source": "BBC World",
+            "title": "UK announces sanctions on West Bank settlements prompting furious Israeli response",
+            "link": "https://www.bbc.co.uk/news/articles/c4g7zen0vveo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T19:11:39+00:00",
+            "summary": "Britain's foreign secretary accuses settlers of carrying out the \"ethnic cleansing\" of Palestinians, as Israel responds by shutting the UK consulate in East Jerusalem."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "elevated",
+            "score": 3.5,
+            "matched": [
+              "israel",
+              "west bank"
+            ],
+            "source": "BBC World",
+            "title": "In West Bank, date farmers weigh impact of UK sanctions on Israeli settlers",
+            "link": "https://www.bbc.co.uk/news/articles/cvgy6gd228vo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T15:36:34+00:00",
+            "summary": "Palestinians strongly back a ban on settlement goods, but Israel's government says it is a \"big mistake\"."
+          }
+        ]
+      },
+      {
+        "key": "us_iran",
+        "name": "US / Israel \u2013 Iran",
+        "weight": 10,
+        "state": "escalating",
+        "headlines": 8,
+        "severe": 2,
+        "elevated": 2,
+        "calming": 1,
+        "score": 30.5,
+        "why_gold": "The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.",
+        "counterweight": "The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold's gain. This is why some escalation days produce a far smaller gold move than the headlines imply.",
+        "typical_duration": "Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed's reaction function.",
+        "escalation_markers": "Direct state-on-state strikes rather than proxies; any interference with shipping in Hormuz; attacks on oil infrastructure; withdrawal from nuclear monitoring.",
+        "top": [
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran",
+              "houthi"
+            ],
+            "source": "BBC World",
+            "title": "Saudi Arabia vows to respond after Houthis attack cities and energy facilities",
+            "link": "https://www.bbc.co.uk/news/articles/cp849n2nz01o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T13:58:32+00:00",
+            "summary": "The Iran-backed Yemeni group's attacks have injured 73 people and caused fires at oil facilities, Saudi authorities say."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran"
+            ],
+            "source": "CNBC World",
+            "title": "Oil rises to $99 on report Iran launched second undisclosed attack on U.S. Navy ships",
+            "link": "https://www.cnbc.com/2026/09/08/oil-prices-today-brent-wti-hormuz-iran-war.html",
+            "published": "2026-09-08T20:28:09+00:00",
+            "summary": "Energy markets Tuesday reacted to escalating Mideast tensions after the U.S. and Iran traded strikes over the weekend."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "elevated",
+            "score": 5.0,
+            "matched": [
+              "iran",
+              "iranian"
+            ],
+            "source": "CNBC World",
+            "title": "U.S. sanctions Iranian airlines in aim to tighten economic squeeze as war spreads, oil rises",
+            "link": "https://www.cnbc.com/2026/09/08/us-sanctions-iran-airlines-oil-economy-war.html",
+            "published": "2026-09-08T17:37:49+00:00",
+            "summary": "The latest U.S. action under \"Operation Economic Outcast\" targets all Iranian airlines that were not already facing sanctions."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "elevated",
+            "score": 5.0,
+            "matched": [
+              "iran",
+              "hormuz",
+              "strait of hormuz"
+            ],
+            "source": "CNBC World",
+            "title": "Iran Foreign Ministry takes aim at Canada for support of U.S. actions in Strait of Hormuz",
+            "link": "https://www.cnbc.com/2026/09/08/us-iran-war-trump-hormuz-canada-trade-talks-greenland.html",
+            "published": "2026-09-08T12:20:17+00:00",
+            "summary": "Canada had condemned Iran\u2019s \"destabilizing actions\" in the Middle East, saying that it would work with partners to maintain significant pressure on Iran."
+          }
+        ]
+      },
+      {
+        "key": "trade_tariffs",
+        "name": "Trade and tariffs",
+        "weight": 5,
+        "state": "escalating",
+        "headlines": 4,
+        "severe": 3,
+        "elevated": 1,
+        "calming": 0,
+        "score": 17.5,
+        "why_gold": "Indirect but real. Tariffs are an inflation impulse and a growth drag at once, which is the hardest combination for the Fed and therefore raises uncertainty about the rate path.",
+        "counterweight": "Also dollar-positive in the short run, which works against gold. The net effect is genuinely ambiguous and often small.",
+        "typical_duration": "Weeks, when it changes the inflation outlook. Announcement headlines alone rarely stick.",
+        "escalation_markers": "Rates above expectations, retaliation, or extension to critical minerals and energy.",
+        "top": [
+          {
+            "flashpoint": "trade_tariffs",
+            "flashpoint_name": "Trade and tariffs",
+            "tier": "severe",
+            "score": 5.0,
+            "matched": [
+              "tariff",
+              "trade war"
+            ],
+            "source": "BBC World",
+            "title": "Carney says US trade war 'will come at a cost' as Canada strikes back on tariffs",
+            "link": "https://www.bbc.co.uk/news/articles/c8jdev0422jo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T14:46:16+00:00",
+            "summary": "Canada's levies - as high as 50% - will apply to nearly $20bn of US products, from steel to T-shirts."
+          },
+          {
+            "flashpoint": "trade_tariffs",
+            "flashpoint_name": "Trade and tariffs",
+            "tier": "severe",
+            "score": 5.0,
+            "matched": [
+              "tariff",
+              "trade war"
+            ],
+            "source": "CNBC World",
+            "title": "Canada's retaliatory tariffs worth CA$27.6 billion take effect as trade rift with U.S. deepens",
+            "link": "https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html",
+            "published": "2026-09-08T17:11:11+00:00",
+            "summary": "Duties on Canadian imports of U.S. steel and aluminum products have doubled to 50% as a trade war between Washington and Ottawa intensifies."
+          },
+          {
+            "flashpoint": "trade_tariffs",
+            "flashpoint_name": "Trade and tariffs",
+            "tier": "severe",
+            "score": 5.0,
+            "matched": [
+              "tariff"
+            ],
+            "source": "CNBC World",
+            "title": "Bombardier points out U.S. footprint after Trump says aerospace giant must build in America",
+            "link": "https://www.cnbc.com/2026/09/07/trump-bombardier-cant-sell-in-us-unless-canada-aerospace-giant-builds-there.html",
+            "published": "2026-09-08T17:08:01+00:00",
+            "summary": "Trump's announcement comes on the eve of Canadian retaliatory tariffs set to take effect Tuesday on $20 billion of U.S. goods."
+          },
+          {
+            "flashpoint": "trade_tariffs",
+            "flashpoint_name": "Trade and tariffs",
+            "tier": "elevated",
+            "score": 2.5,
+            "matched": [
+              "tariff"
+            ],
+            "source": "CNBC World",
+            "title": "'Patients pay the tariff': Swiss pharma CEO warns of Trump's generic drug tariff threat",
+            "link": "https://www.cnbc.com/2026/09/08/pharma-tariffs-trump-generic-drugs-sandoz-cmd-stock.html",
+            "published": "2026-09-08T14:04:15+00:00",
+            "summary": "Sandoz CEO Richard Saynor warns steep U.S. tariffs on imported generic drugs could force manufacturers to raise prices or cut supply."
+          }
+        ]
+      },
+      {
+        "key": "russia_nato",
+        "name": "Russia / Ukraine / NATO",
+        "weight": 8,
+        "state": "active",
+        "headlines": 4,
+        "severe": 1,
+        "elevated": 2,
+        "calming": 0,
+        "score": 17.2,
+        "why_gold": "Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.",
+        "counterweight": "Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day's price action.",
+        "typical_duration": "Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.",
+        "escalation_markers": "Any Article 5 discussion, strikes on NATO territory, nuclear rhetoric or doctrine change, or new sanctions touching reserves or energy.",
+        "top": [
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "severe",
+            "score": 8.0,
+            "matched": [
+              "russia",
+              "russian",
+              "ukraine"
+            ],
+            "source": "BBC World",
+            "title": "Ukrainian TV channel building hit by Russian drone as five killed in Kyiv",
+            "link": "https://www.bbc.co.uk/news/articles/cn8m1k7p3v7o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T17:10:54+00:00",
+            "summary": "President Zelensky describes the daytime drone attack in Ukraine's capital as a \"new page in Russian degradation\""
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "russia",
+              "russian",
+              "kremlin"
+            ],
+            "source": "BBC World",
+            "title": "Hungary expels 10 Russian diplomats as relations worsen",
+            "link": "https://www.bbc.co.uk/news/articles/cddvzd1z53lo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-08T14:38:44+00:00",
+            "summary": "For years, Hungary was viewed as Russia's closest ally in the EU, but the new government has dropped the pro-Kremlin stance."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "russia",
+              "russian",
+              "moscow"
+            ],
+            "source": "Al Jazeera",
+            "title": "Hungary expels 10 Russian diplomats, Moscow promises harsh response",
+            "link": "https://www.aljazeera.com/news/2026/9/8/hungary-expels-russian-diplomats-over-unacceptable-activities?traffic_source=rss",
+            "published": "2026-09-08T15:40:14+00:00",
+            "summary": "Russia promises &#039;harsh and painful&#039; response following Hungary&#039;s expulsion of its diplomats."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "russia",
+              "putin",
+              "ukraine"
+            ],
+            "source": "Al Jazeera",
+            "title": "Trump, Putin hold \u2018frank\u2019 phone call as US restarts Ukraine deal efforts",
+            "link": "https://www.aljazeera.com/news/2026/9/8/trump-putin-hold-frank-phone-call-as-us-restarts-ukraine-deal-efforts?traffic_source=rss",
+            "published": "2026-09-08T18:31:30+00:00",
+            "summary": "The phone call comes after US special envoys travelled to Russia and Ukraine to discuss &#039;a proposal to end the war&#039;."
+          }
+        ]
+      }
+    ],
+    "headline_count": 42,
+    "headlines": [
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "severe",
+        "score": 10.0,
+        "matched": [
+          "iran",
+          "houthi"
+        ],
+        "source": "BBC World",
+        "title": "Saudi Arabia vows to respond after Houthis attack cities and energy facilities",
+        "link": "https://www.bbc.co.uk/news/articles/cp849n2nz01o?at_medium=RSS&at_campaign=rss",
+        "published": "2026-09-08T13:58:32+00:00",
+        "summary": "The Iran-backed Yemeni group's attacks have injured 73 people and caused fires at oil facilities, Saudi authorities say."
+      },
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "severe",
+        "score": 10.0,
+        "matched": [
+          "iran"
+        ],
+        "source": "CNBC World",
+        "title": "Oil rises to $99 on report Iran launched second undisclosed attack on U.S. Navy ships",
+        "link": "https://www.cnbc.com/2026/09/08/oil-prices-today-brent-wti-hormuz-iran-war.html",
+        "published": "2026-09-08T20:28:09+00:00",
+        "summary": "Energy markets Tuesday reacted to escalating Mideast tensions after the U.S. and Iran traded strikes over the weekend."
+      },
+      {
+        "flashpoint": "russia_nato",
+        "flashpoint_name": "Russia / Ukraine / NATO",
+        "tier": "severe",
+        "score": 8.0,
+        "matched": [
+          "russia",
+          "russian",
+          "ukraine"
+        ],
+        "source": "BBC World",
+        "title": "Ukrainian TV channel building hit by Russian drone as five killed in Kyiv",
+        "link": "https://www.bbc.co.uk/news/articles/cn8m1k7p3v7o?at_medium=RSS&at_campaign=rss",
+        "published": "2026-09-08T17:10:54+00:00",
+        "summary": "President Zelensky describes the daytime drone attack in Ukraine's capital as a \"new page in Russian degradation\""
+      },
+      {
+        "flashpoint": "china_taiwan",
+        "flashpoint_name": "China / Taiwan",
+        "tier": "severe",
+        "score": 8.0,
+        "matched": [
+          "pla"
+        ],
+        "source": "BBC World",
+        "title": "Five killed in Miami plane crash were in two vehicles on ground, investigators say",
+        "link": "https://www.bbc.co.uk/news/articles/ce8e32n8epeo?at_medium=RSS&at_campaign=rss",
+        "published": "2026-09-08T16:38:03+00:00",
+        "summary": "Investigators described the scene as \"utter devastation\" after a Boeing 767-300 overshot the runway at Miami airport."
+      },
+      {
+        "flashpoint": "china_taiwan",
+        "flashpoint_name": "China / Taiwan",
+        "tier": "severe",
+        "score": 8.0,
+        "matched": [
+          "pla"
+        ],
+        "source": "BBC World",
+        "title": "Five killed as Amazon cargo plane crashes at Miami airport",
+        "link": "https://www.bbc.co.uk/news/videos/c4grd9mg3rvo?at_medium=RSS&at_campaign=rss",
+        "published": "2026-09-07T05:37:28+00:00",
+        "summary": "Video footage shows the aircraft burst into flames in Sunday's deadly incident."
+      },
+      {
+        "flashpoint": "china_taiwan",
+        "flashpoint_name": "China / Taiwan",
+        "tier": "severe",
+        "score": 8.0,
+        "matched": [
+          "pla"
+        ],
+        "source": "Al Jazeera",
+        "title": "Israeli strikes devastate homes, displace families across Gaza",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-devastate-homes-displace-families-across-gaza?traffic_source=rss",
+        "published": "2026-09-08T17:04:28+00:00",
+        "summary": "Israeli strikes hit several areas across Gaza, destroying homes in Khan Younis and sending thick smoke over Bureij camp."
+      },
+      {
+        "flashpoint": "china_taiwan",
+        "flashpoint_name": "China / Taiwan",
+        "tier": "severe",
+        "score": 8.0,
+        "matched": [
+          "pla"
+        ],
+        "source": "Al Jazeera",
+        "title": "Bombardier defends US manufacturing amid Trump\u2019s aviation sales threat",
+        "link": "https://www.aljazeera.com/economy/2026/9/8/bombardier-defends-us-manufacturing-amid-trumps-aviation-sales-threat?traffic_source=rss",
+        "published": "2026-09-08T17:04:10+00:00",
+        "summary": "Bombardier defends its US presence, stating its planes already feature components made in Texas and California."
+      },
+      {
+        "flashpoint": "china_taiwan",
+        "flashpoint_name": "China / Taiwan",
+        "tier": "severe",
+        "score": 8.0,
+        "matched": [
+          "pla"
+        ],
+        "source": "CNBC World",
+        "title": "Crypto platforms have lost over $3.63 billion to cyberattacks \u2014 even though most of them did security checks",
+        "link": "https://www.cnbc.com/2026/09/08/crypto-platforms-lost-billions-to-cyberattacks-many-even-after-audits.html",
+        "published": "2026-09-08T08:16:11+00:00",
+        "summary": "More than 60% of cryptocurrency platforms that lost money due to cyberattacks had undergone independent security audits, CoinGecko said."
+      },
+      {
+        "flashpoint": "china_taiwan",
+        "flashpoint_name": "China / Taiwan",
+        "tier": "severe",
+        "score": 8.0,
+        "matched": [
+          "pla"
+        ],
+        "source": "CNBC World",
+        "title": "CNBC Daily Open: Rising tensions \u2014 from North America to the Middle East",
+        "link": "https://www.cnbc.com/2026/09/08/cnbc-daily-open-trump-oil-canada-greenland-eu-spacex-iran-mideast-.html",
+        "published": "2026-09-08T01:08:11+00:00",
+        "summary": "President Donald Trump said Monday that Canadian airplane maker Bombardier must build its products in the U.S. in order to keep selling in the American market."
+      },
+      {
+        "flashpoint": "middle_east",
+        "flashpoint_name": "Wider Middle East",
+        "tier": "severe",
+        "score": 7.0,
+        "matched": [
+          "israel",
+          "west bank"
+        ],
+        "source": "BBC World",
+        "title": "Pupils return to West Bank school behind barbed wire to protect against settlers",
+        "link": "https://www.bbc.co.uk/news/videos/c62jdyld8myo?at_medium=RSS&at_campaign=rss",
+        "published": "2026-09-08T06:58:02+00:00",
+        "summary": "Six people, including three pupils at the Palestinian school, have been killed in al-Mughayyir this year, in a surge of Israeli settler-related violence."
+      },
+      {
+        "flashpoint": "middle_east",
+        "flashpoint_name": "Wider Middle East",
+        "tier": "severe",
+        "score": 7.0,
+        "matched": [
+          "israel",
+          "lebanon"
+        ],
+        "source": "Al Jazeera",
+        "title": "Israeli strikes transform Lebanese city into ghost town",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/9/8/israeli-strikes-transform-lebanese-city-into-ghost-town?traffic_source=rss",
+        "published": "2026-09-08T16:19:52+00:00",
+        "summary": "Nabatieh, once southern Lebanon\u2019s economic centre, is now a ghost town as Israel intensifies attacks."
+      },
+      {
+        "flashpoint": "trade_tariffs",
+        "flashpoint_name": "Trade and tariffs",
+        "tier": "severe",
+        "score": 5.0,
+        "matched": [
+          "tariff",
+          "trade war"
+        ],
+        "source": "BBC World",
+        "title": "Carney says US trade war 'will come at a cost' as Canada strikes back on tariffs",
+        "link": "https://www.bbc.co.uk/news/articles/c8jdev0422jo?at_medium=RSS&at_campaign=rss",
+        "published": "2026-09-08T14:46:16+00:00",
+        "summary": "Canada's levies - as high as 50% - will apply to nearly $20bn of US products, from steel to T-shirts."
+      }
+    ],
+    "caveat": "Derived from how loud the news is, not from any assessment of what will happen. It measures attention, which is what moves price in the short run."
   },
   "base_rates": {},
   "context": {
@@ -238,5 +1035,53 @@
       "biggest": 59.7,
       "held_pct": 33
     }
+  },
+  "calibration": null,
+  "health": {
+    "checks": [
+      {
+        "source": "ForexFactory calendar",
+        "ok": true,
+        "detail": "80 entries this week"
+      },
+      {
+        "source": "Gold daily prices",
+        "ok": true,
+        "detail": "GC=F, 503 bars"
+      },
+      {
+        "source": "GVZ implied volatility",
+        "ok": true,
+        "detail": "GVZ 27.26, 65th pct"
+      },
+      {
+        "source": "Drivers (DXY, yields, TIPS)",
+        "ok": true,
+        "detail": "DXY, US10Y"
+      },
+      {
+        "source": "CFTC positioning",
+        "ok": true,
+        "detail": "net 136,771 as of 2026-09-01"
+      },
+      {
+        "source": "USD news feeds",
+        "ok": true,
+        "detail": "20 relevant headlines"
+      },
+      {
+        "source": "Geopolitical feeds",
+        "ok": true,
+        "detail": "SEVERE (66), 42 headlines"
+      },
+      {
+        "source": "Event context / FOMC calendar",
+        "ok": true,
+        "detail": "FOMC via federalreserve.gov"
+      }
+    ],
+    "ok": 8,
+    "failed": 0,
+    "degraded": false
   }
 }
