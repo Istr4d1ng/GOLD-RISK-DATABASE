@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gold / USD Daily Risk Database</title>
+<style>
+  :root {
+    --bg:#0d0f12; --card:#15181d; --line:#232830; --fg:#e8eaed;
+    --muted:#9aa3af; --track:#232830; --accent:#f5a524;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:#f6f7f9; --card:#ffffff; --line:#e3e6ea; --fg:#14171c;
+      --muted:#5d6673; --track:#e8ebef;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:900px; margin:0 auto; padding:20px 16px 64px; }
+  header { display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  h1 { font-size:19px; margin:0; letter-spacing:-.01em; }
+  .date { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+  .card { background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:20px; margin-bottom:16px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:0 0 14px; font-weight:600; }
+  h3 { font-size:16px; margin:22px 0 6px; }
+  .hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  .gauge { width:128px; height:128px; flex:none; }
+  .gauge-num { font-size:34px; font-weight:700; fill:var(--fg); }
+  .gauge-sub { font-size:12px; fill:var(--muted); }
+  .hero-body { flex:1; min-width:220px; }
+  .band { display:inline-block; font-size:12px; font-weight:700;
+    letter-spacing:.08em; padding:4px 10px; border-radius:999px;
+    background:#f5a52422; color:#f5a524; margin-bottom:8px; }
+  .stat { display:flex; justify-content:space-between; gap:12px;
+    padding:7px 0; border-top:1px solid var(--line); font-size:14px; }
+  .stat .k { color:var(--muted); }
+  .stat .v { font-variant-numeric:tabular-nums; font-weight:600; }
+  .up { color:#30a46c; } .down { color:#e5484d; }
+  .scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:14px; min-width:560px; }
+  th { text-align:left; color:var(--muted); font-weight:600; font-size:12px;
+    text-transform:uppercase; letter-spacing:.05em; padding:0 10px 8px 0; }
+  td { padding:11px 10px 11px 0; border-top:1px solid var(--line);
+    vertical-align:top; }
+  td.time { font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap; }
+  td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  tr.major td { background:#f5a5240e; }
+  .dot { display:inline-block; width:8px; height:8px; border-radius:50%;
+    margin-right:8px; vertical-align:middle; }
+  .muted { color:var(--muted); } .small { font-size:12.5px; line-height:1.45; }
+  ul.news { list-style:none; padding:0; margin:0; }
+  ul.news li { padding:10px 0; border-top:1px solid var(--line); font-size:14.5px; }
+  ul.news li:first-child { border-top:none; }
+  ul.news a { color:var(--fg); text-decoration:none; }
+  ul.news a:hover { text-decoration:underline; }
+  .src { display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+  .archive { display:flex; flex-wrap:wrap; gap:8px; }
+  .archive a { font-size:13px; padding:5px 10px; border:1px solid var(--line);
+    border-radius:8px; color:var(--muted); text-decoration:none;
+    font-variant-numeric:tabular-nums; }
+  .analysis p { margin:0 0 12px; }
+  .analysis a { color:var(--accent); }
+  footer { color:var(--muted); font-size:12.5px; text-align:center;
+    margin-top:28px; line-height:1.7; }
+  .bars { display:grid; gap:6px; margin-top:12px; }
+  .bar { display:grid; grid-template-columns:110px 1fr 34px; gap:10px;
+    align-items:center; font-size:12.5px; color:var(--muted); }
+  .bar i { display:block; height:6px; border-radius:3px; background:var(--accent);
+    min-width:2px; }
+  details { border-top:1px solid var(--line); }
+  details:first-of-type { border-top:none; }
+  summary { cursor:pointer; padding:12px 0; font-size:14.5px; list-style:none;
+    display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
+  summary::-webkit-details-marker { display:none; }
+  summary::before { content:"+"; color:var(--muted); font-weight:700;
+    margin-right:4px; }
+  details[open] summary::before { content:"2"; }
+  .detail { padding:2px 0 18px 22px; font-size:14px; }
+  .detail .lead { margin:0 0 12px; }
+  dl.facts { margin:0 0 14px; display:grid; grid-template-columns:auto 1fr;
+    gap:6px 14px; font-size:13.5px; }
+  dl.facts dt { color:var(--muted); white-space:nowrap; }
+  dl.facts dd { margin:0; }
+  .measured { background:var(--track); border-radius:8px; padding:10px 12px;
+    font-size:13.5px; margin:12px 0; }
+  .readings { margin:14px 0; }
+  .rlabel { font-size:12.5px; color:var(--fg); margin-bottom:6px; }
+  .sparks { display:flex; align-items:flex-end; gap:3px; height:38px;
+    margin-bottom:8px; }
+  .spark { flex:1; max-width:26px; background:var(--accent); opacity:.65;
+    border-radius:2px 2px 0 0; }
+  table.mini { font-size:12.5px; min-width:0; }
+  table.mini td, table.mini th { padding:5px 14px 5px 0; }
+  table.mini.wide { width:100%; margin-top:8px; }
+  .bar u { display:block; height:6px; border-radius:3px; background:var(--track); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Gold / USD Daily Risk Database</h1>
+  <span class="date">2026-09-01 &middot; built 06:39 BST</span>
+</header>
+
+<section class="card">
+  <div class="hero">
+    
+<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 44 of 100">
+  <circle cx="64" cy="64" r="52" fill="none" stroke="var(--track)" stroke-width="12"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#f5a524" stroke-width="12"
+          stroke-linecap="round" stroke-dasharray="143.8 326.7"
+          transform="rotate(-90 64 64)"/>
+  <text x="64" y="60" text-anchor="middle" class="gauge-num">44</text>
+  <text x="64" y="82" text-anchor="middle" class="gauge-sub">/ 100</text>
+</svg>
+    <div class="hero-body">
+      <span class="band">MODERATE RISK</span>
+      <p style="margin:0 0 10px">Some scheduled risk. Expect intraday noise around releases.</p>
+      <div class="stat"><span class="k">Expected gold range today</span>
+        <span class="v">$93.6</span></div>
+      <div class="stat"><span class="k">14-day ATR</span>
+        <span class="v">$79.29</span></div>
+      <div class="stat"><span class="k">Volatility vs normal</span>
+        <span class="v">0.97x</span></div>
+      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,476.20 <span class="up">+1.02%</span></span></div>
+    </div>
+  </div>
+  <div class="bars">
+    <div class="bar"><span>Headline event</span><u><i style="width:60%"></i></u><span>42</span></div>
+    <div class="bar"><span>Event breadth</span><u><i style="width:20%"></i></u><span>3</span></div>
+    <div class="bar"><span>Clustering</span><u><i style="width:0%"></i></u><span>0</span></div>
+    <div class="bar"><span>Volatility</span><u><i style="width:0%"></i></u><span>-1</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Today&rsquo;s USD calendar &mdash; UK time</h2>
+  
+<div class="scroll">
+<table>
+  <thead><tr><th>UK</th><th>Event</th><th>Gold wt</th><th>Fcst</th>
+             <th>Prev</th><th>Past 1h move ($)</th></tr></thead>
+  <tbody>
+<tr class="">
+  <td class="time">14:05</td>
+  <td><span class="dot" style="background:#d9c40a"></span>FOMC Member Barr Speaks
+      <div class="muted small">No number to trade - the risk is a hawkish or dovish tone shift, which moves gold through rate expectations.</div></td>
+  <td class="num">3</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">14:45</td>
+  <td><span class="dot" style="background:#d9c40a"></span>Final Manufacturing PMI
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">53.3</td>
+  <td class="num">53.2</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#e5484d"></span>ISM Manufacturing PMI
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">6</td>
+  <td class="num">55.2</td>
+  <td class="num">55.6</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#f5a524"></span>ISM Manufacturing Prices
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">3</td>
+  <td class="num">70.5</td>
+  <td class="num">71.1</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#f5a524"></span>JOLTS Job Openings
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">4</td>
+  <td class="num">7.33M</td>
+  <td class="num">7.36M</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#d9c40a"></span>Construction Spending m/m
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">0.0%</td>
+  <td class="num">-0.1%</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:10</td>
+  <td><span class="dot" style="background:#d9c40a"></span>RCM/TIPP Economic Optimism
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">46.2</td>
+  <td class="num">45.1</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:15</td>
+  <td><span class="dot" style="background:#d9c40a"></span>Omdia Total Vehicle Sales
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">16.3M</td>
+  <td class="num">16.3M</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">21:30</td>
+  <td><span class="dot" style="background:#d9c40a"></span>API Weekly Statistical Bulletin
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num small">&mdash;</td>
+</tr></tbody>
+</table>
+</div>
+</section>
+
+<section class="card">
+  <h2>Event briefings &mdash; what each one is and what it does to gold</h2>
+  
+<details>
+  <summary><span class="dot" style="background:#e5484d"></span>
+    <strong>15:00</strong> ISM Manufacturing PMI
+    <span class="muted small">&mdash; ISM Manufacturing PMI</span></summary>
+  <div class="detail"><p class="lead">Survey of purchasing managers. Above 50 means expansion. Released 15:00 UK.</p><dl class="facts"><dt>Published by</dt><dd>Institute for Supply Management, first business day of the month</dd><dt>Why gold cares</dt><dd>A timely growth signal that arrives before the hard data. Weakness feeds recession pricing, which is usually gold-supportive.</dd><dt>What to watch</dt><dd>The prices-paid and new-orders sub-indices carry more information than the headline.</dd><dt>The catch</dt><dd>Manufacturing is a small share of US output, so the survey overstates its own importance.</dd><dt>Rough prior expectation</dt><dd>$8-20</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
+<details>
+  <summary><span class="dot" style="background:#f5a524"></span>
+    <strong>15:00</strong> JOLTS Job Openings
+    <span class="muted small">&mdash; JOLTS Job Openings</span></summary>
+  <div class="detail"><p class="lead">Job openings, hires and quits. Released 15:00 UK, roughly six weeks in arrears.</p><dl class="facts"><dt>Published by</dt><dd>Bureau of Labor Statistics, monthly</dd><dt>Why gold cares</dt><dd>The vacancy-to-unemployed ratio is a labour-tightness gauge the Fed has cited directly.</dd><dt>What to watch</dt><dd>The quits rate, as a measure of worker confidence.</dd><dt>The catch</dt><dd>Very stale by release, and the response rate has been falling for years.</dd><dt>Rough prior expectation</dt><dd>$3-12</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
+</section>
+
+
+<section class="card">
+  <h2>FOMC cycle</h2>
+  
+  <div class="stat"><span class="k">Next meeting</span>
+    <span class="v">2026-09-16 &middot; 15 days &middot; with projections (dot plot)</span></div>
+  <div class="stat"><span class="k">Last meeting</span>
+    <span class="v">2026-07-29</span></div>
+  <div class="stat"><span class="k">Gold on the last 8 decision days</span><span class="v">avg $21.88 move, $48.26 range</span></div>
+  
+<table class="mini wide">
+  <thead><tr><th>Decision day</th><th>Gold O&rarr;C</th><th>Day range</th>
+             <th>Next day</th></tr></thead>
+  <tbody><tr><td>2026-07-29</td><td class="num up">+16.60</td><td class="num">16.80</td><td class="num up">+65.40</td></tr><tr><td>2026-06-17</td><td class="num up">+19.90</td><td class="num">81.00</td><td class="num down">-134.80</td></tr><tr><td>2026-04-29</td><td class="num down">-53.40</td><td class="num">85.90</td><td class="num up">+69.50</td></tr><tr><td>2026-03-18</td><td class="num down">-59.70</td><td class="num">127.90</td><td class="num down">-289.20</td></tr><tr><td>2026-01-28</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+16.80</td></tr><tr><td>2025-12-10</td><td class="num down">-12.60</td><td class="num">50.90</td><td class="num up">+89.10</td></tr><tr><td>2025-10-29</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+17.60</td></tr><tr><td>2025-09-17</td><td class="num up">+12.80</td><td class="num">23.60</td><td class="num down">-38.10</td></tr></tbody></table>
+  <p class="muted small" style="margin-top:10px">Calendar source: federalreserve.gov.</p>
+</section>
+
+<section class="card analysis">
+  <h2>Analysis</h2>
+  <h4>Yesterday</h4>
+<p>The USD stories carrying the most weight into today:</p>
+<ul>
+<li><strong>Bitcoin Is Trading Like Gold, Not the Nasdaq — And Right Now That&#x27;s the Problem</strong> (Yahoo Gold)</li>
+<li><strong>Gold ETF Inflows Reverse Course as Warsh’s Hawkish Speech Crushes GLDM’s Summer Rally</strong> (Yahoo Gold)</li>
+<li><strong>Gold prices surge in August. Will rate hike forecasts rain on gold&#x27;s parade?</strong> (Yahoo Gold)</li>
+<li><strong>Trump says U.S. growth could hit 20%. It’s happened only once since WWII</strong> (CNBC Top News)</li>
+<li><strong>Gold posts best month since February despite investor concerns over rate hikes</strong> (Yahoo Gold)</li>
+</ul>
+<p>Gold closed the prior session at $4,476.20, +1.02% on the day. 14-day ATR is $79.29, which is the yardstick for whether today&#x27;s move is normal or not.</p>
+<h4>Today</h4>
+<p>No top-tier releases. Secondary events: ISM Manufacturing PMI at 15:00, JOLTS Job Openings at 15:00 (UK time). Expect spikes rather than trends.</p>
+<h4>FOMC cycle</h4>
+<p>The next FOMC meeting is 2026-09-16, 15 days away and carries the dot plot. Gold&#x27;s sensitivity to inflation and labour data rises as a meeting approaches, because each print moves the odds on that specific decision.</p>
+<h4>What each one actually is</h4>
+<p><strong>15:00 - ISM Manufacturing PMI.</strong> Survey of purchasing managers. Above 50 means expansion. Released 15:00 UK. A timely growth signal that arrives before the hard data. Weakness feeds recession pricing, which is usually gold-supportive. Watch: The prices-paid and new-orders sub-indices carry more information than the headline.</p>
+<p><strong>15:00 - JOLTS Job Openings.</strong> Job openings, hires and quits. Released 15:00 UK, roughly six weeks in arrears. The vacancy-to-unemployed ratio is a labour-tightness gauge the Fed has cited directly. Watch: The quits rate, as a measure of worker confidence.</p>
+<h4>Verdict</h4>
+<p>Some scheduled risk. Expect intraday noise around releases. Risk score 44/100 (MODERATE). Expected daily range around $93.6.</p>
+<p><em>Written by the deterministic template. Add a GEMINI_API_KEY secret to get a reasoned write-up instead.</em></p>
+</section>
+
+<section class="card">
+  <h2>USD news &mdash; last 36 hours</h2>
+  <ul class="news"><li><a href="https://beincrypto.com/gold-price-bitcoin-debasement-trade-pause/?.tsrc=rss" target="_blank" rel="noopener">Bitcoin Is Trading Like Gold, Not the Nasdaq — And Right Now That&#x27;s the Problem</a><span class="src">Yahoo Gold</span></li><li><a href="https://247wallst.com/investing/etf/2026/08/31/gold-etf-inflows-reverse-course-as-warshs-hawkish-speech-crushes-gldms-summer-rally/?.tsrc=rss" target="_blank" rel="noopener">Gold ETF Inflows Reverse Course as Warsh’s Hawkish Speech Crushes GLDM’s Summer Rally</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/video/gold-prices-surge-august-rate-200000150.html?.tsrc=rss" target="_blank" rel="noopener">Gold prices surge in August. Will rate hike forecasts rain on gold&#x27;s parade?</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/08/31/trump-us-gdp-growth-20-percent-economy.html" target="_blank" rel="noopener">Trump says U.S. growth could hit 20%. It’s happened only once since WWII</a><span class="src">CNBC Top News</span></li><li><a href="https://finance.yahoo.com/markets/article/gold-posts-best-month-since-february-despite-investor-concerns-over-rate-hikes-165315959.html?.tsrc=rss" target="_blank" rel="noopener">Gold posts best month since February despite investor concerns over rate hikes</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html" target="_blank" rel="noopener">Markets see Warsh endorsing a rate hike in September. Not everyone is convinced</a><span class="src">CNBC Top News</span></li><li><a href="https://www.marketwatch.com/story/should-bond-investors-worry-with-warsh-running-the-fed-0a99c5ac?mod=mw_rss_topstories" target="_blank" rel="noopener">With Warsh running the Fed, should bond investors be worried?</a><span class="src">MarketWatch</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/tnr-gold-begins-exploration-program-120000831.html?.tsrc=rss" target="_blank" rel="noopener">TNR Gold Begins Exploration Program on Shotgun Gold Project in Alaska</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-monday-august-31-2026-gold-sinks-following-us-strikes-on-iran-123744944.html?.tsrc=rss" target="_blank" rel="noopener">Gold prices today, Monday, August 31, 2026: Gold sinks following U.S. strikes on Iran</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/canadian-goldfields-advances-2026-exploration-124500529.html?.tsrc=rss" target="_blank" rel="noopener">Canadian Goldfields Advances 2026 Exploration Program at Miminiska Gold Project</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.proactiveinvestors.com/companies/news/1097846/tnr-gold-launches-2026-exploration-program-at-shotgun-gold-project-in-alaska-1097846.html?.tsrc=rss" target="_blank" rel="noopener">TNR Gold launches 2026 exploration program at Shotgun gold project in Alaska</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/retransmission-gold-runner-exploration-samples-200500268.html?.tsrc=rss" target="_blank" rel="noopener">RETRANSMISSION: Gold Runner Exploration Samples Up To 25,306 Grams per Ton Silver With 11.22 Grams per Ton Gold For a Gold Equivalent of 12.7 Ounces per Ton in New 350 Meter Gold Stack Trend on the 100% Controlled Golden Girl Property, Golden Triangle, B.C.</a><span class="src">Yahoo Gold</span></li></ul>
+</section>
+
+<section class="card"><h2>Archive</h2><div class="archive"><a href="reports/2026-09-01.html">2026-09-01</a><a href="reports/2026-08-31.html">2026-08-31</a><a href="reports/2026-08-28.html">2026-08-28</a></div></section>
+
+<footer>
+  Generated automatically from the ForexFactory calendar feed, public RSS and free
+  price data.<br>Information only &mdash; not trading advice, and the risk score is a
+  model, not a forecast.
+</footer>
+</div>
+</body>
+</html>

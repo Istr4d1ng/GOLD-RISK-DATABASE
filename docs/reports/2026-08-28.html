@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gold / USD Daily Risk Database</title>
+<style>
+  :root {
+    --bg:#0d0f12; --card:#15181d; --line:#232830; --fg:#e8eaed;
+    --muted:#9aa3af; --track:#232830; --accent:#f76808;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:#f6f7f9; --card:#ffffff; --line:#e3e6ea; --fg:#14171c;
+      --muted:#5d6673; --track:#e8ebef;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:900px; margin:0 auto; padding:20px 16px 64px; }
+  header { display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  h1 { font-size:19px; margin:0; letter-spacing:-.01em; }
+  .date { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+  .card { background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:20px; margin-bottom:16px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:0 0 14px; font-weight:600; }
+  h3 { font-size:16px; margin:22px 0 6px; }
+  .hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  .gauge { width:128px; height:128px; flex:none; }
+  .gauge-num { font-size:34px; font-weight:700; fill:var(--fg); }
+  .gauge-sub { font-size:12px; fill:var(--muted); }
+  .hero-body { flex:1; min-width:220px; }
+  .band { display:inline-block; font-size:12px; font-weight:700;
+    letter-spacing:.08em; padding:4px 10px; border-radius:999px;
+    background:#f7680822; color:#f76808; margin-bottom:8px; }
+  .stat { display:flex; justify-content:space-between; gap:12px;
+    padding:7px 0; border-top:1px solid var(--line); font-size:14px; }
+  .stat .k { color:var(--muted); }
+  .stat .v { font-variant-numeric:tabular-nums; font-weight:600; }
+  .up { color:#30a46c; } .down { color:#e5484d; }
+  .scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:14px; min-width:560px; }
+  th { text-align:left; color:var(--muted); font-weight:600; font-size:12px;
+    text-transform:uppercase; letter-spacing:.05em; padding:0 10px 8px 0; }
+  td { padding:11px 10px 11px 0; border-top:1px solid var(--line);
+    vertical-align:top; }
+  td.time { font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap; }
+  td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  tr.major td { background:#f768080e; }
+  .dot { display:inline-block; width:8px; height:8px; border-radius:50%;
+    margin-right:8px; vertical-align:middle; }
+  .muted { color:var(--muted); } .small { font-size:12.5px; line-height:1.45; }
+  ul.news { list-style:none; padding:0; margin:0; }
+  ul.news li { padding:10px 0; border-top:1px solid var(--line); font-size:14.5px; }
+  ul.news li:first-child { border-top:none; }
+  ul.news a { color:var(--fg); text-decoration:none; }
+  ul.news a:hover { text-decoration:underline; }
+  .src { display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+  .archive { display:flex; flex-wrap:wrap; gap:8px; }
+  .archive a { font-size:13px; padding:5px 10px; border:1px solid var(--line);
+    border-radius:8px; color:var(--muted); text-decoration:none;
+    font-variant-numeric:tabular-nums; }
+  .analysis p { margin:0 0 12px; }
+  .analysis a { color:var(--accent); }
+  footer { color:var(--muted); font-size:12.5px; text-align:center;
+    margin-top:28px; line-height:1.7; }
+  .bars { display:grid; gap:6px; margin-top:12px; }
+  .bar { display:grid; grid-template-columns:110px 1fr 34px; gap:10px;
+    align-items:center; font-size:12.5px; color:var(--muted); }
+  .bar i { display:block; height:6px; border-radius:3px; background:var(--accent);
+    min-width:2px; }
+  details { border-top:1px solid var(--line); }
+  details:first-of-type { border-top:none; }
+  summary { cursor:pointer; padding:12px 0; font-size:14.5px; list-style:none;
+    display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
+  summary::-webkit-details-marker { display:none; }
+  summary::before { content:"+"; color:var(--muted); font-weight:700;
+    margin-right:4px; }
+  details[open] summary::before { content:"2"; }
+  .detail { padding:2px 0 18px 22px; font-size:14px; }
+  .detail .lead { margin:0 0 12px; }
+  dl.facts { margin:0 0 14px; display:grid; grid-template-columns:auto 1fr;
+    gap:6px 14px; font-size:13.5px; }
+  dl.facts dt { color:var(--muted); white-space:nowrap; }
+  dl.facts dd { margin:0; }
+  .measured { background:var(--track); border-radius:8px; padding:10px 12px;
+    font-size:13.5px; margin:12px 0; }
+  .readings { margin:14px 0; }
+  .rlabel { font-size:12.5px; color:var(--fg); margin-bottom:6px; }
+  .sparks { display:flex; align-items:flex-end; gap:3px; height:38px;
+    margin-bottom:8px; }
+  .spark { flex:1; max-width:26px; background:var(--accent); opacity:.65;
+    border-radius:2px 2px 0 0; }
+  table.mini { font-size:12.5px; min-width:0; }
+  table.mini td, table.mini th { padding:5px 14px 5px 0; }
+  table.mini.wide { width:100%; margin-top:8px; }
+  .bar u { display:block; height:6px; border-radius:3px; background:var(--track); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Gold / USD Daily Risk Database</h1>
+  <span class="date">2026-08-28 &middot; built 15:38 BST</span>
+</header>
+
+<section class="card">
+  <div class="hero">
+    
+<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 64 of 100">
+  <circle cx="64" cy="64" r="52" fill="none" stroke="var(--track)" stroke-width="12"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#f76808" stroke-width="12"
+          stroke-linecap="round" stroke-dasharray="209.1 326.7"
+          transform="rotate(-90 64 64)"/>
+  <text x="64" y="60" text-anchor="middle" class="gauge-num">64</text>
+  <text x="64" y="82" text-anchor="middle" class="gauge-sub">/ 100</text>
+</svg>
+    <div class="hero-body">
+      <span class="band">HIGH RISK</span>
+      <p style="margin:0 0 10px">Major scheduled event. Wide, fast moves and poor fills likely.</p>
+      <div class="stat"><span class="k">Expected gold range today</span>
+        <span class="v">$94.6</span></div>
+      <div class="stat"><span class="k">14-day ATR</span>
+        <span class="v">$71.09</span></div>
+      <div class="stat"><span class="k">Volatility vs normal</span>
+        <span class="v">0.87x</span></div>
+      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,581.10 <span class="down">-0.62%</span></span></div>
+    </div>
+  </div>
+  <div class="bars">
+    <div class="bar"><span>Headline event</span><u><i style="width:80%"></i></u><span>56</span></div>
+    <div class="bar"><span>Event breadth</span><u><i style="width:40%"></i></u><span>6</span></div>
+    <div class="bar"><span>Clustering</span><u><i style="width:100%"></i></u><span>5</span></div>
+    <div class="bar"><span>Volatility</span><u><i style="width:0%"></i></u><span>-3</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Today&rsquo;s USD calendar &mdash; UK time</h2>
+  
+<div class="scroll">
+<table>
+  <thead><tr><th>UK</th><th>Event</th><th>Gold wt</th><th>Fcst</th>
+             <th>Prev</th><th>Past 1h move ($)</th></tr></thead>
+  <tbody>
+<tr class="">
+  <td class="time">14:00</td>
+  <td><span class="dot" style="background:#d9c40a"></span>FOMC Member Hammack Speaks
+      <div class="muted small">No number to trade - the risk is a hawkish or dovish tone shift, which moves gold through rate expectations.</div></td>
+  <td class="num">3</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">14:45</td>
+  <td><span class="dot" style="background:#d9c40a"></span>Chicago PMI
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">57.9</td>
+  <td class="num">57.6</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="major">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#e5484d"></span>Fed Chairman Warsh Speaks
+      <div class="muted small">No number to trade - the risk is a hawkish or dovish tone shift, which moves gold through rate expectations.</div></td>
+  <td class="num">8</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#e5484d"></span>Prelim Benchmark Payrolls Revision
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">6</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num">-911K</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#f5a524"></span>Revised UoM Consumer Sentiment
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">3</td>
+  <td class="num">51.0</td>
+  <td class="num">51.0</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#f5a524"></span>Revised UoM Inflation Expectations
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">4</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num">4.3%</td>
+  <td class="num small">&mdash;</td>
+</tr></tbody>
+</table>
+</div>
+</section>
+
+<section class="card">
+  <h2>Event briefings &mdash; what each one is and what it does to gold</h2>
+  
+<details>
+  <summary><span class="dot" style="background:#e5484d"></span>
+    <strong>15:00</strong> Fed Chair Speaks
+    <span class="muted small">&mdash; Fed Chairman Warsh Speaks</span></summary>
+  <div class="detail"><p class="lead">Any scheduled appearance by the Fed Chair - testimony, conference remarks, or a moderated Q&amp;A.</p><dl class="facts"><dt>Published by</dt><dd>Federal Reserve</dd><dt>Why gold cares</dt><dd>The Chair sets the policy narrative between meetings. A single sentence on the balance of risks can move the rate curve as much as a data release.</dd><dt>What to watch</dt><dd>Whether the venue allows questions. Prepared remarks are usually safe; unscripted Q&amp;A is where the surprises come from.</dd><dt>The catch</dt><dd>No forecast number exists, so nothing is priced in. The risk is pure tone, which makes it hard to hedge and easy to get run over by.</dd><dt>Rough prior expectation</dt><dd>$10-35, very wide distribution</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p><p class="measured"><strong>Gold on the last 8 FOMC decision days:</strong> average move $21.88, average range $48.26, biggest $59.7, 33% carried into the next day.</p>
+<table class="mini wide">
+  <thead><tr><th>Decision day</th><th>Gold O&rarr;C</th><th>Day range</th>
+             <th>Next day</th></tr></thead>
+  <tbody><tr><td>2026-07-29</td><td class="num up">+16.60</td><td class="num">16.80</td><td class="num up">+65.40</td></tr><tr><td>2026-06-17</td><td class="num up">+19.90</td><td class="num">81.00</td><td class="num down">-134.80</td></tr><tr><td>2026-04-29</td><td class="num down">-53.40</td><td class="num">85.90</td><td class="num up">+69.50</td></tr><tr><td>2026-03-18</td><td class="num down">-59.70</td><td class="num">127.90</td><td class="num down">-289.20</td></tr><tr><td>2026-01-28</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+16.80</td></tr><tr><td>2025-12-10</td><td class="num down">-12.60</td><td class="num">50.90</td><td class="num up">+89.10</td></tr><tr><td>2025-10-29</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+17.60</td></tr><tr><td>2025-09-17</td><td class="num up">+12.80</td><td class="num">23.60</td><td class="num down">-38.10</td></tr></tbody></table></div>
+</details>
+<details>
+  <summary><span class="dot" style="background:#e5484d"></span>
+    <strong>15:00</strong> Benchmark Payrolls Revision
+    <span class="muted small">&mdash; Prelim Benchmark Payrolls Revision</span></summary>
+  <div class="detail"><p class="lead">Annual re-benchmarking of the payroll survey against actual tax records, which can rewrite a whole year of job growth in one line.</p><dl class="facts"><dt>Published by</dt><dd>Bureau of Labor Statistics, preliminary in late summer, final in February</dd><dt>Why gold cares</dt><dd>A large downward revision means the labour market was weaker than the Fed thought all along, which is dovish and gold-positive.</dd><dt>What to watch</dt><dd>The size of the revision against the prior year&#x27;s figure. Six figures is a serious number.</dd><dt>The catch</dt><dd>Once-a-year event that most calendars underrate. It can reprice the whole rate path in a single print.</dd><dt>Rough prior expectation</dt><dd>$15-40</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
+<details>
+  <summary><span class="dot" style="background:#f5a524"></span>
+    <strong>15:00</strong> UoM Consumer Sentiment
+    <span class="muted small">&mdash; Revised UoM Inflation Expectations</span></summary>
+  <div class="detail"><p class="lead">Michigan&#x27;s household survey, released in preliminary and revised form at 15:00 UK.</p><dl class="facts"><dt>Published by</dt><dd>University of Michigan, monthly</dd><dt>Why gold cares</dt><dd>The sentiment number is minor. The inflation-expectations component attached to it is not.</dd><dt>What to watch</dt><dd>The 1-year and 5-10 year inflation expectations. The Fed watches the long-run figure closely, so a jump there is a genuine rate signal.</dd><dt>The catch</dt><dd>Small sample, frequently revised, and prone to reflecting petrol prices more than anything else.</dd><dt>Rough prior expectation</dt><dd>$3-12</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
+</section>
+
+
+<section class="card">
+  <h2>FOMC cycle</h2>
+  
+  <div class="stat"><span class="k">Next meeting</span>
+    <span class="v">2026-09-16 &middot; 19 days &middot; with projections (dot plot)</span></div>
+  <div class="stat"><span class="k">Last meeting</span>
+    <span class="v">2026-07-29</span></div>
+  <div class="stat"><span class="k">Gold on the last 8 decision days</span><span class="v">avg $21.88 move, $48.26 range</span></div>
+  
+<table class="mini wide">
+  <thead><tr><th>Decision day</th><th>Gold O&rarr;C</th><th>Day range</th>
+             <th>Next day</th></tr></thead>
+  <tbody><tr><td>2026-07-29</td><td class="num up">+16.60</td><td class="num">16.80</td><td class="num up">+65.40</td></tr><tr><td>2026-06-17</td><td class="num up">+19.90</td><td class="num">81.00</td><td class="num down">-134.80</td></tr><tr><td>2026-04-29</td><td class="num down">-53.40</td><td class="num">85.90</td><td class="num up">+69.50</td></tr><tr><td>2026-03-18</td><td class="num down">-59.70</td><td class="num">127.90</td><td class="num down">-289.20</td></tr><tr><td>2026-01-28</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+16.80</td></tr><tr><td>2025-12-10</td><td class="num down">-12.60</td><td class="num">50.90</td><td class="num up">+89.10</td></tr><tr><td>2025-10-29</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+17.60</td></tr><tr><td>2025-09-17</td><td class="num up">+12.80</td><td class="num">23.60</td><td class="num down">-38.10</td></tr></tbody></table>
+  <p class="muted small" style="margin-top:10px">Calendar source: federalreserve.gov.</p>
+</section>
+
+<section class="card analysis">
+  <h2>Analysis</h2>
+  <h4>Yesterday</h4>
+<p>The USD stories carrying the most weight into today:</p>
+<ul>
+<li><strong>Fed Chairman Warsh expresses concern about inflation, advocates for &#x27;quieter&#x27; central bank</strong> (CNBC Economy)</li>
+<li><strong>Gold prices steady as investors await Warsh’s Jackson Hole speech</strong> (Yahoo Gold)</li>
+<li><strong>2-year Treasury yield jumps as Warsh says Fed may &#x27;have work to do&#x27;</strong> (CNBC Top News)</li>
+<li><strong>How a plan to fix a $326 billion hole on bank balance sheets could underpin a Warsh and Bessent Treasury twist</strong> (MarketWatch)</li>
+<li><strong>Fed&#x27;s Hammack says &#x27;now is the time to act&#x27; on raising interest rates</strong> (CNBC Economy)</li>
+</ul>
+<p>Gold closed the prior session at $4,581.10, -0.62% on the day. 14-day ATR is $71.09, which is the yardstick for whether today&#x27;s move is normal or not.</p>
+<h4>Today</h4>
+<p>Red-folder risk: Fed Chairman Warsh Speaks at 15:00 (UK time). These are the prints that reprice rate expectations, and gold moves through real yields, so treat the minutes either side of them as unreliable for anything but reaction.</p>
+<h4>FOMC cycle</h4>
+<p>The next FOMC meeting is 2026-09-16, 19 days away and carries the dot plot. Gold&#x27;s sensitivity to inflation and labour data rises as a meeting approaches, because each print moves the odds on that specific decision.</p>
+<h4>What each one actually is</h4>
+<p><strong>15:00 - Fed Chair Speaks.</strong> Any scheduled appearance by the Fed Chair - testimony, conference remarks, or a moderated Q&amp;A. The Chair sets the policy narrative between meetings. A single sentence on the balance of risks can move the rate curve as much as a data release. Watch: Whether the venue allows questions. Prepared remarks are usually safe; unscripted Q&amp;A is where the surprises come from.</p>
+<p><strong>15:00 - Benchmark Payrolls Revision.</strong> Annual re-benchmarking of the payroll survey against actual tax records, which can rewrite a whole year of job growth in one line. A large downward revision means the labour market was weaker than the Fed thought all along, which is dovish and gold-positive. Watch: The size of the revision against the prior year&#x27;s figure. Six figures is a serious number.</p>
+<p><strong>15:00 - UoM Consumer Sentiment.</strong> Michigan&#x27;s household survey, released in preliminary and revised form at 15:00 UK. The sentiment number is minor. The inflation-expectations component attached to it is not. Watch: The 1-year and 5-10 year inflation expectations. The Fed watches the long-run figure closely, so a jump there is a genuine rate signal.</p>
+<h4>Verdict</h4>
+<p>Major scheduled event. Wide, fast moves and poor fills likely. Risk score 64/100 (HIGH). Expected daily range around $94.6.</p>
+<p><em>Written by the deterministic template. Add a GEMINI_API_KEY secret to get a reasoned write-up instead.</em></p>
+</section>
+
+<section class="card">
+  <h2>USD news &mdash; last 36 hours</h2>
+  <ul class="news"><li><a href="https://www.cnbc.com/2026/08/28/kevin-warsh-jackson-hole-federal-reserve-inflation.html" target="_blank" rel="noopener">Fed Chairman Warsh expresses concern about inflation, advocates for &#x27;quieter&#x27; central bank</a><span class="src">CNBC Economy</span></li><li><a href="https://investorshub.advfn.com/market-news/article/35276/gold-prices-steady-as-investors-await-warshs-jackson-hole-speech?.tsrc=rss" target="_blank" rel="noopener">Gold prices steady as investors await Warsh’s Jackson Hole speech</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/08/28/treasury-yields-jackson-hole.html" target="_blank" rel="noopener">2-year Treasury yield jumps as Warsh says Fed may &#x27;have work to do&#x27;</a><span class="src">CNBC Top News</span></li><li><a href="https://www.marketwatch.com/story/how-bank-of-america-and-three-other-lenders-could-win-big-from-scott-bessents-and-kevin-warshs-bond-market-mechanations-4e56b581?mod=mw_rss_topstories" target="_blank" rel="noopener">How a plan to fix a $326 billion hole on bank balance sheets could underpin a Warsh and Bessent Treasury twist</a><span class="src">MarketWatch</span></li><li><a href="https://www.cnbc.com/2026/08/27/feds-hammack-says-now-is-the-time-to-act-on-raising-interest-rates.html" target="_blank" rel="noopener">Fed&#x27;s Hammack says &#x27;now is the time to act&#x27; on raising interest rates</a><span class="src">CNBC Economy</span></li><li><a href="https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-august-28-2026-gold-steady-as-markets-prepare-for-warsh-speech-115654858.html?.tsrc=rss" target="_blank" rel="noopener">Gold prices today, Friday, August 28, 2026: Gold steady as markets prepare for Warsh speech</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/currencies/articles/us-dollar-price-forecast-warsh-055644863.html?.tsrc=rss" target="_blank" rel="noopener">US Dollar Price Forecast: Warsh Looms as DXY Rebounds, EUR/USD Pulls Back; GBPUSD Key Levels</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm" target="_blank" rel="noopener">Warsh, In Our Time</a><span class="src">Fed Speeches</span></li><li><a href="https://finance.yahoo.com/m/d5a22af3-05f8-3691-a712-a8d91a459245/gold-supported-by-u.s.-debt.html?.tsrc=rss" target="_blank" rel="noopener">Gold Supported by U.S. Debt Worries</a><span class="src">Yahoo Gold</span></li><li><a href="https://beincrypto.com/gold-miners-record-month-chip-stocks/?.tsrc=rss" target="_blank" rel="noopener">Gold Mining Stocks Are Up 43% in August — Their Strongest Month on Record</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/tocvan-announces-surface-mineralization-several-060500512.html?.tsrc=rss" target="_blank" rel="noopener">Tocvan Announces New Surface Mineralization in Several Zones at Gran Pilar Gold-Silver Project</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/pirate-gold-intersects-30-6-080500775.html?.tsrc=rss" target="_blank" rel="noopener">Pirate Gold Intersects 30.6 g/t Au over 1.35m and 4.25 g/t Au over 6.65m at Moosehead; Identifies New Gold Structure</a><span class="src">Yahoo Gold</span></li></ul>
+</section>
+
+<section class="card"><h2>Archive</h2><div class="archive"><a href="reports/2026-08-28.html">2026-08-28</a></div></section>
+
+<footer>
+  Generated automatically from the ForexFactory calendar feed, public RSS and free
+  price data.<br>Information only &mdash; not trading advice, and the risk score is a
+  model, not a forecast.
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gold / USD Daily Risk Database</title>
+<style>
+  :root {
+    --bg:#0d0f12; --card:#15181d; --line:#232830; --fg:#e8eaed;
+    --muted:#9aa3af; --track:#232830; --accent:#e5484d;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:#f6f7f9; --card:#ffffff; --line:#e3e6ea; --fg:#14171c;
+      --muted:#5d6673; --track:#e8ebef;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:900px; margin:0 auto; padding:20px 16px 64px; }
+  header { display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  h1 { font-size:19px; margin:0; letter-spacing:-.01em; }
+  .date { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+  .card { background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:20px; margin-bottom:16px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:0 0 14px; font-weight:600; }
+  h3 { font-size:16px; margin:22px 0 6px; }
+  .hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  .gauge { width:128px; height:128px; flex:none; }
+  .gauge-num { font-size:34px; font-weight:700; fill:var(--fg); }
+  .gauge-sub { font-size:12px; fill:var(--muted); }
+  .hero-body { flex:1; min-width:220px; }
+  .band { display:inline-block; font-size:12px; font-weight:700;
+    letter-spacing:.08em; padding:4px 10px; border-radius:999px;
+    background:#e5484d22; color:#e5484d; margin-bottom:8px; }
+  .stat { display:flex; justify-content:space-between; gap:12px;
+    padding:7px 0; border-top:1px solid var(--line); font-size:14px; }
+  .stat .k { color:var(--muted); }
+  .stat .v { font-variant-numeric:tabular-nums; font-weight:600; }
+  .up { color:#30a46c; } .down { color:#e5484d; }
+  .scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:14px; min-width:560px; }
+  th { text-align:left; color:var(--muted); font-weight:600; font-size:12px;
+    text-transform:uppercase; letter-spacing:.05em; padding:0 10px 8px 0; }
+  td { padding:11px 10px 11px 0; border-top:1px solid var(--line);
+    vertical-align:top; }
+  td.time { font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap; }
+  td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  tr.major td { background:#e5484d0e; }
+  .dot { display:inline-block; width:8px; height:8px; border-radius:50%;
+    margin-right:8px; vertical-align:middle; }
+  .muted { color:var(--muted); } .small { font-size:12.5px; line-height:1.45; }
+  ul.news { list-style:none; padding:0; margin:0; }
+  ul.news li { padding:10px 0; border-top:1px solid var(--line); font-size:14.5px; }
+  ul.news li:first-child { border-top:none; }
+  ul.news a { color:var(--fg); text-decoration:none; }
+  ul.news a:hover { text-decoration:underline; }
+  .src { display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+  .archive { display:flex; flex-wrap:wrap; gap:8px; }
+  .archive a { font-size:13px; padding:5px 10px; border:1px solid var(--line);
+    border-radius:8px; color:var(--muted); text-decoration:none;
+    font-variant-numeric:tabular-nums; }
+  .analysis p { margin:0 0 12px; }
+  .analysis a { color:var(--accent); }
+  footer { color:var(--muted); font-size:12.5px; text-align:center;
+    margin-top:28px; line-height:1.7; }
+  .bars { display:grid; gap:6px; margin-top:12px; }
+  .bar { display:grid; grid-template-columns:110px 1fr 34px; gap:10px;
+    align-items:center; font-size:12.5px; color:var(--muted); }
+  .bar i { display:block; height:6px; border-radius:3px; background:var(--accent);
+    min-width:2px; }
+  details { border-top:1px solid var(--line); }
+  details:first-of-type { border-top:none; }
+  summary { cursor:pointer; padding:12px 0; font-size:14.5px; list-style:none;
+    display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
+  summary::-webkit-details-marker { display:none; }
+  summary::before { content:"+"; color:var(--muted); font-weight:700;
+    margin-right:4px; }
+  details[open] summary::before { content:"2"; }
+  .detail { padding:2px 0 18px 22px; font-size:14px; }
+  .detail .lead { margin:0 0 12px; }
+  dl.facts { margin:0 0 14px; display:grid; grid-template-columns:auto 1fr;
+    gap:6px 14px; font-size:13.5px; }
+  dl.facts dt { color:var(--muted); white-space:nowrap; }
+  dl.facts dd { margin:0; }
+  .measured { background:var(--track); border-radius:8px; padding:10px 12px;
+    font-size:13.5px; margin:12px 0; }
+  .readings { margin:14px 0; }
+  .rlabel { font-size:12.5px; color:var(--fg); margin-bottom:6px; }
+  .sparks { display:flex; align-items:flex-end; gap:3px; height:38px;
+    margin-bottom:8px; }
+  .spark { flex:1; max-width:26px; background:var(--accent); opacity:.65;
+    border-radius:2px 2px 0 0; }
+  table.mini { font-size:12.5px; min-width:0; }
+  table.mini td, table.mini th { padding:5px 14px 5px 0; }
+  table.mini.wide { width:100%; margin-top:8px; }
+  .bar u { display:block; height:6px; border-radius:3px; background:var(--track); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Gold / USD Daily Risk Database</h1>
+  <span class="date">2026-09-04 &middot; built 06:39 BST</span>
+</header>
+
+<section class="card">
+  <div class="hero">
+    
+<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 82 of 100">
+  <circle cx="64" cy="64" r="52" fill="none" stroke="var(--track)" stroke-width="12"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#e5484d" stroke-width="12"
+          stroke-linecap="round" stroke-dasharray="267.9 326.7"
+          transform="rotate(-90 64 64)"/>
+  <text x="64" y="60" text-anchor="middle" class="gauge-num">82</text>
+  <text x="64" y="82" text-anchor="middle" class="gauge-sub">/ 100</text>
+</svg>
+    <div class="hero-body">
+      <span class="band">EXTREME RISK</span>
+      <p style="margin:0 0 10px">Top-tier event risk. Spreads widen, stops get run, direction is a coin flip on the print.</p>
+      <div class="stat"><span class="k">Expected gold range today</span>
+        <span class="v">$127.7</span></div>
+      <div class="stat"><span class="k">14-day ATR</span>
+        <span class="v">$87.20</span></div>
+      <div class="stat"><span class="k">Volatility vs normal</span>
+        <span class="v">1.04x</span></div>
+      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,514.60 <span class="up">+3.40%</span></span></div>
+    </div>
+  </div>
+  <div class="bars">
+    <div class="bar"><span>Headline event</span><u><i style="width:100%"></i></u><span>70</span></div>
+    <div class="bar"><span>Event breadth</span><u><i style="width:40%"></i></u><span>6</span></div>
+    <div class="bar"><span>Clustering</span><u><i style="width:100%"></i></u><span>5</span></div>
+    <div class="bar"><span>Volatility</span><u><i style="width:10%"></i></u><span>+1</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Today&rsquo;s USD calendar &mdash; UK time</h2>
+  
+<div class="scroll">
+<table>
+  <thead><tr><th>UK</th><th>Event</th><th>Gold wt</th><th>Fcst</th>
+             <th>Prev</th><th>Past 1h move ($)</th></tr></thead>
+  <tbody>
+<tr class="major">
+  <td class="time">13:30</td>
+  <td><span class="dot" style="background:#e5484d"></span>Average Hourly Earnings m/m
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">8</td>
+  <td class="num">0.3%</td>
+  <td class="num">0.1%</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="major">
+  <td class="time">13:30</td>
+  <td><span class="dot" style="background:#e5484d"></span>Non-Farm Employment Change
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">10</td>
+  <td class="num">55K</td>
+  <td class="num">-23K</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="major">
+  <td class="time">13:30</td>
+  <td><span class="dot" style="background:#e5484d"></span>Unemployment Rate
+      <div class="muted small">Higher unemployment is read as dovish, which is normally gold-positive; a strong labour print pressures gold.</div></td>
+  <td class="num">8</td>
+  <td class="num">4.1%</td>
+  <td class="num">4.1%</td>
+  <td class="num small">&mdash;</td>
+</tr></tbody>
+</table>
+</div>
+</section>
+
+<section class="card">
+  <h2>Event briefings &mdash; what each one is and what it does to gold</h2>
+  
+<details>
+  <summary><span class="dot" style="background:#e5484d"></span>
+    <strong>13:30</strong> Non-Farm Payrolls
+    <span class="muted small">&mdash; Average Hourly Earnings m/m</span></summary>
+  <div class="detail"><p class="lead">Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month.</p><dl class="facts"><dt>Published by</dt><dd>Bureau of Labor Statistics, monthly</dd><dt>Why gold cares</dt><dd>Labour market strength is the other half of the Fed&#x27;s mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it.</dd><dt>What to watch</dt><dd>Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.</dd><dt>The catch</dt><dd>The most whipsaw-prone release on the calendar. The first move is frequently wrong, and the first fifteen minutes routinely reverse.</dd><dt>Rough prior expectation</dt><dd>$20-50 within the hour</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
+<details>
+  <summary><span class="dot" style="background:#e5484d"></span>
+    <strong>13:30</strong> Non-Farm Payrolls
+    <span class="muted small">&mdash; Non-Farm Employment Change</span></summary>
+  <div class="detail"><p class="lead">Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month.</p><dl class="facts"><dt>Published by</dt><dd>Bureau of Labor Statistics, monthly</dd><dt>Why gold cares</dt><dd>Labour market strength is the other half of the Fed&#x27;s mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it.</dd><dt>What to watch</dt><dd>Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.</dd><dt>The catch</dt><dd>The most whipsaw-prone release on the calendar. The first move is frequently wrong, and the first fifteen minutes routinely reverse.</dd><dt>Rough prior expectation</dt><dd>$20-50 within the hour</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
+<details>
+  <summary><span class="dot" style="background:#e5484d"></span>
+    <strong>13:30</strong> Non-Farm Payrolls
+    <span class="muted small">&mdash; Unemployment Rate</span></summary>
+  <div class="detail"><p class="lead">Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month.</p><dl class="facts"><dt>Published by</dt><dd>Bureau of Labor Statistics, monthly</dd><dt>Why gold cares</dt><dd>Labour market strength is the other half of the Fed&#x27;s mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it.</dd><dt>What to watch</dt><dd>Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.</dd><dt>The catch</dt><dd>The most whipsaw-prone release on the calendar. The first move is frequently wrong, and the first fifteen minutes routinely reverse.</dd><dt>Rough prior expectation</dt><dd>$20-50 within the hour</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
+</section>
+
+
+<section class="card">
+  <h2>FOMC cycle</h2>
+  
+  <div class="stat"><span class="k">Next meeting</span>
+    <span class="v">2026-09-16 &middot; 12 days &middot; with projections (dot plot)</span></div>
+  <div class="stat"><span class="k">Last meeting</span>
+    <span class="v">2026-07-29</span></div>
+  <div class="stat"><span class="k">Gold on the last 8 decision days</span><span class="v">avg $21.88 move, $48.26 range</span></div>
+  
+<table class="mini wide">
+  <thead><tr><th>Decision day</th><th>Gold O&rarr;C</th><th>Day range</th>
+             <th>Next day</th></tr></thead>
+  <tbody><tr><td>2026-07-29</td><td class="num up">+16.60</td><td class="num">16.80</td><td class="num up">+65.40</td></tr><tr><td>2026-06-17</td><td class="num up">+19.90</td><td class="num">81.00</td><td class="num down">-134.80</td></tr><tr><td>2026-04-29</td><td class="num down">-53.40</td><td class="num">85.90</td><td class="num up">+69.50</td></tr><tr><td>2026-03-18</td><td class="num down">-59.70</td><td class="num">127.90</td><td class="num down">-289.20</td></tr><tr><td>2026-01-28</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+16.80</td></tr><tr><td>2025-12-10</td><td class="num down">-12.60</td><td class="num">50.90</td><td class="num up">+89.10</td></tr><tr><td>2025-10-29</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+17.60</td></tr><tr><td>2025-09-17</td><td class="num up">+12.80</td><td class="num">23.60</td><td class="num down">-38.10</td></tr></tbody></table>
+  <p class="muted small" style="margin-top:10px">Calendar source: federalreserve.gov.</p>
+</section>
+
+<section class="card analysis">
+  <h2>Analysis</h2>
+  <h4>Yesterday</h4>
+<p>The USD stories carrying the most weight into today:</p>
+<ul>
+<li><strong>Dollar Retreats and Gold Surges on Dovish Fed Waller</strong> (Yahoo Gold)</li>
+<li><strong>The big August jobs report is due out Friday. Here&#x27;s what to expect for what has been a jobless summer</strong> (CNBC Economy)</li>
+<li><strong>Fed Governor Waller indicates he will support holding rates steady at September meeting</strong> (CNBC Economy)</li>
+<li><strong>Stock Market Midday, Sept. 3: Stocks Rally as Treasury Yields Fall, Broadcom Falls Despite Earnings Beat</strong> (Yahoo Gold)</li>
+<li><strong>Netherlands Moves Gold From New York to London, Citing Geopolitical Unrest</strong> (Yahoo Gold)</li>
+</ul>
+<p>Gold closed the prior session at $4,514.60, +3.40% on the day. 14-day ATR is $87.20, which is the yardstick for whether today&#x27;s move is normal or not.</p>
+<h4>Today</h4>
+<p>Red-folder risk: Average Hourly Earnings m/m at 13:30, Non-Farm Employment Change at 13:30, Unemployment Rate at 13:30 (UK time). These are the prints that reprice rate expectations, and gold moves through real yields, so treat the minutes either side of them as unreliable for anything but reaction.</p>
+<h4>FOMC cycle</h4>
+<p>The next FOMC meeting is 2026-09-16, 12 days away and carries the dot plot. Gold&#x27;s sensitivity to inflation and labour data rises as a meeting approaches, because each print moves the odds on that specific decision.</p>
+<h4>What each one actually is</h4>
+<p><strong>13:30 - Non-Farm Payrolls.</strong> Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month. Labour market strength is the other half of the Fed&#x27;s mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it. Watch: Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.</p>
+<p><strong>13:30 - Non-Farm Payrolls.</strong> Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month. Labour market strength is the other half of the Fed&#x27;s mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it. Watch: Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.</p>
+<p><strong>13:30 - Non-Farm Payrolls.</strong> Net jobs added outside farming, plus the unemployment rate and average hourly earnings, all in one 13:30 UK release on the first Friday of the month. Labour market strength is the other half of the Fed&#x27;s mandate. A strong report pushes rate-cut expectations out and pressures gold; a weak one brings cuts forward and supports it. Watch: Three numbers land simultaneously and can disagree: the payroll count, the unemployment rate, and average hourly earnings. Revisions to the prior two months often matter more than the headline.</p>
+<h4>Verdict</h4>
+<p>Top-tier event risk. Spreads widen, stops get run, direction is a coin flip on the print. Risk score 82/100 (EXTREME). Expected daily range around $127.7.</p>
+<p><em>Written by the deterministic template. Add a GEMINI_API_KEY secret to get a reasoned write-up instead.</em></p>
+</section>
+
+<section class="card">
+  <h2>USD news &mdash; last 36 hours</h2>
+  <ul class="news"><li><a href="https://www.barchart.com/story/news/4431758/dollar-retreats-and-gold-surges-on-dovish-fed-waller?.tsrc=rss" target="_blank" rel="noopener">Dollar Retreats and Gold Surges on Dovish Fed Waller</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/03/august-2026-jobs-report-payrolls.html" target="_blank" rel="noopener">The big August jobs report is due out Friday. Here&#x27;s what to expect for what has been a jobless summer</a><span class="src">CNBC Economy</span></li><li><a href="https://www.cnbc.com/2026/09/03/fed-governor-waller-indicates-he-will-support-holding-rates-steady-at-september-meeting.html" target="_blank" rel="noopener">Fed Governor Waller indicates he will support holding rates steady at September meeting</a><span class="src">CNBC Economy</span></li><li><a href="https://www.fool.com/coverage/stock-market-today/2026/09/03/stock-market-midday-sept-3-stocks-rally-as-treasury-yields-fall-broadcom-falls-despite-earnings-beat/?.tsrc=rss" target="_blank" rel="noopener">Stock Market Midday, Sept. 3: Stocks Rally as Treasury Yields Fall, Broadcom Falls Despite Earnings Beat</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.wsj.com/economy/central-banking/netherlands-moves-gold-from-new-york-to-london-citing-geopolitical-unrest-7a095eb8?.tsrc=rss" target="_blank" rel="noopener">Netherlands Moves Gold From New York to London, Citing Geopolitical Unrest</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/04/global-bond-selloff-inflation-risk.html" target="_blank" rel="noopener">The inflation genie could be out of the bottle — and bond markets are sounding the alarm</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/03/vance-fed-interest-rates-trump-bond-yields.html" target="_blank" rel="noopener">Vance says Fed should lower interest rates: &#x27;Would be nice to have some help&#x27;</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/03/carney-lutnick-trump-trade-canada.html" target="_blank" rel="noopener">Carney claps back at Lutnick, says Canada will resume trade talks &#x27;when the Americans are ready&#x27;</a><span class="src">CNBC Top News</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/lake-victoria-gold-reports-high-161602054.html?.tsrc=rss" target="_blank" rel="noopener">Lake Victoria Gold Reports High-Grade Gold Intercepts at Imwelo as It Advances Metallurgical Testing</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/gold-rally-driven-investment-demand-163107026.html?.tsrc=rss" target="_blank" rel="noopener">Gold rally driven by investment demand, not just Treasury move, says analyst</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/canadian-gold-resources-increases-qu-200500398.html?.tsrc=rss" target="_blank" rel="noopener">Canadian Gold Resources Increases Québec Gaspé Land Position by 72% Through Strategic Staking Along the Garin River Fault</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/u-global-investors-reports-3-200500110.html?.tsrc=rss" target="_blank" rel="noopener">U.S. Global Investors Reports $3.1 Million in Net Income for Fiscal Year 2026</a><span class="src">Yahoo Gold</span></li></ul>
+</section>
+
+<section class="card"><h2>Archive</h2><div class="archive"><a href="reports/2026-09-04.html">2026-09-04</a><a href="reports/2026-09-03.html">2026-09-03</a><a href="reports/2026-09-02.html">2026-09-02</a><a href="reports/2026-09-01.html">2026-09-01</a><a href="reports/2026-08-31.html">2026-08-31</a><a href="reports/2026-08-28.html">2026-08-28</a></div></section>
+
+<footer>
+  Generated automatically from the ForexFactory calendar feed, public RSS and free
+  price data.<br>Information only &mdash; not trading advice, and the risk score is a
+  model, not a forecast.
+</footer>
+</div>
+</body>
+</html>

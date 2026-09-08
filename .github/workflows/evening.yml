@@ -2,7 +2,7 @@ name: Evening reaction log
 
 on:
   schedule:
-    # 21:30 UTC weekdays - after the US session has closed.
+    # 21:00 UTC weekdays - after the US session has closed.
     - cron: "30 21 * * 1-5"
   workflow_dispatch:
 

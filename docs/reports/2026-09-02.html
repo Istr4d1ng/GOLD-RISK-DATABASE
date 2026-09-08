@@ -7,7 +7,7 @@
 <style>
   :root {
     --bg:#0d0f12; --card:#15181d; --line:#232830; --fg:#e8eaed;
-    --muted:#9aa3af; --track:#232830; --accent:#30a46c;
+    --muted:#9aa3af; --track:#232830; --accent:#f76808;
   }
   @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
@@ -35,7 +35,7 @@
   .hero-body { flex:1; min-width:220px; }
   .band { display:inline-block; font-size:12px; font-weight:700;
     letter-spacing:.08em; padding:4px 10px; border-radius:999px;
-    background:#30a46c22; color:#30a46c; margin-bottom:8px; }
+    background:#f7680822; color:#f76808; margin-bottom:8px; }
   .stat { display:flex; justify-content:space-between; gap:12px;
     padding:7px 0; border-top:1px solid var(--line); font-size:14px; }
   .stat .k { color:var(--muted); }
@@ -49,7 +49,7 @@
     vertical-align:top; }
   td.time { font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap; }
   td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
-  tr.major td { background:#30a46c0e; }
+  tr.major td { background:#f768080e; }
   .dot { display:inline-block; width:8px; height:8px; border-radius:50%;
     margin-right:8px; vertical-align:middle; }
   .muted { color:var(--muted); } .small { font-size:12.5px; line-height:1.45; }
@@ -104,37 +104,37 @@
 <div class="wrap">
 <header>
   <h1>Gold / USD Daily Risk Database</h1>
-  <span class="date">2026-09-08 &middot; built 06:40 BST</span>
+  <span class="date">2026-09-02 &middot; built 06:40 BST</span>
 </header>
 
 <section class="card">
   <div class="hero">
     
-<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 8 of 100">
+<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 69 of 100">
   <circle cx="64" cy="64" r="52" fill="none" stroke="var(--track)" stroke-width="12"/>
-  <circle cx="64" cy="64" r="52" fill="none" stroke="#30a46c" stroke-width="12"
-          stroke-linecap="round" stroke-dasharray="26.1 326.7"
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#f76808" stroke-width="12"
+          stroke-linecap="round" stroke-dasharray="225.4 326.7"
           transform="rotate(-90 64 64)"/>
-  <text x="64" y="60" text-anchor="middle" class="gauge-num">8</text>
+  <text x="64" y="60" text-anchor="middle" class="gauge-num">69</text>
   <text x="64" y="82" text-anchor="middle" class="gauge-sub">/ 100</text>
 </svg>
     <div class="hero-body">
-      <span class="band">LOW RISK</span>
-      <p style="margin:0 0 10px">Quiet tape. Normal conditions, no scheduled shock.</p>
+      <span class="band">HIGH RISK</span>
+      <p style="margin:0 0 10px">Major scheduled event. Wide, fast moves and poor fills likely.</p>
       <div class="stat"><span class="k">Expected gold range today</span>
-        <span class="v">$76.1</span></div>
+        <span class="v">$106.5</span></div>
       <div class="stat"><span class="k">14-day ATR</span>
-        <span class="v">$83.59</span></div>
+        <span class="v">$77.89</span></div>
       <div class="stat"><span class="k">Volatility vs normal</span>
-        <span class="v">1.05x</span></div>
-      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,469.90 <span class="up">+0.91%</span></span></div>
+        <span class="v">0.95x</span></div>
+      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,363.80 <span class="up">+0.36%</span></span></div>
     </div>
   </div>
   <div class="bars">
-    <div class="bar"><span>Headline event</span><u><i style="width:10%"></i></u><span>7</span></div>
+    <div class="bar"><span>Headline event</span><u><i style="width:100%"></i></u><span>70</span></div>
     <div class="bar"><span>Event breadth</span><u><i style="width:0%"></i></u><span>0</span></div>
     <div class="bar"><span>Clustering</span><u><i style="width:0%"></i></u><span>0</span></div>
-    <div class="bar"><span>Volatility</span><u><i style="width:10%"></i></u><span>+1</span></div>
+    <div class="bar"><span>Volatility</span><u><i style="width:0%"></i></u><span>-1</span></div>
   </div>
 </section>
 
@@ -146,22 +146,40 @@
   <thead><tr><th>UK</th><th>Event</th><th>Gold wt</th><th>Fcst</th>
              <th>Prev</th><th>Past 1h move ($)</th></tr></thead>
   <tbody>
-<tr class="">
-  <td class="time">11:00</td>
-  <td><span class="dot" style="background:#d9c40a"></span>NFIB Small Business Index
+<tr class="major">
+  <td class="time">13:15</td>
+  <td><span class="dot" style="background:#f5a524"></span>ADP Non-Farm Employment Change
       <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
-  <td class="num">1</td>
-  <td class="num">99.4</td>
-  <td class="num">99.8</td>
+  <td class="num">10</td>
+  <td class="num">47K</td>
+  <td class="num">44K</td>
   <td class="num small">&mdash;</td>
 </tr>
 <tr class="">
-  <td class="time">20:00</td>
-  <td><span class="dot" style="background:#d9c40a"></span>Consumer Credit m/m
+  <td class="time">15:00</td>
+  <td><span class="dot" style="background:#d9c40a"></span>Factory Orders m/m
       <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
   <td class="num">1</td>
-  <td class="num">11.9B</td>
-  <td class="num">14.2B</td>
+  <td class="num">0.7%</td>
+  <td class="num">-0.3%</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">15:30</td>
+  <td><span class="dot" style="background:#d9c40a"></span>Crude Oil Inventories
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">-0.4M</td>
+  <td class="num">0.1M</td>
+  <td class="num small">&mdash;</td>
+</tr>
+<tr class="">
+  <td class="time">19:00</td>
+  <td><span class="dot" style="background:#d9c40a"></span>Beige Book
+      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
+  <td class="num">1</td>
+  <td class="num">&amp;ndash;</td>
+  <td class="num">&amp;ndash;</td>
   <td class="num small">&mdash;</td>
 </tr></tbody>
 </table>
@@ -170,7 +188,13 @@
 
 <section class="card">
   <h2>Event briefings &mdash; what each one is and what it does to gold</h2>
-  <p class="muted">Nothing material enough to brief today.</p>
+  
+<details>
+  <summary><span class="dot" style="background:#f5a524"></span>
+    <strong>13:15</strong> ADP Employment Change
+    <span class="muted small">&mdash; ADP Non-Farm Employment Change</span></summary>
+  <div class="detail"><p class="lead">Private payroll processor&#x27;s estimate of job creation, released two days before NFP at 13:15 UK.</p><dl class="facts"><dt>Published by</dt><dd>ADP Research Institute, monthly</dd><dt>Why gold cares</dt><dd>Traded as a preview of NFP, though its correlation with the official number is poor.</dd><dt>What to watch</dt><dd>Only really matters when it diverges wildly from the NFP forecast.</dd><dt>The catch</dt><dd>A bad predictor. Moves gold briefly, then gets forgotten by Friday.</dd><dt>Rough prior expectation</dt><dd>$5-15</dd></dl><p class="muted small">No measured history yet - this event has not been logged enough times. The figures above are a prior, not a statistic.</p></div>
+</details>
 </section>
 
 
@@ -178,7 +202,7 @@
   <h2>FOMC cycle</h2>
   
   <div class="stat"><span class="k">Next meeting</span>
-    <span class="v">2026-09-16 &middot; 8 days &middot; with projections (dot plot)</span></div>
+    <span class="v">2026-09-16 &middot; 14 days &middot; with projections (dot plot)</span></div>
   <div class="stat"><span class="k">Last meeting</span>
     <span class="v">2026-07-29</span></div>
   <div class="stat"><span class="k">Gold on the last 8 decision days</span><span class="v">avg $21.88 move, $48.26 range</span></div>
@@ -195,28 +219,30 @@
   <h4>Yesterday</h4>
 <p>The USD stories carrying the most weight into today:</p>
 <ul>
-<li><strong>Gold Holds Decline as Traders Weigh Prospects for Fed Rate Hike</strong> (Yahoo Gold)</li>
-<li><strong>Gold Falls Below $4,400 as U.S. Jobs Data Keeps Fed Rate Hike Expectations Elevated</strong> (Yahoo Gold)</li>
-<li><strong>US Dollar Price Forecast: Strong Jobs Revive Fed Hike Bets as ECB Decision Looms</strong> (Yahoo Gold)</li>
-<li><strong>Treasury yields face 4.8% test as fiscal risks threaten to spill into other assets</strong> (CNBC Top News)</li>
-<li><strong>Far-right AfD landslide in German state piles pressure on federal government</strong> (CNBC Top News)</li>
+<li><strong>Sycamine Capital Management Tracks Gold Three-Month High</strong> (Yahoo Gold)</li>
+<li><strong>Trump says U.S. growth could hit 20%. It’s happened only once since WWII</strong> (CNBC Top News)</li>
+<li><strong>Euro zone inflation is back above 3%. Higher interest rates are likely to follow</strong> (CNBC Economy)</li>
+<li><strong>10-year yield hits highest since January 2025 as higher oil prices stoke inflation worries</strong> (CNBC Top News)</li>
+<li><strong>Fed Governor Barr says he&#x27;ll support rate hike if inflation doesn&#x27;t ease</strong> (CNBC Top News)</li>
 </ul>
-<p>Gold closed the prior session at $4,469.90, +0.91% on the day. 14-day ATR is $83.59, which is the yardstick for whether today&#x27;s move is normal or not.</p>
+<p>Gold closed the prior session at $4,363.80, +0.36% on the day. 14-day ATR is $77.89, which is the yardstick for whether today&#x27;s move is normal or not.</p>
 <h4>Today</h4>
-<p>Nothing material on the USD calendar. Gold is left to drift on positioning, the dollar and any unscheduled headline.</p>
+<p>Red-folder risk: ADP Non-Farm Employment Change at 13:15 (UK time). These are the prints that reprice rate expectations, and gold moves through real yields, so treat the minutes either side of them as unreliable for anything but reaction.</p>
 <h4>FOMC cycle</h4>
-<p>The next FOMC meeting is 2026-09-16, 8 days away and carries the dot plot. Gold&#x27;s sensitivity to inflation and labour data rises as a meeting approaches, because each print moves the odds on that specific decision.</p>
+<p>The next FOMC meeting is 2026-09-16, 14 days away and carries the dot plot. Gold&#x27;s sensitivity to inflation and labour data rises as a meeting approaches, because each print moves the odds on that specific decision.</p>
+<h4>What each one actually is</h4>
+<p><strong>13:15 - ADP Employment Change.</strong> Private payroll processor&#x27;s estimate of job creation, released two days before NFP at 13:15 UK. Traded as a preview of NFP, though its correlation with the official number is poor. Watch: Only really matters when it diverges wildly from the NFP forecast.</p>
 <h4>Verdict</h4>
-<p>Quiet tape. Normal conditions, no scheduled shock. Risk score 8/100 (LOW). Expected daily range around $76.1.</p>
+<p>Major scheduled event. Wide, fast moves and poor fills likely. Risk score 69/100 (HIGH). Expected daily range around $106.5.</p>
 <p><em>Written by the deterministic template. Add a GEMINI_API_KEY secret to get a reasoned write-up instead.</em></p>
 </section>
 
 <section class="card">
   <h2>USD news &mdash; last 36 hours</h2>
-  <ul class="news"><li><a href="https://finance.yahoo.com/markets/commodities/articles/gold-holds-decline-traders-weigh-232846552.html?.tsrc=rss" target="_blank" rel="noopener">Gold Holds Decline as Traders Weigh Prospects for Fed Rate Hike</a><span class="src">Yahoo Gold</span></li><li><a href="https://investorshub.advfn.com/market-news/article/35748/gold-falls-below-4400-as-u-s-jobs-data-keeps-fed-rate-hike-expectations-elevated?.tsrc=rss" target="_blank" rel="noopener">Gold Falls Below $4,400 as U.S. Jobs Data Keeps Fed Rate Hike Expectations Elevated</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/currencies/articles/us-dollar-price-forecast-strong-081231126.html?.tsrc=rss" target="_blank" rel="noopener">US Dollar Price Forecast: Strong Jobs Revive Fed Hike Bets as ECB Decision Looms</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/07/us-treasury-yields-markets-scott-bessent.html" target="_blank" rel="noopener">Treasury yields face 4.8% test as fiscal risks threaten to spill into other assets</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/07/afd-germany-economy-merz.html" target="_blank" rel="noopener">Far-right AfD landslide in German state piles pressure on federal government</a><span class="src">CNBC Top News</span></li><li><a href="https://beincrypto.com/sugar-price-rally-bitcoin-gold-august/?.tsrc=rss" target="_blank" rel="noopener">A Better Trade Than Bitcoin or Gold in 2026 Is Sitting in Your Kitchen</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/crypto/articles/bitcoin-no-label-closest-rival-151524969.html?.tsrc=rss" target="_blank" rel="noopener">Bitcoin Has No Label but Its Closest Rival Is Gold, BlackRock Exec Says</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.thestreet.com/crypto/markets/ripple-ceo-blasts-11-billion-gold-transfer?.tsrc=rss" target="_blank" rel="noopener">Ripple CEO blasts $11 billion gold transfer</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/07/trump-truth-social-ai-images-posting-spree.html" target="_blank" rel="noopener">Trump says he&#x27;s made &#x27;Hundreds of Billions of Dollars on Stocks&#x27; for the U.S., in stream of AI posts</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/07/here-are-the-3-big-things-were-watching-in-this-holiday-shortened-trading-week.html" target="_blank" rel="noopener">Here are the 3 big things we&#x27;re watching in this holiday-shortened trading week</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/08/novartis-cholesterol-setback-drug-race-eli-lilly-amgen.html" target="_blank" rel="noopener">Cholesterol drug setback casts doubt over multibillion-dollar race</a><span class="src">CNBC Top News</span></li></ul>
+  <ul class="news"><li><a href="https://finance.yahoo.com/markets/commodities/articles/sycamine-capital-management-tracks-gold-175000157.html?.tsrc=rss" target="_blank" rel="noopener">Sycamine Capital Management Tracks Gold Three-Month High</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/08/31/trump-us-gdp-growth-20-percent-economy.html" target="_blank" rel="noopener">Trump says U.S. growth could hit 20%. It’s happened only once since WWII</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/01/euro-zone-inflation-rate-hike.html" target="_blank" rel="noopener">Euro zone inflation is back above 3%. Higher interest rates are likely to follow</a><span class="src">CNBC Economy</span></li><li><a href="https://www.cnbc.com/2026/09/01/bonds-treasury-yields-middle-east-tensions.html" target="_blank" rel="noopener">10-year yield hits highest since January 2025 as higher oil prices stoke inflation worries</a><span class="src">CNBC Top News</span></li><li><a href="https://www.cnbc.com/2026/09/01/fed-governor-barr-says-hell-support-rate-hike-if-inflation-doesnt-ease.html" target="_blank" rel="noopener">Fed Governor Barr says he&#x27;ll support rate hike if inflation doesn&#x27;t ease</a><span class="src">CNBC Top News</span></li><li><a href="https://www.proactiveinvestors.com/companies/news/1097915/rbc-forecasts-gold-could-reach-4-929-an-ounce-by-year-end-1097915.html?.tsrc=rss" target="_blank" rel="noopener">RBC forecasts gold could reach $4,929 an ounce by year-end</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/01/bond-yields-iran-inflation-treasurys-japan-uk.html" target="_blank" rel="noopener">Global bond yields soar to multi-decade highs as Middle East turmoil reignites inflation fears</a><span class="src">CNBC Top News</span></li><li><a href="https://investorshub.advfn.com/market-news/article/35383/newmont-shares-fall-2-6-as-gold-prices-retreat?.tsrc=rss" target="_blank" rel="noopener">Newmont shares fall 2.6% as gold prices retreat</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/video/gold-prices-dip-despite-notching-141932305.html?.tsrc=rss" target="_blank" rel="noopener">Gold prices dip despite notching best month since Feb.: Why Goldman Sachs still expects a rally</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.ccn.com/news/crypto/bitcoin-gold-currency-debasement-fears-750-percent/?.tsrc=rss" target="_blank" rel="noopener">Bitcoin and Gold Gain as Currency Debasement Fears Surge 750% in Two Weeks</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/video/arizona-gold-silver-director-yale-154651232.html?.tsrc=rss" target="_blank" rel="noopener">Arizona Gold &amp; Silver new Director Yale Simpson sees major upside at Philadelphia Project</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/golds-powerful-rally-runs-wall-190359442.html?.tsrc=rss" target="_blank" rel="noopener">Gold&#x27;s Powerful Rally Runs Into a New Wall</a><span class="src">Yahoo Gold</span></li></ul>
 </section>
 
-<section class="card"><h2>Archive</h2><div class="archive"><a href="reports/2026-09-08.html">2026-09-08</a><a href="reports/2026-09-07.html">2026-09-07</a><a href="reports/2026-09-04.html">2026-09-04</a><a href="reports/2026-09-03.html">2026-09-03</a><a href="reports/2026-09-02.html">2026-09-02</a><a href="reports/2026-09-01.html">2026-09-01</a><a href="reports/2026-08-31.html">2026-08-31</a><a href="reports/2026-08-28.html">2026-08-28</a></div></section>
+<section class="card"><h2>Archive</h2><div class="archive"><a href="reports/2026-09-02.html">2026-09-02</a><a href="reports/2026-09-01.html">2026-09-01</a><a href="reports/2026-08-31.html">2026-08-31</a><a href="reports/2026-08-28.html">2026-08-28</a></div></section>
 
 <footer>
   Generated automatically from the ForexFactory calendar feed, public RSS and free
