@@ -1,23 +1,51 @@
 {
-  "date": "2026-09-07",
+  "date": "2026-09-08",
   "generated": "06:40 BST",
   "risk": {
-    "score": 1,
+    "score": 8,
     "band": "LOW",
     "band_note": "Quiet tape. Normal conditions, no scheduled shock.",
-    "expected_range_usd": 71.0,
-    "atr14": 82.79,
-    "vol_ratio": 1.04,
+    "expected_range_usd": 76.1,
+    "atr14": 83.59,
+    "vol_ratio": 1.05,
     "components": {
-      "headline_event": 0,
+      "headline_event": 7,
       "breadth": 0,
       "clustering": 0,
       "volatility": 1
     },
     "material_events": 0,
-    "top_weight": 0
+    "top_weight": 1
   },
   "events": [
+    {
+      "title": "NFIB Small Business Index",
+      "currency": "USD",
+      "utc": "2026-09-08T10:00:00+00:00",
+      "local_time": "11:00",
+      "local_dt": "2026-09-08 11:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "99.4",
+      "previous": "99.8",
+      "actual": "",
+      "weight": 1
+    },
+    {
+      "title": "Consumer Credit m/m",
+      "currency": "USD",
+      "utc": "2026-09-08T19:00:00+00:00",
+      "local_time": "20:00",
+      "local_dt": "2026-09-08 20:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "11.9B",
+      "previous": "14.2B",
+      "actual": "",
+      "weight": 1
+    }
+  ],
+  "yesterday_events": [
     {
       "title": "Bank Holiday",
       "currency": "USD",
@@ -32,16 +60,7 @@
       "weight": 0
     }
   ],
-  "yesterday_events": [],
   "news": [
-    {
-      "source": "Yahoo Gold",
-      "title": "What is \"The Warsh Shadow Rate\"?",
-      "link": "https://finance.yahoo.com/economy/policy/articles/warsh-shadow-rate-145609542.html?.tsrc=rss",
-      "published": "2026-09-06T14:56:09+00:00",
-      "summary": "Investing.com -- The Federal Reserve faces a growing risk of delivering a September rate hike after Chair Kevin Warsh signalled a more hawkish approach to inflation, although softer incoming data could still keep the central bank on hold, Citi Research said.",
-      "relevance": 16
-    },
     {
       "source": "Yahoo Gold",
       "title": "Gold Holds Decline as Traders Weigh Prospects for Fed Rate Hike",
@@ -51,36 +70,20 @@
       "relevance": 13
     },
     {
-      "source": "CNBC Economy",
-      "title": "Trump turns up the heat on Warsh as Fed rate hike looms",
-      "link": "https://www.cnbc.com/2026/09/05/trump-warsh-fed-september-rate-hike.html",
-      "published": "2026-09-05T19:12:53+00:00",
-      "summary": "Ten days ahead of the next Federal Reserve meeting, the Trump administration looks to be in a full-court press to halt a rate hike in its tracks.",
-      "relevance": 11
+      "source": "Yahoo Gold",
+      "title": "Gold Falls Below $4,400 as U.S. Jobs Data Keeps Fed Rate Hike Expectations Elevated",
+      "link": "https://investorshub.advfn.com/market-news/article/35748/gold-falls-below-4400-as-u-s-jobs-data-keeps-fed-rate-hike-expectations-elevated?.tsrc=rss",
+      "published": "2026-09-07T10:14:12+00:00",
+      "summary": "Gold prices fell below $4,400 an ounce on Monday as stronger-than-expected U. S.",
+      "relevance": 10
     },
     {
-      "source": "MarketWatch",
-      "title": "Is the U.S. losing its safe-haven status? Why global central banks are pulling gold out of New York.",
-      "link": "https://www.marketwatch.com/story/is-the-u-s-losing-its-safe-haven-status-why-global-central-banks-are-pulling-gold-out-of-new-york-3e24d510?mod=mw_rss_topstories",
-      "published": "2026-09-06T13:00:00+00:00",
-      "summary": "What to know about safe havens and the U.S., as the Netherlands\u2019 central bank follows France in pulling gold out of New York.",
+      "source": "Yahoo Gold",
+      "title": "US Dollar Price Forecast: Strong Jobs Revive Fed Hike Bets as ECB Decision Looms",
+      "link": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-price-forecast-strong-081231126.html?.tsrc=rss",
+      "published": "2026-09-07T08:12:31+00:00",
+      "summary": "Strong U.S. jobs revive Fed hike bets as DXY stalls, while ECB and BoE tightening risks support the euro and pound ahead of key inflation data.",
       "relevance": 9
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "BofA\u2019s Hartnett maintains commodities and gold position as policy measures affect yields",
-      "link": "https://investorshub.advfn.com/market-news/article/35729/bofas-hartnett-maintains-commodities-and-gold-position-as-policy-measures-affect-yields?.tsrc=rss",
-      "published": "2026-09-06T13:20:00+00:00",
-      "summary": "Bank of America strategist Michael Hartnett said investors should maintain long positions in commodities and gold as policy intervention seeks to limit increases in bond yields and support financial markets. \u201cPolicy panic [is] working,\u201d Hartnett and his team wrote, citing the appreciation of the Japanese yen as evidence of efforts to defend market thresholds including $4-a-gallon gasoline, 160 dol",
-      "relevance": 6
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "The US Dollar Has Lost 97% of Its Value Since 1913: Is Bitcoin the Way Out?",
-      "link": "https://beincrypto.com/us-dollar-lost-97-percent-value-bitcoin-case/?.tsrc=rss",
-      "published": "2026-09-06T15:57:58+00:00",
-      "summary": "The US dollar lost 97% of its value since the Federal Reserve's creation in 1913. Is Bitcoin the answer? Here's the full breakdown.",
-      "relevance": 6
     },
     {
       "source": "CNBC Top News",
@@ -91,38 +94,73 @@
       "relevance": 5
     },
     {
+      "source": "CNBC Top News",
+      "title": "Far-right AfD landslide in German state piles pressure on federal government",
+      "link": "https://www.cnbc.com/2026/09/07/afd-germany-economy-merz.html",
+      "published": "2026-09-07T17:04:21+00:00",
+      "summary": "The \"extraordinary\" result may be the \"most consequential German state-election result of the postwar era,\" according to analysts.",
+      "relevance": 5
+    },
+    {
       "source": "Yahoo Gold",
-      "title": "How China became a more powerful force in global gold demand",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/china-became-more-powerful-force-102615800.html?.tsrc=rss",
-      "published": "2026-09-06T10:26:15+00:00",
-      "summary": "Investing.com -- China\u2019s influence on the global gold market is becoming broader and more structural as central-bank purchases, household investment, institutional participation and new trading infrastructure reinforce demand, Jefferies analysts said.",
+      "title": "A Better Trade Than Bitcoin or Gold in 2026 Is Sitting in Your Kitchen",
+      "link": "https://beincrypto.com/sugar-price-rally-bitcoin-gold-august/?.tsrc=rss",
+      "published": "2026-09-07T08:30:37+00:00",
+      "summary": "Raw sugar logged its biggest monthly gain since 2010 in August, outpacing the S&P 500 as Bitcoin and gold set the pace.",
       "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "Bitcoin-Gold Correlation Hits Nearly Six-Year High As BTC Breaks From Tech Stocks",
-      "link": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-gold-correlation-hits-nearly-six-year-high-as-btc-breaks-from-tech-stocks/cZtbLkwRJDH?.tsrc=rss",
-      "published": "2026-09-06T10:51:24+00:00",
-      "summary": "Bitwise said that Bitcoin is increasingly trading like gold rather than a tech asset, strengthening its long-running \u201cdigital gold\u201d case.",
+      "title": "Bitcoin Has No Label but Its Closest Rival Is Gold, BlackRock Exec Says",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-no-label-closest-rival-151524969.html?.tsrc=rss",
+      "published": "2026-09-07T15:15:24+00:00",
+      "summary": "Bitcoin as a portfolio diversifier and hedge against rising government debt and currency debasement, according to BlackRock Inc. Global Head of Digital Assets Robbie Mitchnick. How ETFs Build Long-Term Investor Base Speaking on the Crypto Prime podcast on Sep. 5,...",
       "relevance": 4
     },
     {
       "source": "Yahoo Gold",
-      "title": "A Couple Diversified Into Gold. Their Adult Children Thought They'd Been Scammed.",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/couple-diversified-gold-adult-children-150010034.html?.tsrc=rss",
-      "published": "2026-09-06T15:00:10+00:00",
-      "summary": "A couple, both 60, moved $120,000 from a traditional IRA invested in stocks and mutual funds into a self-directed IRA holding physical gold and silver after deciding they wanted broader diversification in retirement. Their two adult children found out and...",
+      "title": "Ripple CEO blasts $11 billion gold transfer",
+      "link": "https://www.thestreet.com/crypto/markets/ripple-ceo-blasts-11-billion-gold-transfer?.tsrc=rss",
+      "published": "2026-09-07T21:17:44+00:00",
+      "summary": "Ripple CEO Brad Garlinghouse slams the global finance system for slow movement of assets like gold.",
       "relevance": 4
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Trump says he's made 'Hundreds of Billions of Dollars on Stocks' for the U.S., in stream of AI posts",
+      "link": "https://www.cnbc.com/2026/09/07/trump-truth-social-ai-images-posting-spree.html",
+      "published": "2026-09-07T12:09:41+00:00",
+      "summary": "U.S. President Donald Trump posted a stream of AI-generated images and a series of sweeping and unverified claims on Truth Social on Sunday",
+      "relevance": 3
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Here are the 3 big things we're watching in this holiday-shortened trading week",
+      "link": "https://www.cnbc.com/2026/09/07/here-are-the-3-big-things-were-watching-in-this-holiday-shortened-trading-week.html",
+      "published": "2026-09-07T23:31:25+00:00",
+      "summary": "The week will be dominated by inflation data. Plus, Apple's new CEO has his first big test.",
+      "relevance": 3
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Cholesterol drug setback casts doubt over multibillion-dollar race",
+      "link": "https://www.cnbc.com/2026/09/08/novartis-cholesterol-setback-drug-race-eli-lilly-amgen.html",
+      "published": "2026-09-08T05:00:01+00:00",
+      "summary": "Novartis\u2019 failure raises the stakes for Amgen and Eli Lilly in the race to turn lower Lp(a) levels into fewer heart attacks and strokes.",
+      "relevance": 3
     }
   ],
   "gold": {
     "symbol": "GC=F",
-    "last": 4476.60009765625,
-    "change_pct": 1.0564877654115912
+    "last": 4469.89990234375,
+    "change_pct": 0.9052349863264049
   },
   "base_rates": {},
   "context": {
-    "Bank Holiday": {
+    "NFIB Small Business Index": {
+      "profile": null
+    },
+    "Consumer Credit m/m": {
       "profile": null
     }
   },
@@ -131,7 +169,7 @@
       "next": "2026-09-16",
       "last": "2026-07-29",
       "is_today": false,
-      "days_away": 9,
+      "days_away": 8,
       "has_projections": true
     },
     "source": "federalreserve.gov",
