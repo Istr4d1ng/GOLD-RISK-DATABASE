@@ -57,12 +57,12 @@ def fetch_calendar():
 def weight_for(title, impact):
     """Gold-sensitivity weight 0-10 for an event title."""
     t = (title or "").lower()
-    best = 0
-    for key, w in config.EVENT_WEIGHTS.items():
-        if key in t and w > best:
-            best = w
-    if best:
-        return best
+    best_key, best_len = None, 0
+    for key in config.EVENT_WEIGHTS:
+        if key in t and len(key) > best_len:
+            best_key, best_len = key, len(key)
+    if best_key:
+        return config.EVENT_WEIGHTS[best_key]
     return config.IMPACT_FALLBACK.get((impact or "").lower(), 1)
 
 
@@ -100,6 +100,7 @@ def parse_events(entries, day, currency="USD"):
             "previous": (e.get("previous") or "").strip(),
             "actual": (e.get("actual") or "").strip(),
             "weight": weight_for(title, impact),
+            "release": local.strftime("%Y-%m-%d %H:%M"),
         })
     out.sort(key=lambda x: x["utc"])
     return out

@@ -22,7 +22,13 @@ each event, so the answers get better the longer it runs.
 | `scripts/sources.py` | Calendar, news and price fetching (standard library only) |
 | `scripts/risk.py` | The 0-100 risk score and the historical base-rate lookup |
 | `scripts/context.py` | Event profiles, FRED readings, FOMC calendar and cycle |
+| `scripts/geopolitics.py` | Flashpoints, escalation scoring, unscheduled risk |
+| `scripts/market.py` | Implied vol, gold's drivers, CFTC positioning, FRED |
+| `scripts/actuals.py` | Reads the released value back and computes the surprise |
+| `scripts/health.py` | Records which sources answered, so failures aren't silent |
 | `data/event_profiles.json` | Curated briefing for each major USD release |
+| `data/geopolitical_profiles.json` | Named flashpoints and how each reaches gold |
+| `data/calibration.csv` | Predicted range vs what actually happened, per day |
 | `scripts/narrate.py` | The written analysis (template, or a model if you add a key) |
 | `scripts/render.py` | Builds the dashboard page |
 | `scripts/morning.py` | Weekday 06:30 UK: builds the report |
@@ -38,15 +44,61 @@ downloads for historical readings, and the Fed's own FOMC calendar page.
 
 ### The risk score
 
-Four components, each visible on the dashboard so you can see where the number
-came from:
+Two independent sources of danger, combined so neither can hide the other. A day
+with a live escalation and an empty calendar must not read LOW.
 
-- **Headline event** (0-70) - the single biggest scheduled release, by its
-  gold-sensitivity weight
-- **Breadth** (0-15) - several meaningful releases compound the noise
-- **Clustering** (0 or 5) - two heavyweight prints at the same minute is worse
-  than the same two spread across the day
-- **Volatility** (-5 to +10) - current 14-day ATR against its 60-day average
+**Scheduled** (0-70): the biggest release of the day by gold-sensitivity weight,
+plus breadth for separate releases through the day, plus 5 for genuine
+clustering - two *different* reports at the same minute, not the three titles of
+one report.
+
+**Unscheduled** (0-70): the geopolitical score (below).
+
+The higher of the two sets the base; the lower adds up to 15 more, because both
+at once is worse than either alone. Then:
+
+- **Volatility** (-5 to +10) - where GVZ sits in its own yearly range
+- **Positioning** (0 or 5) - crowded speculative length amplifies everything
+
+Every component is printed on the dashboard, so the number is always auditable.
+
+### Unscheduled risk
+
+Seven named flashpoints - US/Iran, the wider Middle East, Russia/NATO,
+China/Taiwan, trade, Fed independence, Korea - each with a gold weight, the
+transmission mechanism, **what works against it**, and how long its effect
+usually lasts. World-news headlines are matched to a flashpoint and an escalation
+tier; the aggregate becomes the unscheduled score.
+
+It is a headline-frequency heuristic, not a geopolitical model. It measures how
+loud something is, which is what moves price in the short run - not what will
+happen. Football transfers and rail strikes don't trip it.
+
+### Expected range
+
+Taken from **GVZ**, gold's volatility index - the market's own priced
+expectation - rather than a backward-looking ATR, falling back to ATR if GVZ is
+unavailable. The page says which it used.
+
+### Driver attribution
+
+DXY, the 10-year yield and the 10-year TIPS real yield sit alongside gold, and
+the report names the channel the last move came through: real yields (tends to
+persist), the dollar (tends to mean-revert), or haven demand (usually fades).
+Same move, completely different shelf life.
+
+### Positioning
+
+Managed-money net length in COMEX gold from the CFTC's public API, with its
+percentile over two years. Crowding is the fuel; the event is only the match.
+
+### Calibration
+
+Every evening the predicted range is scored against the range that actually
+happened and written to `data/calibration.csv`. After a few weeks the dashboard
+reports the median error and how often the model runs too wide. If those numbers
+look bad, the weights in `config.py` are wrong and should be changed - the page
+marks its own homework.
 
 ### What you get on each event
 
@@ -82,10 +134,20 @@ the move carried into the next session.
 value, gold immediately before, at +15 minutes, at +1 hour, and at the close -
 plus whether the move **sustained**, went **partial**, or **faded**.
 
-Once an event has three or more entries, the morning report starts showing its
-real base rate instead of a generic description: *"CPI m/m: median 1h gold move
-$18.40, 71% held into the close, n=7."* That is the difference between a
-newsletter and a database.
+It also reads the **actual** value back from FRED after release and records the
+surprise against forecast, because the unconditional average is a blend of two
+different events. Once an event has three or more entries the report shows its
+real base rate - and once each surprise bucket has two, it splits them:
+
+> *CPI m/m: median 1h gold move $22, n=6. Split by the print: above $29 (n=2),
+> in line $5.50 (n=2), below $22 (n=2).*
+
+"CPI is usually a big one" and "CPI is a big one **when it surprises**" are
+different claims, and only the second is useful.
+
+Co-published titles - payrolls, the unemployment rate and average hourly
+earnings arrive together - are recorded with a `co_released` count, briefed once
+rather than three times, and counted as one release by the risk score.
 
 ---
 
@@ -151,8 +213,15 @@ also best-effort and can run a few minutes late when it is busy.
 - **The `prior_move_usd` figures in the profiles are opinion**, not measurement.
   They are labelled as priors on the page and get superseded by the measured
   base rate as soon as the event has been logged three times.
+- **The geopolitical score measures attention, not danger.** A quiet build-up
+  that no one is writing about scores zero. It is a coincident indicator.
+- **COT data is stale by construction** - published Fridays for the prior
+  Tuesday. Useful for context, useless for timing.
 - **Event weights are a starting opinion**, not truth. They are all in
   `config.py` and should be revised once the CSV disagrees with them.
+- **Data health is now printed on the page.** FRED silently returned nothing for
+  the first fortnight and the reports just omitted a section rather than saying
+  so. Every source now reports whether it answered.
 - Free price feeds occasionally rate-limit. The code retries and falls back
   between sources, and a failed component degrades the report rather than
   killing the run.

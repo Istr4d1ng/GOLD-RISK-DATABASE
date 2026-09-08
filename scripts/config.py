@@ -111,4 +111,45 @@ GEMINI_MODEL = "gemini-2.5-flash"
 GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/models/"
               "{model}:generateContent")
 
+# --- Market context symbols ------------------------------------------------
+# GVZ is the CBOE gold volatility index - the market's own priced expectation
+# for gold, which beats a backward-looking ATR.
+GVZ_SYMBOLS = ["^GVZ"]
+DRIVER_SYMBOLS = [
+    ("DXY", "DX-Y.NYB", "Dollar index"),
+    ("US10Y", "^TNX", "US 10-year yield"),
+]
+# 10-year TIPS yield: gold's cleanest single driver. FRED, keyless.
+REAL_YIELD_SERIES = "DFII10"
+
+# --- CFTC Commitments of Traders ------------------------------------------
+# Disaggregated futures-only dataset, keyless Socrata API.
+COT_URL = ("https://publicreporting.cftc.gov/resource/72hh-3qpy.json"
+           "?cftc_contract_market_code={code}"
+           "&$order=report_date_as_yyyy_mm_dd%20DESC&$limit={limit}")
+COT_GOLD_CODE = "088691"          # GOLD - COMMODITY EXCHANGE INC.
+COT_HISTORY = 104                 # two years of weekly reports
+
+# --- FRED ------------------------------------------------------------------
+FRED_SOURCES = [
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}&cosd={start}",
+    "https://fred.stlouisfed.org/data/{sid}.txt",
+]
+
+
+# --- Geopolitical feeds ----------------------------------------------------
+# World news, for the risk that never appears on an economic calendar.
+GEO_FEEDS = [
+    ("BBC World", "https://feeds.bbci.co.uk/news/world/rss.xml"),
+    ("Al Jazeera", "https://www.aljazeera.com/xml/rss/all.xml"),
+    ("CNBC World", "https://www.cnbc.com/id/100727362/device/rss/rss.html"),
+    ("UN News", "https://news.un.org/feed/subscribe/en/news/all/rss.xml"),
+    ("US Defense", "https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=1&Site=945&max=25"),
+    ("State Dept", "https://www.state.gov/rss-feed/press-releases/feed/"),
+]
+GEO_LOOKBACK_HOURS = 48
+# Intensity multipliers applied to a flashpoint's weight.
+GEO_INTENSITY = {"severe": 1.0, "elevated": 0.5, "background": 0.15}
+
+
 SITE_TITLE = "Gold / USD Daily Risk Database"

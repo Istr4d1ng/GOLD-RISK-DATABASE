@@ -1,0 +1,210 @@
+{
+  "_note": "Named flashpoints, their gold sensitivity (0-10), and how each transmits to the price. 'typical_duration' is the honest part: most geopolitical gold rallies fade unless they change the rate path or oil supply. A flashpoint may carry 'severe_terms': phrases that are themselves the escalation and need no accompanying verb.",
+  "flashpoints": {
+    "us_iran": {
+      "name": "US / Israel – Iran",
+      "weight": 10,
+      "terms": [
+        "iran",
+        "iranian",
+        "tehran",
+        "irgc",
+        "revolutionary guard",
+        "hormuz",
+        "strait of hormuz",
+        "houthi",
+        "persian gulf"
+      ],
+      "why_gold": "The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.",
+      "counterweight": "The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold's gain. This is why some escalation days produce a far smaller gold move than the headlines imply.",
+      "typical_duration": "Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed's reaction function.",
+      "escalation_markers": "Direct state-on-state strikes rather than proxies; any interference with shipping in Hormuz; attacks on oil infrastructure; withdrawal from nuclear monitoring."
+    },
+    "middle_east": {
+      "name": "Wider Middle East",
+      "weight": 7,
+      "terms": [
+        "israel",
+        "gaza",
+        "hezbollah",
+        "lebanon",
+        "syria",
+        "west bank",
+        "red sea",
+        "yemen",
+        "idf"
+      ],
+      "why_gold": "Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region's conflicts rarely touch US rate expectations directly.",
+      "counterweight": "Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.",
+      "typical_duration": "Hours to days. The shortest-lived of the major flashpoints unless it pulls Iran in directly.",
+      "escalation_markers": "Direct Iranian involvement, Red Sea shipping disruption, or US forces taking casualties."
+    },
+    "russia_nato": {
+      "name": "Russia / Ukraine / NATO",
+      "weight": 8,
+      "terms": [
+        "russia",
+        "russian",
+        "moscow",
+        "kremlin",
+        "putin",
+        "ukraine",
+        "ukrainian",
+        "kyiv",
+        "nato",
+        "baltic",
+        "kaliningrad"
+      ],
+      "why_gold": "Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.",
+      "counterweight": "Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day's price action.",
+      "typical_duration": "Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.",
+      "escalation_markers": "Any Article 5 discussion, strikes on NATO territory, nuclear rhetoric or doctrine change, or new sanctions touching reserves or energy."
+    },
+    "china_taiwan": {
+      "name": "China / Taiwan",
+      "weight": 8,
+      "terms": [
+        "taiwan",
+        "taipei",
+        "taiwan strait",
+        "pla",
+        "south china sea",
+        "china invasion",
+        "blockade"
+      ],
+      "why_gold": "Low frequency, very high severity. A genuine blockade or invasion scenario is the largest single tail risk in the gold market, because it would be a global supply-chain and reserve-currency event simultaneously.",
+      "counterweight": "Routine incursions and drills are so frequent they carry almost no information. Gold ignores them, correctly.",
+      "typical_duration": "Drills: nothing. A real blockade: a regime change in gold pricing, not a spike.",
+      "escalation_markers": "Quarantine or blockade language, live-fire exercises encircling the island, US carrier movements, or semiconductor export emergencies."
+    },
+    "trade_tariffs": {
+      "name": "Trade and tariffs",
+      "weight": 5,
+      "terms": [
+        "tariff",
+        "trade war",
+        "export controls",
+        "trade deal",
+        "wto",
+        "import duty",
+        "customs duty"
+      ],
+      "why_gold": "Indirect but real. Tariffs are an inflation impulse and a growth drag at once, which is the hardest combination for the Fed and therefore raises uncertainty about the rate path.",
+      "counterweight": "Also dollar-positive in the short run, which works against gold. The net effect is genuinely ambiguous and often small.",
+      "typical_duration": "Weeks, when it changes the inflation outlook. Announcement headlines alone rarely stick.",
+      "escalation_markers": "Rates above expectations, retaliation, or extension to critical minerals and energy."
+    },
+    "fed_independence": {
+      "name": "Fed independence and US fiscal stress",
+      "weight": 9,
+      "terms": [
+        "fed independence",
+        "fire powell",
+        "remove the fed chair",
+        "fed chair removal",
+        "debt ceiling",
+        "government shutdown",
+        "credit rating",
+        "downgrade",
+        "default on",
+        "treasury auction failed"
+      ],
+      "why_gold": "The most underrated gold driver on this list. Gold is a hedge against monetary credibility, so anything that threatens the central bank's independence or the Treasury's standing goes to the heart of why the asset is owned at all.",
+      "counterweight": "Nothing meaningful - this is one of the few themes where the haven bid and the rates channel push the same way.",
+      "typical_duration": "Long. Credibility is repriced slowly and recovers slowly; these episodes have lasting effects on the gold bid rather than one-day spikes.",
+      "escalation_markers": "Explicit attempts to remove or pressure Fed officials, ratings actions, a failed or badly-covered auction, or a shutdown running long enough to delay official data.",
+      "severe_terms": [
+        "fire powell",
+        "remove the fed chair",
+        "fed chair removal",
+        "default on",
+        "treasury auction failed",
+        "downgrade"
+      ]
+    },
+    "korea": {
+      "name": "Korean peninsula",
+      "weight": 5,
+      "terms": [
+        "north korea",
+        "pyongyang",
+        "kim jong",
+        "dprk",
+        "icbm"
+      ],
+      "why_gold": "Classic haven headline risk, heavily desensitised by decades of repetition.",
+      "counterweight": "Markets have learned to fade it almost entirely.",
+      "typical_duration": "Hours, unless a test is genuinely novel in capability.",
+      "escalation_markers": "A nuclear test, an ICBM over Japan, or any exchange of fire across the DMZ."
+    }
+  },
+  "escalation": {
+    "severe": [
+      "strike",
+      "missile",
+      "attack",
+      "invasion",
+      "invaded",
+      "killed",
+      "casualties",
+      "bombard",
+      "retaliat",
+      "at war",
+      "warfare",
+      "declares war",
+      "blockade",
+      "seized tanker",
+      "shot down",
+      "nuclear test",
+      "mobilis",
+      "mobiliz",
+      "assassinat",
+      "explosion",
+      "detonat",
+      "air raid",
+      "shelling"
+    ],
+    "elevated": [
+      "sanction",
+      "threaten",
+      "threat",
+      "warns",
+      "warned",
+      "ultimatum",
+      "deploy",
+      "troops",
+      "escalat",
+      "expel",
+      "cyberattack",
+      "drone",
+      "incursion",
+      "scrambl",
+      "condemn",
+      "emergency meeting",
+      "evacuat"
+    ],
+    "background": [
+      "talks",
+      "negotiat",
+      "summit",
+      "meeting",
+      "diplomat",
+      "proposal"
+    ],
+    "de_escalation": [
+      "ceasefire",
+      "cease-fire",
+      "truce",
+      "peace deal",
+      "peace agreement",
+      "de-escalat",
+      "deescalat",
+      "withdraw",
+      "withdrawal",
+      "agreement reached",
+      "prisoner exchange",
+      "resume talks",
+      "sanctions lifted"
+    ]
+  }
+}

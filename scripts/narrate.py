@@ -18,7 +18,11 @@ and gold's recent price behaviour.
 
 Write four short sections, in plain British English, no bullet-point padding:
 
-1. YESTERDAY - what actually happened in USD news and how gold responded.
+0. UNSCHEDULED - if `geopolitics` shows anything above QUIET, lead with it, name
+   the flashpoint, and use its counterweight and typical_duration honestly. Skip
+   this section entirely when it is QUIET; do not manufacture drama.
+1. YESTERDAY - what actually happened in USD news and how gold responded. Use
+   `driver_attribution` to say which channel the move came through.
 2. DURATION - for each meaningful story, say whether the effect is likely to be
    short-lived (a day or less) or long-lasting (weeks), and why. Be explicit that
    this is a judgement, and say when you are unsure.
@@ -31,7 +35,8 @@ cares, what to watch, the usual catch), its recent published readings, and where
 the calendar sits in the FOMC meeting cycle. Use that context - explain the
 mechanism, not just the direction - and prefer the measured base rates in
 `historical_base_rates` and `fomc` over the rough prior figures in the profiles
-whenever both are present, saying which you are using.
+whenever both are present, saying which you are using. `positioning` tells you
+whether speculative length is crowded, which amplifies whatever else happens.
 
 Be concrete and quantitative where the data supports it. Never invent numbers,
 prices, or events that are not in the input. If the data is thin, say so.
@@ -48,6 +53,17 @@ def _template(payload):
 
     parts = []
 
+    geo = payload.get("geo") or {}
+    if geo.get("points", 0) >= 15:
+        lead = geo["flashpoints"][0] if geo.get("flashpoints") else None
+        parts.append(f"### Unscheduled risk &mdash; {geo['band']}\n\n{geo['note']}\n")
+        if lead:
+            parts.append(f"**{lead['name']}** is the live one, {lead['state']} on "
+                         f"{lead['headlines']} headlines in the last 48 hours. "
+                         f"{lead['why_gold']}\n")
+            parts.append(f"_Working against it:_ {lead['counterweight']}\n")
+            parts.append(f"_How long this usually lasts:_ {lead['typical_duration']}\n")
+
     if news:
         lines = "\n".join(f"- **{n['title']}** ({n['source']})" for n in news)
         parts.append("### Yesterday\n\nThe USD stories carrying the most weight "
@@ -57,6 +73,17 @@ def _template(payload):
                      "picked up in the last 36 hours. A quiet news backdrop "
                      "usually means gold trades off technicals and the dollar "
                      "rather than fresh catalysts.\n")
+
+    attr = payload.get("attribution")
+    if attr:
+        parts.append(f"Gold's last move came through **{attr['channel']}**. "
+                     f"{attr['note']}\n")
+
+    cot = payload.get("cot")
+    if cot and cot.get("crowded"):
+        parts.append(f"Positioning is not neutral: managed money net long sits at "
+                     f"the {cot['percentile_2y']}th percentile of the last two "
+                     f"years. {cot['read']}\n")
 
     gold = payload.get("gold", {})
     if gold.get("last"):
@@ -98,9 +125,16 @@ def _template(payload):
                          "on that specific decision.\n")
 
     ctx = payload.get("context") or {}
-    briefs = [(e, ctx.get(e["title"], {}).get("profile"))
-              for e in ev if e["weight"] >= config.MATERIAL_WEIGHT]
-    briefs = [(e, p) for e, p in briefs if p]
+    briefs, seen_profiles = [], set()
+    for e in ev:
+        if e["weight"] < config.MATERIAL_WEIGHT:
+            continue
+        prof = ctx.get(e["title"], {}).get("profile")
+        # One report, one description - payrolls carries three titles.
+        if not prof or prof["name"] in seen_profiles:
+            continue
+        seen_profiles.add(prof["name"])
+        briefs.append((e, prof))
     if briefs:
         parts.append("### What each one actually is\n")
         for e, prof in briefs[:4]:
@@ -109,7 +143,8 @@ def _template(payload):
 
     parts.append(f"### Verdict\n\n{risk['band_note']} Risk score {risk['score']}"
                  f"/100 ({risk['band']}). Expected daily range around "
-                 f"${risk.get('expected_range_usd') or 0:,.1f}.\n")
+                 f"${risk.get('expected_range_usd') or 0:,.1f}, from "
+                 f"{risk.get('range_source') or 'the volatility model'}.\n")
 
     parts.append("_Written by the deterministic template. Add a GEMINI_API_KEY "
                  "secret to get a reasoned write-up instead._")
@@ -130,6 +165,12 @@ def _gemini(payload, key):
         "news": [{"title": n["title"], "source": n["source"],
                   "summary": n["summary"]} for n in payload["news"][:15]],
         "historical_base_rates": payload.get("base_rates", {}),
+        "geopolitics": payload.get("geo"),
+        "drivers": payload.get("drivers"),
+        "driver_attribution": payload.get("attribution"),
+        "positioning": payload.get("cot"),
+        "implied_volatility": payload.get("implied"),
+        "model_calibration": payload.get("calibration"),
         "event_context": {
             t: {
                 "profile": {k: v for k, v in (c.get("profile") or {}).items()

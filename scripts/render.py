@@ -160,14 +160,24 @@ def _fomc_history_table(rows):
   <tbody>{body}</tbody></table>"""
 
 
-def _event_details(events, ctx, base_rates, classified):
+
+STATE_COLOURS = {"escalating": "#e5484d", "active": "#f76808",
+                 "simmering": "#f5a524", "de-escalating": "#30a46c",
+                 "quiet": "#6b7280"}
+
+
+def _event_details(groups, ctx, base_rates, classified):
+    """One briefing per release - the payrolls report is one event, not three."""
     blocks = []
-    for e in events:
-        if e["weight"] < config.MATERIAL_WEIGHT:
-            continue
-        c = ctx.get(e["title"], {})
+    for g in groups:
+        lead = g["lead"]
+        c = ctx.get(lead["title"], {})
         prof = c.get("profile")
         inner = []
+        if g["also"]:
+            inner.append('<p class="also">Published together with '
+                         + html.escape(", ".join(g["also"]))
+                         + ' &mdash; one release, one reaction.</p>')
         if prof:
             inner.append(f'<p class="lead">{html.escape(prof["what"])}</p>')
             inner.append('<dl class="facts">')
@@ -175,50 +185,206 @@ def _event_details(events, ctx, base_rates, classified):
                          ("Why gold cares", prof["why_gold"]),
                          ("What to watch", prof["watch"]),
                          ("The catch", prof["gotchas"]),
-                         ("Rough prior expectation",
-                          "$" + prof["prior_move_usd"])):
+                         ("Rough prior expectation", "$" + prof["prior_move_usd"])):
                 inner.append(f"<dt>{k}</dt><dd>{html.escape(v)}</dd>")
             inner.append("</dl>")
         else:
-            cl = classified.get(e["title"], {})
+            cl = classified.get(lead["title"], {})
             inner.append(f'<p class="lead">{html.escape(cl.get("expectation",""))}</p>')
             inner.append(f'<p class="muted">{html.escape(cl.get("direction",""))}</p>')
 
         inner.append(_readings_block(c.get("readings")))
 
-        bs = base_rates.get(e["title"])
+        bs = base_rates.get(lead["title"])
         if bs:
+            extra = ""
+            by = bs.get("by_surprise") or {}
+            if by:
+                parts = " &middot; ".join(
+                    f'{html.escape(k)} <b>${v["median_move_1h"]}</b> (n={v["samples"]})'
+                    for k, v in by.items())
+                extra = f'<br><span class="muted">Split by the print: {parts}</span>'
             inner.append(
                 f'<p class="measured"><strong>Measured here:</strong> median 1h gold '
                 f'move ${bs["median_move_1h"]}, max ${bs["max_move_1h"]}, '
-                f'n={bs["samples"]}, {bs["sustained_rate"]}% held into the close.</p>')
+                f'n={bs["samples"]}, {bs["sustained_rate"]}% held into the close.'
+                f'{extra}</p>')
         else:
-            inner.append('<p class="muted small">No measured history yet - this '
-                         'event has not been logged enough times. The figures above '
-                         'are a prior, not a statistic.</p>')
+            inner.append('<p class="muted small">No measured history yet. The figures '
+                         'above are a prior, not a statistic.</p>')
 
         fh = c.get("fomc_gold_summary")
         if fh:
             inner.append(
                 f'<p class="measured"><strong>Gold on the last {fh["samples"]} FOMC '
                 f'decision days:</strong> average move ${fh["avg_abs_move"]}, '
-                f'average range ${fh["avg_range"]}, biggest ${fh["biggest"]}'
-                + (f', {fh["held_pct"]}% carried into the next day.'
-                   if fh.get("held_pct") is not None else '.') + '</p>')
+                f'average range ${fh["avg_range"]}, biggest ${fh["biggest"]}.</p>')
             inner.append(_fomc_history_table(c.get("fomc_gold_history")))
 
-        name = prof["name"] if prof else e["title"]
-        dot = FOLDER_COLOURS.get(e["folder"], "#6b7280")
+        name = prof["name"] if prof else lead["title"]
+        dot = FOLDER_COLOURS.get(lead["folder"], "#6b7280")
         blocks.append(f"""
 <details>
   <summary><span class="dot" style="background:{dot}"></span>
-    <strong>{e['local_time']}</strong> {html.escape(name)}
-    <span class="muted small">&mdash; {html.escape(e['title'])}</span></summary>
+    <strong>{g['time']}</strong> {html.escape(name)}
+    <span class="muted small">&mdash; weight {lead['weight']}</span></summary>
   <div class="detail">{''.join(inner)}</div>
 </details>""")
     if not blocks:
         return '<p class="muted">Nothing material enough to brief today.</p>'
     return "".join(blocks)
+
+
+def _geo_card(geo):
+    if not geo:
+        return ""
+    colour = {"SEVERE": "#e5484d", "ELEVATED": "#f76808",
+              "BACKGROUND": "#f5a524", "QUIET": "#30a46c"}.get(geo["band"], "#6b7280")
+    rows = []
+    for f in geo.get("flashpoints", [])[:6]:
+        sc = STATE_COLOURS.get(f["state"], "#6b7280")
+        heads = "".join(
+            f'<li><a href="{html.escape(h.get("link") or "#")}" target="_blank" '
+            f'rel="noopener">{html.escape(h["title"])}</a>'
+            f'<span class="src">{html.escape(h["source"])} &middot; {h["tier"]}</span></li>'
+            for h in f.get("top", []))
+        rows.append(f"""
+<details>
+  <summary><span class="pill" style="background:{sc}22;color:{sc}">
+    {html.escape(f['state'])}</span>
+    <strong>{html.escape(f['name'])}</strong>
+    <span class="muted small">&mdash; {f['headlines']} headlines, weight {f['weight']}</span></summary>
+  <div class="detail">
+    <dl class="facts">
+      <dt>Why gold cares</dt><dd>{html.escape(f['why_gold'])}</dd>
+      <dt>Working against it</dt><dd>{html.escape(f['counterweight'])}</dd>
+      <dt>How long it lasts</dt><dd>{html.escape(f['typical_duration'])}</dd>
+      <dt>What would escalate it</dt><dd>{html.escape(f['escalation_markers'])}</dd>
+    </dl>
+    <ul class="news">{heads}</ul>
+  </div>
+</details>""")
+    body = "".join(rows) or '<p class="muted">No flashpoint activity detected.</p>'
+    return f"""
+<section class="card">
+  <h2>Unscheduled risk &mdash; geopolitics</h2>
+  <div class="stat"><span class="k">Level</span>
+    <span class="v" style="color:{colour}">{html.escape(geo['band'])}
+      &middot; {geo['points']}/70</span></div>
+  <p style="margin:12px 0">{html.escape(geo['note'])}</p>
+  {body}
+  <p class="muted small" style="margin-top:12px">{html.escape(geo['caveat'])}</p>
+</section>"""
+
+
+def _drivers_card(drivers, attribution, cot):
+    if not drivers and not cot:
+        return ""
+    rows = []
+    for key in ("REAL10Y", "US10Y", "DXY"):
+        d = drivers.get(key)
+        if not d:
+            continue
+        if key == "REAL10Y":
+            move = f'{d["change_5d_bp"]:+.1f}bp / 5d'
+            cls = "up" if d["change_5d_bp"] >= 0 else "down"
+        else:
+            move = f'{d["change_pct"]:+.2f}%'
+            cls = "up" if d["change_pct"] >= 0 else "down"
+        rows.append(f'<div class="stat"><span class="k">{html.escape(d["label"])}</span>'
+                    f'<span class="v">{d["last"]} '
+                    f'<span class="{cls}">{move}</span></span></div>')
+    attr = ""
+    if attribution:
+        attr = (f'<p class="measured"><strong>Gold\u2019s last move came through '
+                f'{html.escape(attribution["channel"])}.</strong> '
+                f'{html.escape(attribution["note"])}</p>')
+    pos = ""
+    if cot:
+        spark = ""
+        hist = cot.get("history") or []
+        if len(hist) > 3:
+            vals = [h["net"] for h in hist]
+            lo, hi = min(vals), max(vals)
+            span = (hi - lo) or 1
+            spark = '<div class="sparks">' + "".join(
+                f'<span class="spark" style="height:{6 + 30 * (v - lo) / span:.0f}px" '
+                f'title="{html.escape(h["date"])}: {v:,}"></span>'
+                for h, v in zip(hist, vals)) + "</div>"
+        pos = f"""
+  <h3 class="sub">Speculative positioning</h3>
+  <div class="stat"><span class="k">Managed money net long</span>
+    <span class="v">{cot['net']:,} contracts</span></div>
+  <div class="stat"><span class="k">Percentile of last 2 years</span>
+    <span class="v">{cot['percentile_2y']}th</span></div>
+  <div class="stat"><span class="k">Change over 4 weeks</span>
+    <span class="v">{(f"{cot['change_4w']:+,}" if cot.get('change_4w') is not None else '&ndash;')}</span></div>
+  {spark}
+  <p class="measured">{html.escape(cot['read'])}</p>
+  <p class="muted small">CFTC, as of {html.escape(cot['as_of'])}. Published Fridays,
+  reporting the prior Tuesday &mdash; always several days stale.</p>"""
+    return f"""
+<section class="card">
+  <h2>What is driving gold</h2>
+  {''.join(rows)}
+  {attr}
+  {pos}
+</section>"""
+
+
+def _calibration_card(calib):
+    if not calib:
+        return ""
+    if not calib.get("ready"):
+        return f"""
+<section class="card">
+  <h2>Model calibration</h2>
+  <p class="muted">Scoring itself since setup: {calib.get('samples', 0)} days recorded,
+  five needed before the error is worth reporting.</p>
+</section>"""
+    rows = "".join(
+        f'<tr><td>{html.escape(str(r["date"]))}</td>'
+        f'<td class="num">${r["predicted"]:,.0f}</td>'
+        f'<td class="num">${r["realised"]:,.0f}</td>'
+        f'<td class="num muted">{r["score"]}</td></tr>'
+        for r in reversed(calib.get("recent", [])))
+    return f"""
+<section class="card">
+  <h2>Model calibration</h2>
+  <div class="stat"><span class="k">Median error vs the day that happened</span>
+    <span class="v">{calib['median_abs_error_pct']}%</span></div>
+  <div class="stat"><span class="k">Predicted too wide</span>
+    <span class="v">{calib['over_predicted_pct']}% of days</span></div>
+  <div class="stat"><span class="k">Days scored</span>
+    <span class="v">{calib['samples']}</span></div>
+  <div class="scroll"><table class="mini wide">
+    <thead><tr><th>Date</th><th>Predicted</th><th>Realised</th><th>Risk</th></tr></thead>
+    <tbody>{rows}</tbody></table></div>
+  <p class="muted small" style="margin-top:10px">This is the page marking its own
+  homework. If the error stays high or it is consistently too wide, the weights in
+  config.py are wrong and should be changed.</p>
+</section>"""
+
+
+def _health_card(hs):
+    if not hs or not hs.get("checks"):
+        return ""
+    items = "".join(
+        f'<div class="hrow"><span class="hdot {"on" if c["ok"] else "off"}"></span>'
+        f'<span>{html.escape(c["source"])}</span>'
+        f'<span class="muted small">{html.escape(c["detail"] or ("failed" if not c["ok"] else ""))}</span></div>'
+        for c in hs["checks"])
+    warn = ""
+    if hs.get("degraded"):
+        warn = (f'<p class="measured">{hs["failed"]} source(s) did not answer this '
+                f'morning, so parts of this page are missing rather than empty by '
+                f'choice.</p>')
+    return f"""
+<section class="card">
+  <h2>Data health</h2>
+  {warn}
+  <div class="health">{items}</div>
+</section>"""
 
 
 def _fomc_card(fomc):
@@ -248,24 +414,26 @@ def _fomc_card(fomc):
 </section>"""
 
 
-def build_page(payload, narrative, archive=None):
+def build_page(payload, narrative, archive=None, groups=None):
     risk = payload["risk"]
     events = payload["events"]
     classified = payload.get("classified", {})
-    gold = payload.get("gold", {})
     ctx = payload.get("context") or {}
-    fomc = payload.get("fomc")
+    gold = payload.get("gold", {})
+    implied = payload.get("implied") or {}
     base_rates = payload.get("base_rates") or {}
     band = risk["band"]
     colour = BAND_COLOURS.get(band, "#6b7280")
     comp = risk["components"]
+    groups = groups or []
 
     archive_html = ""
     if archive:
         links = "".join(
             f'<a href="reports/{html.escape(d)}.html">{html.escape(d)}</a>'
             for d in archive[:20])
-        archive_html = f'<section class="card"><h2>Archive</h2><div class="archive">{links}</div></section>'
+        archive_html = ('<section class="card"><h2>Archive</h2>'
+                        f'<div class="archive">{links}</div></section>')
 
     gold_line = ""
     if gold.get("last"):
@@ -274,6 +442,24 @@ def build_page(payload, narrative, archive=None):
         chg_txt = f'<span class="{cls}">{chg:+.2f}%</span>' if chg is not None else ""
         gold_line = (f'<div class="stat"><span class="k">Gold last close</span>'
                      f'<span class="v">${gold["last"]:,.2f} {chg_txt}</span></div>')
+
+    implied_line = ""
+    if implied.get("gvz"):
+        implied_line = (f'<div class="stat"><span class="k">Implied vol (GVZ)</span>'
+                        f'<span class="v">{implied["gvz"]} &middot; '
+                        f'{implied["percentile_1y"]}th pct of the year</span></div>')
+
+    bars = [("Headline event", comp["headline_event"], 70),
+            ("Event breadth", comp["breadth"], 15),
+            ("Clustering", comp["clustering"], 5),
+            ("Geopolitical", comp["geopolitical"], 70),
+            ("Both at once", comp["both_at_once"], 15),
+            ("Volatility", comp["volatility"], 10),
+            ("Positioning", comp["positioning"], 5)]
+    bar_html = "".join(
+        f'<div class="bar"><span>{label}</span><u><i style="width:'
+        f'{max(0, min(100, int(value * 100 / cap))) if cap else 0}%"></i></u>'
+        f'<span>{value:+d}</span></div>' for label, value, cap in bars)
 
     return f"""<!doctype html>
 <html lang="en" data-theme="dark">
@@ -305,6 +491,8 @@ def build_page(payload, narrative, archive=None):
   h2 {{ font-size:13px; text-transform:uppercase; letter-spacing:.08em;
     color:var(--muted); margin:0 0 14px; font-weight:600; }}
   h3 {{ font-size:16px; margin:22px 0 6px; }}
+  h3.sub {{ font-size:13px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:22px 0 10px; }}
   .hero {{ display:flex; gap:24px; align-items:center; flex-wrap:wrap; }}
   .gauge {{ width:128px; height:128px; flex:none; }}
   .gauge-num {{ font-size:34px; font-weight:700; fill:var(--fg); }}
@@ -313,10 +501,13 @@ def build_page(payload, narrative, archive=None):
   .band {{ display:inline-block; font-size:12px; font-weight:700;
     letter-spacing:.08em; padding:4px 10px; border-radius:999px;
     background:{colour}22; color:{colour}; margin-bottom:8px; }}
+  .split {{ display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }}
+  .split span {{ font-size:12px; padding:3px 9px; border-radius:6px;
+    background:var(--track); color:var(--muted); }}
   .stat {{ display:flex; justify-content:space-between; gap:12px;
     padding:7px 0; border-top:1px solid var(--line); font-size:14px; }}
   .stat .k {{ color:var(--muted); }}
-  .stat .v {{ font-variant-numeric:tabular-nums; font-weight:600; }}
+  .stat .v {{ font-variant-numeric:tabular-nums; font-weight:600; text-align:right; }}
   .up {{ color:#30a46c; }} .down {{ color:#e5484d; }}
   .scroll {{ overflow-x:auto; }}
   table {{ width:100%; border-collapse:collapse; font-size:14px; min-width:560px; }}
@@ -329,8 +520,11 @@ def build_page(payload, narrative, archive=None):
   tr.major td {{ background:{colour}0e; }}
   .dot {{ display:inline-block; width:8px; height:8px; border-radius:50%;
     margin-right:8px; vertical-align:middle; }}
+  .pill {{ font-size:10.5px; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; padding:3px 8px; border-radius:999px;
+    margin-right:8px; white-space:nowrap; }}
   .muted {{ color:var(--muted); }} .small {{ font-size:12.5px; line-height:1.45; }}
-  ul.news {{ list-style:none; padding:0; margin:0; }}
+  ul.news {{ list-style:none; padding:0; margin:8px 0 0; }}
   ul.news li {{ padding:10px 0; border-top:1px solid var(--line); font-size:14.5px; }}
   ul.news li:first-child {{ border-top:none; }}
   ul.news a {{ color:var(--fg); text-decoration:none; }}
@@ -345,10 +539,11 @@ def build_page(payload, narrative, archive=None):
   footer {{ color:var(--muted); font-size:12.5px; text-align:center;
     margin-top:28px; line-height:1.7; }}
   .bars {{ display:grid; gap:6px; margin-top:12px; }}
-  .bar {{ display:grid; grid-template-columns:110px 1fr 34px; gap:10px;
+  .bar {{ display:grid; grid-template-columns:110px 1fr 40px; gap:10px;
     align-items:center; font-size:12.5px; color:var(--muted); }}
   .bar i {{ display:block; height:6px; border-radius:3px; background:var(--accent);
     min-width:2px; }}
+  .bar u {{ display:block; height:6px; border-radius:3px; background:var(--track); }}
   details {{ border-top:1px solid var(--line); }}
   details:first-of-type {{ border-top:none; }}
   summary {{ cursor:pointer; padding:12px 0; font-size:14.5px; list-style:none;
@@ -359,6 +554,8 @@ def build_page(payload, narrative, archive=None):
   details[open] summary::before {{ content:"\2212"; }}
   .detail {{ padding:2px 0 18px 22px; font-size:14px; }}
   .detail .lead {{ margin:0 0 12px; }}
+  .also {{ margin:0 0 10px; font-size:13px; color:var(--muted);
+    border-left:2px solid var(--line); padding-left:10px; }}
   dl.facts {{ margin:0 0 14px; display:grid; grid-template-columns:auto 1fr;
     gap:6px 14px; font-size:13.5px; }}
   dl.facts dt {{ color:var(--muted); white-space:nowrap; }}
@@ -368,13 +565,22 @@ def build_page(payload, narrative, archive=None):
   .readings {{ margin:14px 0; }}
   .rlabel {{ font-size:12.5px; color:var(--fg); margin-bottom:6px; }}
   .sparks {{ display:flex; align-items:flex-end; gap:3px; height:38px;
-    margin-bottom:8px; }}
+    margin:10px 0 8px; }}
   .spark {{ flex:1; max-width:26px; background:var(--accent); opacity:.65;
     border-radius:2px 2px 0 0; }}
   table.mini {{ font-size:12.5px; min-width:0; }}
   table.mini td, table.mini th {{ padding:5px 14px 5px 0; }}
   table.mini.wide {{ width:100%; margin-top:8px; }}
-  .bar u {{ display:block; height:6px; border-radius:3px; background:var(--track); }}
+  .health {{ display:grid; gap:8px; }}
+  .hrow {{ display:grid; grid-template-columns:10px 1fr auto; gap:10px;
+    align-items:baseline; font-size:13.5px; }}
+  .hdot {{ width:8px; height:8px; border-radius:50%; }}
+  .hdot.on {{ background:#30a46c; }} .hdot.off {{ background:#e5484d; }}
+  @media (max-width:520px) {{
+    dl.facts {{ grid-template-columns:1fr; gap:2px 0; }}
+    dl.facts dt {{ margin-top:8px; }}
+    .detail {{ padding-left:12px; }}
+  }}
 </style>
 </head>
 <body>
@@ -389,23 +595,23 @@ def build_page(payload, narrative, archive=None):
     {_gauge(risk['score'], band)}
     <div class="hero-body">
       <span class="band">{band} RISK</span>
+      <div class="split">
+        <span>Scheduled {risk.get('scheduled', 0)}/70</span>
+        <span>Unscheduled {risk.get('unscheduled', 0)}/70</span>
+      </div>
       <p style="margin:0 0 10px">{html.escape(risk['band_note'])}</p>
       <div class="stat"><span class="k">Expected gold range today</span>
         <span class="v">${risk.get('expected_range_usd') or 0:,.1f}</span></div>
-      <div class="stat"><span class="k">14-day ATR</span>
-        <span class="v">${risk.get('atr14') or 0:,.2f}</span></div>
-      <div class="stat"><span class="k">Volatility vs normal</span>
-        <span class="v">{(str(risk.get('vol_ratio')) + 'x') if risk.get('vol_ratio') else '&ndash;'}</span></div>
+      <div class="stat"><span class="k">Range basis</span>
+        <span class="v small">{html.escape(risk.get('range_source') or '&ndash;')}</span></div>
+      {implied_line}
       {gold_line}
     </div>
   </div>
-  <div class="bars">
-    <div class="bar"><span>Headline event</span><u><i style="width:{min(100, comp['headline_event']*100//70)}%"></i></u><span>{comp['headline_event']}</span></div>
-    <div class="bar"><span>Event breadth</span><u><i style="width:{min(100, comp['breadth']*100//15 if comp['breadth'] else 0)}%"></i></u><span>{comp['breadth']}</span></div>
-    <div class="bar"><span>Clustering</span><u><i style="width:{comp['clustering']*20}%"></i></u><span>{comp['clustering']}</span></div>
-    <div class="bar"><span>Volatility</span><u><i style="width:{max(0, comp['volatility'])*10}%"></i></u><span>{comp['volatility']:+d}</span></div>
-  </div>
+  <div class="bars">{bar_html}</div>
 </section>
+
+{_geo_card(payload.get('geo'))}
 
 <section class="card">
   <h2>Today&rsquo;s USD calendar &mdash; UK time</h2>
@@ -414,10 +620,12 @@ def build_page(payload, narrative, archive=None):
 
 <section class="card">
   <h2>Event briefings &mdash; what each one is and what it does to gold</h2>
-  {_event_details(events, ctx, base_rates, classified)}
+  {_event_details(groups, ctx, base_rates, classified)}
 </section>
 
-{_fomc_card(fomc)}
+{_drivers_card(payload.get('drivers') or {{}}, payload.get('attribution'), payload.get('cot'))}
+
+{_fomc_card(payload.get('fomc'))}
 
 <section class="card analysis">
   <h2>Analysis</h2>
@@ -429,12 +637,16 @@ def build_page(payload, narrative, archive=None):
   {_news_list(payload.get('news', []))}
 </section>
 
+{_calibration_card(payload.get('calibration'))}
+
+{_health_card(payload.get('health'))}
+
 {archive_html}
 
 <footer>
-  Generated automatically from the ForexFactory calendar feed, public RSS and free
-  price data.<br>Information only &mdash; not trading advice, and the risk score is a
-  model, not a forecast.
+  Built automatically from the ForexFactory calendar feed, public RSS, FRED, CFTC
+  and free price data.<br>Information only &mdash; not trading advice, and the risk
+  score is a model, not a forecast.
 </footer>
 </div>
 </body>

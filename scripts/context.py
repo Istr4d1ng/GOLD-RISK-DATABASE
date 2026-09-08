@@ -104,25 +104,9 @@ def series_for(title):
 # ---------------------------------------------------------------------------
 
 def fred_series(series_id, years=3):
-    start = (date.today() - timedelta(days=365 * years)).isoformat()
-    raw = sources._get(FRED_CSV.format(sid=series_id, start=start), timeout=25, retries=2)
-    if raw[:2] == b"\x1f\x8b":
-        raw = gzip.decompress(raw)
-    text = raw.decode("utf-8-sig", "replace")
-    rows = list(csv.reader(io.StringIO(text)))
-    if not rows or len(rows) < 2:
-        raise RuntimeError(f"no rows for {series_id}")
-    out = []
-    for r in rows[1:]:
-        if len(r) < 2 or r[1] in ("", "."):
-            continue
-        try:
-            out.append((r[0][:10], float(r[1])))
-        except ValueError:
-            continue
-    if not out:
-        raise RuntimeError(f"no usable values for {series_id}")
-    return out
+    """Kept for callers; the fetching itself lives in market.py."""
+    import market
+    return market.fred_series(series_id, years=years)
 
 
 def recent_readings(title, count=8):
