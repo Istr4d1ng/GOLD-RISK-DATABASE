@@ -1,7 +1,17 @@
-# Gold / USD Daily Risk Database
+# Financial Market Risk Database
 
-A self-running database that answers four questions every weekday morning,
-without anyone needing to open a chat window:
+A self-running database of how things move markets. Gold is the primary asset
+and the daily report is written around it, but the underlying model is general:
+events and geopolitical flashpoints map to **drivers**, and every tracked asset
+carries a signed sensitivity to each driver, so the effect on anything is
+derived rather than hardcoded.
+
+Twelve assets are tracked and logged: gold, S&P 500, Nasdaq 100, WTI crude, the
+dollar index, the US 10-year yield, silver, copper, bitcoin, EUR/USD, USD/JPY
+and the VIX.
+
+It answers four questions every weekday morning, without anyone needing to open
+a chat window:
 
 1. What happened in USD news yesterday, and how did gold react?
 2. Is that effect likely to be short-lived or long-lasting?
@@ -22,17 +32,23 @@ each event, so the answers get better the longer it runs.
 | `scripts/sources.py` | Calendar, news and price fetching (standard library only) |
 | `scripts/risk.py` | The 0-100 risk score and the historical base-rate lookup |
 | `scripts/context.py` | Event profiles, FRED readings, FOMC calendar and cycle |
+| `scripts/assets.py` | The asset registry, correlations, and the driver derivation |
+| `scripts/reactions.py` | Cross-asset reaction logging and the base-rate matrix |
+| `scripts/weekly.py` | Sunday cross-asset review |
 | `scripts/geopolitics.py` | Flashpoints, escalation scoring, unscheduled risk |
 | `scripts/market.py` | Implied vol, gold's drivers, CFTC positioning, FRED |
 | `scripts/actuals.py` | Reads the released value back and computes the surprise |
 | `scripts/health.py` | Records which sources answered, so failures aren't silent |
 | `data/event_profiles.json` | Curated briefing for each major USD release |
+| `data/assets.json` | The tracked set, with a signed sensitivity to each driver |
+| `data/drivers.json` | The eight forces markets actually move on |
+| `data/reactions.csv` | **The matrix.** One row per event per asset, forever |
 | `data/geopolitical_profiles.json` | Named flashpoints and how each reaches gold |
 | `data/calibration.csv` | Predicted range vs what actually happened, per day |
 | `scripts/narrate.py` | The written analysis (template, or a model if you add a key) |
 | `scripts/render.py` | Builds the dashboard page |
 | `scripts/morning.py` | Weekday 06:30 UK: builds the report |
-| `scripts/evening.py` | Weekday 22:30 UK: records gold's actual reaction |
+| `scripts/evening.py` | Weekday 22:30 UK: records the reaction across all assets |
 | `data/events.csv` | **The database.** One row per event, forever |
 | `data/reports/` | Markdown archive, one file per day |
 | `docs/` | The published dashboard |
@@ -128,6 +144,43 @@ decision is, whether it carries the dot plot, and what gold actually did on each
 of the last eight decision days - open to close, the day's range, and whether
 the move carried into the next session.
 
+### Drivers, and why the model is a matrix
+
+Eight drivers: rate expectations, inflation, growth, risk appetite, dollar and
+liquidity, supply shock, geopolitics, positioning. Every event maps to the
+drivers an *above-forecast* print pushes and in which direction; a below-forecast
+print flips the signs. Every asset carries a signed sensitivity from -1 to +1.
+
+So "what does a hot CPI do?" is derived, not written down:
+
+> inflation ↑ and rate expectations ↑ → 10-year yield strongly up, Nasdaq
+> strongly down (longer duration than the S&P, so it takes more), dollar up,
+> **gold down — with a flagged conflict**, because inflation-hedge demand and
+> rate pressure pull it opposite ways.
+
+Higher jobless claims correctly reads *dovish* rather than hawkish, because the
+mapping is signed per event rather than assuming above-forecast is bullish.
+
+Adding an asset, or revising one number, updates every explanation on the site
+at once. There is one page per asset (what drives it, ranked, plus what it has
+measurably done) and one per driver (which assets it moves, and how hard).
+
+### Correlations and regime
+
+Rolling correlations across the tracked set, because the relationships move.
+"Gold is trading *with* equities rather than against them" is a real, learnable
+fact that changes how you read everything else, and the dashboard says it in
+those words.
+
+### The weekly review
+
+A Sunday job reads the week across the whole book: what moved, what moved
+together (recent correlation against its longer-run norm — the *shift* is the
+interesting column), what the reaction log has learned, and **where the model is
+wrong** — event/asset pairs whose measured direction contradicts the prior in
+`assets.json`. Those are the lines to change, because the measurement is the
+fact and the prior is an opinion.
+
 ### The bit that compounds
 
 `data/events.csv` records, for every material event: the forecast, the previous
@@ -148,6 +201,11 @@ different claims, and only the second is useful.
 Co-published titles - payrolls, the unemployment rate and average hourly
 earnings arrive together - are recorded with a `co_released` count, briefed once
 rather than three times, and counted as one release by the risk score.
+
+`data/reactions.csv` does the same across the whole book: one row per event per
+asset, in percent so the assets are comparable. Once a pair has three instances
+the base rate appears on that asset's page, and the weekly review starts
+reporting it.
 
 ---
 
@@ -194,6 +252,7 @@ python scripts/evening.py     # log gold's reaction to today's events
 
 python tests/run_offline.py           # full pipeline, no network needed
 python tests/run_evening_offline.py   # reaction recorder, no network needed
+python tests/run_weekly_offline.py    # weekly review, no network needed
 ```
 
 ## Timing note
@@ -217,6 +276,11 @@ also best-effort and can run a few minutes late when it is busy.
   that no one is writing about scores zero. It is a coincident indicator.
 - **COT data is stale by construction** - published Fridays for the prior
   Tuesday. Useful for context, useless for timing.
+- **The sensitivity matrix is opinion.** Every number in `assets.json` is a
+  prior. The whole point of the reaction log and the weekly review is to find
+  out which of them are wrong.
+- **Correlations are descriptive, not predictive.** They tell you what regime
+  you have been in, which is useful, and nothing about what comes next.
 - **Event weights are a starting opinion**, not truth. They are all in
   `config.py` and should be revised once the CSV disagrees with them.
 - **Data health is now printed on the page.** FRED silently returned nothing for

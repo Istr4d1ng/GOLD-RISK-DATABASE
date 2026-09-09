@@ -264,11 +264,16 @@ def fetch_news(hours=36, limit=25):
                 "summary": " ".join(desc.split()),
                 "relevance": score,
             })
-    seen, unique = set(), []
+    # Cap each source so a high-volume squawk cannot crowd out the Fed feed.
+    seen, per_source, unique = set(), {}, []
     for it in sorted(items, key=lambda x: (-x["relevance"], x["published"])):
         key = it["title"].lower()[:70]
         if key in seen:
             continue
+        cap = getattr(config, "NEWS_PER_SOURCE", 6)
+        if per_source.get(it["source"], 0) >= cap:
+            continue
         seen.add(key)
+        per_source[it["source"]] = per_source.get(it["source"], 0) + 1
         unique.append(it)
     return unique[:limit]

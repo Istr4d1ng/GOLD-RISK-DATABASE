@@ -37,6 +37,8 @@ mechanism, not just the direction - and prefer the measured base rates in
 `historical_base_rates` and `fomc` over the rough prior figures in the profiles
 whenever both are present, saying which you are using. `positioning` tells you
 whether speculative length is crowded, which amplifies whatever else happens.
+`market_map` gives equity risk appetite and whether gold miners confirm gold's
+move - mention it only when it says something, never as a list of quotes.
 
 Be concrete and quantitative where the data supports it. Never invent numbers,
 prices, or events that are not in the input. If the data is thin, say so.
@@ -56,7 +58,7 @@ def _template(payload):
     geo = payload.get("geo") or {}
     if geo.get("points", 0) >= 15:
         lead = geo["flashpoints"][0] if geo.get("flashpoints") else None
-        parts.append(f"### Unscheduled risk &mdash; {geo['band']}\n\n{geo['note']}\n")
+        parts.append(f"### Unscheduled risk \u2014 {geo['band']}\n\n{geo['note']}\n")
         if lead:
             parts.append(f"**{lead['name']}** is the live one, {lead['state']} on "
                          f"{lead['headlines']} headlines in the last 48 hours. "
@@ -84,6 +86,12 @@ def _template(payload):
         parts.append(f"Positioning is not neutral: managed money net long sits at "
                      f"the {cot['percentile_2y']}th percentile of the last two "
                      f"years. {cot['read']}\n")
+
+    mm = payload.get("market_map")
+    if mm and mm.get("appetite") != "mixed":
+        parts.append(f"Equities are **{mm['appetite']}**. {mm['appetite_note']}\n")
+    if mm and mm.get("miner_read"):
+        parts.append(mm["miner_read"] + "\n")
 
     gold = payload.get("gold", {})
     if gold.get("last"):
@@ -169,6 +177,13 @@ def _gemini(payload, key):
         "drivers": payload.get("drivers"),
         "driver_attribution": payload.get("attribution"),
         "positioning": payload.get("cot"),
+        "market_map": (lambda m: {
+            "appetite": m["appetite"], "spread": m["spread"],
+            "miner_read": m.get("miner_read"),
+            "indices": [{k: q[k] for k in ("label", "last", "change_pct")}
+                        for q in m["indices"]],
+            "stocks": [{k: q[k] for k in ("label", "sector", "change_pct")}
+                       for q in m["stocks"]]} if m else None)(payload.get("market_map")),
         "implied_volatility": payload.get("implied"),
         "model_calibration": payload.get("calibration"),
         "event_context": {

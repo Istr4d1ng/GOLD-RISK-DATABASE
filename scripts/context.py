@@ -122,6 +122,11 @@ def recent_readings(title, count=8):
         obs = fred_series(sid)
     except Exception as exc:                # noqa: BLE001
         print(f"[context] FRED {sid} unavailable: {exc}")
+        try:
+            import health
+            health.fail(f"FRED series {sid}", exc)
+        except Exception:                   # noqa: BLE001
+            pass
         return None
 
     points = []

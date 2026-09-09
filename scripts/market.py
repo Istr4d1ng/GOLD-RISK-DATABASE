@@ -52,8 +52,28 @@ def _parse_fred_txt(text):
     return out
 
 
+def _parse_dbnomics(raw):
+    """DBnomics mirrors FRED without a key. Tolerant of shape changes."""
+    data = json.loads(raw.decode("utf-8", "replace"))
+    docs = ((data.get("series") or {}).get("docs")) or []
+    if not docs:
+        return []
+    doc = docs[0]
+    periods = doc.get("period") or doc.get("original_period") or []
+    values = doc.get("value") or []
+    out = []
+    for d, v in zip(periods, values):
+        if v is None or v == "NA":
+            continue
+        try:
+            out.append((str(d)[:10], float(v)))
+        except (TypeError, ValueError):
+            continue
+    return out
+
+
 def fred_series(series_id, years=3):
-    """Observations for a FRED series, trying both keyless endpoints."""
+    """Observations for a FRED series, trying every keyless endpoint."""
     start = (date.today() - timedelta(days=365 * years)).isoformat()
     errors = []
     for template in config.FRED_SOURCES:
@@ -72,6 +92,15 @@ def fred_series(series_id, years=3):
             errors.append(f"{url.split('?')[0]}: no rows")
         except Exception as exc:            # noqa: BLE001
             errors.append(f"{url.split('?')[0]}: {exc}")
+    try:
+        obs = _parse_dbnomics(sources._get(
+            config.DBNOMICS_URL.format(sid=series_id), timeout=25, retries=2))
+        if obs:
+            cutoff = (date.today() - timedelta(days=365 * years)).isoformat()
+            return [o for o in obs if o[0] >= cutoff] or obs
+        errors.append("dbnomics: no rows")
+    except Exception as exc:                # noqa: BLE001
+        errors.append(f"dbnomics: {exc}")
     raise RuntimeError("; ".join(errors))
 
 
@@ -251,4 +280,118 @@ def cot_gold():
         "read": read,
         "crowded": pct_rank >= 85 or pct_rank <= 15,
         "history": [{"date": r["date"], "net": int(r["net"])} for r in series[-26:]],
+    }
+
+
+# ---------------------------------------------------------------------------
+# Market map - indices and sector leaders, read for what they say about gold
+# ---------------------------------------------------------------------------
+
+def _quote(symbol, label, **extra):
+    bars = sources.fetch_chart(symbol, "1d", "1mo")
+    if len(bars) < 2:
+        raise RuntimeError(f"{symbol}: too few bars")
+    last, prev = bars[-1]["c"], bars[-2]["c"]
+    out = {"symbol": symbol, "label": label, "last": round(last, 2),
+           "change_pct": round((last - prev) / prev * 100, 2) if prev else None}
+    if len(bars) > 5 and bars[-6]["c"]:
+        out["change_5d_pct"] = round((last - bars[-6]["c"]) / bars[-6]["c"] * 100, 2)
+    out.update(extra)
+    return out
+
+
+def _mean(values):
+    vals = [v for v in values if v is not None]
+    return round(sum(vals) / len(vals), 2) if vals else None
+
+
+def market_map(gold_change_pct=None):
+    """Indices plus one liquid name per sector, and what they imply for gold.
+
+    Quotes on their own would be decoration here. What earns their place is the
+    read: whether the tape is risk-on or risk-off, whether the oil channel is
+    live, and whether the miners confirm gold's move or disagree with it.
+    """
+    indices, stocks, failed = [], [], []
+    for symbol, label, kind in config.INDICES:
+        try:
+            indices.append(_quote(symbol, label, kind=kind))
+        except Exception as exc:            # noqa: BLE001
+            failed.append(f"{symbol} ({exc.__class__.__name__})")
+    for symbol, label, sector, kind in config.SECTOR_STOCKS:
+        try:
+            stocks.append(_quote(symbol, label, sector=sector, kind=kind))
+        except Exception as exc:            # noqa: BLE001
+            failed.append(f"{symbol} ({exc.__class__.__name__})")
+    if not indices and not stocks:
+        raise RuntimeError("no market map data: " + "; ".join(failed[:4]))
+
+    by_kind = {}
+    for row in stocks:
+        by_kind.setdefault(row["kind"], []).append(row["change_pct"])
+
+    cyclical = _mean(by_kind.get("cyclical", []))
+    defensive = _mean(by_kind.get("defensive", []))
+    miners = _mean(by_kind.get("miner", []))
+    energy = _mean(by_kind.get("energy", []))
+    spread = (round(cyclical - defensive, 2)
+              if cyclical is not None and defensive is not None else None)
+    vix = next((i for i in indices if i["symbol"] == "^VIX"), None)
+    small = next((i for i in indices if i["symbol"] == "^RUT"), None)
+
+    # --- risk appetite -----------------------------------------------------
+    appetite, appetite_note = "mixed", (
+        "No clear rotation between cyclicals and defensives, so equities are "
+        "not saying much about gold today.")
+    if spread is not None:
+        vix_up = (vix or {}).get("change_pct", 0) or 0
+        if spread <= -0.5 or (vix_up > 5 and spread < 0):
+            appetite = "risk-off"
+            appetite_note = (
+                f"Defensives are outperforming cyclicals by {abs(spread):.2f}pp"
+                + (f" with the VIX up {vix_up:.1f}%" if vix_up > 0 else "")
+                + ". Risk-off tapes are usually gold-supportive, though the "
+                  "dollar competes for the same haven flow.")
+        elif spread >= 0.5:
+            appetite = "risk-on"
+            appetite_note = (
+                f"Cyclicals are leading defensives by {spread:.2f}pp. A "
+                "confident tape is a mild headwind for gold, since haven demand "
+                "is the part of the bid that fades first.")
+    if small and small.get("change_pct") is not None and appetite == "mixed":
+        if small["change_pct"] <= -1.0:
+            appetite, appetite_note = "risk-off", (
+                f"Small caps are down {abs(small['change_pct']):.2f}% while the "
+                "large-cap indices hold up - the classic early sign of risk "
+                "coming off, and usually gold-supportive.")
+
+    # --- miners: confirmation or divergence --------------------------------
+    miner_read = None
+    if miners is not None and gold_change_pct is not None:
+        if abs(gold_change_pct) < 0.3:
+            miner_read = (f"Miners {miners:+.2f}% on a flat day for gold - "
+                          "little to read into.")
+        elif (miners > 0) == (gold_change_pct > 0):
+            lev = abs(miners) / abs(gold_change_pct)
+            # A ratio computed off a tiny denominator is arithmetic, not insight.
+            lev_txt = "more than 5x" if lev > 5 else f"about {lev:.1f}x"
+            miner_read = (
+                f"Miners {miners:+.2f}% against gold {gold_change_pct:+.2f}% - "
+                f"{lev_txt} leverage, confirming the move. Miners generally "
+                "amplify gold, so this is the normal relationship.")
+        else:
+            miner_read = (
+                f"Miners {miners:+.2f}% while gold went {gold_change_pct:+.2f}% "
+                "- a divergence. Worth noting rather than acting on: equity "
+                "factors move miners too, so this is not automatically a signal "
+                "about gold.")
+
+    return {
+        "indices": indices, "stocks": stocks,
+        "sectors": sorted({s["sector"] for s in stocks}),
+        "cyclical_avg": cyclical, "defensive_avg": defensive,
+        "miner_avg": miners, "energy_avg": energy, "spread": spread,
+        "appetite": appetite, "appetite_note": appetite_note,
+        "miner_read": miner_read,
+        "failed": failed,
     }

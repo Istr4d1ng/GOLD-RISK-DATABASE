@@ -1,0 +1,230 @@
+{
+  "_note": "The tracked set. 'sensitivity' is a signed prior from -1 to +1: if that driver RISES, this is the direction the asset is expected to go. These are opinions and are labelled as such on the page - they get checked against, and eventually corrected by, the measured reactions in data/reactions.csv. 'overnight' names the contract to use for the Asia session when the primary symbol does not trade overnight.",
+  "assets": {
+    "gold": {
+      "name": "Gold",
+      "symbol": "GC=F",
+      "alt": [
+        "XAUUSD=X"
+      ],
+      "unit": "usd",
+      "decimals": 2,
+      "vol_index": "^GVZ",
+      "primary": true,
+      "what": "Spot gold, quoted per troy ounce. Pays no yield, so it is priced almost entirely off the opportunity cost of holding it and off demand for a store of value outside the banking system.",
+      "drives_it": "Real yields first, the dollar second, haven demand third. Central bank buying is the slow structural bid underneath all of it.",
+      "sensitivity": {
+        "rate_expectations": -0.85,
+        "inflation": 0.35,
+        "growth": -0.1,
+        "risk_appetite": -0.5,
+        "dollar_liquidity": -0.6,
+        "supply_shock": 0.2,
+        "geopolitics": 0.7,
+        "positioning": 0.0
+      }
+    },
+    "sp500": {
+      "name": "S&P 500",
+      "symbol": "^GSPC",
+      "unit": "index",
+      "decimals": 2,
+      "vol_index": "^VIX",
+      "what": "The broad US equity market, and the reference risk asset for everything else.",
+      "drives_it": "Earnings and the discount rate. Growth helps until it forces policy tighter, at which point it stops helping.",
+      "sensitivity": {
+        "rate_expectations": -0.6,
+        "inflation": -0.3,
+        "growth": 0.8,
+        "risk_appetite": 0.9,
+        "dollar_liquidity": -0.2,
+        "supply_shock": -0.35,
+        "geopolitics": -0.4,
+        "positioning": 0.0
+      },
+      "overnight": "ES=F"
+    },
+    "nasdaq": {
+      "name": "Nasdaq 100",
+      "symbol": "^NDX",
+      "unit": "index",
+      "decimals": 2,
+      "what": "Large-cap growth and technology. Longer duration cash flows than the S&P, which makes it the more rate-sensitive of the two.",
+      "drives_it": "The same forces as the S&P, but the discount rate matters more and current earnings matter less.",
+      "sensitivity": {
+        "rate_expectations": -0.85,
+        "inflation": -0.4,
+        "growth": 0.7,
+        "risk_appetite": 0.95,
+        "dollar_liquidity": -0.2,
+        "supply_shock": -0.25,
+        "geopolitics": -0.4,
+        "positioning": 0.0
+      },
+      "overnight": "NQ=F"
+    },
+    "oil": {
+      "name": "WTI crude",
+      "symbol": "CL=F",
+      "unit": "usd",
+      "decimals": 2,
+      "vol_index": "^OVX",
+      "what": "US benchmark crude. The one asset here where physical supply genuinely sets the price rather than expectations about it.",
+      "drives_it": "Supply first, demand second. It is also the transmission belt from geopolitics into inflation, which is why it matters far beyond energy.",
+      "sensitivity": {
+        "rate_expectations": -0.1,
+        "inflation": 0.3,
+        "growth": 0.7,
+        "risk_appetite": 0.3,
+        "dollar_liquidity": -0.3,
+        "supply_shock": 0.9,
+        "geopolitics": 0.6,
+        "positioning": 0.0
+      }
+    },
+    "dollar": {
+      "name": "Dollar index",
+      "symbol": "DX-Y.NYB",
+      "unit": "index",
+      "decimals": 3,
+      "what": "The dollar against a basket of major currencies. The unit almost everything else is priced in.",
+      "drives_it": "US rates relative to everywhere else. It is also a haven, which is why it can rise both when things are good and when they are frightening.",
+      "sensitivity": {
+        "rate_expectations": 0.8,
+        "inflation": 0.2,
+        "growth": 0.35,
+        "risk_appetite": -0.35,
+        "dollar_liquidity": 1.0,
+        "supply_shock": 0.1,
+        "geopolitics": 0.3,
+        "positioning": 0.0
+      }
+    },
+    "us10y": {
+      "name": "US 10-year yield",
+      "symbol": "^TNX",
+      "unit": "pct",
+      "decimals": 3,
+      "what": "The yield, not the price - so it moves opposite to the bond. The single most important number in global finance.",
+      "drives_it": "Expected policy plus expected inflation plus a term premium for the risk of being wrong about either.",
+      "sensitivity": {
+        "rate_expectations": 0.9,
+        "inflation": 0.7,
+        "growth": 0.6,
+        "risk_appetite": 0.35,
+        "dollar_liquidity": 0.2,
+        "supply_shock": 0.2,
+        "geopolitics": -0.4,
+        "positioning": 0.0
+      }
+    },
+    "silver": {
+      "name": "Silver",
+      "symbol": "SI=F",
+      "unit": "usd",
+      "decimals": 3,
+      "what": "Half precious metal, half industrial input. Behaves like a leveraged, noisier gold with a growth kicker attached.",
+      "drives_it": "Everything that moves gold, amplified, plus genuine industrial demand - solar and electronics in particular.",
+      "sensitivity": {
+        "rate_expectations": -0.65,
+        "inflation": 0.45,
+        "growth": 0.45,
+        "risk_appetite": -0.15,
+        "dollar_liquidity": -0.5,
+        "supply_shock": 0.25,
+        "geopolitics": 0.4,
+        "positioning": 0.0
+      }
+    },
+    "copper": {
+      "name": "Copper",
+      "symbol": "HG=F",
+      "unit": "usd",
+      "decimals": 4,
+      "what": "The cleanest market read on global industrial activity there is, which is why it is nicknamed the metal with a doctorate.",
+      "drives_it": "Growth, mostly Chinese. Mine supply matters at the margin and occasionally dominates.",
+      "sensitivity": {
+        "rate_expectations": -0.25,
+        "inflation": 0.25,
+        "growth": 0.9,
+        "risk_appetite": 0.5,
+        "dollar_liquidity": -0.4,
+        "supply_shock": 0.5,
+        "geopolitics": 0.1,
+        "positioning": 0.0
+      }
+    },
+    "bitcoin": {
+      "name": "Bitcoin",
+      "symbol": "BTC-USD",
+      "unit": "usd",
+      "decimals": 0,
+      "what": "Traded as the highest-beta liquidity asset in the set. Whether it is also a store of value is an argument, not a fact - so this database treats it as what it demonstrably behaves like.",
+      "drives_it": "Liquidity and risk appetite, overwhelmingly. Its correlation with gold is unstable and should be checked rather than assumed.",
+      "sensitivity": {
+        "rate_expectations": -0.6,
+        "inflation": 0.1,
+        "growth": 0.25,
+        "risk_appetite": 0.85,
+        "dollar_liquidity": -0.5,
+        "supply_shock": 0.0,
+        "geopolitics": 0.05,
+        "positioning": 0.0
+      }
+    },
+    "eurusd": {
+      "name": "EUR/USD",
+      "symbol": "EURUSD=X",
+      "unit": "fx",
+      "decimals": 4,
+      "what": "The most traded currency pair. Effectively the inverse of the dollar index with a European growth story attached.",
+      "drives_it": "The gap between US and euro-area rate expectations, plus relative growth.",
+      "sensitivity": {
+        "rate_expectations": -0.7,
+        "inflation": -0.15,
+        "growth": 0.2,
+        "risk_appetite": 0.35,
+        "dollar_liquidity": -0.9,
+        "supply_shock": -0.3,
+        "geopolitics": -0.3,
+        "positioning": 0.0
+      }
+    },
+    "usdjpy": {
+      "name": "USD/JPY",
+      "symbol": "USDJPY=X",
+      "unit": "fx",
+      "decimals": 3,
+      "what": "The purest expression of rate differentials in the currency market, and the funding leg of the global carry trade.",
+      "drives_it": "US yields against Japanese ones. The yen is also a haven, so risk-off drags this pair down hard - and carry unwinds here have a habit of moving everything else.",
+      "sensitivity": {
+        "rate_expectations": 0.85,
+        "inflation": 0.3,
+        "growth": 0.3,
+        "risk_appetite": 0.5,
+        "dollar_liquidity": 0.6,
+        "supply_shock": 0.0,
+        "geopolitics": -0.35,
+        "positioning": 0.0
+      }
+    },
+    "vix": {
+      "name": "VIX",
+      "symbol": "^VIX",
+      "unit": "index",
+      "decimals": 2,
+      "what": "Thirty-day implied volatility on the S&P. A price for insurance, not a forecast - it says what protection costs, not what will happen.",
+      "drives_it": "Demand for hedges. Mean-reverting by construction, which is why a high VIX is usually a poor reason to expect more trouble.",
+      "sensitivity": {
+        "rate_expectations": 0.2,
+        "inflation": 0.15,
+        "growth": -0.45,
+        "risk_appetite": -0.9,
+        "dollar_liquidity": 0.3,
+        "supply_shock": 0.4,
+        "geopolitics": 0.65,
+        "positioning": 0.0
+      }
+    }
+  }
+}

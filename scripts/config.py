@@ -32,7 +32,11 @@ NEWS_FEEDS = [
     ("CNBC Top News", "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
     ("MarketWatch", "https://feeds.content.dowjones.io/public/rss/mw_topstories"),
     ("Yahoo Gold", "https://feeds.finance.yahoo.com/rss/2.0/headline?s=GC=F&region=US&lang=en-US"),
+    ("Financial Juice", "https://www.financialjuice.com/feed.ashx?xy=rss"),
 ]
+# A squawk publishes hundreds of lines a day. Without a per-source cap it would
+# crowd out the Fed and Treasury feeds purely on volume.
+NEWS_PER_SOURCE = 6
 
 # --- Gold sensitivity weights ---------------------------------------------
 # 0-10: how hard this release typically hits gold. Matched on the event title,
@@ -135,6 +139,8 @@ FRED_SOURCES = [
     "https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}&cosd={start}",
     "https://fred.stlouisfed.org/data/{sid}.txt",
 ]
+# Keyless mirror of the same series, used when FRED itself refuses the runner.
+DBNOMICS_URL = "https://api.db.nomics.world/v22/series/FRED/{sid}?observations=1"
 
 
 # --- Geopolitical feeds ----------------------------------------------------
@@ -150,6 +156,60 @@ GEO_FEEDS = [
 GEO_LOOKBACK_HOURS = 48
 # Intensity multipliers applied to a flashpoint's weight.
 GEO_INTENSITY = {"severe": 1.0, "elevated": 0.5, "background": 0.15}
+# A long-running conflict produces severe headlines every day. Scoring the
+# absolute level would pin it at maximum forever and teach you to ignore it,
+# so each flashpoint is measured against its OWN trailing normal instead.
+GEO_BASELINE_DAYS = 30          # trailing window for the baseline
+GEO_BASELINE_MIN = 7            # days of history before the baseline is trusted
+GEO_BACKDROP_CAP = 18           # most a standing situation can score on its own
+GEO_SIGMA_FULL = 3.0            # deviation that maps to the full escalation score
+GEO_NOVEL_BONUS = 0.4           # sigma added per genuinely new escalation marker
+GEO_BONUS_CAP = 1.2             # most that novelty and burst together can add
+GEO_NOVEL_LOOKBACK = 21         # days a marker must be absent to count as new
+GEO_BURST_MINUTES = 90          # window for "several outlets at once"
+
+
+
+# --- Market map ------------------------------------------------------------
+# Indices and one liquid name per sector. These are here to answer a gold
+# question, not to be a quote board: risk appetite, the oil channel, and
+# whether the miners confirm what gold is doing.
+INDICES = [
+    ("^GSPC", "S&P 500", "risk"),
+    ("^NDX", "Nasdaq 100", "risk"),
+    ("^DJI", "Dow Jones", "risk"),
+    ("^RUT", "Russell 2000", "risk"),
+    ("^VIX", "VIX", "fear"),
+    ("^FTSE", "FTSE 100", "risk"),
+]
+SECTOR_STOCKS = [
+    ("NVDA", "Nvidia", "Technology", "cyclical"),
+    ("MSFT", "Microsoft", "Technology", "cyclical"),
+    ("AMZN", "Amazon", "Consumer discretionary", "cyclical"),
+    ("JPM", "JPMorgan", "Financials", "cyclical"),
+    ("CAT", "Caterpillar", "Industrials", "cyclical"),
+    ("XOM", "Exxon Mobil", "Energy", "energy"),
+    ("LLY", "Eli Lilly", "Healthcare", "defensive"),
+    ("PG", "Procter & Gamble", "Consumer staples", "defensive"),
+    ("NEM", "Newmont", "Gold miners", "miner"),
+    ("GDX", "Gold Miners ETF", "Gold miners", "miner"),
+]
+
+
+# --- Asia session ----------------------------------------------------------
+# The morning job runs at 06:30 UK, by which point Asia has done most of its
+# work. Tokyo closes around 07:00 UK and Hong Kong around 09:00, so this is a
+# read on a session that is finishing, not one that has finished.
+ASIA_INDICES = [
+    ("^N225", "Nikkei 225", "Japan"),
+    ("^HSI", "Hang Seng", "Hong Kong"),
+    ("000001.SS", "Shanghai Composite", "China"),
+    ("^AXJO", "ASX 200", "Australia"),
+    ("^KS11", "KOSPI", "South Korea"),
+]
+ASIA_CURRENCIES = ["JPY", "CNY", "AUD", "NZD", "KRW", "SGD"]
+ASIA_START_HOUR = 0        # 00:00 UK - Tokyo's open
+ASIA_LOOKBACK_HOURS = 10   # how far back to look for overnight releases
 
 
 SITE_TITLE = "Gold / USD Daily Risk Database"

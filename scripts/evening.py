@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import actuals
 import config
+import reactions
 import risk as riskmod
 import sources
 
@@ -164,6 +165,24 @@ def main():
             print(f"[evening] logged {r['event']}: 1h {r['move_1h']}, "
                   f"close {r['move_close']} ({r['persistence']})")
     print(f"[evening] appended {len(new_rows)} rows to data/events.csv")
+
+    # The cross-asset log: one row per event per asset. This is what makes the
+    # base rates a matrix instead of a single column about gold.
+    try:
+        enriched = []
+        for e in events:
+            row = next((r for r in new_rows if r["event"] == e["title"]), {})
+            enriched.append({**e, "actual": row.get("actual", ""),
+                             "surprise": row.get("surprise", ""),
+                             "surprise_label": row.get("surprise_label", "")})
+        multi, failed = reactions.intraday_bars(days=5)
+        n = reactions.record(today, enriched, multi, tz)
+        print(f"[evening] logged {n} cross-asset reactions across "
+              f"{len(multi)} assets"
+              + (f"; no intraday for {', '.join(failed)}" if failed else ""))
+    except Exception as exc:                # noqa: BLE001
+        print(f"[evening] cross-asset logging failed: {exc}")
+
     record_calibration(today, day_bars)
     return 0
 

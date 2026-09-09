@@ -77,8 +77,30 @@ with open(riskmod.EVENTS_CSV, "w", newline="", encoding="utf-8") as fh:
 shutil.copy(os.path.join(ROOT, "data", "latest.json"),
             os.path.join(TESTS, "latest.json"))
 
+import reactions     # noqa: E402
+reactions.REACTIONS_CSV = os.path.join(TESTS, "_tmp_reactions.csv")
+if os.path.exists(reactions.REACTIONS_CSV):
+    os.remove(reactions.REACTIONS_CSV)
+
+# Every tracked asset gets the same shaped intraday series, scaled differently,
+# so the cross-asset logger has something to measure.
+import assets as assetlib   # noqa: E402
+
+
+def fake_intraday(days=5):
+    out = {}
+    for i, key in enumerate(assetlib.load_assets()):
+        scale = 1 + i * 0.4
+        out[key] = [{"t": b["t"], "o": b["o"] * scale, "h": b["h"] * scale,
+                     "l": b["l"] * scale, "c": b["c"] * scale} for b in bars]
+    return out, []
+
+
+reactions.intraday_bars = fake_intraday
+
 import evening       # noqa: E402
 evening.riskmod = riskmod
+evening.reactions = reactions
 
 assert evening.main() == 0
 rows = riskmod.load_history()
@@ -147,4 +169,31 @@ print(f"ok  calibration summary   (median error {summary['median_abs_error_pct']
 for f in (riskmod.EVENTS_CSV, riskmod.CALIBRATION_CSV,
           os.path.join(TESTS, "latest.json")):
     os.remove(f)
+rx = reactions.load()
+assert rx, "no cross-asset reactions logged"
+assets_logged = {r["asset"] for r in rx}
+events_logged = {r["event"] for r in rx}
+assert len(assets_logged) == 12, sorted(assets_logged)
+print(f"ok  cross-asset logged     ({len(rx)} rows: {len(events_logged)} events "
+      f"x {len(assets_logged)} assets)")
+
+gold_nfp = next(r for r in rx if r["asset"] == "gold"
+                and r["event"] == "Non-Farm Employment Change")
+assert abs(float(gold_nfp["pct_1h"])) > 0.3 and gold_nfp["persistence"], gold_nfp
+print(f"ok  percent moves recorded (gold {gold_nfp['pct_1h']}% at 1h, "
+      f"{gold_nfp['persistence']})")
+assert gold_nfp["surprise_label"] in ("above", "below", "in line")
+print("ok  surprise carried across (so base rates split by print, per asset)")
+
+m = reactions.matrix_for_event("Non-Farm Employment Change", rx, min_samples=1)
+assert m and "gold" in m and "oil" in m
+print(f"ok  matrix reads back      ({len(m)} assets for one event)")
+
+before = len(rx)
+assert evening.main() == 0
+assert len(reactions.load()) == before
+print("ok  cross-asset idempotent (no duplicate rows on a re-run)")
+if os.path.exists(reactions.REACTIONS_CSV):
+    os.remove(reactions.REACTIONS_CSV)
+
 print("\nALL CHECKS PASSED")

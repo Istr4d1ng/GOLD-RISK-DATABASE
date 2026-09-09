@@ -1,0 +1,32 @@
+name: Weekly cross-asset review
+
+on:
+  schedule:
+    # 09:00 UTC on Sundays - after the week has closed everywhere.
+    - cron: "0 9 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the weekly review
+        run: python scripts/weekly.py
+      - name: Commit output
+        run: |
+          git config user.name  "gold-risk-bot"
+          git config user.email "actions@github.com"
+          git add data docs
+          git diff --staged --quiet || git commit -m "weekly review $(date -u +%Y-%m-%d)"
+          git push

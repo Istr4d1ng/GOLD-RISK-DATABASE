@@ -1,0 +1,341 @@
+{
+  "_note": "Recurring news themes and the drivers each one pushes. Used to turn a day's headlines into an expected effect across the book. 'polarity' terms flip the sign: a headline about inflation COOLING pushes the inflation driver down. 'override_hawkish'/'override_dovish' decide the sign even when the opposite vocabulary also matches.",
+  "themes": {
+    "fed_policy": {
+      "name": "Fed policy and the rate path",
+      "terms": [
+        "fed",
+        "fomc",
+        "powell",
+        "warsh",
+        "rate cut",
+        "rate hike",
+        "monetary policy",
+        "interest rate",
+        "dot plot",
+        "hawkish",
+        "dovish",
+        "quantitative",
+        "balance sheet"
+      ],
+      "drivers": {
+        "rate_expectations": 1
+      },
+      "hawkish": [
+        "hawkish",
+        "higher for longer",
+        "delay cuts",
+        "rate hike",
+        "tighten",
+        "no cuts",
+        "pushes back"
+      ],
+      "dovish": [
+        "dovish",
+        "rate cut",
+        "cutting",
+        "ease",
+        "easing",
+        "pivot",
+        "sooner than expected"
+      ],
+      "override_hawkish": [
+        "pushes back",
+        "push back",
+        "rules out",
+        "no rate cut",
+        "no cuts",
+        "delay",
+        "higher for longer",
+        "not ready to cut",
+        "too early to cut"
+      ],
+      "override_dovish": [
+        "opens the door",
+        "signals a cut",
+        "ready to cut",
+        "prepared to ease"
+      ]
+    },
+    "inflation": {
+      "name": "Inflation",
+      "terms": [
+        "inflation",
+        "cpi",
+        "pce",
+        "ppi",
+        "price pressures",
+        "cost of living",
+        "breakeven",
+        "deflation",
+        "disinflation"
+      ],
+      "drivers": {
+        "inflation": 1,
+        "rate_expectations": 1
+      },
+      "hawkish": [
+        "hotter",
+        "accelerat",
+        "above forecast",
+        "sticky",
+        "rises",
+        "jumps",
+        "picks up"
+      ],
+      "dovish": [
+        "cools",
+        "eases",
+        "slows",
+        "below forecast",
+        "falls",
+        "disinflation",
+        "moderat"
+      ],
+      "override_dovish": [
+        "cools",
+        "cooler than",
+        "eases"
+      ],
+      "override_hawkish": [
+        "hotter than",
+        "above forecast",
+        "re-accelerat"
+      ]
+    },
+    "labour": {
+      "name": "Labour market",
+      "terms": [
+        "payrolls",
+        "jobs report",
+        "unemployment",
+        "jobless",
+        "hiring",
+        "layoff",
+        "wage",
+        "labour market",
+        "labor market"
+      ],
+      "drivers": {
+        "growth": 1,
+        "rate_expectations": 1
+      },
+      "hawkish": [
+        "strong",
+        "beats",
+        "robust",
+        "tight",
+        "hiring surge"
+      ],
+      "dovish": [
+        "layoff",
+        "weak",
+        "misses",
+        "cooling",
+        "job cuts",
+        "rises"
+      ]
+    },
+    "growth": {
+      "name": "Growth and recession risk",
+      "terms": [
+        "gdp",
+        "recession",
+        "slowdown",
+        "contraction",
+        "pmi",
+        "retail sales",
+        "consumer spending",
+        "manufacturing"
+      ],
+      "drivers": {
+        "growth": 1
+      },
+      "hawkish": [
+        "beats",
+        "expands",
+        "strong",
+        "accelerat",
+        "rebound"
+      ],
+      "dovish": [
+        "recession",
+        "contract",
+        "slowdown",
+        "misses",
+        "weak",
+        "slumps"
+      ]
+    },
+    "trade": {
+      "name": "Tariffs and trade",
+      "terms": [
+        "tariff",
+        "trade war",
+        "export control",
+        "import duty",
+        "trade deal",
+        "sanction on imports",
+        "customs"
+      ],
+      "drivers": {
+        "inflation": 1,
+        "growth": -1
+      },
+      "hawkish": [
+        "imposes",
+        "raises",
+        "new tariff",
+        "escalat",
+        "retaliat"
+      ],
+      "dovish": [
+        "deal",
+        "exempt",
+        "lowers",
+        "suspend",
+        "truce",
+        "agreement"
+      ]
+    },
+    "energy": {
+      "name": "Energy supply",
+      "terms": [
+        "opec",
+        "crude",
+        "oil output",
+        "oil supply",
+        "refinery",
+        "pipeline",
+        "lng",
+        "barrel",
+        "production cut",
+        "spr"
+      ],
+      "drivers": {
+        "supply_shock": 1,
+        "inflation": 1
+      },
+      "hawkish": [
+        "cut",
+        "disruption",
+        "outage",
+        "halts",
+        "attack",
+        "shortage"
+      ],
+      "dovish": [
+        "raises output",
+        "increase production",
+        "glut",
+        "oversupply",
+        "resumes",
+        "restart"
+      ]
+    },
+    "credit": {
+      "name": "Banking and credit stress",
+      "terms": [
+        "bank failure",
+        "credit spread",
+        "default",
+        "bankruptcy",
+        "liquidity crisis",
+        "bailout",
+        "deposit",
+        "funding stress",
+        "repo market"
+      ],
+      "drivers": {
+        "risk_appetite": -1,
+        "rate_expectations": -1
+      },
+      "hawkish": [],
+      "dovish": []
+    },
+    "fiscal": {
+      "name": "Fiscal and debt",
+      "terms": [
+        "debt ceiling",
+        "government shutdown",
+        "credit rating",
+        "downgrade",
+        "deficit",
+        "treasury auction",
+        "borrowing",
+        "fiscal"
+      ],
+      "drivers": {
+        "dollar_liquidity": -1,
+        "rate_expectations": 1
+      },
+      "hawkish": [
+        "downgrade",
+        "shutdown",
+        "default",
+        "widening deficit",
+        "poor auction"
+      ],
+      "dovish": [
+        "deal reached",
+        "raises ceiling",
+        "upgrade",
+        "strong demand"
+      ]
+    },
+    "china": {
+      "name": "China policy and demand",
+      "terms": [
+        "china stimulus",
+        "pboc",
+        "beijing",
+        "chinese economy",
+        "property developer",
+        "yuan",
+        "china demand"
+      ],
+      "drivers": {
+        "growth": 1
+      },
+      "hawkish": [
+        "stimulus",
+        "boost",
+        "cuts rates",
+        "support package"
+      ],
+      "dovish": [
+        "slowdown",
+        "weak demand",
+        "property crisis",
+        "contraction"
+      ]
+    },
+    "dollar": {
+      "name": "Dollar and currency policy",
+      "terms": [
+        "dollar index",
+        "greenback",
+        "currency intervention",
+        "reserve currency",
+        "de-dollaris",
+        "de-dollariz",
+        "fx reserves"
+      ],
+      "drivers": {
+        "dollar_liquidity": 1
+      },
+      "hawkish": [
+        "strengthens",
+        "surges",
+        "safe haven bid"
+      ],
+      "dovish": [
+        "weakens",
+        "slides",
+        "de-dollaris",
+        "de-dollariz",
+        "diversify away"
+      ]
+    }
+  }
+}

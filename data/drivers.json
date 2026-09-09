@@ -1,0 +1,69 @@
+{
+  "_note": "The eight forces this database thinks markets actually move on. Every event and flashpoint maps to one or more of these; every asset carries a signed sensitivity to each. That indirection is what lets one mechanism explain many assets instead of hardcoding a sentence per pair.",
+  "drivers": {
+    "rate_expectations": {
+      "name": "Rate expectations",
+      "short": "Where the market thinks policy rates are going",
+      "what": "Not the current policy rate, which is known, but the expected path of it over the next year or two. This is the single most important driver in the set, because almost everything else is discounted against it.",
+      "propagates": "A change here moves the whole curve, which reprices the discount rate on every future cash flow and the opportunity cost of holding anything that yields nothing.",
+      "rises_when": "Inflation surprises high, labour data runs hot, or the Fed sounds hawkish.",
+      "watch": "Fed funds futures, the 2-year yield, and the dot plot on projection meetings."
+    },
+    "inflation": {
+      "name": "Inflation",
+      "short": "The price level and what people expect it to do",
+      "what": "Realised inflation and, more importantly, expected inflation. The two can move in opposite directions, which is when things get interesting.",
+      "propagates": "Directly through rate expectations, and separately as an erosion of the real value of nominal assets - which is the case for owning real assets at all.",
+      "rises_when": "CPI, PPI or PCE come in above forecast, oil spikes, or tariffs land.",
+      "watch": "Core CPI m/m, core PCE, the 5-year breakeven, and the Michigan long-run expectation."
+    },
+    "growth": {
+      "name": "Growth",
+      "short": "How fast the economy is actually running",
+      "what": "Activity and demand. Feeds rate expectations in one direction and corporate earnings in another, which is why the same growth print can be read two ways depending on where the Fed is.",
+      "propagates": "Strong growth supports earnings and cyclical assets, but also keeps policy tight. Which effect dominates depends on whether inflation is the binding constraint.",
+      "rises_when": "GDP, retail sales, ISM or payrolls beat.",
+      "watch": "ISM services, retail sales control group, jobless claims trend, copper."
+    },
+    "risk_appetite": {
+      "name": "Risk appetite",
+      "short": "Willingness to hold risky assets at all",
+      "what": "The market's mood, which is not the same as the fundamentals. It can shift on nothing identifiable and it moves fast.",
+      "propagates": "Risk-on bids equities and credit and drains havens; risk-off does the reverse. Confusingly the dollar is both a risk asset and a haven, which is why it can rise in either direction.",
+      "rises_when": "Earnings beat, volatility falls, or a feared event passes without incident.",
+      "watch": "VIX, small caps against large, cyclicals against defensives, credit spreads."
+    },
+    "dollar_liquidity": {
+      "name": "Dollar and liquidity",
+      "short": "The price and availability of dollars",
+      "what": "The dollar is the unit almost everything is priced in, so its strength mechanically moves anything quoted in it, before any economics happens at all.",
+      "propagates": "A stronger dollar makes dollar-priced commodities more expensive for everyone else, and tightens global financial conditions independently of what the Fed intends.",
+      "rises_when": "US rates rise relative to elsewhere, or in a genuine panic when everyone wants dollars.",
+      "watch": "DXY, cross-currency basis, SOFR against the reverse repo rate."
+    },
+    "supply_shock": {
+      "name": "Supply shock",
+      "short": "Physical supply, disrupted",
+      "what": "Something interrupting the actual production or transport of a physical good. Unlike the other drivers this one is not about expectations at all.",
+      "propagates": "Straight into the price of the affected commodity, then into headline inflation, then - awkwardly for policymakers - into rate expectations at exactly the moment growth is being hurt.",
+      "rises_when": "Shipping lanes close, producers cut, or infrastructure is attacked.",
+      "watch": "Crude and product spreads, freight rates, inventory reports."
+    },
+    "geopolitics": {
+      "name": "Geopolitics",
+      "short": "Conflict, sanctions and the haven bid they create",
+      "what": "Unscheduled risk. Distinct from supply shock even when the two arrive together: one is about fear, the other about barrels.",
+      "propagates": "Haven demand into gold, Treasuries and the dollar, out of equities. Usually fades within days unless it changes the supply picture or the rate path.",
+      "rises_when": "Escalation above its own recent baseline - see the unscheduled risk layer.",
+      "watch": "Whether new escalation language appears, and whether shipping or energy infrastructure is involved."
+    },
+    "positioning": {
+      "name": "Positioning",
+      "short": "How crowded the trade already is",
+      "what": "Not a fundamental at all - a description of who already owns what. Amplifies every other driver rather than acting on its own.",
+      "propagates": "A crowded book makes moves against it faster and deeper, because the people who would normally buy the dip are already long.",
+      "rises_when": "Speculative length builds after a sustained trend.",
+      "watch": "CFTC managed money net, and how far it sits from its own two-year range."
+    }
+  }
+}
