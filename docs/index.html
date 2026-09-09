@@ -1,384 +1,730 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-band="HIGH">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gold / USD Daily Risk Database</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-  :root {
-    --bg:#0d0f12; --card:#15181d; --line:#232830; --fg:#e8eaed;
-    --muted:#9aa3af; --track:#232830; --accent:#e5484d;
+:root {
+  --bg:#f4f5f7; --surface:#ffffff; --sunken:#eceef2;
+  --line:#e0e3e9; --line-soft:#eaedf1;
+  --ink:#101319; --ink-2:#39414f; --muted:#6b7480;
+  --brass:#8a6d1f; --brass-soft:#f2ead6;
+  --low:#1f7a52; --moderate:#a8720c; --high:#c2521c; --extreme:#c0303c;
+  --accent:var(--moderate);
+  --shadow:0 1px 2px rgba(16,19,25,.05), 0 12px 32px -22px rgba(16,19,25,.45);
+  --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans:"Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#0a0c10; --surface:#12151c; --sunken:#171b23;
+    --line:#212630; --line-soft:#1a1f27;
+    --ink:#e9ecf1; --ink-2:#b9c1cd; --muted:#828c9c;
+    --brass:#c9a227; --brass-soft:#2a2413;
+    --low:#3fb27f; --moderate:#e0a030; --high:#ec7b40; --extreme:#e3596a;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 16px 40px -26px rgba(0,0,0,.9);
   }
-  @media (prefers-color-scheme: light) {
-    :root:not([data-theme="dark"]) {
-      --bg:#f6f7f9; --card:#ffffff; --line:#e3e6ea; --fg:#14171c;
-      --muted:#5d6673; --track:#e8ebef;
-    }
-  }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg);
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  .wrap { max-width:900px; margin:0 auto; padding:20px 16px 64px; }
-  header { display:flex; justify-content:space-between; align-items:baseline;
-    flex-wrap:wrap; gap:8px; margin-bottom:20px; }
-  h1 { font-size:19px; margin:0; letter-spacing:-.01em; }
-  .date { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
-  .card { background:var(--card); border:1px solid var(--line);
-    border-radius:14px; padding:20px; margin-bottom:16px; }
-  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em;
-    color:var(--muted); margin:0 0 14px; font-weight:600; }
-  h3 { font-size:16px; margin:22px 0 6px; }
-  h3.sub { font-size:13px; text-transform:uppercase; letter-spacing:.08em;
-    color:var(--muted); margin:22px 0 10px; }
-  .hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
-  .gauge { width:128px; height:128px; flex:none; }
-  .gauge-num { font-size:34px; font-weight:700; fill:var(--fg); }
-  .gauge-sub { font-size:12px; fill:var(--muted); }
-  .hero-body { flex:1; min-width:220px; }
-  .band { display:inline-block; font-size:12px; font-weight:700;
-    letter-spacing:.08em; padding:4px 10px; border-radius:999px;
-    background:#e5484d22; color:#e5484d; margin-bottom:8px; }
-  .split { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
-  .split span { font-size:12px; padding:3px 9px; border-radius:6px;
-    background:var(--track); color:var(--muted); }
-  .stat { display:flex; justify-content:space-between; gap:12px;
-    padding:7px 0; border-top:1px solid var(--line); font-size:14px; }
-  .stat .k { color:var(--muted); }
-  .stat .v { font-variant-numeric:tabular-nums; font-weight:600; text-align:right; }
-  .up { color:#30a46c; } .down { color:#e5484d; }
-  .scroll { overflow-x:auto; }
-  table { width:100%; border-collapse:collapse; font-size:14px; min-width:560px; }
-  th { text-align:left; color:var(--muted); font-weight:600; font-size:12px;
-    text-transform:uppercase; letter-spacing:.05em; padding:0 10px 8px 0; }
-  td { padding:11px 10px 11px 0; border-top:1px solid var(--line);
-    vertical-align:top; }
-  td.time { font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap; }
-  td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
-  tr.major td { background:#e5484d0e; }
-  .dot { display:inline-block; width:8px; height:8px; border-radius:50%;
-    margin-right:8px; vertical-align:middle; }
-  .pill { font-size:10.5px; font-weight:700; letter-spacing:.06em;
-    text-transform:uppercase; padding:3px 8px; border-radius:999px;
-    margin-right:8px; white-space:nowrap; }
-  .muted { color:var(--muted); } .small { font-size:12.5px; line-height:1.45; }
-  ul.news { list-style:none; padding:0; margin:8px 0 0; }
-  ul.news li { padding:10px 0; border-top:1px solid var(--line); font-size:14.5px; }
-  ul.news li:first-child { border-top:none; }
-  ul.news a { color:var(--fg); text-decoration:none; }
-  ul.news a:hover { text-decoration:underline; }
-  .src { display:block; color:var(--muted); font-size:12px; margin-top:2px; }
-  .archive { display:flex; flex-wrap:wrap; gap:8px; }
-  .archive a { font-size:13px; padding:5px 10px; border:1px solid var(--line);
-    border-radius:8px; color:var(--muted); text-decoration:none;
-    font-variant-numeric:tabular-nums; }
-  .analysis p { margin:0 0 12px; }
-  .analysis a { color:var(--accent); }
-  footer { color:var(--muted); font-size:12.5px; text-align:center;
-    margin-top:28px; line-height:1.7; }
-  .bars { display:grid; gap:6px; margin-top:12px; }
-  .bar { display:grid; grid-template-columns:110px 1fr 40px; gap:10px;
-    align-items:center; font-size:12.5px; color:var(--muted); }
-  .bar i { display:block; height:6px; border-radius:3px; background:var(--accent);
-    min-width:2px; }
-  .bar u { display:block; height:6px; border-radius:3px; background:var(--track); }
-  details { border-top:1px solid var(--line); }
-  details:first-of-type { border-top:none; }
-  summary { cursor:pointer; padding:12px 0; font-size:14.5px; list-style:none;
-    display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
-  summary::-webkit-details-marker { display:none; }
-  summary::before { content:"+"; color:var(--muted); font-weight:700;
-    margin-right:4px; }
-  details[open] summary::before { content:"2"; }
-  .detail { padding:2px 0 18px 22px; font-size:14px; }
-  .detail .lead { margin:0 0 12px; }
-  .also { margin:0 0 10px; font-size:13px; color:var(--muted);
-    border-left:2px solid var(--line); padding-left:10px; }
-  dl.facts { margin:0 0 14px; display:grid; grid-template-columns:auto 1fr;
-    gap:6px 14px; font-size:13.5px; }
-  dl.facts dt { color:var(--muted); white-space:nowrap; }
-  dl.facts dd { margin:0; }
-  .measured { background:var(--track); border-radius:8px; padding:10px 12px;
-    font-size:13.5px; margin:12px 0; }
-  .readings { margin:14px 0; }
-  .rlabel { font-size:12.5px; color:var(--fg); margin-bottom:6px; }
-  .sparks { display:flex; align-items:flex-end; gap:3px; height:38px;
-    margin:10px 0 8px; }
-  .spark { flex:1; max-width:26px; background:var(--accent); opacity:.65;
-    border-radius:2px 2px 0 0; }
-  table.mini { font-size:12.5px; min-width:0; }
-  table.mini td, table.mini th { padding:5px 14px 5px 0; }
-  table.mini.wide { width:100%; margin-top:8px; }
-  .health { display:grid; gap:8px; }
-  .hrow { display:grid; grid-template-columns:10px 1fr auto; gap:10px;
-    align-items:baseline; font-size:13.5px; }
-  .hdot { width:8px; height:8px; border-radius:50%; }
-  .hdot.on { background:#30a46c; } .hdot.off { background:#e5484d; }
-  @media (max-width:520px) {
-    dl.facts { grid-template-columns:1fr; gap:2px 0; }
-    dl.facts dt { margin-top:8px; }
-    .detail { padding-left:12px; }
-  }
+}
+:root[data-theme="dark"] {
+  --bg:#0a0c10; --surface:#12151c; --sunken:#171b23;
+  --line:#212630; --line-soft:#1a1f27;
+  --ink:#e9ecf1; --ink-2:#b9c1cd; --muted:#828c9c;
+  --brass:#c9a227; --brass-soft:#2a2413;
+  --low:#3fb27f; --moderate:#e0a030; --high:#ec7b40; --extreme:#e3596a;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 16px 40px -26px rgba(0,0,0,.9);
+}
+[data-band="LOW"]      { --accent:var(--low); }
+[data-band="MODERATE"] { --accent:var(--moderate); }
+[data-band="HIGH"]     { --accent:var(--high); }
+[data-band="EXTREME"]  { --accent:var(--extreme); }
+
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body {
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap { max-width:960px; margin:0 auto; padding:0 18px 80px; }
+
+/* ---- masthead ---- */
+.top {
+  position:sticky; top:0; z-index:40; background:var(--bg);
+  border-bottom:1px solid var(--line); margin-bottom:26px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; padding:13px 0; flex-wrap:wrap;
+}
+.brand { display:flex; align-items:baseline; gap:10px; min-width:0; }
+.brand b { font-size:15px; font-weight:600; letter-spacing:-.01em; }
+.brand .rule { width:22px; height:2px; background:var(--brass); flex:none; }
+.stamp { font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums; }
+
+/* ---- hero ---- */
+.hero { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:34px;
+  align-items:start; padding-bottom:30px; border-bottom:1px solid var(--line); }
+.score { display:flex; align-items:flex-start; gap:16px; }
+.score .num { font-family:var(--mono); font-size:74px; line-height:.86;
+  font-weight:600; letter-spacing:-.04em; color:var(--accent);
+  font-variant-numeric:tabular-nums; }
+.score .of { font-family:var(--mono); font-size:12px; color:var(--muted);
+  padding-top:6px; }
+.bandline { display:flex; align-items:center; gap:9px; margin:14px 0 8px; }
+.chip { font-size:10.5px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; padding:4px 9px; border-radius:5px;
+  background:color-mix(in srgb, var(--accent) 15%, transparent);
+  color:var(--accent); white-space:nowrap; }
+.verdict { color:var(--ink-2); margin:0; max-width:46ch; }
+
+.scale { margin-top:20px; }
+.scale .track { position:relative; height:5px; border-radius:3px;
+  background:linear-gradient(90deg, var(--low) 0 25%, var(--moderate) 25% 50%,
+    var(--high) 50% 75%, var(--extreme) 75% 100%); opacity:.85; }
+.scale .pin { position:absolute; top:-5px; width:3px; height:15px;
+  border-radius:2px; background:var(--ink);
+  box-shadow:0 0 0 3px var(--bg); }
+.scale .ticks { display:flex; justify-content:space-between;
+  font-family:var(--mono); font-size:10px; color:var(--muted); margin-top:7px; }
+
+/* two-source split */
+.split { display:grid; gap:11px; margin-top:24px; }
+.srow { display:grid; grid-template-columns:96px 1fr 44px; gap:12px;
+  align-items:center; font-size:12.5px; color:var(--muted); }
+.srow u { display:block; height:7px; border-radius:4px; background:var(--sunken); }
+.srow u i { display:block; height:7px; border-radius:4px; background:var(--accent);
+  min-width:3px; }
+.srow b { font-family:var(--mono); font-size:12px; color:var(--ink-2);
+  text-align:right; font-weight:500; font-variant-numeric:tabular-nums; }
+
+/* ---- glance panel ---- */
+.glance { background:var(--surface); border:1px solid var(--line);
+  border-radius:12px; padding:6px 16px; box-shadow:var(--shadow); }
+.g { display:flex; justify-content:space-between; align-items:baseline;
+  gap:14px; padding:11px 0; border-top:1px solid var(--line-soft); }
+.g:first-child { border-top:none; }
+.g .k { font-size:12.5px; color:var(--muted); }
+.g .v { font-family:var(--mono); font-size:13px; font-weight:500;
+  text-align:right; font-variant-numeric:tabular-nums; }
+.g .v small { display:block; font-family:var(--sans); font-size:11px;
+  color:var(--muted); font-weight:400; }
+.up { color:var(--low); } .down { color:var(--extreme); }
+
+/* ---- sections ---- */
+section { padding:26px 0; border-bottom:1px solid var(--line);
+  scroll-margin-top:64px; }
+section:last-of-type { border-bottom:none; }
+h2 { font-size:11px; text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); font-weight:600; margin:0 0 4px; }
+.lede { color:var(--muted); font-size:13.5px; margin:0 0 18px; max-width:62ch; }
+
+/* ---- geopolitics rows ---- */
+.geo { display:grid; gap:2px; }
+.gr { position:relative; display:grid;
+  grid-template-columns:112px minmax(0,1fr) 104px 70px 14px;
+  gap:14px; align-items:center; padding:13px 10px; border-radius:9px;
+  background:none; border:none; width:100%; text-align:left; cursor:pointer;
+  color:inherit; font:inherit; -webkit-tap-highlight-color:transparent; }
+.gr:hover, .gr:focus-visible { background:var(--sunken); outline:none; }
+.gr:focus-visible { box-shadow:inset 0 0 0 2px var(--accent); }
+.gr .name { font-size:14px; font-weight:500; min-width:0; }
+.gr .name small { display:block; font-weight:400; font-size:11.5px;
+  color:var(--muted); }
+.gr .dev { font-family:var(--mono); font-size:12.5px; text-align:right;
+  white-space:nowrap; font-variant-numeric:tabular-nums; }
+.gr .arrow { color:var(--muted); font-size:15px; }
+.state { font-size:10px; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; padding:3px 7px; border-radius:4px;
+  text-align:center; white-space:nowrap; }
+.state.extreme { background:color-mix(in srgb,var(--extreme) 16%,transparent); color:var(--extreme); }
+.state.high { background:color-mix(in srgb,var(--high) 16%,transparent); color:var(--high); }
+.state.moderate { background:color-mix(in srgb,var(--moderate) 16%,transparent); color:var(--moderate); }
+.state.low { background:color-mix(in srgb,var(--low) 16%,transparent); color:var(--low); }
+.state.muted-state { background:var(--sunken); color:var(--muted); }
+
+.spark { display:block; width:100%; height:26px; overflow:visible; }
+.spark .base { stroke:var(--muted); stroke-width:1; stroke-dasharray:2 3; opacity:.7; }
+.spark .fill { fill:var(--accent); opacity:.14; }
+.spark .line { fill:none; stroke:var(--accent); stroke-width:1.5;
+  stroke-linejoin:round; }
+.spark .tip { fill:var(--accent); }
+
+/* ---- popover (level 2) ---- */
+.pop { position:absolute; z-index:60; left:10px; right:10px; top:calc(100% - 6px);
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  box-shadow:var(--shadow); padding:16px 17px; display:none; }
+.pop.on { display:block; animation:rise .14s ease-out; }
+@keyframes rise { from { opacity:0; transform:translateY(-4px);} to { opacity:1; } }
+.pop h4 { margin:0 0 2px; font-size:14px; font-weight:600; }
+.pop .sub { font-family:var(--mono); font-size:11px; color:var(--muted);
+  margin-bottom:12px; }
+.pop p { margin:0 0 10px; font-size:13px; color:var(--ink-2); }
+.pop .big { width:100%; height:56px; margin:4px 0 12px; }
+.spark.tall { height:130px; margin:6px 0 4px; }
+.pop .cta { font-size:11.5px; color:var(--muted); font-family:var(--mono); }
+
+/* transmission chain */
+.chain { display:flex; align-items:center; gap:7px; flex-wrap:wrap;
+  margin:2px 0 12px; }
+.chain span { font-size:11px; padding:4px 9px; border-radius:20px;
+  background:var(--sunken); color:var(--ink-2); white-space:nowrap; }
+.chain span.end { background:var(--brass-soft); color:var(--brass);
+  font-weight:600; }
+.chain b { color:var(--muted); font-size:11px; }
+
+/* ---- tables ---- */
+.scroll { overflow-x:auto; margin:0 -18px; padding:0 18px; }
+table { width:100%; border-collapse:collapse; font-size:13.5px; min-width:540px; }
+th { text-align:left; font-size:10.5px; text-transform:uppercase;
+  letter-spacing:.09em; color:var(--muted); font-weight:600;
+  padding:0 12px 9px 0; border-bottom:1px solid var(--line); }
+td { padding:11px 12px 11px 0; border-bottom:1px solid var(--line-soft);
+  vertical-align:top; }
+td.t { font-family:var(--mono); font-size:12.5px; white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+td.n { font-family:var(--mono); font-size:12.5px; white-space:nowrap;
+  font-variant-numeric:tabular-nums; }
+tr.major td { background:color-mix(in srgb, var(--accent) 6%, transparent); }
+.fdot { display:inline-block; width:7px; height:7px; border-radius:50%;
+  margin-right:8px; vertical-align:middle; }
+.f-red { background:var(--extreme); } .f-orange { background:var(--high); }
+.f-yellow { background:var(--moderate); } .f-grey { background:var(--muted); }
+
+/* ---- disclosure ---- */
+details { border-bottom:1px solid var(--line-soft); }
+details:last-of-type { border-bottom:none; }
+summary { cursor:pointer; padding:13px 0; list-style:none; display:flex;
+  align-items:baseline; gap:9px; flex-wrap:wrap; font-size:14px; }
+summary::-webkit-details-marker { display:none; }
+summary::after { content:"+"; margin-left:auto; color:var(--muted);
+  font-family:var(--mono); }
+details[open] summary::after { content:"\2212"; }
+summary .tm { font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+.detail { padding:0 0 18px; font-size:13.5px; color:var(--ink-2);
+  max-width:70ch; }
+.detail p { margin:0 0 10px; }
+dl { display:grid; grid-template-columns:auto 1fr; gap:7px 16px; margin:0 0 14px;
+  font-size:13px; }
+dt { color:var(--muted); white-space:nowrap; }
+dd { margin:0; }
+.note { background:var(--sunken); border-radius:8px; padding:11px 13px;
+  font-size:13px; margin:12px 0; }
+.also { border-left:2px solid var(--line); padding-left:11px; font-size:12.5px;
+  color:var(--muted); margin:0 0 12px; }
+
+/* ---- headline list ---- */
+ul.heads { list-style:none; padding:0; margin:0; }
+ul.heads li { padding:11px 0; border-bottom:1px solid var(--line-soft); }
+ul.heads li:last-child { border-bottom:none; }
+ul.heads a { color:var(--ink); text-decoration:none; font-size:13.5px; }
+ul.heads a:hover { text-decoration:underline; }
+ul.heads .meta { display:flex; gap:9px; margin-top:3px; font-family:var(--mono);
+  font-size:10.5px; color:var(--muted); flex-wrap:wrap; }
+.tier { padding:1px 6px; border-radius:3px; background:var(--sunken); }
+.tier.severe { background:color-mix(in srgb,var(--extreme) 16%,transparent);
+  color:var(--extreme); }
+
+.archive { display:flex; flex-wrap:wrap; gap:7px; }
+.archive a { font-family:var(--mono); font-size:11.5px; padding:5px 9px;
+  border:1px solid var(--line); border-radius:7px; color:var(--muted);
+  text-decoration:none; }
+.archive a:hover { color:var(--ink); border-color:var(--muted); }
+
+.quotes { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:0 22px; margin-top:6px; }
+.q { display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+  padding:9px 0; border-bottom:1px solid var(--line-soft); }
+.ql { font-size:13px; }
+.ql small { display:block; font-size:11px; color:var(--muted); }
+.qv { font-family:var(--mono); font-size:12.5px; text-align:right;
+  white-space:nowrap; font-variant-numeric:tabular-nums; }
+.qv small { display:block; font-size:10.5px; color:var(--muted); }
+a.q { text-decoration:none; color:inherit; }
+a.q:hover .ql { color:var(--brass); }
+.brasstag { font-size:9.5px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--brass); border:1px solid var(--brass); border-radius:3px;
+  padding:1px 4px; margin-left:6px; vertical-align:1px; }
+.chip.up { background:color-mix(in srgb,var(--low) 15%,transparent); color:var(--low); }
+.chip.down { background:color-mix(in srgb,var(--extreme) 15%,transparent); color:var(--extreme); }
+.sens { position:relative; display:inline-block; width:54px; height:8px;
+  background:var(--sunken); border-radius:2px; }
+.sens::after { content:""; position:absolute; left:26.5px; top:-2px; width:1px;
+  height:12px; background:var(--line); }
+.sens i { position:absolute; top:0; height:8px; border-radius:2px; }
+.sens i.up { background:var(--low); } .sens i.down { background:var(--extreme); }
+.nav { display:flex; gap:2px; flex-wrap:wrap; margin:-8px 0 22px;
+  border-bottom:1px solid var(--line); padding-bottom:10px; }
+.nav a { font-size:12.5px; color:var(--muted); text-decoration:none;
+  padding:6px 11px; border-radius:7px; white-space:nowrap; }
+.nav a:hover { color:var(--ink); background:var(--sunken); }
+.nav a.on { color:var(--ink); background:var(--sunken); font-weight:500; }
+.nav.jump { border-bottom:none; margin:-16px 0 18px; padding-bottom:0; }
+.nav.jump a { font-size:11.5px; padding:4px 9px; }
+.brand a.home { text-decoration:none; color:inherit; display:flex;
+  align-items:baseline; gap:10px; }
+.filter { font:inherit; font-size:13px; padding:6px 11px; border-radius:8px;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink);
+  min-width:180px; margin-left:6px; }
+.filter:focus { outline:none; border-color:var(--muted); }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:10px; margin:6px 0 22px; }
+.card { display:grid; gap:4px; padding:14px 15px; border:1px solid var(--line);
+  border-radius:11px; background:var(--surface); text-decoration:none;
+  color:inherit; }
+.card:hover { border-color:var(--muted); }
+.ct { font-size:14px; font-weight:500; }
+.cv { font-family:var(--mono); font-size:12.5px; }
+.cd { font-size:12.5px; color:var(--muted); line-height:1.45; }
+.archive-item { font-family:var(--mono); font-size:12.5px; padding:6px 10px;
+  border:1px solid var(--line); border-radius:7px; color:var(--muted);
+  text-decoration:none; }
+.archive-item:hover { color:var(--ink); border-color:var(--muted); }
+.pending { border-top:1px solid var(--line-soft); padding:11px 0; }
+.pending .pt { font-size:13.5px; margin-bottom:5px; }
+.pending .ps { font-size:12.5px; color:var(--ink-2); padding:2px 0; }
+.rng { position:relative; display:inline-block; width:46px; height:8px;
+  background:var(--sunken); border-radius:2px; vertical-align:middle; }
+.rng i { position:absolute; top:-2px; width:2px; height:12px; border-radius:1px;
+  background:var(--accent); }
+.health { display:grid; gap:7px; }
+.hr { display:grid; grid-template-columns:8px 1fr auto; gap:11px;
+  align-items:baseline; font-size:12.5px; }
+.hd { width:7px; height:7px; border-radius:50%; background:var(--low); }
+.hd.off { background:var(--extreme); }
+
+footer { margin-top:34px; padding-top:22px; border-top:1px solid var(--line);
+  color:var(--muted); font-size:12px; line-height:1.7; }
+a { color:var(--brass); }
+.back { display:inline-flex; align-items:center; gap:7px; font-size:12.5px;
+  color:var(--muted); text-decoration:none; margin:20px 0 0; }
+.back:hover { color:var(--ink); }
+
+@media (max-width:820px) {
+  .hero { grid-template-columns:1fr; gap:26px; }
+}
+@media (max-width:620px) {
+  .gr { grid-template-columns:88px minmax(0,1fr) 62px;
+    grid-template-areas:"state name dev" "state spark spark"; gap:8px 11px; }
+  .gr .state-cell { grid-area:state; align-self:start; }
+  .gr .name { grid-area:name; font-size:13.5px; }
+  .gr .dev { grid-area:dev; font-size:12px; }
+  .gr .spark-cell { grid-area:spark; }
+  .gr .arrow { display:none; }
+}
+@media (max-width:560px) {
+  .score .num { font-size:60px; }
+  dl { grid-template-columns:1fr; gap:1px; }
+  dt { margin-top:9px; }
+}
+@media (prefers-reduced-motion: reduce) { *, .pop.on { animation:none !important; } }
 </style>
 </head>
 <body>
 <div class="wrap">
-<header>
-  <h1>Gold / USD Daily Risk Database</h1>
-  <span class="date">2026-09-09 &middot; built 06:39 BST</span>
-</header>
 
-<section class="card">
+  <div class="top">
+    <div class="brand"><a class="home" href="index.html"><span class="rule"></span>
+      <b>Gold / USD Daily Risk Database</b></a></div>
+    <span class="stamp">2026-09-09 &middot; built 21:22 BST</span>
+  </div>
+  <nav class="nav"><a href="index.html" class="on">Today</a><a href="assets/index.html">Assets</a><a href="drivers/index.html">Drivers</a><a href="geo/index.html">Flashpoints</a><a href="weekly/index.html">Weekly</a><a href="reports/index.html">Archive</a></nav>
+  <nav class="nav jump">
+    <a href="#brief">Listen</a><a href="#affairs">Current affairs</a><a href="#asia">Asia</a><a href="#unscheduled">Geopolitics</a>
+    <a href="#calendar">Calendar</a><a href="#briefings">Briefings</a>
+    <a href="#board">Board</a><a href="#analysis">Analysis</a>
+  </nav>
+
   <div class="hero">
-    
-<svg viewBox="0 0 128 128" class="gauge" role="img" aria-label="Risk 80 of 100">
-  <circle cx="64" cy="64" r="52" fill="none" stroke="var(--track)" stroke-width="12"/>
-  <circle cx="64" cy="64" r="52" fill="none" stroke="#e5484d" stroke-width="12"
-          stroke-linecap="round" stroke-dasharray="261.4 326.7"
-          transform="rotate(-90 64 64)"/>
-  <text x="64" y="60" text-anchor="middle" class="gauge-num">80</text>
-  <text x="64" y="82" text-anchor="middle" class="gauge-sub">/ 100</text>
-</svg>
-    <div class="hero-body">
-      <span class="band">EXTREME RISK</span>
-      <div class="split">
-        <span>Scheduled 21/70</span>
-        <span>Unscheduled 70/70</span>
+    <div>
+      <div class="score">
+        <span class="num">56</span><span class="of">/100</span>
       </div>
-      <p style="margin:0 0 10px">Top-tier event risk. Spreads widen, stops get run, direction is a coin flip on the print.</p>
-      <div class="stat"><span class="k">Expected gold range today</span>
-        <span class="v">$152.1</span></div>
-      <div class="stat"><span class="k">Range basis</span>
-        <span class="v small">GVZ 27.26 (implied, 1 s.d.)</span></div>
-      <div class="stat"><span class="k">Implied vol (GVZ)</span><span class="v">27.26 &middot; 65th pct of the year</span></div>
-      <div class="stat"><span class="k">Gold last close</span><span class="v">$4,429.10 <span class="up">+0.80%</span></span></div>
+      <div class="bandline"><span class="chip">HIGH risk</span></div>
+      <p class="verdict">Major scheduled event. Wide, fast moves and poor fills likely.</p>
+      <div class="scale">
+        <div class="track"><span class="pin" style="left:calc(56% - 1.5px)"></span></div>
+        <div class="ticks"><span>0 low</span><span>25</span><span>50</span>
+          <span>75</span><span>100 extreme</span></div>
+      </div>
+      <div class="split"><div class="srow"><span>Scheduled</span><u><i style="width:30%"></i></u><b>21</b></div><div class="srow"><span>Unscheduled</span><u><i style="width:64%"></i></u><b>45</b></div></div>
+      <p class="lede" style="margin:10px 0 0">Plus volatility +4 &middot; both at once +7.</p>
     </div>
+    <div class="glance"><div class="g"><span class="k">Expected range today</span><span class="v">$156<small>GVZ 27.79 (implied, 1 s.d.)</small></span></div><div class="g"><span class="k">Gold last close</span><span class="v">$4,443.40 <span class="up">+1.13%</span></span></div><div class="g"><span class="k">Implied vol (GVZ)</span><span class="v">27.79<small>69th percentile of the year</small></span></div><div class="g"><span class="k">Dollar index</span><span class="v">98.828 <span class="up">-0.01%</span></span></div><div class="g"><span class="k">Next FOMC</span><span class="v">7d<small>2026-09-16 &middot; dot plot</small></span></div><div class="g"><span class="k">Managed money net</span><span class="v">136,771<small>57th percentile of 2y</small></span></div></div>
   </div>
-  <div class="bars"><div class="bar"><span>Headline event</span><u><i style="width:30%"></i></u><span>+21</span></div><div class="bar"><span>Event breadth</span><u><i style="width:0%"></i></u><span>+0</span></div><div class="bar"><span>Clustering</span><u><i style="width:0%"></i></u><span>+0</span></div><div class="bar"><span>Geopolitical</span><u><i style="width:100%"></i></u><span>+70</span></div><div class="bar"><span>Both at once</span><u><i style="width:46%"></i></u><span>+7</span></div><div class="bar"><span>Volatility</span><u><i style="width:30%"></i></u><span>+3</span></div><div class="bar"><span>Positioning</span><u><i style="width:0%"></i></u><span>+0</span></div></div>
-</section>
 
+  <section id="unscheduled">
+    <h2>Unscheduled risk</h2>
+    <p class="lede">Something has genuinely changed rather than simply continued. Expect headline-driven moves. Each flashpoint is scored against
+    <em>its own</em> recent normal, so a long-running conflict does not sit at maximum
+    forever. Hold a row for the picture, press it for everything.</p>
+    <div class="geo">
+<div style="position:relative;--accent:var(--muted)">
+  <button class="gr" data-geo="geo/us_iran.html"
+          aria-label="US / Israel – Iran detail">
+    <span class="state-cell"><span class="state muted-state">unbaselined</span></span>
+    <span class="name">US / Israel – Iran<small>1 days running</small></span>
+    <span class="spark-cell"><div class="muted" style="font-size:11px">no history yet</div></span>
+    <span class="dev"><span class="muted">no baseline</span></span>
+    <span class="arrow">&rsaquo;</span>
+  </button>
+  <div class="pop" role="dialog" aria-label="US / Israel – Iran summary">
+    <h4>US / Israel – Iran</h4>
+    <div class="sub">UNBASELINED
+      &middot; 11 headlines today
+      &middot; baseline 0.0</div>
+    <div class="muted" style="font-size:11px">no history yet</div>
+    <div class="chain"><span class="">Escalation</span><b>&rarr;</b><span class="">Oil supply risk</span><b>&rarr;</b><span class="">Real yields</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <p>11 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    <p><strong>New today:</strong> attack, escalat, missile, retaliat, strike</p>
+    <div class="cta">Press for the full picture and every headline &rsaquo;</div>
+  </div>
+</div>
+<div style="position:relative;--accent:var(--muted)">
+  <button class="gr" data-geo="geo/middle_east.html"
+          aria-label="Wider Middle East detail">
+    <span class="state-cell"><span class="state muted-state">unbaselined</span></span>
+    <span class="name">Wider Middle East<small>1 days running</small></span>
+    <span class="spark-cell"><div class="muted" style="font-size:11px">no history yet</div></span>
+    <span class="dev"><span class="muted">no baseline</span></span>
+    <span class="arrow">&rsaquo;</span>
+  </button>
+  <div class="pop" role="dialog" aria-label="Wider Middle East summary">
+    <h4>Wider Middle East</h4>
+    <div class="sub">UNBASELINED
+      &middot; 13 headlines today
+      &middot; baseline 0.0</div>
+    <div class="muted" style="font-size:11px">no history yet</div>
+    <div class="chain"><span class="">Escalation</span><b>&rarr;</b><span class="">Haven demand</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <p>13 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    <p><strong>New today:</strong> explosion, killed, sanction, strike, withdraw, withdrawal</p>
+    <div class="cta">Press for the full picture and every headline &rsaquo;</div>
+  </div>
+</div>
+<div style="position:relative;--accent:var(--muted)">
+  <button class="gr" data-geo="geo/russia_nato.html"
+          aria-label="Russia / Ukraine / NATO detail">
+    <span class="state-cell"><span class="state muted-state">unbaselined</span></span>
+    <span class="name">Russia / Ukraine / NATO<small>1 days running</small></span>
+    <span class="spark-cell"><div class="muted" style="font-size:11px">no history yet</div></span>
+    <span class="dev"><span class="muted">no baseline</span></span>
+    <span class="arrow">&rsaquo;</span>
+  </button>
+  <div class="pop" role="dialog" aria-label="Russia / Ukraine / NATO summary">
+    <h4>Russia / Ukraine / NATO</h4>
+    <div class="sub">UNBASELINED
+      &middot; 3 headlines today
+      &middot; baseline 0.0</div>
+    <div class="muted" style="font-size:11px">no history yet</div>
+    <div class="chain"><span class="">Sanctions</span><b>&rarr;</b><span class="">Reserve diversification</span><b>&rarr;</b><span class="">Central bank buying</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <p>3 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    <p><strong>New today:</strong> drone, strike</p>
+    <div class="cta">Press for the full picture and every headline &rsaquo;</div>
+  </div>
+</div>
+<div style="position:relative;--accent:var(--muted)">
+  <button class="gr" data-geo="geo/trade_tariffs.html"
+          aria-label="Trade and tariffs detail">
+    <span class="state-cell"><span class="state muted-state">unbaselined</span></span>
+    <span class="name">Trade and tariffs<small>1 days running</small></span>
+    <span class="spark-cell"><div class="muted" style="font-size:11px">no history yet</div></span>
+    <span class="dev"><span class="muted">no baseline</span></span>
+    <span class="arrow">&rsaquo;</span>
+  </button>
+  <div class="pop" role="dialog" aria-label="Trade and tariffs summary">
+    <h4>Trade and tariffs</h4>
+    <div class="sub">UNBASELINED
+      &middot; 2 headlines today
+      &middot; baseline 0.0</div>
+    <div class="muted" style="font-size:11px">no history yet</div>
+    <div class="chain"><span class="">Tariffs</span><b>&rarr;</b><span class="">Inflation impulse</span><b>&rarr;</b><span class="">Fed uncertainty</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <p>2 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    <p><strong>New today:</strong> escalat, strike</p>
+    <div class="cta">Press for the full picture and every headline &rsaquo;</div>
+  </div>
+</div>
+<div style="position:relative;--accent:var(--muted)">
+  <button class="gr" data-geo="geo/china_taiwan.html"
+          aria-label="China / Taiwan detail">
+    <span class="state-cell"><span class="state muted-state">unbaselined</span></span>
+    <span class="name">China / Taiwan<small>1 days running</small></span>
+    <span class="spark-cell"><div class="muted" style="font-size:11px">no history yet</div></span>
+    <span class="dev"><span class="muted">no baseline</span></span>
+    <span class="arrow">&rsaquo;</span>
+  </button>
+  <div class="pop" role="dialog" aria-label="China / Taiwan summary">
+    <h4>China / Taiwan</h4>
+    <div class="sub">UNBASELINED
+      &middot; 4 headlines today
+      &middot; baseline 0.0</div>
+    <div class="muted" style="font-size:11px">no history yet</div>
+    <div class="chain"><span class="">Blockade risk</span><b>&rarr;</b><span class="">Supply chains</span><b>&rarr;</b><span class="">Haven demand</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <p>4 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    
+    <div class="cta">Press for the full picture and every headline &rsaquo;</div>
+  </div>
+</div></div>
+  </section>
 
-<section class="card">
-  <h2>Unscheduled risk &mdash; geopolitics</h2>
-  <div class="stat"><span class="k">Level</span>
-    <span class="v" style="color:#e5484d">SEVERE
-      &middot; 70/70</span></div>
-  <p style="margin:12px 0">Multiple severe headlines on a flashpoint gold is highly sensitive to. Treat scheduled data as secondary today.</p>
-  
-<details>
-  <summary><span class="pill" style="background:#e5484d22;color:#e5484d">
-    escalating</span>
-    <strong>US / Israel – Iran</strong>
-    <span class="muted small">&mdash; 14 headlines, weight 10</span></summary>
-  <div class="detail">
-    <dl class="facts">
-      <dt>Why gold cares</dt><dd>The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.</dd>
-      <dt>Working against it</dt><dd>The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold&#x27;s gain. This is why some escalation days produce a far smaller gold move than the headlines imply.</dd>
-      <dt>How long it lasts</dt><dd>Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed&#x27;s reaction function.</dd>
-      <dt>What would escalate it</dt><dd>Direct state-on-state strikes rather than proxies; any interference with shipping in Hormuz; attacks on oil infrastructure; withdrawal from nuclear monitoring.</dd>
-    </dl>
-    <ul class="news"><li><a href="https://www.bbc.co.uk/news/articles/cp849n2nz01o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Saudi Arabia vows to respond after Houthis attack cities and energy facilities</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.aljazeera.com/video/newsfeed/2026/9/9/yemens-saudi-backed-forces-strike-houthis-on-western-coast?traffic_source=rss" target="_blank" rel="noopener">Yemen’s Saudi-backed forces strike Houthis on western coast</a><span class="src">Al Jazeera &middot; severe</span></li><li><a href="https://www.aljazeera.com/video/newsfeed/2026/9/9/jordanian-air-defences-intercept-iranian-missile-barrage?traffic_source=rss" target="_blank" rel="noopener">Jordanian air defences intercept Iranian missile barrage</a><span class="src">Al Jazeera &middot; severe</span></li><li><a href="https://www.aljazeera.com/news/2026/9/9/us-destroys-five-iranian-tankers-iran-retaliates-with-attacks-on-jordan-base?traffic_source=rss" target="_blank" rel="noopener">US strikes 5 Iranian oil tankers; Tehran targets Jordan base, US warships</a><span class="src">Al Jazeera &middot; severe</span></li></ul>
-  </div>
-</details>
-<details>
-  <summary><span class="pill" style="background:#f7680822;color:#f76808">
-    active</span>
-    <strong>Wider Middle East</strong>
-    <span class="muted small">&mdash; 7 headlines, weight 7</span></summary>
-  <div class="detail">
-    <dl class="facts">
-      <dt>Why gold cares</dt><dd>Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region&#x27;s conflicts rarely touch US rate expectations directly.</dd>
-      <dt>Working against it</dt><dd>Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.</dd>
-      <dt>How long it lasts</dt><dd>Hours to days. The shortest-lived of the major flashpoints unless it pulls Iran in directly.</dd>
-      <dt>What would escalate it</dt><dd>Direct Iranian involvement, Red Sea shipping disruption, or US forces taking casualties.</dd>
-    </dl>
-    <ul class="news"><li><a href="https://www.bbc.co.uk/news/videos/c62jdyld8myo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Pupils return to West Bank school behind barbed wire to protect against settlers</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.bbc.co.uk/news/articles/c4g7zen0vveo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">UK announces sanctions on West Bank settlements prompting furious Israeli response</a><span class="src">BBC World &middot; elevated</span></li><li><a href="https://www.bbc.co.uk/news/articles/cvgy6gd228vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">In West Bank, date farmers weigh impact of UK sanctions on Israeli settlers</a><span class="src">BBC World &middot; elevated</span></li><li><a href="https://www.cnbc.com/2026/09/08/uk-israel-sanctions-miliband-florida-trump.html" target="_blank" rel="noopener">UK announces new Israeli settlement sanctions, despite U.S. warning of economic consequences</a><span class="src">CNBC World &middot; elevated</span></li></ul>
-  </div>
-</details>
-<details>
-  <summary><span class="pill" style="background:#f5a52422;color:#f5a524">
-    simmering</span>
-    <strong>China / Taiwan</strong>
-    <span class="muted small">&mdash; 9 headlines, weight 8</span></summary>
-  <div class="detail">
-    <dl class="facts">
-      <dt>Why gold cares</dt><dd>Low frequency, very high severity. A genuine blockade or invasion scenario is the largest single tail risk in the gold market, because it would be a global supply-chain and reserve-currency event simultaneously.</dd>
-      <dt>Working against it</dt><dd>Routine incursions and drills are so frequent they carry almost no information. Gold ignores them, correctly.</dd>
-      <dt>How long it lasts</dt><dd>Drills: nothing. A real blockade: a regime change in gold pricing, not a spike.</dd>
-      <dt>What would escalate it</dt><dd>Quarantine or blockade language, live-fire exercises encircling the island, US carrier movements, or semiconductor export emergencies.</dd>
-    </dl>
-    <ul class="news"><li><a href="https://www.aljazeera.com/economy/2026/9/9/conflict-over-taiwan-would-be-disastrous-de-facto-us-ambassador-warns?traffic_source=rss" target="_blank" rel="noopener">Conflict over Taiwan would be disastrous, de facto US ambassador warns</a><span class="src">Al Jazeera &middot; elevated</span></li><li><a href="https://www.bbc.co.uk/sport/golf/articles/ce8x39wj5p1o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">LIV files for bankruptcy protection with over $45m owed to players</a><span class="src">BBC World &middot; background</span></li><li><a href="https://www.bbc.co.uk/news/videos/clyl2dnjgkro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#x27;Good to have choice&#x27;: Australians on opting out of social media algorithms</a><span class="src">BBC World &middot; background</span></li><li><a href="https://www.aljazeera.com/video/newsfeed/2026/9/9/600-year-old-tomb-of-pre-incan-chimu-kingdom-found-in-peru?traffic_source=rss" target="_blank" rel="noopener">600-year-old tomb of pre-Incan Chimu kingdom found in Peru</a><span class="src">Al Jazeera &middot; background</span></li></ul>
-  </div>
-</details>
-<details>
-  <summary><span class="pill" style="background:#e5484d22;color:#e5484d">
-    escalating</span>
-    <strong>Trade and tariffs</strong>
-    <span class="muted small">&mdash; 3 headlines, weight 5</span></summary>
-  <div class="detail">
-    <dl class="facts">
-      <dt>Why gold cares</dt><dd>Indirect but real. Tariffs are an inflation impulse and a growth drag at once, which is the hardest combination for the Fed and therefore raises uncertainty about the rate path.</dd>
-      <dt>Working against it</dt><dd>Also dollar-positive in the short run, which works against gold. The net effect is genuinely ambiguous and often small.</dd>
-      <dt>How long it lasts</dt><dd>Weeks, when it changes the inflation outlook. Announcement headlines alone rarely stick.</dd>
-      <dt>What would escalate it</dt><dd>Rates above expectations, retaliation, or extension to critical minerals and energy.</dd>
-    </dl>
-    <ul class="news"><li><a href="https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">US slaps import ban on Canadian alcohol, motorbikes and other goods</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html" target="_blank" rel="noopener">Canada&#x27;s retaliatory tariffs worth CA$27.6 billion take effect as trade rift with U.S. deepens</a><span class="src">CNBC World &middot; severe</span></li><li><a href="https://www.cnbc.com/2026/09/08/pharma-tariffs-trump-generic-drugs-sandoz-cmd-stock.html" target="_blank" rel="noopener">&#x27;Patients pay the tariff&#x27;: Swiss pharma CEO warns of Trump&#x27;s generic drug tariff threat</a><span class="src">CNBC World &middot; elevated</span></li></ul>
-  </div>
-</details>
-<details>
-  <summary><span class="pill" style="background:#f7680822;color:#f76808">
-    active</span>
-    <strong>Russia / Ukraine / NATO</strong>
-    <span class="muted small">&mdash; 2 headlines, weight 8</span></summary>
-  <div class="detail">
-    <dl class="facts">
-      <dt>Why gold cares</dt><dd>Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.</dd>
-      <dt>Working against it</dt><dd>Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day&#x27;s price action.</dd>
-      <dt>How long it lasts</dt><dd>Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.</dd>
-      <dt>What would escalate it</dt><dd>Any Article 5 discussion, strikes on NATO territory, nuclear rhetoric or doctrine change, or new sanctions touching reserves or energy.</dd>
-    </dl>
-    <ul class="news"><li><a href="https://www.bbc.co.uk/news/articles/cn8m1k7p3v7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Ukrainian TV channel building hit by Russian drone as five killed in Kyiv</a><span class="src">BBC World &middot; severe</span></li><li><a href="https://www.bbc.co.uk/news/articles/cddvzd1z53lo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Hungary expels 10 Russian diplomats as relations worsen</a><span class="src">BBC World &middot; elevated</span></li></ul>
-  </div>
-</details>
-  <p class="muted small" style="margin-top:12px">Derived from how loud the news is, not from any assessment of what will happen. It measures attention, which is what moves price in the short run.</p>
-</section>
-
-<section class="card">
-  <h2>Today&rsquo;s USD calendar &mdash; UK time</h2>
-  
-<div class="scroll">
-<table>
-  <thead><tr><th>UK</th><th>Event</th><th>Gold wt</th><th>Fcst</th>
-             <th>Prev</th><th>Past 1h move ($)</th></tr></thead>
+  <section id="calendar">
+    <h2>Today&rsquo;s USD calendar &mdash; UK time</h2>
+    <div class="scroll"><table>
+  <thead><tr><th>UK</th><th>Event</th><th>Wt</th><th>Fcst</th><th>Prev</th>
+    <th>Past 1h</th></tr></thead>
   <tbody>
 <tr class="">
-  <td class="time">13:15</td>
-  <td><span class="dot" style="background:#d9c40a"></span>ADP Weekly Employment Change
-      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
-  <td class="num">1</td>
-  <td class="num">&amp;ndash;</td>
-  <td class="num">&amp;ndash;</td>
-  <td class="num small">&mdash;</td>
+  <td class="t">13:14</td>
+  <td><span class="fdot f-yellow"></span>ADP Weekly Employment Change</td>
+  <td class="n">1</td>
+  <td class="n">&ndash;</td>
+  <td class="n">11.8K</td>
+  <td class="n">&mdash;</td>
 </tr>
 <tr class="">
-  <td class="time">13:16</td>
-  <td><span class="dot" style="background:#d9c40a"></span>ADP Weekly Employment Change
-      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
-  <td class="num">1</td>
-  <td class="num">&amp;ndash;</td>
-  <td class="num">11.8K</td>
-  <td class="num small">&mdash;</td>
+  <td class="t">13:15</td>
+  <td><span class="fdot f-yellow"></span>ADP Weekly Employment Change</td>
+  <td class="n">1</td>
+  <td class="n">&ndash;</td>
+  <td class="n">10.0K</td>
+  <td class="n">&mdash;</td>
 </tr>
 <tr class="">
-  <td class="time">18:01</td>
-  <td><span class="dot" style="background:#d9c40a"></span>10-y Bond Auction
-      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
-  <td class="num">3</td>
-  <td class="num">&amp;ndash;</td>
-  <td class="num">4.68|2.5</td>
-  <td class="num small">&mdash;</td>
+  <td class="t">18:01</td>
+  <td><span class="fdot f-yellow"></span>10-y Bond Auction</td>
+  <td class="n">3</td>
+  <td class="n">&ndash;</td>
+  <td class="n">4.68|2.5</td>
+  <td class="n">&mdash;</td>
 </tr>
 <tr class="">
-  <td class="time">21:30</td>
-  <td><span class="dot" style="background:#d9c40a"></span>API Weekly Statistical Bulletin
-      <div class="muted small">Hotter than forecast is dollar-positive and gold-negative; softer readings do the reverse.</div></td>
-  <td class="num">1</td>
-  <td class="num">&amp;ndash;</td>
-  <td class="num">&amp;ndash;</td>
-  <td class="num small">&mdash;</td>
-</tr></tbody>
-</table>
-</div>
-</section>
+  <td class="t">21:30</td>
+  <td><span class="fdot f-yellow"></span>API Weekly Statistical Bulletin</td>
+  <td class="n">1</td>
+  <td class="n">&ndash;</td>
+  <td class="n">&ndash;</td>
+  <td class="n">&mdash;</td>
+</tr></tbody></table></div>
+  </section>
 
-<section class="card">
-  <h2>Event briefings &mdash; what each one is and what it does to gold</h2>
-  <p class="muted">Nothing material enough to brief today.</p>
-</section>
+  <section id="briefings">
+    <h2>Event briefings</h2>
+    <p class="lede">What each release is, why gold cares, and what it has actually
+    done here before.</p>
+    <p class="lede">Nothing material to brief today.</p>
+  </section>
 
+  <section>
+    <h2>What is driving gold</h2>
+    <div class="note"><strong>Gold&rsquo;s last move came through mixed.</strong> No single driver dominates; the move has more than one cause.</div><div class="note">Positioning is unremarkable, so events should move gold roughly in line with their own weight rather than being amplified.</div>
+  </section>
 
-<section class="card">
-  <h2>What is driving gold</h2>
-  <div class="stat"><span class="k">US 10-year yield</span><span class="v">4.806 <span class="up">+0.46%</span></span></div><div class="stat"><span class="k">Dollar index</span><span class="v">98.709 <span class="down">-0.13%</span></span></div>
-  <p class="measured"><strong>Gold’s last move came through idiosyncratic.</strong> Neither yields nor the dollar explain this one - look to flows, positioning or physical demand.</p>
   
-  <h3 class="sub">Speculative positioning</h3>
-  <div class="stat"><span class="k">Managed money net long</span>
-    <span class="v">136,771 contracts</span></div>
-  <div class="stat"><span class="k">Percentile of last 2 years</span>
-    <span class="v">57th</span></div>
-  <div class="stat"><span class="k">Change over 4 weeks</span>
-    <span class="v">+6,005</span></div>
-  <div class="sparks"><span class="spark" style="height:11px" title="2026-03-10: 98,399"></span><span class="spark" style="height:13px" title="2026-03-17: 102,043"></span><span class="spark" style="height:7px" title="2026-03-24: 91,621"></span><span class="spark" style="height:8px" title="2026-03-31: 92,814"></span><span class="spark" style="height:6px" title="2026-04-07: 90,032"></span><span class="spark" style="height:9px" title="2026-04-14: 95,141"></span><span class="spark" style="height:8px" title="2026-04-21: 92,976"></span><span class="spark" style="height:6px" title="2026-04-28: 89,752"></span><span class="spark" style="height:8px" title="2026-05-05: 94,254"></span><span class="spark" style="height:11px" title="2026-05-12: 98,015"></span><span class="spark" style="height:8px" title="2026-05-19: 93,540"></span><span class="spark" style="height:10px" title="2026-05-26: 97,446"></span><span class="spark" style="height:18px" title="2026-06-02: 112,179"></span><span class="spark" style="height:15px" title="2026-06-09: 105,863"></span><span class="spark" style="height:19px" title="2026-06-16: 113,721"></span><span class="spark" style="height:20px" title="2026-06-23: 115,395"></span><span class="spark" style="height:23px" title="2026-06-30: 120,091"></span><span class="spark" style="height:20px" title="2026-07-07: 116,161"></span><span class="spark" style="height:23px" title="2026-07-14: 120,779"></span><span class="spark" style="height:25px" title="2026-07-21: 124,831"></span><span class="spark" style="height:22px" title="2026-07-28: 119,795"></span><span class="spark" style="height:28px" title="2026-08-04: 130,766"></span><span class="spark" style="height:32px" title="2026-08-11: 137,662"></span><span class="spark" style="height:34px" title="2026-08-18: 141,648"></span><span class="spark" style="height:36px" title="2026-08-25: 144,747"></span><span class="spark" style="height:32px" title="2026-09-01: 136,771"></span></div>
-  <p class="measured">Positioning is unremarkable, so events should move gold roughly in line with their own weight rather than being amplified.</p>
-  <p class="muted small">CFTC, as of 2026-09-01. Published Fridays,
-  reporting the prior Tuesday &mdash; always several days stale.</p>
+<section id="brief" hidden>
+  <h2>Spoken brief</h2>
+  <p class="lede">A separate ninety-second read on what is going on and what it
+  means for gold and the other markets. Written for listening, not the page read
+  aloud.</p>
+  <audio controls preload="none" src="audio/2026-09-09.mp3"
+         style="width:100%;max-width:520px"></audio>
+  <p class="lede" style="margin-top:8px">1:33 &middot; 232
+  words &middot; <a href="audio/2026-09-09.mp3" download>download</a></p>
 </section>
 
-
-<section class="card">
-  <h2>FOMC cycle</h2>
   
-  <div class="stat"><span class="k">Next meeting</span>
-    <span class="v">2026-09-16 &middot; 7 days &middot; with projections (dot plot)</span></div>
-  <div class="stat"><span class="k">Last meeting</span>
-    <span class="v">2026-07-29</span></div>
-  <div class="stat"><span class="k">Gold on the last 8 decision days</span><span class="v">avg $21.88 move, $48.26 range</span></div>
+<section id="affairs">
+  <h2>Current affairs &amp; markets</h2>
+  <p class="lede">What is actually going on, what the driver model says it should
+  do to each market, and whether prices are behaving that way.</p>
   
-<table class="mini wide">
-  <thead><tr><th>Decision day</th><th>Gold O&rarr;C</th><th>Day range</th>
-             <th>Next day</th></tr></thead>
-  <tbody><tr><td>2026-07-29</td><td class="num up">+16.60</td><td class="num">16.80</td><td class="num up">+65.40</td></tr><tr><td>2026-06-17</td><td class="num up">+19.90</td><td class="num">81.00</td><td class="num down">-134.80</td></tr><tr><td>2026-04-29</td><td class="num down">-53.40</td><td class="num">85.90</td><td class="num up">+69.50</td></tr><tr><td>2026-03-18</td><td class="num down">-59.70</td><td class="num">127.90</td><td class="num down">-289.20</td></tr><tr><td>2026-01-28</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+16.80</td></tr><tr><td>2025-12-10</td><td class="num down">-12.60</td><td class="num">50.90</td><td class="num up">+89.10</td></tr><tr><td>2025-10-29</td><td class="num up">+0.00</td><td class="num">0.00</td><td class="num up">+17.60</td></tr><tr><td>2025-09-17</td><td class="num up">+12.80</td><td class="num">23.60</td><td class="num down">-38.10</td></tr></tbody></table>
-  <p class="muted small" style="margin-top:10px">Calendar source: federalreserve.gov.</p>
+<details>
+  <summary><span class="state high">
+    unbaselined</span>
+    <strong>US / Israel – Iran</strong>
+    <span class="muted small">&mdash; Broadly consistent, though US 10-year yield is not playing along. One asse</span></summary>
+  <div class="detail">
+    
+    <p>11 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    <div class="chain"><span class="">Escalation</span><b>&rarr;</b><span class="">Oil supply risk</span><b>&rarr;</b><span class="">Real yields</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <dl><dt>Why it reaches markets</dt><dd>The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.</dd><dt>Working against it</dt><dd>The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold&#x27;s gain. This is why some escalation days produce a far smaller gold move than the headlines imply.</dd><dt>How long it lasts</dt><dd>Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed&#x27;s reaction function.</dd></dl>
+    <div class="scroll"><table>
+      <thead><tr><th>Asset</th><th>Model expects</th><th>Actually did</th>
+        <th></th></tr></thead><tbody><tr><td><a href="assets/oil.html">WTI crude</a></td><td class="n">up <span class="muted">(+1.50)</span></td><td class="n up">+2.82%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/vix.html">VIX</a></td><td class="n">up <span class="muted">(+1.05)</span></td><td class="n up">+5.37%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/gold.html">Gold</a></td><td class="n">up <span class="muted">(+0.90)</span></td><td class="n up">+1.03%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/sp500.html">S&amp;P 500</a></td><td class="n">down <span class="muted">(-0.75)</span></td><td class="n down">-0.47%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/nasdaq.html">Nasdaq 100</a></td><td class="n">down <span class="muted">(-0.65)</span></td><td class="n down">-0.31%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/silver.html">Silver</a></td><td class="n">up <span class="muted">(+0.65)</span></td><td class="n up">+2.45%</td><td><span class="state low">consistent</span></td></tr></tbody></table></div>
+    <div class="note">Broadly consistent, though US 10-year yield is not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.</div>
+    
+    <p><a href="geo/us_iran.html">More on this &rsaquo;</a></p>
+  </div>
+</details>
+<details>
+  <summary><span class="state high">
+    unbaselined</span>
+    <strong>Wider Middle East</strong>
+    <span class="muted small">&mdash; Broadly consistent, though US 10-year yield is not playing along. One asse</span></summary>
+  <div class="detail">
+    
+    <p>13 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    <div class="chain"><span class="">Escalation</span><b>&rarr;</b><span class="">Haven demand</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <dl><dt>Why it reaches markets</dt><dd>Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region&#x27;s conflicts rarely touch US rate expectations directly.</dd><dt>Working against it</dt><dd>Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.</dd><dt>How long it lasts</dt><dd>Hours to days. The shortest-lived of the major flashpoints unless it pulls Iran in directly.</dd></dl>
+    <div class="scroll"><table>
+      <thead><tr><th>Asset</th><th>Model expects</th><th>Actually did</th>
+        <th></th></tr></thead><tbody><tr><td><a href="assets/gold.html">Gold</a></td><td class="n">up <span class="muted">(+0.70)</span></td><td class="n up">+1.03%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/vix.html">VIX</a></td><td class="n">up <span class="muted">(+0.65)</span></td><td class="n up">+5.37%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/oil.html">WTI crude</a></td><td class="n">up <span class="muted">(+0.60)</span></td><td class="n up">+2.82%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/sp500.html">S&amp;P 500</a></td><td class="n">down <span class="muted">(-0.40)</span></td><td class="n down">-0.47%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/nasdaq.html">Nasdaq 100</a></td><td class="n">down <span class="muted">(-0.40)</span></td><td class="n down">-0.31%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/us10y.html">US 10-year yield</a></td><td class="n">down <span class="muted">(-0.40)</span></td><td class="n up">+0.60%</td><td><span class="state extreme">not following</span></td></tr></tbody></table></div>
+    <div class="note">Broadly consistent, though US 10-year yield is not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.</div>
+    
+    <p><a href="geo/middle_east.html">More on this &rsaquo;</a></p>
+  </div>
+</details>
+<details>
+  <summary><span class="state high">
+    unbaselined</span>
+    <strong>Russia / Ukraine / NATO</strong>
+    <span class="muted small">&mdash; Broadly consistent, though US 10-year yield is not playing along. One asse</span></summary>
+  <div class="detail">
+    
+    <p>3 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.</p>
+    <div class="chain"><span class="">Sanctions</span><b>&rarr;</b><span class="">Reserve diversification</span><b>&rarr;</b><span class="">Central bank buying</span><b>&rarr;</b><span class="end">Gold</span></div>
+    <dl><dt>Why it reaches markets</dt><dd>Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.</dd><dt>Working against it</dt><dd>Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day&#x27;s price action.</dd><dt>How long it lasts</dt><dd>Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.</dd></dl>
+    <div class="scroll"><table>
+      <thead><tr><th>Asset</th><th>Model expects</th><th>Actually did</th>
+        <th></th></tr></thead><tbody><tr><td><a href="assets/oil.html">WTI crude</a></td><td class="n">up <span class="muted">(+1.50)</span></td><td class="n up">+2.82%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/vix.html">VIX</a></td><td class="n">up <span class="muted">(+1.05)</span></td><td class="n up">+5.37%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/gold.html">Gold</a></td><td class="n">up <span class="muted">(+0.90)</span></td><td class="n up">+1.03%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/sp500.html">S&amp;P 500</a></td><td class="n">down <span class="muted">(-0.75)</span></td><td class="n down">-0.47%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/nasdaq.html">Nasdaq 100</a></td><td class="n">down <span class="muted">(-0.65)</span></td><td class="n down">-0.31%</td><td><span class="state low">consistent</span></td></tr><tr><td><a href="assets/silver.html">Silver</a></td><td class="n">up <span class="muted">(+0.65)</span></td><td class="n up">+2.45%</td><td><span class="state low">consistent</span></td></tr></tbody></table></div>
+    <div class="note">Broadly consistent, though US 10-year yield is not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.</div>
+    
+    <p><a href="geo/russia_nato.html">More on this &rsaquo;</a></p>
+  </div>
+</details>
+  
+  <p class="lede" style="margin-top:14px">Expected direction is derived from the driver model; observed is what prices have actually done. Many things move at once, so this is a consistency check rather than attribution.</p>
 </section>
 
-<section class="card analysis">
-  <h2>Analysis</h2>
-  <h4>Unscheduled risk &amp;mdash; SEVERE</h4>
-<p>Multiple severe headlines on a flashpoint gold is highly sensitive to. Treat scheduled data as secondary today.</p>
-<p><strong>US / Israel – Iran</strong> is the live one, escalating on 14 headlines in the last 48 hours. The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.</p>
+  <div id="asia"></div>
+  
+<section>
+  <h2>Asia overnight &mdash; to 21:22 UK</h2>
+  <div class="note">Asian equities are broadly lower, averaging -0.69%. Risk came off overnight, which normally gives gold a small bid into London. Gold moved +1.03% overnight in a 2.16% range, and comes into London near the middle of it. Mid-range is the least informative place it can be. 4 minor Asian releases overnight, none of them the kind that reaches gold.</div>
+  <div class="quotes"><div class="q"><span class="ql">Nikkei 225<small>Japan</small></span><span class="qv">65,269.33<span class="down"> -1.70%</span></span></div><div class="q"><span class="ql">Hang Seng<small>Hong Kong</small></span><span class="qv">25,317.18<span class="down"> -0.38%</span></span></div><div class="q"><span class="ql">Shanghai Composite<small>China</small></span><span class="qv">3,940.55<span class="up"> +0.20%</span></span></div><div class="q"><span class="ql">ASX 200<small>Australia</small></span><span class="qv">8,920.80<span class="down"> -1.00%</span></span></div><div class="q"><span class="ql">KOSPI<small>South Korea</small></span><span class="qv">6,954.52<span class="down"> -0.58%</span></span></div></div>
+  <div class="scroll" style="margin-top:14px"><table><thead><tr><th>Asset</th><th>Overnight</th><th>Range</th><th>In range</th></tr></thead><tbody><tr class="major"><td><a href="assets/gold.html">Gold</a></td><td class="n up">+1.03%</td><td class="n muted">2.16%</td><td class="n"><span class="rng"><i style="left:62%"></i></span><span class="muted small"> 62%</span></td></tr><tr><td><a href="assets/vix.html">VIX</a></td><td class="n up">+5.37%</td><td class="n muted">7.09%</td><td class="n"><span class="rng"><i style="left:83%"></i></span><span class="muted small"> 83%</span></td></tr><tr><td><a href="assets/oil.html">WTI crude</a></td><td class="n up">+2.82%</td><td class="n muted">3.36%</td><td class="n"><span class="rng"><i style="left:96%"></i></span><span class="muted small"> 98%</span></td></tr><tr><td><a href="assets/silver.html">Silver</a></td><td class="n up">+2.45%</td><td class="n muted">4.24%</td><td class="n"><span class="rng"><i style="left:60%"></i></span><span class="muted small"> 60%</span></td></tr><tr><td><a href="assets/copper.html">Copper</a></td><td class="n up">+1.15%</td><td class="n muted">2.30%</td><td class="n"><span class="rng"><i style="left:73%"></i></span><span class="muted small"> 73%</span></td></tr><tr><td><a href="assets/us10y.html">US 10-year yield</a></td><td class="n up">+0.60%</td><td class="n muted">1.31%</td><td class="n"><span class="rng"><i style="left:68%"></i></span><span class="muted small"> 68%</span></td></tr><tr><td><a href="assets/sp500.html">S&amp;P 500</a></td><td class="n down">-0.47%</td><td class="n muted">0.81%</td><td class="n"><span class="rng"><i style="left:28%"></i></span><span class="muted small"> 28%</span></td></tr><tr><td><a href="assets/bitcoin.html">Bitcoin</a></td><td class="n down">-0.43%</td><td class="n muted">2.17%</td><td class="n"><span class="rng"><i style="left:10%"></i></span><span class="muted small"> 10%</span></td></tr><tr><td><a href="assets/nasdaq.html">Nasdaq 100</a></td><td class="n down">-0.31%</td><td class="n muted">1.02%</td><td class="n"><span class="rng"><i style="left:40%"></i></span><span class="muted small"> 40%</span></td></tr><tr><td><a href="assets/usdjpy.html">USD/JPY</a></td><td class="n down">-0.05%</td><td class="n muted">0.59%</td><td class="n"><span class="rng"><i style="left:79%"></i></span><span class="muted small"> 79%</span></td></tr><tr><td><a href="assets/dollar.html">Dollar index</a></td><td class="n up">+0.02%</td><td class="n muted">0.30%</td><td class="n"><span class="rng"><i style="left:76%"></i></span><span class="muted small"> 76%</span></td></tr><tr><td><a href="assets/eurusd.html">EUR/USD</a></td><td class="n up">+0.02%</td><td class="n muted">0.28%</td><td class="n"><span class="rng"><i style="left:25%"></i></span><span class="muted small"> 25%</span></td></tr></tbody></table></div>
+  <h3 class="sub">Overnight releases</h3><div class="scroll"><table><thead><tr><th>UK</th><th>Release</th><th>Fcst</th><th>Prev</th></tr></thead><tbody><tr><td class="t">00:50</td><td><span class="fdot f-yellow"></span>JPY M2 Money Stock y/y</td><td class="n">2.2%</td><td class="n">2.2%</td></tr><tr><td class="t">02:30</td><td><span class="fdot f-yellow"></span>CNY CPI y/y</td><td class="n">0.8%</td><td class="n">0.5%</td></tr><tr><td class="t">02:30</td><td><span class="fdot f-yellow"></span>CNY PPI y/y</td><td class="n">3.6%</td><td class="n">3.5%</td></tr><tr><td class="t">07:00</td><td><span class="fdot f-yellow"></span>JPY Prelim Machine Tool Orders y/y</td><td class="n">&ndash;</td><td class="n">50.4%</td></tr></tbody></table></div>
+  <p class="lede" style="margin-top:12px">Measured from 00:00 UK to 21:22. Tokyo closes around 07:00 UK and Hong Kong around 09:00, so this is a session finishing rather than one that has finished.</p>
+</section>
+
+  <div id="board"></div>
+  
+<section>
+  <h2>Cross-asset board</h2>
+  <p class="lede">The tracked set. Press any of them for what drives it and what
+  it has measurably done.</p>
+  <div class="quotes"><a class="q" href="assets/gold.html"><span class="ql">Gold <span class="brasstag">primary</span><small>+2.18% 5d &middot; +1.36% 20d</small></span><span class="qv">4,442.6<span class="up"> +1.11%</span></span></a><a class="q" href="assets/sp500.html"><span class="ql">S&amp;P 500<small>+0.06% 5d &middot; -1.19% 20d</small></span><span class="qv">7,636.36<span class="down"> -0.48%</span></span></a><a class="q" href="assets/nasdaq.html"><span class="ql">Nasdaq 100<small>+1.18% 5d &middot; -0.35% 20d</small></span><span class="qv">29,421.55<span class="down"> -0.29%</span></span></a><a class="q" href="assets/oil.html"><span class="ql">WTI crude<small>+7.37% 5d &middot; +16.43% 20d</small></span><span class="qv">96.87<span class="up"> +4.13%</span></span></a><a class="q" href="assets/dollar.html"><span class="ql">Dollar index<small>-0.85% 5d &middot; -0.99% 20d</small></span><span class="qv">98.827<span class="down"> -0.01%</span></span></a><a class="q" href="assets/us10y.html"><span class="ql">US 10-year yield<small>+0.85% 5d &middot; +3.27% 20d</small></span><span class="qv">4.837<span class="up"> +0.65%</span></span></a><a class="q" href="assets/silver.html"><span class="ql">Silver<small>+5.00% 5d &middot; +4.76% 20d</small></span><span class="qv">67.85<span class="up"> +2.34%</span></span></a><a class="q" href="assets/copper.html"><span class="ql">Copper<small>+5.30% 5d &middot; +3.62% 20d</small></span><span class="qv">6.8515<span class="up"> +1.67%</span></span></a><a class="q" href="assets/bitcoin.html"><span class="ql">Bitcoin<small>-1.92% 5d &middot; +6.99% 20d</small></span><span class="qv">78,141.0<span class="down"> -0.38%</span></span></a><a class="q" href="assets/eurusd.html"><span class="ql">EUR/USD<small>+0.40% 5d &middot; +0.88% 20d</small></span><span class="qv">1.1632<span class="up"> +0.04%</span></span></a><a class="q" href="assets/usdjpy.html"><span class="ql">USD/JPY<small>-3.32% 5d &middot; -3.57% 20d</small></span><span class="qv">153.643<span class="up"> +0.11%</span></span></a><a class="q" href="assets/vix.html"><span class="ql">VIX<small>+8.55% 5d &middot; +13.40% 20d</small></span><span class="qv">16.5<span class="up"> +4.96%</span></span></a></div>
+  <div class="note">Gold and the dollar are running at -0.53. That is the textbook inverse relationship, so dollar moves are doing real work on the price. Against the S&amp;P it is +0.31. Gold is trading WITH risk assets rather than against them, so it is behaving as a liquidity asset right now, not a hedge - do not rely on it to offset an equity drawdown while that holds.</div><div class="chain" style="margin-top:10px"><span>Silver +0.88</span><span>Bitcoin +0.66</span><span>Dollar index -0.53</span><span>Copper +0.53</span><span>EUR/USD +0.51</span></div><p class="lede" style="margin-top:8px">Rolling 60-day correlation of daily returns. These relationships move, which is the point of tracking them.</p>
+</section>
+
+  
+<section>
+  <h2>Market map</h2>
+  <p class="lede">Indices and one liquid name per sector &mdash; here to answer a
+  gold question, not as a quote board.</p>
+  <div class="bandline" style="margin:0 0 12px">
+    <span class="state extreme">risk-off</span>
+    <span class="stamp">cyclicals -0.73 vs defensives
+      -0.99</span>
+  </div>
+  <div class="note">Small caps are down 1.32% while the large-cap indices hold up - the classic early sign of risk coming off, and usually gold-supportive.</div>
+  <div class="note">Miners +1.18% against gold +1.13% - about 1.0x leverage, confirming the move. Miners generally amplify gold, so this is the normal relationship.</div>
+  <div class="quotes"><div class="q"><span class="ql">S&amp;P 500</span><span class="qv">7,636.36<span class="down"> -0.48%</span><small>+0.06% 5d</small></span></div><div class="q"><span class="ql">Nasdaq 100</span><span class="qv">29,421.55<span class="down"> -0.29%</span><small>+1.18% 5d</small></span></div><div class="q"><span class="ql">Dow Jones</span><span class="qv">52,380.66<span class="down"> -0.77%</span><small>-0.73% 5d</small></span></div><div class="q"><span class="ql">Russell 2000</span><span class="qv">2,921.23<span class="down"> -1.32%</span><small>+0.04% 5d</small></span></div><div class="q"><span class="ql">VIX</span><span class="qv">16.50<span class="up"> +4.96%</span><small>+8.55% 5d</small></span></div><div class="q"><span class="ql">FTSE 100</span><span class="qv">10,670.06<span class="down"> -1.31%</span><small>-0.80% 5d</small></span></div></div>
+  <div class="quotes"><div class="q"><span class="ql">Nvidia<small>Technology</small></span><span class="qv">223.67<span class="down"> -0.91%</span><small>+2.87% 5d</small></span></div><div class="q"><span class="ql">Microsoft<small>Technology</small></span><span class="qv">491.65<span class="down"> -0.47%</span><small>-1.87% 5d</small></span></div><div class="q"><span class="ql">Amazon<small>Consumer discretionary</small></span><span class="qv">252.40<span class="down"> -1.78%</span><small>-0.99% 5d</small></span></div><div class="q"><span class="ql">JPMorgan<small>Financials</small></span><span class="qv">354.71<span class="up"> +0.34%</span><small>-0.07% 5d</small></span></div><div class="q"><span class="ql">Caterpillar<small>Industrials</small></span><span class="qv">815.56<span class="down"> -0.84%</span><small>+4.67% 5d</small></span></div><div class="q"><span class="ql">Exxon Mobil<small>Energy</small></span><span class="qv">164.23<span class="up"> +2.22%</span><small>-0.19% 5d</small></span></div><div class="q"><span class="ql">Eli Lilly<small>Healthcare</small></span><span class="qv">1,124.21<span class="up"> +0.03%</span><small>-3.09% 5d</small></span></div><div class="q"><span class="ql">Procter &amp; Gamble<small>Consumer staples</small></span><span class="qv">142.64<span class="down"> -2.02%</span><small>-2.44% 5d</small></span></div><div class="q"><span class="ql">Newmont<small>Gold miners</small></span><span class="qv">128.71<span class="up"> +1.27%</span><small>+4.96% 5d</small></span></div><div class="q"><span class="ql">Gold Miners ETF<small>Gold miners</small></span><span class="qv">99.47<span class="up"> +1.08%</span><small>+5.07% 5d</small></span></div></div>
+  
+</section>
+
+  <section id="analysis">
+    <h2>Analysis</h2>
+    <div class="detail" style="max-width:70ch"><h3>Unscheduled risk — ELEVATED</h3>
+<p>Something has genuinely changed rather than simply continued. Expect headline-driven moves.</p>
+<p><strong>US / Israel – Iran</strong> is the live one, unbaselined on 11 headlines in the last 48 hours. The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.</p>
 <p><em>Working against it:</em> The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold&#x27;s gain. This is why some escalation days produce a far smaller gold move than the headlines imply.</p>
 <p><em>How long this usually lasts:</em> Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed&#x27;s reaction function.</p>
-<h4>Yesterday</h4>
+<h3>Yesterday</h3>
 <p>The USD stories carrying the most weight into today:</p>
-<ul>
-<li><strong>China Adds 650,000 Ounces of Gold in Biggest Monthly Buy Since 2023</strong> (Yahoo Gold)</li>
-<li><strong>InvestingIn.Gold Publishes New Gold IRA Case Study as Retirement Investors Reassess Portfolio Diversification in 2026</strong> (Yahoo Gold)</li>
-<li><strong>Krakatoa Resources: Zopkhito drilling extends gold-antimony potential</strong> (Yahoo Gold)</li>
-<li><strong>G10’s ‘surprise’ currency star could stumble as peers hike interest rates</strong> (CNBC Top News)</li>
-<li><strong>Canadian Dollar Faces Pullback on Trade Tension Risks Before Resuming Gains, National Bank Says</strong> (Yahoo Gold)</li>
-</ul>
-<p>Gold&#x27;s last move came through <strong>idiosyncratic</strong>. Neither yields nor the dollar explain this one - look to flows, positioning or physical demand.</p>
-<p>Gold closed the prior session at $4,429.10, +0.80% on the day. 14-day ATR is $71.76, which is the yardstick for whether today&#x27;s move is normal or not.</p>
-<h4>Today</h4>
+<ul><li><strong>FinancialJuice: Past US CPI Market Reactions &amp; Deviations - FJElite</strong> (Financial Juice)</li><li><strong>Fed rate hike hinges on two key inflation reports in the next two days</strong> (MarketWatch)</li><li><strong>Investors worried about rising bond yields are keeping a close eye on this corner of the market</strong> (MarketWatch)</li><li><strong>American Gold &amp; Copper Inc. (OTC: AGCI) Signs Definitive $10 Million Acquisition Agreement for 1,540-Acre Rimrock Copper-Gold Project in Nevada</strong> (Yahoo Gold)</li><li><strong>If you invested $1,000 in gold &amp; Bitcoin 10 years ago, here&#x27;s how much money you&#x27;d have today</strong> (Yahoo Gold)</li></ul>
+<p>Gold&#x27;s last move came through <strong>mixed</strong>. No single driver dominates; the move has more than one cause.</p>
+<p>Equities are <strong>risk-off</strong>. Small caps are down 1.32% while the large-cap indices hold up - the classic early sign of risk coming off, and usually gold-supportive.</p>
+<p>Miners +1.18% against gold +1.13% - about 1.0x leverage, confirming the move. Miners generally amplify gold, so this is the normal relationship.</p>
+<p>Gold closed the prior session at $4,443.40, +1.13% on the day. 14-day ATR is $75.10, which is the yardstick for whether today&#x27;s move is normal or not.</p>
+<h3>Today</h3>
 <p>Nothing material on the USD calendar. Gold is left to drift on positioning, the dollar and any unscheduled headline.</p>
-<h4>FOMC cycle</h4>
+<h3>FOMC cycle</h3>
 <p>The next FOMC meeting is 2026-09-16, 7 days away and carries the dot plot. Gold&#x27;s sensitivity to inflation and labour data rises as a meeting approaches, because each print moves the odds on that specific decision.</p>
-<h4>Verdict</h4>
-<p>Top-tier event risk. Spreads widen, stops get run, direction is a coin flip on the print. Risk score 80/100 (EXTREME). Expected daily range around $152.1, from GVZ 27.26 (implied, 1 s.d.).</p>
-<p><em>Written by the deterministic template. Add a GEMINI_API_KEY secret to get a reasoned write-up instead.</em></p>
-</section>
+<h3>Verdict</h3>
+<p>Major scheduled event. Wide, fast moves and poor fills likely. Risk score 56/100 (HIGH). Expected daily range around $155.6, from GVZ 27.79 (implied, 1 s.d.).</p>
+<p><em>Written by the deterministic template. Add a GEMINI_API_KEY secret to get a reasoned write-up instead.</em></p></div>
+  </section>
 
-<section class="card">
-  <h2>USD news &mdash; last 36 hours</h2>
-  <ul class="news"><li><a href="https://finance.yahoo.com/markets/commodities/articles/china-adds-650-000-ounces-190000241.html?.tsrc=rss" target="_blank" rel="noopener">China Adds 650,000 Ounces of Gold in Biggest Monthly Buy Since 2023</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/investingin-gold-publishes-gold-ira-131500930.html?.tsrc=rss" target="_blank" rel="noopener">InvestingIn.Gold Publishes New Gold IRA Case Study as Retirement Investors Reassess Portfolio Diversification in 2026</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/video/krakatoa-resources-zopkhito-drilling-extends-031650638.html?.tsrc=rss" target="_blank" rel="noopener">Krakatoa Resources: Zopkhito drilling extends gold-antimony potential</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/09/fx-currencies-interest-rate-hikes.html" target="_blank" rel="noopener">G10’s ‘surprise’ currency star could stumble as peers hike interest rates</a><span class="src">CNBC Top News</span></li><li><a href="https://finance.yahoo.com/markets/currencies/articles/canadian-dollar-faces-pullback-trade-142321352.html?.tsrc=rss" target="_blank" rel="noopener">Canadian Dollar Faces Pullback on Trade Tension Risks Before Resuming Gains, National Bank Says</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/09/singapore-prime-minister-salary-lawrence-wong.html" target="_blank" rel="noopener">The world&#x27;s highest paid leader is set for a 64% pay rise. Here&#x27;s how others compare</a><span class="src">CNBC Top News</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/grizzly-extends-gold-silver-mineralization-130000999.html?.tsrc=rss" target="_blank" rel="noopener">Grizzly Extends Gold-Silver Mineralization at Midway Mine Area and Identifies New Gold Occurrence at Sappho Critical Minerals Target Area Greenwood, BC</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/arc-mineral-royalties-commences-trading-133000073.html?.tsrc=rss" target="_blank" rel="noopener">Arc Mineral Royalties Commences Trading Following Completion of Change of Business</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/gold-x2-commences-trading-nyse-140000618.html?.tsrc=rss" target="_blank" rel="noopener">Gold X2 Commences Trading on the NYSE American Under Ticker &quot;AUXX&quot;</a><span class="src">Yahoo Gold</span></li><li><a href="https://www.cnbc.com/2026/09/08/pharma-tariffs-trump-generic-drugs-sandoz-cmd-stock.html" target="_blank" rel="noopener">&#x27;Patients pay the tariff&#x27;: Swiss pharma CEO warns of Trump&#x27;s generic drug tariff threat</a><span class="src">CNBC Top News</span></li><li><a href="https://www.fool.com/investing/2026/09/08/why-gold-will-outperform-silver-in-2027/?.tsrc=rss" target="_blank" rel="noopener">Why Gold Will Outperform Silver in 2027</a><span class="src">Yahoo Gold</span></li><li><a href="https://finance.yahoo.com/markets/commodities/articles/ssrm-advances-marigold-growth-initiatives-153900635.html?.tsrc=rss" target="_blank" rel="noopener">SSRM Advances With Marigold Growth Initiatives: Can They Aid Upside?</a><span class="src">Yahoo Gold</span></li></ul>
-</section>
+  <section>
+    <h2>Going deeper</h2>
+    <div class="archive">
+      <a href="weekly/index.html">Weekly cross-asset review</a>
+      <a href="assets/gold.html">Asset pages</a>
+      <a href="drivers/rate_expectations.html">Driver pages</a>
+    </div>
+  </section>
 
+  <section><h2>Recent reports</h2><div class="archive"><a href="reports/2026-09-09.html">2026-09-09</a><a href="reports/2026-09-08.html">2026-09-08</a><a href="reports/2026-09-07.html">2026-09-07</a><a href="reports/2026-09-04.html">2026-09-04</a><a href="reports/2026-09-03.html">2026-09-03</a><a href="reports/2026-09-02.html">2026-09-02</a><a href="reports/2026-09-01.html">2026-09-01</a><a href="reports/2026-08-31.html">2026-08-31</a><a href="reports/index.html">all &rsaquo;</a></div></section>
 
+  <section>
+    <h2>Calibration &amp; data health</h2>
+    
+    <div class="health"><div class="hr"><span class="hd "></span><span>ForexFactory calendar</span><span class="muted">81 entries this week</span></div><div class="hr"><span class="hd "></span><span>Gold daily prices</span><span class="muted">GC=F, 504 bars</span></div><div class="hr"><span class="hd "></span><span>GVZ implied volatility</span><span class="muted">GVZ 27.79, 69th pct</span></div><div class="hr"><span class="hd "></span><span>Drivers (DXY, yields, TIPS)</span><span class="muted">DXY, US10Y</span></div><div class="hr"><span class="hd "></span><span>CFTC positioning</span><span class="muted">net 136,771 as of 2026-09-01</span></div><div class="hr"><span class="hd "></span><span>Asia session</span><span class="muted">12 assets, 5 indices, 4 overnight releases</span></div><div class="hr"><span class="hd "></span><span>Cross-asset prices</span><span class="muted">12 of 12 assets</span></div><div class="hr"><span class="hd "></span><span>Indices and sector stocks</span><span class="muted">6 indices, 10 stocks, risk-off</span></div><div class="hr"><span class="hd "></span><span>USD news feeds</span><span class="muted">19 relevant headlines</span></div><div class="hr"><span class="hd "></span><span>Geopolitical feeds</span><span class="muted">ELEVATED (45), 33 headlines, baseline building</span></div><div class="hr"><span class="hd "></span><span>Event context / FOMC calendar</span><span class="muted">FOMC via federalreserve.gov</span></div><div class="hr"><span class="hd "></span><span>Current affairs board</span><span class="muted">3 live stories, 0 pending releases</span></div></div>
+  </section>
 
-
-<section class="card">
-  <h2>Data health</h2>
-  
-  <div class="health"><div class="hrow"><span class="hdot on"></span><span>ForexFactory calendar</span><span class="muted small">80 entries this week</span></div><div class="hrow"><span class="hdot on"></span><span>Gold daily prices</span><span class="muted small">GC=F, 504 bars</span></div><div class="hrow"><span class="hdot on"></span><span>GVZ implied volatility</span><span class="muted small">GVZ 27.26, 65th pct</span></div><div class="hrow"><span class="hdot on"></span><span>Drivers (DXY, yields, TIPS)</span><span class="muted small">DXY, US10Y</span></div><div class="hrow"><span class="hdot on"></span><span>CFTC positioning</span><span class="muted small">net 136,771 as of 2026-09-01</span></div><div class="hrow"><span class="hdot on"></span><span>USD news feeds</span><span class="muted small">20 relevant headlines</span></div><div class="hrow"><span class="hdot on"></span><span>Geopolitical feeds</span><span class="muted small">SEVERE (70), 35 headlines</span></div><div class="hrow"><span class="hdot on"></span><span>Event context / FOMC calendar</span><span class="muted small">FOMC via federalreserve.gov</span></div></div>
-</section>
-
-<section class="card"><h2>Archive</h2><div class="archive"><a href="reports/2026-09-09.html">2026-09-09</a><a href="reports/2026-09-08.html">2026-09-08</a><a href="reports/2026-09-07.html">2026-09-07</a><a href="reports/2026-09-04.html">2026-09-04</a><a href="reports/2026-09-03.html">2026-09-03</a><a href="reports/2026-09-02.html">2026-09-02</a><a href="reports/2026-09-01.html">2026-09-01</a><a href="reports/2026-08-31.html">2026-08-31</a><a href="reports/2026-08-28.html">2026-08-28</a></div></section>
-
-<footer>
-  Built automatically from the ForexFactory calendar feed, public RSS, FRED, CFTC
-  and free price data.<br>Information only &mdash; not trading advice, and the risk
-  score is a model, not a forecast.
-</footer>
+  <footer>
+    Built automatically from the ForexFactory calendar feed, Financial Juice, public
+    RSS, FRED, CFTC and free price data.<br>
+    Information only &mdash; not trading advice. The risk score is a model, not a
+    forecast.
+  </footer>
 </div>
+<script>
+(function () {
+  var open = null;
+  function close() { if (open) { open.classList.remove('on'); open = null; } }
+  function show(pop) {
+    if (open === pop) return;
+    close(); pop.classList.add('on'); open = pop;
+  }
+  document.querySelectorAll('[data-geo]').forEach(function (row) {
+    var pop = row.parentNode.querySelector('.pop');
+    var timer = null, held = false;
+    if (window.matchMedia('(pointer:fine)').matches) {
+      row.addEventListener('mouseenter', function () { show(pop); });
+      row.parentNode.addEventListener('mouseleave', close);
+    }
+    row.addEventListener('focus', function () { show(pop); });
+    row.addEventListener('touchstart', function () {
+      held = false;
+      timer = setTimeout(function () { held = true; show(pop); }, 320);
+    }, { passive: true });
+    ['touchend', 'touchcancel', 'touchmove'].forEach(function (e) {
+      row.addEventListener(e, function () { clearTimeout(timer); }, { passive: true });
+    });
+    row.addEventListener('click', function (e) {
+      if (held) { e.preventDefault(); held = false; return; }
+      window.location.href = row.dataset.geo;
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+  document.addEventListener('click', function (e) {
+    if (open && !open.parentNode.contains(e.target)) close();
+  });
+})();
+
+(function () {
+  var sec = document.getElementById('brief');
+  if (!sec) return;
+  var src = sec.querySelector('audio').getAttribute('src');
+  fetch(src, { method: 'HEAD' })
+    .then(function (r) { if (r.ok) sec.hidden = false; })
+    .catch(function () {});
+})();
+</script>
 </body>
 </html>
