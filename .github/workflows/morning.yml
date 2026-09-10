@@ -9,7 +9,7 @@ on:
 permissions:
   contents: write
 
-concurrency
+concurrency:
   group: build
   cancel-in-progress: false
 
