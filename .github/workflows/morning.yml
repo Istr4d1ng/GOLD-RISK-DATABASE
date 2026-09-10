@@ -9,7 +9,7 @@ on:
 permissions:
   contents: write
 
-concurrency:
+concurrency
   group: build
   cancel-in-progress: false
 
@@ -27,6 +27,24 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/morning.py
+
+      # Voice is a bolt-on. It installs its own dependency, runs in its own
+      # step, and is allowed to fail without taking the report down with it.
+      - name: Cache the Piper voice model
+        uses: actions/cache@v4
+        with:
+          path: .voice
+          key: piper-voice-${{ env.PIPER_VOICE || 'en_GB-alan-medium' }}
+
+      - name: Speak the brief
+        continue-on-error: true
+        env:
+          PIPER_VOICE: en_GB-alan-medium
+          AUDIO_KEEP_DAYS: "30"
+        run: |
+          pip install --quiet piper-tts
+          sudo apt-get install -y -qq ffmpeg >/dev/null 2>&1 || true
+          python scripts/audio.py
 
       - name: Commit output
         run: |
