@@ -1,30 +1,212 @@
 {
-  "date": "2026-09-15",
-  "generated": "06:36 BST",
+  "date": "2026-09-16",
+  "generated": "06:35 BST",
   "risk": {
-    "score": 45,
-    "band": "MODERATE",
-    "band_note": "Some scheduled risk. Expect intraday noise around releases.",
-    "expected_range_usd": 145.0,
-    "range_source": "GVZ 26.54 (implied, 1 s.d.)",
-    "atr14": 79.78,
+    "score": 98,
+    "band": "EXTREME",
+    "band_note": "Top-tier event risk. Spreads widen, stops get run, direction is a coin flip on the print.",
+    "expected_range_usd": 147.9,
+    "range_source": "GVZ 26.9 (implied, 1 s.d.)",
+    "atr14": 111.84,
     "vol_ratio": 0.27,
-    "scheduled": 7,
-    "unscheduled": 42,
+    "scheduled": 81,
+    "unscheduled": 45,
     "components": {
-      "headline_event": 7,
-      "breadth": 0,
-      "clustering": 0,
-      "geopolitical": 42,
-      "both_at_once": 2,
-      "volatility": 1,
+      "headline_event": 70,
+      "breadth": 6,
+      "clustering": 5,
+      "geopolitical": 45,
+      "both_at_once": 15,
+      "volatility": 2,
       "positioning": 0
     },
-    "material_events": 0,
-    "releases": 0,
-    "top_weight": 1
+    "material_events": 6,
+    "releases": 3,
+    "top_weight": 10
   },
   "events": [
+    {
+      "title": "Core Retail Sales m/m",
+      "currency": "USD",
+      "utc": "2026-09-16T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-09-16 13:30:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "0.6%",
+      "previous": "-0.3%",
+      "actual": "",
+      "weight": 6,
+      "release": "2026-09-16 13:30"
+    },
+    {
+      "title": "Retail Sales m/m",
+      "currency": "USD",
+      "utc": "2026-09-16T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-09-16 13:30:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "0.8%",
+      "previous": "-0.6%",
+      "actual": "",
+      "weight": 6,
+      "release": "2026-09-16 13:30"
+    },
+    {
+      "title": "Import Prices m/m",
+      "currency": "USD",
+      "utc": "2026-09-16T12:30:00+00:00",
+      "local_time": "13:30",
+      "local_dt": "2026-09-16 13:30:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "0.4%",
+      "previous": "-0.4%",
+      "actual": "",
+      "weight": 1,
+      "release": "2026-09-16 13:30"
+    },
+    {
+      "title": "Business Inventories m/m",
+      "currency": "USD",
+      "utc": "2026-09-16T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-09-16 15:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "0.6%",
+      "previous": "0.0%",
+      "actual": "",
+      "weight": 1,
+      "release": "2026-09-16 15:00"
+    },
+    {
+      "title": "NAHB Housing Market Index",
+      "currency": "USD",
+      "utc": "2026-09-16T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-09-16 15:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "34",
+      "previous": "35",
+      "actual": "",
+      "weight": 1,
+      "release": "2026-09-16 15:00"
+    },
+    {
+      "title": "Crude Oil Inventories",
+      "currency": "USD",
+      "utc": "2026-09-16T14:30:00+00:00",
+      "local_time": "15:30",
+      "local_dt": "2026-09-16 15:30:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "-1.6M",
+      "previous": "-0.4M",
+      "actual": "",
+      "weight": 1,
+      "release": "2026-09-16 15:30"
+    },
+    {
+      "title": "Federal Funds Rate",
+      "currency": "USD",
+      "utc": "2026-09-16T18:00:00+00:00",
+      "local_time": "19:00",
+      "local_dt": "2026-09-16 19:00:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "4.00%",
+      "previous": "3.75%",
+      "actual": "",
+      "weight": 10,
+      "release": "2026-09-16 19:00"
+    },
+    {
+      "title": "FOMC Economic Projections",
+      "currency": "USD",
+      "utc": "2026-09-16T18:00:00+00:00",
+      "local_time": "19:00",
+      "local_dt": "2026-09-16 19:00:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 10,
+      "release": "2026-09-16 19:00"
+    },
+    {
+      "title": "FOMC Statement",
+      "currency": "USD",
+      "utc": "2026-09-16T18:00:00+00:00",
+      "local_time": "19:00",
+      "local_dt": "2026-09-16 19:00:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 10,
+      "release": "2026-09-16 19:00"
+    },
+    {
+      "title": "FOMC Press Conference",
+      "currency": "USD",
+      "utc": "2026-09-16T18:30:00+00:00",
+      "local_time": "19:30",
+      "local_dt": "2026-09-16 19:30:00+01:00",
+      "impact": "High",
+      "folder": "RED",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 10,
+      "release": "2026-09-16 19:30"
+    },
+    {
+      "title": "TIC Long-Term Purchases",
+      "currency": "USD",
+      "utc": "2026-09-16T20:00:00+00:00",
+      "local_time": "21:00",
+      "local_dt": "2026-09-16 21:00:00+01:00",
+      "impact": "Low",
+      "folder": "YELLOW",
+      "forecast": "146.3B",
+      "previous": "172.7B",
+      "actual": "",
+      "weight": 1,
+      "release": "2026-09-16 21:00"
+    }
+  ],
+  "groups": [
+    {
+      "time": "13:30",
+      "lead": "Core Retail Sales m/m",
+      "also": [
+        "Retail Sales m/m"
+      ]
+    },
+    {
+      "time": "19:00",
+      "lead": "Federal Funds Rate",
+      "also": [
+        "FOMC Statement"
+      ]
+    },
+    {
+      "time": "19:00",
+      "lead": "FOMC Economic Projections",
+      "also": []
+    },
+    {
+      "time": "19:30",
+      "lead": "FOMC Press Conference",
+      "also": []
+    }
+  ],
+  "yesterday_events": [
     {
       "title": "ADP Weekly Employment Change",
       "currency": "USD",
@@ -54,6 +236,20 @@
       "release": "2026-09-15 13:30"
     },
     {
+      "title": "Treasury Sec Bessent Speaks",
+      "currency": "USD",
+      "utc": "2026-09-15T14:00:00+00:00",
+      "local_time": "15:00",
+      "local_dt": "2026-09-15 15:00:00+01:00",
+      "impact": "Medium",
+      "folder": "ORANGE",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "weight": 4,
+      "release": "2026-09-15 15:00"
+    },
+    {
       "title": "API Weekly Statistical Bulletin",
       "currency": "USD",
       "utc": "2026-09-15T20:30:00+00:00",
@@ -68,8 +264,6 @@
       "release": "2026-09-15 21:30"
     }
   ],
-  "groups": [],
-  "yesterday_events": [],
   "news": [
     {
       "source": "CNBC Economy",
@@ -80,176 +274,168 @@
       "relevance": 14
     },
     {
-      "source": "CNBC Top News",
-      "title": "The Fed is likely to raise interest rates as inflation persists. What that means for consumers",
-      "link": "https://www.cnbc.com/2026/09/14/fed-rate-hike-anticipated-what-it-means-for-your-money.html",
-      "published": "2026-09-14T17:42:05+00:00",
-      "summary": "The Federal Reserve is widely expected to raise its benchmark interest rate by a quarter percentage point at its September meeting.",
+      "source": "MarketWatch",
+      "title": "Why a Federal Reserve rate hike could be a \u2018rare win\u2019 for your retirement money",
+      "link": "https://www.marketwatch.com/story/why-a-federal-reserve-rate-hike-could-be-a-rare-win-for-your-retirement-money-3ae337df?mod=mw_rss_topstories",
+      "published": "2026-09-15T20:47:00+00:00",
+      "summary": "There may be better savings yields, but beware rising credit-card rates",
+      "relevance": 10
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Market Minute 9-15-26- Rising Yields and Fed in Focus",
+      "link": "https://finance.yahoo.com/economy/policy/articles/market-minute-9-15-26-141500436.html?.tsrc=rss",
+      "published": "2026-09-15T14:15:00+00:00",
+      "summary": "Stocks are under modest pressure again this morning after a late day fade yesterday. Crude oil is up, while gold, silver, and Treasuries are mixed. Bitcoin and other cryptocurrencies are broadly lower.",
       "relevance": 9
     },
     {
+      "source": "Yahoo Gold",
+      "title": "Bitcoin\u2019s Correlation With Gold Just Hit a Six-Year High. Is BTC Finally Digital Gold?",
+      "link": "https://247wallst.com/investing/cryptocurrency/2026/09/15/bitcoins-correlation-with-gold-just-hit-a-six-year-high-is-btc-finally-digital-gold/?.tsrc=rss",
+      "published": "2026-09-15T15:31:54+00:00",
+      "summary": "Bitcoin just posted behavior that gold bugs have claimed for years was impossible, and the bond market may be the reason why. Whether that makes BTC a true safe-haven asset or simply a temporary traveling companion for gold depends on what the Fed does next.",
+      "relevance": 7
+    },
+    {
       "source": "CNBC Top News",
-      "title": "The stock market could do something strange this week after the Fed decision",
-      "link": "https://www.cnbc.com/2026/09/14/the-stock-market-could-do-something-strange-this-week-after-the-fed-decision.html",
-      "published": "2026-09-14T19:49:23+00:00",
-      "summary": "Odds of more interest rate hikes coming this year have grown.",
-      "relevance": 9
+      "title": "Beaten-up bond market may be nearing 'escape velocity.' Here's what that means",
+      "link": "https://www.cnbc.com/2026/09/15/bonds-yield-10year-treasury-rates.html",
+      "published": "2026-09-15T16:53:56+00:00",
+      "summary": "Rising yields across the bond market have spooked investors, but the surge from zero interest rates since Covid suggests fixed-income risk-reward has improved.",
+      "relevance": 7
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold and the U.S. dollar: Why they often move in opposite directions",
+      "link": "https://finance.yahoo.com/personal-finance/investing/article/gold-us-dollar-relationship-204112404.html?.tsrc=rss",
+      "published": "2026-09-15T20:41:12+00:00",
+      "summary": "Gold and the U.S. dollar often move in opposite directions. Learn why the dollar affects gold prices and what other factors influence the price of gold.",
+      "relevance": 7
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "Treasury yields hitting 5% may not break markets now \u2014 but the clock is ticking",
+      "link": "https://www.cnbc.com/2026/09/16/10-year-treasury-yeilds-rise-impact-markets.html",
+      "published": "2026-09-16T05:28:01+00:00",
+      "summary": "The 10-year Treasury yield hit its highest since 2007, pushing borrowing costs deeper into territory that could expose some of the financial system's weakest links.",
+      "relevance": 7
+    },
+    {
+      "source": "CNBC Top News",
+      "title": "No one and done: The Fed will hike at least two times over the next year, according to CNBC survey",
+      "link": "https://www.cnbc.com/2026/09/15/cnbc-fed-survey-two-rate-hikes-seen-ahead.html",
+      "published": "2026-09-15T14:02:53+00:00",
+      "summary": "While higher oil is cited as a main reason for the change in view, roughly three-quarters of respondents see the inflation problem as broader than just energy prices.",
+      "relevance": 6
+    },
+    {
+      "source": "Financial Juice",
+      "title": "FinancialJuice: CBO: Annual PCE inflation projection now 0.5 ppt higher in Q1 2027.",
+      "link": "https://www.financialjuice.com/News/9764184/CBO-Annual-PCE-inflation-projection-now-05-ppt-higher-in-Q1-2027.aspx?xy=rss",
+      "published": "2026-09-15T18:00:26+00:00",
+      "summary": "",
+      "relevance": 6
     },
     {
       "source": "MarketWatch",
-      "title": "10-year Treasury yield hits 5% as oil prices jump and Fed meeting looms",
-      "link": "https://www.marketwatch.com/story/10-year-treasury-yield-tops-5-for-the-first-time-since-2007-as-bond-market-selloff-deepens-14c81f75?mod=mw_rss_topstories",
-      "published": "2026-09-14T20:47:00+00:00",
-      "summary": "The key \u201caffordability\u201d rate briefly touched its highest level since 2007 on Monday.",
-      "relevance": 8
+      "title": "Inflation killed the penny. Now it\u2019s coming for your dollar.",
+      "link": "https://www.marketwatch.com/story/inflation-killed-the-penny-now-its-coming-for-your-dollar-78336cd8?mod=mw_rss_topstories",
+      "published": "2026-09-15T21:00:00+00:00",
+      "summary": "Congress congratulated itself for solving the penny problem, but what about the source of the problem \u2014 inflation?",
+      "relevance": 6
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "G Mining Ventures stock could have more upside as Oko project stays on track",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/g-mining-ventures-stock-could-131010781.html?.tsrc=rss",
+      "published": "2026-09-15T13:10:10+00:00",
+      "summary": "Investing.com -- G Mining Ventures\u2019 Oko Gold Project in Guyana is progressing broadly in line with its schedule and budget, strengthening Canaccord Genuity\u2019s confidence in the company\u2019s development plans and exploration potential, the brokerage said after a site visit.",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Arc Mineral Royalties Notes Significant Resource Growth at Flagship Mt Henry Gold Project",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/arc-mineral-royalties-notes-significant-133000341.html?.tsrc=rss",
+      "published": "2026-09-15T13:30:00+00:00",
+      "summary": "Interim resource doubles with only 41% of planned drilling included, highlighting Arc's royalty upsideOttawa, Ontario--(Newsfile Corp. - September 15, 2026) - Arc Mineral Royalties Ltd. (TSXV: ARO) (\"Arc\" or the \"Company\") is pleased to note Sinclair Gold Ltd.'s (ASX: SGC) (\"Sinclair Gold\") announcement dated September 14, 2026, of an updated interim JORC 2012 Mineral Resource for the Mt Henry Gol",
+      "relevance": 4
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Can Bullabulling Deal Aid Franco-Nevada's Portfolio Expansion?",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/bullabulling-deal-aid-franco-nevadas-140500518.html?.tsrc=rss",
+      "published": "2026-09-15T14:05:00+00:00",
+      "summary": "FNV expands its Bullabulling royalty stake, backing a large gold resource with production targeted for 2028.",
+      "relevance": 4
+    },
+    {
+      "source": "Financial Juice",
+      "title": "FinancialJuice: FOMC Prep - FJElite",
+      "link": "https://www.financialjuice.com/News/9764357/FOMC-Prep---FJElite.aspx?xy=rss",
+      "published": "2026-09-15T20:00:19+00:00",
+      "summary": "",
+      "relevance": 3
+    },
+    {
+      "source": "Financial Juice",
+      "title": "FinancialJuice: Council of Economic Advisers Chairman Phelan: It would be a mistake for the Fed to hike rates - CNBC Interview.",
+      "link": "https://www.financialjuice.com/News/9764403/Council-of-Economic-Advisers-Chairman-Phelan-It-would-be-a-mistake-for-the-Fed-to-hike-rates---CNBC-Interview.aspx?xy=rss",
+      "published": "2026-09-15T20:42:46+00:00",
+      "summary": "",
+      "relevance": 3
     },
     {
       "source": "CNBC Top News",
-      "title": "10-year Treasury yield rises to highest since 2007 as Fed rate-hike expectations rise",
-      "link": "https://www.cnbc.com/2026/09/15/10-year-treasury-yield-rises-to-highest-since-2007.html",
-      "published": "2026-09-15T05:24:56+00:00",
-      "summary": "The benchmark 10-year Treasury yield climbed to its highest level since 2007 on Tuesday as a sell-off in U.S. government debt deepened ahead of the Federal Reserve's interest-rate decision.",
-      "relevance": 8
+      "title": "Americans' incomes rose and poverty fell in 2025, Census Bureau says",
+      "link": "https://www.cnbc.com/2026/09/15/income-poverty-census-fed-interest-rates.html",
+      "published": "2026-09-15T21:31:56+00:00",
+      "summary": "The data comes as the Federal Reserve is considering interest-rate increases that could slow economic growth.",
+      "relevance": 3
     },
     {
-      "source": "Yahoo Gold",
-      "title": "Update: US Equity Indexes Retreat as 10-Year Treasury Yield Crosses 5% Threshold, Crude Oil Extends Gains",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-retreat-10-175030073.html?.tsrc=rss",
-      "published": "2026-09-14T17:50:30+00:00",
-      "summary": "(Updates with index/price moves and company/geopolitical news from the first paragraph.) US equit",
-      "relevance": 7
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "Oil and Treasury yields haven\u2019t moved this closely in seven years. That\u2019s bad news for markets",
-      "link": "https://www.cnbc.com/2026/09/15/oil-us-treasurys-stocks-pressure.html",
-      "published": "2026-09-15T05:22:57+00:00",
-      "summary": "Oil and 10-year Treasury yields are moving in near lockstep, with their correlation at its strongest since 2019.",
-      "relevance": 7
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "LAURION Reports Multiple Gold and Polymetallic Intercepts",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/laurion-reports-multiple-gold-polymetallic-143535166.html?.tsrc=rss",
-      "published": "2026-09-14T14:35:35+00:00",
-      "summary": "TORONTO, ONTARIO - September 14, 2026 (NEWMEDIAWIRE) - LAURION Mineral Exploration Inc. (TSX-V: LME | OTC: LMEFF | FSE: 5YD) (\"LAURION\" or the \"Company\") is pleased to report assay results from drill holes LBX26-106 and LBX26-107 from its ongoing 202...",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Dakota Gold CEO Jack Henris Outlines Game Plan for Richmond Hill Gold Project",
-      "link": "https://finance.yahoo.com/video/dakota-gold-ceo-jack-henris-151652464.html?.tsrc=rss",
-      "published": "2026-09-14T15:16:52+00:00",
-      "summary": "Dakota Gold CEO Jack Henris joins Ashley Mastronardi on NYSE Live to discuss Game Plan for Richmond Hill Gold Project",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Rio2 Announces Inclusion in MVIS Global Junior Gold Miners Index",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/rio2-announces-inclusion-mvis-global-161600087.html?.tsrc=rss",
-      "published": "2026-09-14T16:16:00+00:00",
-      "summary": "Vancouver, British Columbia--(Newsfile Corp. - September 14, 2026) - Rio2 Limited (TSX: RIO) (OTCQX: RIOFF) (BVL: RIO) (\"Rio2\" or \"the Company\") announces that it has been added to the MVIS Global Junior Gold Miners Index), effective September 18. This index benchmarks the VanEck Junior Gold Miners ETF, which tracks small-cap gold and silver mining companies.\u200dInclusion is expected to enhance Rio2'",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "How gold IRAs fit into a diversified retirement portfolio",
-      "link": "https://finance.yahoo.com/personal-finance/investing/article/how-gold-iras-fit-into-a-diversified-retirement-portfolio-162815731.html?.tsrc=rss",
-      "published": "2026-09-14T16:28:15+00:00",
-      "summary": "Learn how a gold IRA may fit into a diversified retirement portfolio, including potential benefits, risks, asset allocation, and long-term performance.",
-      "relevance": 4
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Lingbao Gold Group (SEHK:3330) Could Be 52% Undervalued As Revenue Growth Draws Focus",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/lingbao-gold-group-sehk-3330-171435489.html?.tsrc=rss",
-      "published": "2026-09-14T17:14:35+00:00",
-      "summary": "Lingbao Gold Group (SEHK:3330) has caught investor attention after recent share price moves alongside double digit reported annual revenue growth. The diversified precious metals producer now invites closer scrutiny of its valuation and risk profile. Recent trading has been lively. Lingbao Gold Group\u2019s share price has pulled back slightly in the last session, yet sits at HK$23.28 after a strong 90",
-      "relevance": 4
-    },
-    {
-      "source": "CNBC Top News",
-      "title": "Car ownership costs an average of $5,851 a year on top of auto loan payments, analysis finds",
-      "link": "https://www.cnbc.com/2026/09/14/car-ownership-costs-insurance-gas-maintenance-auto-loan-payments.html",
-      "published": "2026-09-14T12:15:01+00:00",
-      "summary": "The cost of insurance, gas, and maintenance or repairs can add thousands of dollars a year to the price of owning a car.",
+      "source": "CNBC Economy",
+      "title": "Why de-dollarization discussions are more talk, less action",
+      "link": "https://www.cnbc.com/2026/09/16/de-dollarization-brics-china-russia-trump.html",
+      "published": "2026-09-15T23:28:01+00:00",
+      "summary": "BRICS leaders have asserted the need to use local currencies in intra-BRICS trade to cut dependency on dollar.",
       "relevance": 3
     },
     {
       "source": "Financial Juice",
-      "title": "FinancialJuice: IRGC Navy Command: The Strait of Hormuz is closed and remains under the intelligent control of the IRGC Navy - IRNA.",
-      "link": "https://www.financialjuice.com/News/9762406/IRGC-Navy-Command-The-Strait-of-Hormuz-is-closed-and-remains-under-the-intelligent-control-of-the-IRGC-Navy---IRNA.aspx?xy=rss",
-      "published": "2026-09-14T18:56:52+00:00",
-      "summary": "Supertanker Algaya Engulfed in Flames After Reportedly Striking Naval Mine South of Strait of Hormuz Algaya reportedly exploded after striking a naval mine while attempting to transit a restricted area south of the Strait of Hormuz Efforts to contain the fire were unsuccessful, leaving the tanker fully engulfed in flames.",
-      "relevance": 3
-    },
-    {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: Fed to purchase $15.6 billion in bills for MBS reinvestment",
-      "link": "https://www.financialjuice.com/News/9762430/Fed-to-purchase-156-billion-in-bills-for-MBS-reinvestment.aspx?xy=rss",
-      "published": "2026-09-14T19:03:24+00:00",
-      "summary": "",
-      "relevance": 3
-    },
-    {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: Fed releases September-October Treasury bill purchase timetable",
-      "link": "https://www.financialjuice.com/News/9762429/Fed-releases-September-October-Treasury-bill-purchase-timetable.aspx?xy=rss",
-      "published": "2026-09-14T19:03:24+00:00",
-      "summary": "",
-      "relevance": 3
-    },
-    {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: Fed extends pause on reserve management asset purchases to mid-October",
-      "link": "https://www.financialjuice.com/News/9762428/Fed-extends-pause-on-reserve-management-asset-purchases-to-mid-October.aspx?xy=rss",
-      "published": "2026-09-14T19:03:24+00:00",
-      "summary": "",
-      "relevance": 3
-    },
-    {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: China PBOC seen setting yuan midpoint at 6.7051 per dollar: estimate",
-      "link": "https://www.financialjuice.com/News/9762731/China-PBOC-seen-setting-yuan-midpoint-at-67051-per-dollar-estimate.aspx?xy=rss",
-      "published": "2026-09-15T00:26:30+00:00",
-      "summary": "",
-      "relevance": 3
-    },
-    {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: Dollar/yen rises 0.3% to 154.790",
-      "link": "https://www.financialjuice.com/News/9762927/Dollaryen-rises-03-to-154790.aspx?xy=rss",
-      "published": "2026-09-15T02:05:56+00:00",
+      "title": "FinancialJuice: China PBOC predicted to set yuan reference rate at 6.7148 per dollar - Estimate",
+      "link": "https://www.financialjuice.com/News/9764629/China-PBOC-predicted-to-set-yuan-reference-rate-at-67148-per-dollar---Estimate.aspx?xy=rss",
+      "published": "2026-09-16T00:17:19+00:00",
       "summary": "",
       "relevance": 3
     }
   ],
   "gold": {
     "symbol": "GC=F",
-    "last": 4336.7001953125,
-    "change_pct": -0.34926600731473806
+    "last": 4365.2001953125,
+    "change_pct": 0.7477933919297906
   },
   "implied": {
-    "gvz": 26.54,
-    "percentile_1y": 55,
-    "daily_move_pct": 1.67,
+    "gvz": 26.9,
+    "percentile_1y": 59,
+    "daily_move_pct": 1.69,
     "year_low": 16.45,
     "year_high": 46.02,
-    "daily_move_usd": 72.5,
-    "one_sd_range_usd": 145.0
+    "daily_move_usd": 74.0,
+    "one_sd_range_usd": 147.9
   },
   "drivers": {
     "DXY": {
       "label": "Dollar index",
-      "last": 99.633,
-      "change_pct": 0.17,
-      "change_5d_pct": 0.8
+      "last": 99.615,
+      "change_pct": -0.04,
+      "change_5d_pct": 0.86
     },
     "US10Y": {
       "label": "US 10-year yield",
-      "last": 4.961,
-      "change_pct": -0.28,
-      "change_5d_pct": 3.7
+      "last": 4.996,
+      "change_pct": 0.71,
+      "change_5d_pct": 3.95
     }
   },
   "attribution": {
@@ -379,49 +565,49 @@
       {
         "symbol": "^GSPC",
         "label": "S&P 500",
-        "last": 7619.98,
-        "change_pct": -0.48,
-        "change_5d_pct": -1.28,
+        "last": 7585.73,
+        "change_pct": -0.45,
+        "change_5d_pct": -1.14,
         "kind": "risk"
       },
       {
         "symbol": "^NDX",
         "label": "Nasdaq 100",
-        "last": 29127.16,
-        "change_pct": -0.82,
-        "change_5d_pct": -1.41,
+        "last": 28937.84,
+        "change_pct": -0.65,
+        "change_5d_pct": -1.93,
         "kind": "risk"
       },
       {
         "symbol": "^DJI",
         "label": "Dow Jones",
-        "last": 52421.2,
-        "change_pct": -0.29,
-        "change_5d_pct": -1.86,
+        "last": 52093.11,
+        "change_pct": -0.63,
+        "change_5d_pct": -1.31,
         "kind": "risk"
       },
       {
         "symbol": "^RUT",
         "label": "Russell 2000",
-        "last": 2892.24,
-        "change_pct": -0.4,
-        "change_5d_pct": -2.8,
+        "last": 2870.29,
+        "change_pct": -0.76,
+        "change_5d_pct": -3.04,
         "kind": "risk"
       },
       {
         "symbol": "^VIX",
         "label": "VIX",
-        "last": 17.1,
-        "change_pct": 7.95,
-        "change_5d_pct": 11.76,
+        "last": 17.2,
+        "change_pct": 0.58,
+        "change_5d_pct": 9.41,
         "kind": "fear"
       },
       {
         "symbol": "^FTSE",
         "label": "FTSE 100",
-        "last": 10697.6,
-        "change_pct": 0.44,
-        "change_5d_pct": -1.15,
+        "last": 10658.1,
+        "change_pct": -0.37,
+        "change_5d_pct": -1.42,
         "kind": "risk"
       }
     ],
@@ -429,90 +615,90 @@
       {
         "symbol": "NVDA",
         "label": "Nvidia",
-        "last": 210.96,
-        "change_pct": -3.36,
-        "change_5d_pct": -8.42,
+        "last": 212.17,
+        "change_pct": 0.57,
+        "change_5d_pct": -6.01,
         "sector": "Technology",
         "kind": "cyclical"
       },
       {
         "symbol": "MSFT",
         "label": "Microsoft",
-        "last": 505.41,
-        "change_pct": 1.97,
-        "change_5d_pct": 1.14,
+        "last": 497.12,
+        "change_pct": -1.64,
+        "change_5d_pct": 0.64,
         "sector": "Technology",
         "kind": "cyclical"
       },
       {
         "symbol": "AMZN",
         "label": "Amazon",
-        "last": 253.54,
-        "change_pct": -1.26,
-        "change_5d_pct": -1.92,
+        "last": 248.42,
+        "change_pct": -2.02,
+        "change_5d_pct": -3.33,
         "sector": "Consumer discretionary",
         "kind": "cyclical"
       },
       {
         "symbol": "JPM",
         "label": "JPMorgan",
-        "last": 350.13,
-        "change_pct": -1.71,
-        "change_5d_pct": -2.37,
+        "last": 352.49,
+        "change_pct": 0.67,
+        "change_5d_pct": -0.29,
         "sector": "Financials",
         "kind": "cyclical"
       },
       {
         "symbol": "CAT",
         "label": "Caterpillar",
-        "last": 784.0,
-        "change_pct": -4.22,
-        "change_5d_pct": -3.68,
+        "last": 783.54,
+        "change_pct": -0.06,
+        "change_5d_pct": -4.73,
         "sector": "Industrials",
         "kind": "cyclical"
       },
       {
         "symbol": "XOM",
         "label": "Exxon Mobil",
-        "last": 165.08,
-        "change_pct": -0.55,
-        "change_5d_pct": 3.52,
+        "last": 169.32,
+        "change_pct": 2.57,
+        "change_5d_pct": 5.39,
         "sector": "Energy",
         "kind": "energy"
       },
       {
         "symbol": "LLY",
         "label": "Eli Lilly",
-        "last": 1138.28,
-        "change_pct": 2.02,
-        "change_5d_pct": -0.96,
+        "last": 1136.11,
+        "change_pct": -0.19,
+        "change_5d_pct": 1.09,
         "sector": "Healthcare",
         "kind": "defensive"
       },
       {
         "symbol": "PG",
         "label": "Procter & Gamble",
-        "last": 146.13,
-        "change_pct": 0.59,
-        "change_5d_pct": -0.21,
+        "last": 146.67,
+        "change_pct": 0.37,
+        "change_5d_pct": 0.75,
         "sector": "Consumer staples",
         "kind": "defensive"
       },
       {
         "symbol": "NEM",
         "label": "Newmont",
-        "last": 123.07,
-        "change_pct": -2.95,
-        "change_5d_pct": -3.92,
+        "last": 124.19,
+        "change_pct": 0.91,
+        "change_5d_pct": -2.28,
         "sector": "Gold miners",
         "kind": "miner"
       },
       {
         "symbol": "GDX",
         "label": "Gold Miners ETF",
-        "last": 94.14,
-        "change_pct": -3.05,
-        "change_5d_pct": -5.16,
+        "last": 94.13,
+        "change_pct": -0.01,
+        "change_5d_pct": -4.35,
         "sector": "Gold miners",
         "kind": "miner"
       }
@@ -527,14 +713,14 @@
       "Industrials",
       "Technology"
     ],
-    "cyclical_avg": -1.72,
-    "defensive_avg": 1.3,
-    "miner_avg": -3.0,
-    "energy_avg": -0.55,
-    "spread": -3.02,
+    "cyclical_avg": -0.5,
+    "defensive_avg": 0.09,
+    "miner_avg": 0.45,
+    "energy_avg": 2.57,
+    "spread": -0.59,
     "appetite": "risk-off",
-    "appetite_note": "Defensives are outperforming cyclicals by 3.02pp with the VIX up 8.0%. Risk-off tapes are usually gold-supportive, though the dollar competes for the same haven flow.",
-    "miner_read": "Miners -3.00% against gold -0.35% - more than 5x leverage, confirming the move. Miners generally amplify gold, so this is the normal relationship.",
+    "appetite_note": "Defensives are outperforming cyclicals by 0.59pp with the VIX up 0.6%. Risk-off tapes are usually gold-supportive, though the dollar competes for the same haven flow.",
+    "miner_read": "Miners +0.45% against gold +0.75% - about 0.6x leverage, confirming the move. Miners generally amplify gold, so this is the normal relationship.",
     "failed": []
   },
   "affairs": {
@@ -545,7 +731,7 @@
         "title": "US / Israel \u2013 Iran",
         "easing": false,
         "state": "unbaselined",
-        "detail": "12 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "detail": "14 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
         "chain": [
           "Escalation",
           "Oil supply risk",
@@ -568,9 +754,9 @@
             "name": "WTI crude",
             "expected": 1.5,
             "expected_dir": "up",
-            "observed": 1.3,
+            "observed": -0.5,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -578,7 +764,7 @@
             "name": "VIX",
             "expected": 1.05,
             "expected_dir": "up",
-            "observed": 7.95,
+            "observed": 0.58,
             "window": "last close",
             "verdict": "consistent",
             "conflict": false
@@ -588,9 +774,9 @@
             "name": "Gold",
             "expected": 0.9,
             "expected_dir": "up",
-            "observed": 0.04,
+            "observed": 0.88,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -598,9 +784,9 @@
             "name": "S&P 500",
             "expected": -0.75,
             "expected_dir": "down",
-            "observed": -0.39,
+            "observed": 0.04,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "flat",
             "conflict": false
           },
           {
@@ -608,9 +794,9 @@
             "name": "Nasdaq 100",
             "expected": -0.65,
             "expected_dir": "down",
-            "observed": -0.43,
+            "observed": 0.12,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -618,102 +804,14 @@
             "name": "Silver",
             "expected": 0.65,
             "expected_dir": "up",
-            "observed": -0.15,
+            "observed": 1.48,
             "window": "overnight",
-            "verdict": "not following",
+            "verdict": "consistent",
             "conflict": false
           }
         ],
-        "read": "Broadly consistent, though Silver, USD/JPY are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
+        "read": "Broadly consistent, though WTI crude, Nasdaq 100, Dollar index and 1 others are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
         "weight": 36
-      },
-      {
-        "kind": "geopolitical",
-        "key": "russia_nato",
-        "title": "Russia / Ukraine / NATO",
-        "easing": false,
-        "state": "unbaselined",
-        "detail": "5 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
-        "chain": [
-          "Sanctions",
-          "Reserve diversification",
-          "Central bank buying",
-          "Gold"
-        ],
-        "drivers": {
-          "geopolitics": 1,
-          "supply_shock": 1
-        },
-        "why": "Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.",
-        "counterweight": "Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day's price action.",
-        "duration": "Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.",
-        "spoken": "Russia, Ukraine and NATO",
-        "spoken_why": "The day to day headlines are priced, but sanctions on reserves are why central banks keep buying gold.",
-        "link": "geo/russia_nato.html",
-        "rows": [
-          {
-            "key": "oil",
-            "name": "WTI crude",
-            "expected": 1.5,
-            "expected_dir": "up",
-            "observed": 1.3,
-            "window": "overnight",
-            "verdict": "consistent",
-            "conflict": false
-          },
-          {
-            "key": "vix",
-            "name": "VIX",
-            "expected": 1.05,
-            "expected_dir": "up",
-            "observed": 7.95,
-            "window": "last close",
-            "verdict": "consistent",
-            "conflict": false
-          },
-          {
-            "key": "gold",
-            "name": "Gold",
-            "expected": 0.9,
-            "expected_dir": "up",
-            "observed": 0.04,
-            "window": "overnight",
-            "verdict": "flat",
-            "conflict": false
-          },
-          {
-            "key": "sp500",
-            "name": "S&P 500",
-            "expected": -0.75,
-            "expected_dir": "down",
-            "observed": -0.39,
-            "window": "overnight",
-            "verdict": "consistent",
-            "conflict": false
-          },
-          {
-            "key": "nasdaq",
-            "name": "Nasdaq 100",
-            "expected": -0.65,
-            "expected_dir": "down",
-            "observed": -0.43,
-            "window": "overnight",
-            "verdict": "consistent",
-            "conflict": false
-          },
-          {
-            "key": "silver",
-            "name": "Silver",
-            "expected": 0.65,
-            "expected_dir": "up",
-            "observed": -0.15,
-            "window": "overnight",
-            "verdict": "not following",
-            "conflict": false
-          }
-        ],
-        "read": "Broadly consistent, though Silver, USD/JPY are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
-        "weight": 25
       },
       {
         "kind": "geopolitical",
@@ -721,7 +819,7 @@
         "title": "China / Taiwan",
         "easing": false,
         "state": "unbaselined",
-        "detail": "5 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "detail": "9 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
         "chain": [
           "Blockade risk",
           "Supply chains",
@@ -744,9 +842,9 @@
             "name": "S&P 500",
             "expected": -1.2,
             "expected_dir": "down",
-            "observed": -0.39,
+            "observed": 0.04,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "flat",
             "conflict": false
           },
           {
@@ -754,9 +852,9 @@
             "name": "Nasdaq 100",
             "expected": -1.1,
             "expected_dir": "down",
-            "observed": -0.43,
+            "observed": 0.12,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -764,7 +862,7 @@
             "name": "VIX",
             "expected": 1.1,
             "expected_dir": "up",
-            "observed": 7.95,
+            "observed": 0.58,
             "window": "last close",
             "verdict": "consistent",
             "conflict": false
@@ -774,9 +872,9 @@
             "name": "US 10-year yield",
             "expected": -1.0,
             "expected_dir": "down",
-            "observed": -0.28,
+            "observed": 0.71,
             "window": "last close",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -784,9 +882,9 @@
             "name": "Gold",
             "expected": 0.8,
             "expected_dir": "up",
-            "observed": 0.04,
+            "observed": 0.88,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -794,14 +892,102 @@
             "name": "Copper",
             "expected": -0.8,
             "expected_dir": "down",
-            "observed": 0.02,
+            "observed": 0.32,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "not following",
             "conflict": false
           }
         ],
-        "read": "Broadly consistent, though USD/JPY, WTI crude, Dollar index are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
-        "weight": 19
+        "read": "Mostly not following - Nasdaq 100, US 10-year yield, Copper and 2 others are all going the other way. Either this is already in the price, or something bigger is driving the tape today.",
+        "weight": 36
+      },
+      {
+        "kind": "geopolitical",
+        "key": "russia_nato",
+        "title": "Russia / Ukraine / NATO",
+        "easing": false,
+        "state": "unbaselined",
+        "detail": "6 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "chain": [
+          "Sanctions",
+          "Reserve diversification",
+          "Central bank buying",
+          "Gold"
+        ],
+        "drivers": {
+          "geopolitics": 1,
+          "supply_shock": 1
+        },
+        "why": "Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.",
+        "counterweight": "Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day's price action.",
+        "duration": "Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.",
+        "spoken": "Russia, Ukraine and NATO",
+        "spoken_why": "The day to day headlines are priced, but sanctions on reserves are why central banks keep buying gold.",
+        "link": "geo/russia_nato.html",
+        "rows": [
+          {
+            "key": "oil",
+            "name": "WTI crude",
+            "expected": 1.5,
+            "expected_dir": "up",
+            "observed": -0.5,
+            "window": "overnight",
+            "verdict": "not following",
+            "conflict": false
+          },
+          {
+            "key": "vix",
+            "name": "VIX",
+            "expected": 1.05,
+            "expected_dir": "up",
+            "observed": 0.58,
+            "window": "last close",
+            "verdict": "consistent",
+            "conflict": false
+          },
+          {
+            "key": "gold",
+            "name": "Gold",
+            "expected": 0.9,
+            "expected_dir": "up",
+            "observed": 0.88,
+            "window": "overnight",
+            "verdict": "consistent",
+            "conflict": false
+          },
+          {
+            "key": "sp500",
+            "name": "S&P 500",
+            "expected": -0.75,
+            "expected_dir": "down",
+            "observed": 0.04,
+            "window": "overnight",
+            "verdict": "flat",
+            "conflict": false
+          },
+          {
+            "key": "nasdaq",
+            "name": "Nasdaq 100",
+            "expected": -0.65,
+            "expected_dir": "down",
+            "observed": 0.12,
+            "window": "overnight",
+            "verdict": "not following",
+            "conflict": false
+          },
+          {
+            "key": "silver",
+            "name": "Silver",
+            "expected": 0.65,
+            "expected_dir": "up",
+            "observed": 1.48,
+            "window": "overnight",
+            "verdict": "consistent",
+            "conflict": false
+          }
+        ],
+        "read": "Broadly consistent, though WTI crude, Nasdaq 100, Dollar index and 1 others are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
+        "weight": 27
       },
       {
         "kind": "geopolitical",
@@ -809,7 +995,7 @@
         "title": "Wider Middle East",
         "easing": false,
         "state": "unbaselined",
-        "detail": "3 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "detail": "6 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
         "chain": [
           "Escalation",
           "Haven demand",
@@ -830,9 +1016,9 @@
             "name": "Gold",
             "expected": 0.7,
             "expected_dir": "up",
-            "observed": 0.04,
+            "observed": 0.88,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -840,7 +1026,7 @@
             "name": "VIX",
             "expected": 0.65,
             "expected_dir": "up",
-            "observed": 7.95,
+            "observed": 0.58,
             "window": "last close",
             "verdict": "consistent",
             "conflict": false
@@ -850,9 +1036,9 @@
             "name": "WTI crude",
             "expected": 0.6,
             "expected_dir": "up",
-            "observed": 1.3,
+            "observed": -0.5,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -860,9 +1046,9 @@
             "name": "S&P 500",
             "expected": -0.4,
             "expected_dir": "down",
-            "observed": -0.39,
+            "observed": 0.04,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "flat",
             "conflict": false
           },
           {
@@ -870,9 +1056,9 @@
             "name": "Nasdaq 100",
             "expected": -0.4,
             "expected_dir": "down",
-            "observed": -0.43,
+            "observed": 0.12,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -880,48 +1066,167 @@
             "name": "US 10-year yield",
             "expected": -0.4,
             "expected_dir": "down",
-            "observed": -0.28,
+            "observed": 0.71,
             "window": "last close",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           }
         ],
-        "read": "Broadly consistent, though Silver, USD/JPY are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
-        "weight": 18
+        "read": "Broadly consistent, though WTI crude, Nasdaq 100, US 10-year yield and 1 others are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
+        "weight": 25
       }
     ],
-    "pending": [],
+    "pending": [
+      {
+        "time": "13:30",
+        "title": "Core Retail Sales m/m",
+        "name": "Retail Sales",
+        "above": [
+          {
+            "name": "US 10-year yield",
+            "direction": "up",
+            "net": 1.5
+          },
+          {
+            "name": "Dollar index",
+            "direction": "up",
+            "net": 1.15
+          },
+          {
+            "name": "USD/JPY",
+            "direction": "up",
+            "net": 1.15
+          },
+          {
+            "name": "Gold",
+            "direction": "down",
+            "net": -0.95
+          },
+          {
+            "name": "Copper",
+            "direction": "up",
+            "net": 0.65
+          }
+        ],
+        "below": [
+          {
+            "name": "US 10-year yield",
+            "direction": "down",
+            "net": -1.5
+          },
+          {
+            "name": "Dollar index",
+            "direction": "down",
+            "net": -1.15
+          },
+          {
+            "name": "USD/JPY",
+            "direction": "down",
+            "net": -1.15
+          },
+          {
+            "name": "Gold",
+            "direction": "up",
+            "net": 0.95
+          },
+          {
+            "name": "Copper",
+            "direction": "down",
+            "net": -0.65
+          }
+        ]
+      },
+      {
+        "time": "13:30",
+        "title": "Retail Sales m/m",
+        "name": "Retail Sales",
+        "above": [
+          {
+            "name": "US 10-year yield",
+            "direction": "up",
+            "net": 1.5
+          },
+          {
+            "name": "Dollar index",
+            "direction": "up",
+            "net": 1.15
+          },
+          {
+            "name": "USD/JPY",
+            "direction": "up",
+            "net": 1.15
+          },
+          {
+            "name": "Gold",
+            "direction": "down",
+            "net": -0.95
+          },
+          {
+            "name": "Copper",
+            "direction": "up",
+            "net": 0.65
+          }
+        ],
+        "below": [
+          {
+            "name": "US 10-year yield",
+            "direction": "down",
+            "net": -1.5
+          },
+          {
+            "name": "Dollar index",
+            "direction": "down",
+            "net": -1.15
+          },
+          {
+            "name": "USD/JPY",
+            "direction": "down",
+            "net": -1.15
+          },
+          {
+            "name": "Gold",
+            "direction": "up",
+            "net": 0.95
+          },
+          {
+            "name": "Copper",
+            "direction": "down",
+            "net": -0.65
+          }
+        ]
+      }
+    ],
     "caveat": "Expected direction is derived from the driver model; observed is what prices have actually done. Many things move at once, so this is a consistency check rather than attribution."
   },
   "asia": {
-    "cutoff": "06:36",
+    "cutoff": "06:35",
     "moves": [
       {
         "key": "gold",
         "name": "Gold",
         "symbol": "GC=F",
         "decimals": 2,
-        "open": 4335.8,
-        "last": 4337.6,
-        "high": 4350.4,
-        "low": 4323.8,
-        "change_pct": 0.04,
-        "range_pct": 0.61,
-        "position": 52,
+        "open": 4329.1,
+        "last": 4367.1,
+        "high": 4381.9,
+        "low": 4315.2,
+        "change_pct": 0.88,
+        "range_pct": 1.54,
+        "position": 78,
         "primary": true
       },
       {
-        "key": "bitcoin",
-        "name": "Bitcoin",
-        "symbol": "BTC-USD",
-        "decimals": 0,
-        "open": 78537.0,
-        "last": 77388.0,
-        "high": 78561.0,
-        "low": 77290.0,
-        "change_pct": -1.46,
-        "range_pct": 1.62,
-        "position": 8,
+        "key": "silver",
+        "name": "Silver",
+        "symbol": "SI=F",
+        "decimals": 3,
+        "open": 64.255,
+        "last": 65.205,
+        "high": 65.395,
+        "low": 63.94,
+        "change_pct": 1.48,
+        "range_pct": 2.26,
+        "position": 87,
         "primary": false
       },
       {
@@ -929,97 +1234,27 @@
         "name": "WTI crude",
         "symbol": "CL=F",
         "decimals": 2,
-        "open": 101.97,
-        "last": 103.3,
-        "high": 103.35,
-        "low": 101.95,
-        "change_pct": 1.3,
-        "range_pct": 1.37,
-        "position": 96,
+        "open": 105.34,
+        "last": 104.81,
+        "high": 105.48,
+        "low": 104.23,
+        "change_pct": -0.5,
+        "range_pct": 1.19,
+        "position": 46,
         "primary": false
       },
       {
-        "key": "nasdaq",
-        "name": "Nasdaq 100",
-        "symbol": "NQ=F",
-        "decimals": 2,
-        "open": 29459.5,
-        "last": 29334.25,
-        "high": 29495.25,
-        "low": 29308.5,
-        "change_pct": -0.43,
-        "range_pct": 0.63,
-        "position": 14,
-        "primary": false
-      },
-      {
-        "key": "usdjpy",
-        "name": "USD/JPY",
-        "symbol": "USDJPY=X",
-        "decimals": 3,
-        "open": 154.252,
-        "last": 154.894,
-        "high": 154.913,
-        "low": 154.202,
-        "change_pct": 0.42,
-        "range_pct": 0.46,
-        "position": 97,
-        "primary": false
-      },
-      {
-        "key": "sp500",
-        "name": "S&P 500",
-        "symbol": "ES=F",
-        "decimals": 2,
-        "open": 7696.75,
-        "last": 7666.75,
-        "high": 7701.0,
-        "low": 7663.0,
-        "change_pct": -0.39,
-        "range_pct": 0.49,
-        "position": 10,
-        "primary": false
-      },
-      {
-        "key": "dollar",
-        "name": "Dollar index",
-        "symbol": "DX-Y.NYB",
-        "decimals": 3,
-        "open": 99.48,
-        "last": 99.632,
-        "high": 99.636,
-        "low": 99.478,
-        "change_pct": 0.15,
-        "range_pct": 0.16,
-        "position": 97,
-        "primary": false
-      },
-      {
-        "key": "silver",
-        "name": "Silver",
-        "symbol": "SI=F",
-        "decimals": 3,
-        "open": 63.735,
-        "last": 63.64,
-        "high": 64.08,
-        "low": 63.39,
-        "change_pct": -0.15,
-        "range_pct": 1.08,
-        "position": 36,
-        "primary": false
-      },
-      {
-        "key": "eurusd",
-        "name": "EUR/USD",
-        "symbol": "EURUSD=X",
-        "decimals": 4,
-        "open": 1.1555,
-        "last": 1.1538,
-        "high": 1.1555,
-        "low": 1.1537,
-        "change_pct": -0.15,
-        "range_pct": 0.16,
-        "position": 7,
+        "key": "bitcoin",
+        "name": "Bitcoin",
+        "symbol": "BTC-USD",
+        "decimals": 0,
+        "open": 75613.0,
+        "last": 75863.0,
+        "high": 76030.0,
+        "low": 75403.0,
+        "change_pct": 0.33,
+        "range_pct": 0.83,
+        "position": 73,
         "primary": false
       },
       {
@@ -1027,13 +1262,83 @@
         "name": "Copper",
         "symbol": "HG=F",
         "decimals": 4,
-        "open": 6.3985,
-        "last": 6.3995,
-        "high": 6.4015,
-        "low": 6.369,
-        "change_pct": 0.02,
-        "range_pct": 0.51,
-        "position": 94,
+        "open": 6.4645,
+        "last": 6.4855,
+        "high": 6.491,
+        "low": 6.44,
+        "change_pct": 0.32,
+        "range_pct": 0.79,
+        "position": 89,
+        "primary": false
+      },
+      {
+        "key": "nasdaq",
+        "name": "Nasdaq 100",
+        "symbol": "NQ=F",
+        "decimals": 2,
+        "open": 29282.0,
+        "last": 29316.25,
+        "high": 29358.5,
+        "low": 29226.0,
+        "change_pct": 0.12,
+        "range_pct": 0.45,
+        "position": 68,
+        "primary": false
+      },
+      {
+        "key": "dollar",
+        "name": "Dollar index",
+        "symbol": "DX-Y.NYB",
+        "decimals": 3,
+        "open": 99.696,
+        "last": 99.6,
+        "high": 99.735,
+        "low": 99.598,
+        "change_pct": -0.1,
+        "range_pct": 0.14,
+        "position": 1,
+        "primary": false
+      },
+      {
+        "key": "eurusd",
+        "name": "EUR/USD",
+        "symbol": "EURUSD=X",
+        "decimals": 4,
+        "open": 1.1542,
+        "last": 1.1551,
+        "high": 1.1551,
+        "low": 1.1535,
+        "change_pct": 0.08,
+        "range_pct": 0.14,
+        "position": 100,
+        "primary": false
+      },
+      {
+        "key": "usdjpy",
+        "name": "USD/JPY",
+        "symbol": "USDJPY=X",
+        "decimals": 3,
+        "open": 155.108,
+        "last": 155.231,
+        "high": 155.49,
+        "low": 155.105,
+        "change_pct": 0.08,
+        "range_pct": 0.25,
+        "position": 33,
+        "primary": false
+      },
+      {
+        "key": "sp500",
+        "name": "S&P 500",
+        "symbol": "ES=F",
+        "decimals": 2,
+        "open": 7666.5,
+        "last": 7669.75,
+        "high": 7678.0,
+        "low": 7658.75,
+        "change_pct": 0.04,
+        "range_pct": 0.25,
+        "position": 57,
         "primary": false
       }
     ],
@@ -1042,101 +1347,92 @@
         "symbol": "^N225",
         "label": "Nikkei 225",
         "country": "Japan",
-        "last": 63326.19,
-        "change_pct": -0.26
+        "last": 63679.33,
+        "change_pct": 0.31
       },
       {
         "symbol": "^HSI",
         "label": "Hang Seng",
         "country": "Hong Kong",
-        "last": 24786.04,
-        "change_pct": -0.53
+        "last": 24669.32,
+        "change_pct": 0.01
       },
       {
         "symbol": "000001.SS",
         "label": "Shanghai Composite",
         "country": "China",
-        "last": 3875.84,
-        "change_pct": -0.24
+        "last": 3885.17,
+        "change_pct": 0.54
       },
       {
         "symbol": "^AXJO",
         "label": "ASX 200",
         "country": "Australia",
-        "last": 8661.8,
-        "change_pct": -1.01
+        "last": 8694.3,
+        "change_pct": 0.25
       },
       {
         "symbol": "^KS11",
         "label": "KOSPI",
         "country": "South Korea",
-        "last": 6588.72,
-        "change_pct": -1.43
+        "last": 6688.3,
+        "change_pct": 0.92
       }
     ],
     "events": [
       {
-        "title": "New Home Prices m/m",
-        "currency": "CNY",
-        "local_time": "02:30",
-        "impact": "Low",
-        "folder": "YELLOW",
-        "forecast": "",
-        "previous": "-0.18%"
-      },
-      {
-        "title": "Fixed Asset Investment ytd/y",
-        "currency": "CNY",
-        "local_time": "03:00",
-        "impact": "Low",
-        "folder": "YELLOW",
-        "forecast": "-7.1%",
-        "previous": "-6.7%"
-      },
-      {
-        "title": "Industrial Production y/y",
-        "currency": "CNY",
-        "local_time": "03:00",
-        "impact": "Low",
-        "folder": "YELLOW",
-        "forecast": "4.8%",
-        "previous": "4.5%"
-      },
-      {
-        "title": "NBS Press Conference",
-        "currency": "CNY",
-        "local_time": "03:00",
-        "impact": "Low",
-        "folder": "YELLOW",
-        "forecast": "",
-        "previous": ""
-      },
-      {
-        "title": "Retail Sales y/y",
-        "currency": "CNY",
-        "local_time": "03:00",
-        "impact": "Low",
-        "folder": "YELLOW",
-        "forecast": "0.7%",
-        "previous": "0.6%"
-      },
-      {
-        "title": "Unemployment Rate",
-        "currency": "CNY",
-        "local_time": "03:00",
-        "impact": "Low",
-        "folder": "YELLOW",
-        "forecast": "5.2%",
-        "previous": "5.2%"
-      },
-      {
-        "title": "Tertiary Industry Activity m/m",
+        "title": "Core Machinery Orders m/m",
         "currency": "JPY",
-        "local_time": "05:30",
+        "local_time": "00:50",
         "impact": "Low",
         "folder": "YELLOW",
-        "forecast": "0.3%",
-        "previous": "-0.2%"
+        "forecast": "-1.2%",
+        "previous": "9.7%"
+      },
+      {
+        "title": "Trade Balance",
+        "currency": "JPY",
+        "local_time": "00:50",
+        "impact": "Low",
+        "folder": "YELLOW",
+        "forecast": "-1.00T",
+        "previous": "-0.69T"
+      },
+      {
+        "title": "MI Leading Index m/m",
+        "currency": "AUD",
+        "local_time": "01:30",
+        "impact": "Low",
+        "folder": "YELLOW",
+        "forecast": "",
+        "previous": "0.0%"
+      },
+      {
+        "title": "GDT Price Index",
+        "currency": "NZD",
+        "local_time": "16:39",
+        "impact": "Low",
+        "folder": "YELLOW",
+        "forecast": "",
+        "previous": "0.9%"
+      },
+      {
+        "title": "Westpac Consumer Sentiment",
+        "currency": "NZD",
+        "local_time": "22:04",
+        "impact": "Low",
+        "folder": "YELLOW",
+        "forecast": "",
+        "previous": "80.4"
+      },
+      {
+        "title": "Current Account",
+        "currency": "NZD",
+        "local_time": "23:45",
+        "impact": "Low",
+        "folder": "YELLOW",
+        "forecast": "-2.57B",
+        "previous": "-1.01B"
       }
     ],
     "skipped": [
@@ -1144,8 +1440,8 @@
       "vix"
     ],
     "failed": [],
-    "read": "Asian equities are broadly lower, averaging -0.69%. Risk came off overnight, which normally gives gold a small bid into London. Gold moved +0.04% overnight in a 0.61% range, and comes into London near the middle of it. Mid-range is the least informative place it can be. 7 minor Asian releases overnight, none of them the kind that reaches gold.",
-    "caveat": "Measured from 00:00 UK to 06:36. Tokyo closes around 07:00 UK and Hong Kong around 09:00, so this is a session finishing rather than one that has finished."
+    "read": "Asian equities are mixed, averaging +0.41% - no clear overnight lead for London. Gold moved +0.88% overnight in a 1.54% range, and comes into London near the top of it. Holding the highs into the European open more often extends than fades, though a thin Asian range is weak evidence either way. 6 minor Asian releases overnight, none of them the kind that reaches gold.",
+    "caveat": "Measured from 00:00 UK to 06:35. Tokyo closes around 07:00 UK and Hong Kong around 09:00, so this is a session finishing rather than one that has finished."
   },
   "board": [
     {
@@ -1154,10 +1450,10 @@
       "symbol": "GC=F",
       "unit": "usd",
       "decimals": 2,
-      "last": 4337.6,
-      "change_pct": -0.33,
-      "change_5d_pct": -1.28,
-      "change_20d_pct": -1.82,
+      "last": 4366.9,
+      "change_pct": 0.79,
+      "change_5d_pct": -2.1,
+      "change_20d_pct": -1.21,
       "primary": true
     },
     {
@@ -1166,10 +1462,10 @@
       "symbol": "^GSPC",
       "unit": "index",
       "decimals": 2,
-      "last": 7619.98,
-      "change_pct": -0.48,
-      "change_5d_pct": -1.28,
-      "change_20d_pct": -2.13,
+      "last": 7585.73,
+      "change_pct": -0.45,
+      "change_5d_pct": -1.14,
+      "change_20d_pct": -2.06,
       "primary": false
     },
     {
@@ -1178,10 +1474,10 @@
       "symbol": "^NDX",
       "unit": "index",
       "decimals": 2,
-      "last": 29127.16,
-      "change_pct": -0.82,
-      "change_5d_pct": -1.41,
-      "change_20d_pct": -3.06,
+      "last": 28937.84,
+      "change_pct": -0.65,
+      "change_5d_pct": -1.93,
+      "change_20d_pct": -3.53,
       "primary": false
     },
     {
@@ -1190,10 +1486,10 @@
       "symbol": "CL=F",
       "unit": "usd",
       "decimals": 2,
-      "last": 103.3,
-      "change_pct": 1.88,
-      "change_5d_pct": 11.04,
-      "change_20d_pct": 22.25,
+      "last": 104.81,
+      "change_pct": -0.96,
+      "change_5d_pct": 9.12,
+      "change_20d_pct": 23.39,
       "primary": false
     },
     {
@@ -1202,10 +1498,10 @@
       "symbol": "DX-Y.NYB",
       "unit": "index",
       "decimals": 3,
-      "last": 99.632,
-      "change_pct": 0.17,
-      "change_5d_pct": 0.8,
-      "change_20d_pct": -0.01,
+      "last": 99.599,
+      "change_pct": -0.05,
+      "change_5d_pct": 0.84,
+      "change_20d_pct": -0.05,
       "primary": false
     },
     {
@@ -1214,10 +1510,10 @@
       "symbol": "^TNX",
       "unit": "pct",
       "decimals": 3,
-      "last": 4.961,
-      "change_pct": -0.28,
-      "change_5d_pct": 3.7,
-      "change_20d_pct": 5.64,
+      "last": 4.996,
+      "change_pct": 0.71,
+      "change_5d_pct": 3.95,
+      "change_20d_pct": 5.76,
       "primary": false
     },
     {
@@ -1226,10 +1522,10 @@
       "symbol": "SI=F",
       "unit": "usd",
       "decimals": 3,
-      "last": 63.64,
-      "change_pct": 0.2,
-      "change_5d_pct": -4.01,
-      "change_20d_pct": -3.75,
+      "last": 65.205,
+      "change_pct": 3.11,
+      "change_5d_pct": -4.03,
+      "change_20d_pct": 1.98,
       "primary": false
     },
     {
@@ -1238,10 +1534,10 @@
       "symbol": "HG=F",
       "unit": "usd",
       "decimals": 4,
-      "last": 6.3995,
-      "change_pct": 1.1,
-      "change_5d_pct": -5.04,
-      "change_20d_pct": -3.1,
+      "last": 6.4855,
+      "change_pct": 1.84,
+      "change_5d_pct": -4.67,
+      "change_20d_pct": 0.05,
       "primary": false
     },
     {
@@ -1250,10 +1546,10 @@
       "symbol": "BTC-USD",
       "unit": "usd",
       "decimals": 0,
-      "last": 77384.0,
-      "change_pct": 0.71,
-      "change_5d_pct": -1.12,
-      "change_20d_pct": -1.5,
+      "last": 75827.0,
+      "change_pct": -2.99,
+      "change_5d_pct": -0.97,
+      "change_20d_pct": -4.05,
       "primary": false
     },
     {
@@ -1262,10 +1558,10 @@
       "symbol": "EURUSD=X",
       "unit": "fx",
       "decimals": 4,
-      "last": 1.1538,
-      "change_pct": -0.48,
-      "change_5d_pct": -0.77,
-      "change_20d_pct": -0.39,
+      "last": 1.155,
+      "change_pct": 0.01,
+      "change_5d_pct": -0.67,
+      "change_20d_pct": -0.25,
       "primary": false
     },
     {
@@ -1274,10 +1570,10 @@
       "symbol": "USDJPY=X",
       "unit": "fx",
       "decimals": 3,
-      "last": 154.886,
-      "change_pct": 0.95,
-      "change_5d_pct": 0.67,
-      "change_20d_pct": -2.8,
+      "last": 155.226,
+      "change_pct": 0.54,
+      "change_5d_pct": 1.14,
+      "change_20d_pct": -2.71,
       "primary": false
     },
     {
@@ -1286,10 +1582,10 @@
       "symbol": "^VIX",
       "unit": "index",
       "decimals": 2,
-      "last": 17.1,
-      "change_pct": 7.95,
-      "change_5d_pct": 11.76,
-      "change_20d_pct": 12.57,
+      "last": 17.2,
+      "change_pct": 0.58,
+      "change_5d_pct": 9.41,
+      "change_20d_pct": 8.59,
       "primary": false
     }
   ],
@@ -1313,14 +1609,14 @@
       "gold": {
         "gold": 1.0,
         "sp500": 0.39,
-        "nasdaq": 0.33,
-        "oil": -0.18,
-        "dollar": -0.53,
-        "us10y": -0.17,
+        "nasdaq": 0.34,
+        "oil": -0.19,
+        "dollar": -0.55,
+        "us10y": -0.14,
         "silver": 0.85,
         "copper": 0.51,
-        "bitcoin": 0.64,
-        "eurusd": 0.46,
+        "bitcoin": 0.56,
+        "eurusd": 0.47,
         "usdjpy": -0.43,
         "vix": -0.44
       },
@@ -1328,154 +1624,154 @@
         "gold": 0.39,
         "sp500": 1.0,
         "nasdaq": 0.89,
-        "oil": -0.49,
+        "oil": -0.51,
         "dollar": -0.35,
         "us10y": -0.28,
-        "silver": 0.44,
-        "copper": 0.52,
-        "bitcoin": 0.2,
-        "eurusd": 0.25,
-        "usdjpy": -0.35,
+        "silver": 0.43,
+        "copper": 0.51,
+        "bitcoin": 0.19,
+        "eurusd": 0.21,
+        "usdjpy": -0.37,
         "vix": -0.78
       },
       "nasdaq": {
-        "gold": 0.33,
+        "gold": 0.34,
         "sp500": 0.89,
         "nasdaq": 1.0,
-        "oil": -0.3,
+        "oil": -0.31,
         "dollar": -0.34,
-        "us10y": -0.17,
+        "us10y": -0.16,
         "silver": 0.48,
         "copper": 0.56,
-        "bitcoin": 0.21,
-        "eurusd": 0.29,
-        "usdjpy": -0.26,
-        "vix": -0.65
+        "bitcoin": 0.2,
+        "eurusd": 0.24,
+        "usdjpy": -0.29,
+        "vix": -0.66
       },
       "oil": {
-        "gold": -0.18,
-        "sp500": -0.49,
-        "nasdaq": -0.3,
+        "gold": -0.19,
+        "sp500": -0.51,
+        "nasdaq": -0.31,
         "oil": 1.0,
-        "dollar": 0.03,
-        "us10y": 0.54,
-        "silver": -0.15,
+        "dollar": 0.05,
+        "us10y": 0.58,
+        "silver": -0.17,
         "copper": -0.27,
-        "bitcoin": -0.05,
-        "eurusd": 0.06,
-        "usdjpy": 0.18,
-        "vix": 0.45
+        "bitcoin": -0.03,
+        "eurusd": 0.04,
+        "usdjpy": 0.17,
+        "vix": 0.47
       },
       "dollar": {
-        "gold": -0.53,
+        "gold": -0.55,
         "sp500": -0.35,
         "nasdaq": -0.34,
-        "oil": 0.03,
+        "oil": 0.05,
         "dollar": 1.0,
-        "us10y": 0.25,
+        "us10y": 0.24,
         "silver": -0.42,
         "copper": -0.34,
-        "bitcoin": -0.45,
-        "eurusd": -0.91,
-        "usdjpy": 0.74,
-        "vix": 0.41
+        "bitcoin": -0.41,
+        "eurusd": -0.92,
+        "usdjpy": 0.76,
+        "vix": 0.4
       },
       "us10y": {
-        "gold": -0.17,
+        "gold": -0.14,
         "sp500": -0.28,
-        "nasdaq": -0.17,
-        "oil": 0.54,
-        "dollar": 0.25,
+        "nasdaq": -0.16,
+        "oil": 0.58,
+        "dollar": 0.24,
         "us10y": 1.0,
         "silver": -0.1,
-        "copper": -0.12,
-        "bitcoin": -0.2,
-        "eurusd": -0.23,
-        "usdjpy": 0.22,
-        "vix": 0.13
+        "copper": -0.11,
+        "bitcoin": -0.22,
+        "eurusd": -0.24,
+        "usdjpy": 0.21,
+        "vix": 0.12
       },
       "silver": {
         "gold": 0.85,
-        "sp500": 0.44,
+        "sp500": 0.43,
         "nasdaq": 0.48,
-        "oil": -0.15,
+        "oil": -0.17,
         "dollar": -0.42,
         "us10y": -0.1,
         "silver": 1.0,
-        "copper": 0.68,
-        "bitcoin": 0.57,
-        "eurusd": 0.39,
+        "copper": 0.69,
+        "bitcoin": 0.49,
+        "eurusd": 0.36,
         "usdjpy": -0.25,
         "vix": -0.38
       },
       "copper": {
         "gold": 0.51,
-        "sp500": 0.52,
+        "sp500": 0.51,
         "nasdaq": 0.56,
         "oil": -0.27,
         "dollar": -0.34,
-        "us10y": -0.12,
-        "silver": 0.68,
+        "us10y": -0.11,
+        "silver": 0.69,
         "copper": 1.0,
-        "bitcoin": 0.3,
-        "eurusd": 0.26,
-        "usdjpy": -0.24,
+        "bitcoin": 0.22,
+        "eurusd": 0.27,
+        "usdjpy": -0.28,
         "vix": -0.49
       },
       "bitcoin": {
-        "gold": 0.64,
-        "sp500": 0.2,
-        "nasdaq": 0.21,
-        "oil": -0.05,
-        "dollar": -0.45,
-        "us10y": -0.2,
-        "silver": 0.57,
-        "copper": 0.3,
+        "gold": 0.56,
+        "sp500": 0.19,
+        "nasdaq": 0.2,
+        "oil": -0.03,
+        "dollar": -0.41,
+        "us10y": -0.22,
+        "silver": 0.49,
+        "copper": 0.22,
         "bitcoin": 1.0,
-        "eurusd": 0.52,
-        "usdjpy": -0.31,
-        "vix": -0.23
+        "eurusd": 0.49,
+        "usdjpy": -0.33,
+        "vix": -0.21
       },
       "eurusd": {
-        "gold": 0.46,
-        "sp500": 0.25,
-        "nasdaq": 0.29,
-        "oil": 0.06,
-        "dollar": -0.91,
-        "us10y": -0.23,
-        "silver": 0.39,
-        "copper": 0.26,
-        "bitcoin": 0.52,
+        "gold": 0.47,
+        "sp500": 0.21,
+        "nasdaq": 0.24,
+        "oil": 0.04,
+        "dollar": -0.92,
+        "us10y": -0.24,
+        "silver": 0.36,
+        "copper": 0.27,
+        "bitcoin": 0.49,
         "eurusd": 1.0,
-        "usdjpy": -0.53,
-        "vix": -0.29
+        "usdjpy": -0.52,
+        "vix": -0.27
       },
       "usdjpy": {
         "gold": -0.43,
-        "sp500": -0.35,
-        "nasdaq": -0.26,
-        "oil": 0.18,
-        "dollar": 0.74,
-        "us10y": 0.22,
+        "sp500": -0.37,
+        "nasdaq": -0.29,
+        "oil": 0.17,
+        "dollar": 0.76,
+        "us10y": 0.21,
         "silver": -0.25,
-        "copper": -0.24,
-        "bitcoin": -0.31,
-        "eurusd": -0.53,
+        "copper": -0.28,
+        "bitcoin": -0.33,
+        "eurusd": -0.52,
         "usdjpy": 1.0,
-        "vix": 0.38
+        "vix": 0.41
       },
       "vix": {
         "gold": -0.44,
         "sp500": -0.78,
-        "nasdaq": -0.65,
-        "oil": 0.45,
-        "dollar": 0.41,
-        "us10y": 0.13,
+        "nasdaq": -0.66,
+        "oil": 0.47,
+        "dollar": 0.4,
+        "us10y": 0.12,
         "silver": -0.38,
         "copper": -0.49,
-        "bitcoin": -0.23,
-        "eurusd": -0.29,
-        "usdjpy": 0.38,
+        "bitcoin": -0.21,
+        "eurusd": -0.27,
+        "usdjpy": 0.41,
         "vix": 1.0
       }
     },
@@ -1488,12 +1784,12 @@
       {
         "asset": "bitcoin",
         "name": "Bitcoin",
-        "corr": 0.64
+        "corr": 0.56
       },
       {
         "asset": "dollar",
         "name": "Dollar index",
-        "corr": -0.53
+        "corr": -0.55
       },
       {
         "asset": "copper",
@@ -1503,19 +1799,19 @@
       {
         "asset": "eurusd",
         "name": "EUR/USD",
-        "corr": 0.46
+        "corr": 0.47
       }
     ],
-    "regime": "Gold and the dollar are running at -0.53. That is the textbook inverse relationship, so dollar moves are doing real work on the price. Against the S&P it is +0.39. Gold is trading WITH risk assets rather than against them, so it is behaving as a liquidity asset right now, not a hedge - do not rely on it to offset an equity drawdown while that holds."
+    "regime": "Gold and the dollar are running at -0.55. That is the textbook inverse relationship, so dollar moves are doing real work on the price. Against the S&P it is +0.39. Gold is trading WITH risk assets rather than against them, so it is behaving as a liquidity asset right now, not a hedge - do not rely on it to offset an equity drawdown while that holds."
   },
   "coverage": {
-    "rows": 82,
-    "events": 8,
+    "rows": 94,
+    "events": 9,
     "assets": 12,
-    "days": 2
+    "days": 3
   },
   "geo": {
-    "points": 42,
+    "points": 45,
     "band": "ELEVATED",
     "note": "Something has genuinely changed rather than simply continued. Expect headline-driven moves.",
     "flashpoints": [
@@ -1524,23 +1820,27 @@
         "name": "US / Israel \u2013 Iran",
         "weight": 10,
         "state": "unbaselined",
-        "headlines": 12,
-        "events": 12,
-        "severe": 2,
-        "elevated": 2,
+        "headlines": 14,
+        "events": 13,
+        "severe": 5,
+        "elevated": 3,
         "calming": 0,
-        "raw": 42.0,
-        "baseline": 50.61,
-        "mad": 15.03,
-        "baseline_days": 4,
+        "raw": 69.0,
+        "baseline": 42.0,
+        "mad": 9.64,
+        "baseline_days": 5,
         "baseline_ready": false,
-        "days_active": 5,
+        "days_active": 6,
         "sigma": null,
         "sigma_volume": null,
-        "novel_markers": [],
+        "novel_markers": [
+          "killed"
+        ],
         "markers": [
           "attack",
-          "escalat",
+          "drone",
+          "killed",
+          "missile",
           "sanction",
           "strike"
         ],
@@ -1580,14 +1880,72 @@
           {
             "date": "2026-09-15",
             "score": 42.0
+          },
+          {
+            "date": "2026-09-16",
+            "score": 69.0
           }
         ],
         "why_gold": "The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.",
         "counterweight": "The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold's gain. This is why some escalation days produce a far smaller gold move than the headlines imply.",
         "typical_duration": "Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed's reaction function.",
         "escalation_markers": "Direct state-on-state strikes rather than proxies; any interference with shipping in Hormuz; attacks on oil infrastructure; withdrawal from nuclear monitoring.",
-        "summary": "12 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "summary": "14 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
         "top": [
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran",
+              "hormuz",
+              "strait of hormuz"
+            ],
+            "esc_matched": [
+              "missile",
+              "attack"
+            ],
+            "source": "BBC World",
+            "title": "Two sailors missing after tanker attacked in Strait of Hormuz, Oman says",
+            "link": "https://www.bbc.co.uk/news/articles/c3n07ydqdzlvo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T16:13:41+00:00",
+            "summary": "Iran says El Gaia caught fire after hitting mines, but the US says the oil tanker was struck by a missile and then a drone."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran"
+            ],
+            "esc_matched": [
+              "attack"
+            ],
+            "source": "CNBC World",
+            "title": "Oil falls as U.S. crude inventories reportedly rise, traders weigh Saudi pipeline closure",
+            "link": "https://www.cnbc.com/2026/09/16/oil-prices-today-brent-wti-hormuz-iran-war.html",
+            "published": "2026-09-16T04:56:02+00:00",
+            "summary": "Oil fell Wednesday, as an unexpected increase in U.S. crude inventories outweighed worries over supply disruptions after an Iran-backed attack on Saudi Arabia's East-West pipeline."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran"
+            ],
+            "esc_matched": [
+              "strike"
+            ],
+            "source": "CNBC World",
+            "title": "AWS says it can't restore service to Bahrain, UAE facilities 6 months after Iran strikes",
+            "link": "https://www.cnbc.com/2026/09/15/aws-cant-restore-service-to-bahrain-uae-6-months-after-iran-strikes.html",
+            "published": "2026-09-15T19:04:46+00:00",
+            "summary": "In March, two Amazon data centers in the UAE were struck by drones, while a site was also damaged by a nearby drone hit."
+          },
           {
             "flashpoint": "us_iran",
             "flashpoint_name": "US / Israel \u2013 Iran",
@@ -1598,65 +1956,13 @@
               "houthi"
             ],
             "esc_matched": [
-              "strike",
-              "attack"
+              "strike"
             ],
             "source": "CNBC World",
-            "title": "Oil extends gains following Houthi strikes on Saudi Arabia",
+            "title": "U.S. oil tops $105 as Saudi Arabia reportedly cancels some crude cargoes after pipeline closure",
             "link": "https://www.cnbc.com/2026/09/15/oil-extends-gains-following-houthi-strikes-on-saudi-arabia.html",
-            "published": "2026-09-15T04:41:36+00:00",
-            "summary": "Oil extended gains amid reports of fresh Houthi strikes on Saudi Arabia and attacks by Iran on ships in the Gulf."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "severe",
-            "score": 10.0,
-            "matched": [
-              "iran"
-            ],
-            "esc_matched": [
-              "attack"
-            ],
-            "source": "CNBC World",
-            "title": "Ukraine says it's open to halting attacks on Russian energy after Trump's claims of deal",
-            "link": "https://www.cnbc.com/2026/09/14/trump-ukraine-russia-energy-oil-iran.html",
-            "published": "2026-09-14T22:18:56+00:00",
-            "summary": "\"The World's Diesel price rise is mostly caused by the Russia/Ukraine War, not Iran,\" Trump said in a social media post."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "elevated",
-            "score": 5.0,
-            "matched": [
-              "iran"
-            ],
-            "esc_matched": [
-              "escalat"
-            ],
-            "source": "CNBC World",
-            "title": "Prediction market traders think gas prices will hit new highs for the year",
-            "link": "https://www.cnbc.com/2026/09/14/prediction-markets-traders-think-gas-prices-will-hit-new-highs-in-2026.html",
-            "published": "2026-09-14T15:49:39+00:00",
-            "summary": "Oil prices have marched higher in recent weeks, above $100 per barrel, as tensions between the U.S. and Iran have escalated again."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "elevated",
-            "score": 5.0,
-            "matched": [
-              "iran"
-            ],
-            "esc_matched": [
-              "sanction"
-            ],
-            "source": "State Dept",
-            "title": "U.S. Sanctions VTB Bank for Aiding Iran\u2019s Sanctions Evasion",
-            "link": "https://www.state.gov/releases/office-of-the-spokesman/2026/09/u-s-sanctions-vtb-bank-for-aiding-irans-sanctions-evasion/",
-            "published": "2026-09-14T19:35:42+00:00",
-            "summary": "Thomas &quot;Tommy&quot; Pigott, SpokesmanOffice of the Spokesman U.S. Sanctions VTB Bank for Aiding Iran&#8217;s Sanctions Evasion Press Statement"
+            "published": "2026-09-15T18:58:36+00:00",
+            "summary": "Iran-backed Houthi militants in Yemen, meanwhile, carried out renewed strikes on Saudi Arabia this week."
           }
         ],
         "all_headlines": [
@@ -1666,67 +1972,33 @@
             "tier": "severe",
             "score": 10.0,
             "matched": [
-              "iran",
-              "houthi"
-            ],
-            "esc_matched": [
-              "strike",
-              "attack"
-            ],
-            "source": "CNBC World",
-            "title": "Oil extends gains following Houthi strikes on Saudi Arabia",
-            "link": "https://www.cnbc.com/2026/09/15/oil-extends-gains-following-houthi-strikes-on-saudi-arabia.html",
-            "published": "2026-09-15T04:41:36+00:00",
-            "summary": "Oil extended gains amid reports of fresh Houthi strikes on Saudi Arabia and attacks by Iran on ships in the Gulf."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "background",
-            "score": 1.5,
-            "matched": [
-              "iran"
-            ],
-            "esc_matched": [],
-            "source": "CNBC World",
-            "title": "Weapon shortfalls, 'hundreds' of buildings and aircraft damaged, $33.4 billion spent: the U.S. government tallies costs of the Iran war",
-            "link": "https://www.cnbc.com/2026/09/15/us-iran-war-trump-hormuz-munitions-dod-costs-aircraft.html",
-            "published": "2026-09-15T03:45:15+00:00",
-            "summary": "The department revealed that the Iran war had cost an estimated $33.4 billion as of June 29."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "background",
-            "score": 1.5,
-            "matched": [
-              "iran",
-              "irgc",
-              "hormuz"
-            ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "Iran war live: CENTCOM disputes IRGC claim supertanker struck by Hormuz nav",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines?traffic_source=rss",
-            "published": "2026-09-15T00:00:00+00:00",
-            "summary": "CENTCOM disputes the IRGC claim that the Panama-flagged oil tanker El Gaia hit naval mines in the Strait of Hormuz."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "severe",
-            "score": 10.0,
-            "matched": [
               "iran"
             ],
             "esc_matched": [
               "attack"
             ],
             "source": "CNBC World",
-            "title": "Ukraine says it's open to halting attacks on Russian energy after Trump's claims of deal",
-            "link": "https://www.cnbc.com/2026/09/14/trump-ukraine-russia-energy-oil-iran.html",
-            "published": "2026-09-14T22:18:56+00:00",
-            "summary": "\"The World's Diesel price rise is mostly caused by the Russia/Ukraine War, not Iran,\" Trump said in a social media post."
+            "title": "Oil falls as U.S. crude inventories reportedly rise, traders weigh Saudi pipeline closure",
+            "link": "https://www.cnbc.com/2026/09/16/oil-prices-today-brent-wti-hormuz-iran-war.html",
+            "published": "2026-09-16T04:56:02+00:00",
+            "summary": "Oil fell Wednesday, as an unexpected increase in U.S. crude inventories outweighed worries over supply disruptions after an Iran-backed attack on Saudi Arabia's East-West pipeline."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "elevated",
+            "score": 5.0,
+            "matched": [
+              "houthi"
+            ],
+            "esc_matched": [
+              "drone"
+            ],
+            "source": "Al Jazeera",
+            "title": "Saudi-led coalition intercepts Houthi drone headed for Mecca",
+            "link": "https://www.aljazeera.com/news/2026/9/16/saudi-led-coalition-intercepts-drone-headed-for-mecca?traffic_source=rss",
+            "published": "2026-09-16T01:09:54+00:00",
+            "summary": "Saudi Arabia says it intercepted a drone before it entered Islam&#039;s holiest city, calling pilgrims&#039; security a &#039;red line&#039;"
           },
           {
             "flashpoint": "us_iran",
@@ -1738,56 +2010,28 @@
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "Why talks in Oman between Iran and Gulf Arab states were postponed",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/14/why-talks-in-oman-between-iran-and-gulf-arab-states-were-postponed?traffic_source=rss",
-            "published": "2026-09-14T21:20:00+00:00",
-            "summary": "Hopes for a breakthrough on the Iran war have taken a hit after talks in Oman between Iran-Gulf nations were postponed."
+            "title": "Iran war increasing inflation, straining US munitions: congressional report",
+            "link": "https://www.aljazeera.com/news/2026/9/16/iran-war-increasing-inflation-straining-us-munitions-congressional-report?traffic_source=rss",
+            "published": "2026-09-16T00:38:12+00:00",
+            "summary": "Report by nonpartisan research body finds that replenishing depleted munitions stockpiles could take up to five years."
           },
           {
             "flashpoint": "us_iran",
             "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "background",
-            "score": 1.5,
-            "matched": [
-              "iran"
-            ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "US blocks Iran nuclear chief from attending IAEA conference in Vienna",
-            "link": "https://www.aljazeera.com/news/2026/9/14/us-blocks-iran-nuclear-chief-from-attending-key-vienna-conference?traffic_source=rss",
-            "published": "2026-09-14T21:19:41+00:00",
-            "summary": "Iran accuses US of pressuring Austria to revoke visa for Mohammad Eslami, calling it a violation of member state rights."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "background",
-            "score": 1.5,
+            "tier": "elevated",
+            "score": 5.0,
             "matched": [
               "iran",
               "houthi"
             ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "What could stop the Houthis\u2019 advance across Yemen?",
-            "link": "https://www.aljazeera.com/video/inside-story/2026/9/14/what-could-stop-the-houthis-advance-across-yemen?traffic_source=rss",
-            "published": "2026-09-14T20:55:57+00:00",
-            "summary": "Iran-backed group seized areas on Red Sea coastline."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "background",
-            "score": 1.5,
-            "matched": [
-              "houthi"
+            "esc_matched": [
+              "drone"
             ],
-            "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "Inside the Houthis\u2019 expanding war economy in Yemen",
-            "link": "https://www.aljazeera.com/economy/2026/9/14/inside-the-houthis-expanding-war-economy-in-yemen?traffic_source=rss",
-            "published": "2026-09-14T20:41:47+00:00",
-            "summary": "The Houthis have restructured Yemen&#039;s commercial sector, securing billions in revenue amid a humanitarian crisis."
+            "title": "Iran war live: Saudi coalition intercepts, destroys drone headed for Mecca",
+            "link": "https://www.aljazeera.com/news/liveblog/2026/9/16/iran-war-live-irans-top-diplomat-heads-to-china-as-war-drags-on?traffic_source=rss",
+            "published": "2026-09-16T00:00:00+00:00",
+            "summary": "Saudi Arabia has intercepted and destroyed a Houthi drone that was heading toward Mecca."
           },
           {
             "flashpoint": "us_iran",
@@ -1800,10 +2044,126 @@
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "Austria denies entry to Iranian official after UN ruling",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/14/austria-denies-entry-to-iranian-official-after-un-ruling?traffic_source=rss",
-            "published": "2026-09-14T20:41:21+00:00",
-            "summary": "Iran accused Austria of reversing its approval of an Iranian delegation to the IAEA under external pressure."
+            "title": "Panic on board Iranian plane as violent shaking rips cabin apart",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/15/aje-onl-nf_iranian-plane-violent-shaking-rips-cabin-apart-150926?traffic_source=rss",
+            "published": "2026-09-15T23:47:56+00:00",
+            "summary": "A Sepehran Airlines Boeing 737 cabin rips apart after an emergency landing in Mashhad, Iran."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "background",
+            "score": 1.5,
+            "matched": [
+              "iran"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Republican congressman calls to impeach US Defence Secretary Pete Hegseth",
+            "link": "https://www.aljazeera.com/news/2026/9/15/republican-congressman-calls-to-impeach-us-defence-secretary-pete-hegseth?traffic_source=rss",
+            "published": "2026-09-15T22:38:08+00:00",
+            "summary": "GOP Representative Thomas Massie has emerged as outspoken critic of war on Iran and overseas military interventions."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "background",
+            "score": 1.5,
+            "matched": [
+              "iran"
+            ],
+            "esc_matched": [],
+            "source": "CNBC World",
+            "title": "Iran war has cost on average $246 million per day in its first five months, CBO finds",
+            "link": "https://www.cnbc.com/2026/09/15/cbo-iran-war-cost-pentagon-weapons.html",
+            "published": "2026-09-15T22:33:45+00:00",
+            "summary": "CBO estimates the Iran war cost the Pentagon $38.1 billion through Aug. 1 and could cost another $2 billion to $3 billion each additional month."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "background",
+            "score": 1.5,
+            "matched": [
+              "iran"
+            ],
+            "esc_matched": [],
+            "source": "BBC World",
+            "title": "Iran war has led to US munitions shortfalls, Pentagon inspector confirms",
+            "link": "https://www.bbc.co.uk/news/articles/c9gk58xgng0vo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T20:34:12+00:00",
+            "summary": "The inspector also found a bottleneck in resupply, despite President Donald Trump's claims that US supplies are \"virtually limitless\"."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran"
+            ],
+            "esc_matched": [
+              "strike"
+            ],
+            "source": "CNBC World",
+            "title": "AWS says it can't restore service to Bahrain, UAE facilities 6 months after Iran strikes",
+            "link": "https://www.cnbc.com/2026/09/15/aws-cant-restore-service-to-bahrain-uae-6-months-after-iran-strikes.html",
+            "published": "2026-09-15T19:04:46+00:00",
+            "summary": "In March, two Amazon data centers in the UAE were struck by drones, while a site was also damaged by a nearby drone hit."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran",
+              "houthi"
+            ],
+            "esc_matched": [
+              "strike"
+            ],
+            "source": "CNBC World",
+            "title": "U.S. oil tops $105 as Saudi Arabia reportedly cancels some crude cargoes after pipeline closure",
+            "link": "https://www.cnbc.com/2026/09/15/oil-extends-gains-following-houthi-strikes-on-saudi-arabia.html",
+            "published": "2026-09-15T18:58:36+00:00",
+            "summary": "Iran-backed Houthi militants in Yemen, meanwhile, carried out renewed strikes on Saudi Arabia this week."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran",
+              "hormuz",
+              "strait of hormuz"
+            ],
+            "esc_matched": [
+              "missile",
+              "attack"
+            ],
+            "source": "BBC World",
+            "title": "Two sailors missing after tanker attacked in Strait of Hormuz, Oman says",
+            "link": "https://www.bbc.co.uk/news/articles/c3n07ydqdzlvo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T16:13:41+00:00",
+            "summary": "Iran says El Gaia caught fire after hitting mines, but the US says the oil tanker was struck by a missile and then a drone."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "background",
+            "score": 1.5,
+            "matched": [
+              "iran",
+              "iranian"
+            ],
+            "esc_matched": [],
+            "source": "CNBC World",
+            "title": "Iranian foreign minister will head to China for talks, as Pentagon reveals financial cost of war",
+            "link": "https://www.cnbc.com/2026/09/15/us-iran-war-trump-hormuz-munitions-dod-costs-aircraft.html",
+            "published": "2026-09-15T11:53:36+00:00",
+            "summary": "Iranian Foreign Minister Abbas Araghchi will visit China on Wednesday for talks, Beijing's foreign ministry announced on Tuesday."
           },
           {
             "flashpoint": "us_iran",
@@ -1825,262 +2185,20 @@
           {
             "flashpoint": "us_iran",
             "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "elevated",
-            "score": 5.0,
+            "tier": "severe",
+            "score": 10.0,
             "matched": [
               "iran"
             ],
             "esc_matched": [
-              "escalat"
-            ],
-            "source": "CNBC World",
-            "title": "Prediction market traders think gas prices will hit new highs for the year",
-            "link": "https://www.cnbc.com/2026/09/14/prediction-markets-traders-think-gas-prices-will-hit-new-highs-in-2026.html",
-            "published": "2026-09-14T15:49:39+00:00",
-            "summary": "Oil prices have marched higher in recent weeks, above $100 per barrel, as tensions between the U.S. and Iran have escalated again."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "background",
-            "score": 1.5,
-            "matched": [
-              "iran"
-            ],
-            "esc_matched": [],
-            "source": "CNBC World",
-            "title": "Trump urges Ukraine to stop \u2018knocking out\u2019 Russian oil refineries as U.S. diesel hits record",
-            "link": "https://www.cnbc.com/2026/09/14/trump-ukraine-russia-diesel-prices-oil.html",
-            "published": "2026-09-14T14:25:00+00:00",
-            "summary": "U.S. diesel prices have surpassed $6 a gallon for the first time ever as the Ukraine and Iran wars drive broader energy supply concerns."
-          }
-        ]
-      },
-      {
-        "key": "russia_nato",
-        "name": "Russia / Ukraine / NATO",
-        "weight": 8,
-        "state": "unbaselined",
-        "headlines": 5,
-        "events": 5,
-        "severe": 1,
-        "elevated": 1,
-        "calming": 0,
-        "raw": 15.6,
-        "baseline": 18.4,
-        "mad": 7.71,
-        "baseline_days": 4,
-        "baseline_ready": false,
-        "days_active": 5,
-        "sigma": null,
-        "sigma_volume": null,
-        "novel_markers": [],
-        "markers": [
-          "casualties",
-          "drone",
-          "strike"
-        ],
-        "burst": false,
-        "points": 25,
-        "escalation": 25.0,
-        "backdrop": 18,
-        "chain": [
-          "Sanctions",
-          "Reserve diversification",
-          "Central bank buying",
-          "Gold"
-        ],
-        "drivers": {
-          "geopolitics": 1,
-          "supply_shock": 1
-        },
-        "spoken": "Russia, Ukraine and NATO",
-        "spoken_why": "The day to day headlines are priced, but sanctions on reserves are why central banks keep buying gold.",
-        "history": [
-          {
-            "date": "2026-09-09",
-            "score": 13.2
-          },
-          {
-            "date": "2026-09-10",
-            "score": 23.6
-          },
-          {
-            "date": "2026-09-11",
-            "score": 13.2
-          },
-          {
-            "date": "2026-09-14",
-            "score": 24.8
-          },
-          {
-            "date": "2026-09-15",
-            "score": 15.6
-          }
-        ],
-        "why_gold": "Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.",
-        "counterweight": "Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day's price action.",
-        "typical_duration": "Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.",
-        "escalation_markers": "Any Article 5 discussion, strikes on NATO territory, nuclear rhetoric or doctrine change, or new sanctions touching reserves or energy.",
-        "summary": "5 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
-        "top": [
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "severe",
-            "score": 8.0,
-            "matched": [
-              "russia",
-              "russian",
-              "ukraine"
-            ],
-            "esc_matched": [
               "strike",
-              "casualties"
+              "killed"
             ],
-            "source": "BBC World",
-            "title": "Watch: Why a Russian strike on train near Ukraine-Poland border could mark an escalation",
-            "link": "https://www.bbc.co.uk/news/videos/cx2z5gjj838o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T01:12:20+00:00",
-            "summary": "No casualties were reported after a Russian drone struck a train shortly after Boris Johnson and top European officials left the area."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "elevated",
-            "score": 4.0,
-            "matched": [
-              "russia",
-              "nato"
-            ],
-            "esc_matched": [
-              "drone"
-            ],
-            "source": "BBC World",
-            "title": "Nato jets down drone that entered Lithuanian airspace",
-            "link": "https://www.bbc.co.uk/news/articles/cjx2zgk7edlzo?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-15T02:22:07+00:00",
-            "summary": "The origin of the drone is currently unknown, but authorities say it likely entered Lithuania from neighbouring Belarus, an ally of Russia."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "putin"
-            ],
-            "esc_matched": [],
-            "source": "BBC World",
-            "title": "Donald Trump Jr and Bettina Trump say Putin ally paid for some wedding festivities as a 'gift'",
-            "link": "https://www.bbc.co.uk/news/articles/cmqjkg121kr9o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T22:56:44+00:00",
-            "summary": "An Instagram post from the couple said two nights of their wedding festivities in the Bahamas were partially funded by Umar Kremlev."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "russia",
-              "russian",
-              "ukraine"
-            ],
-            "esc_matched": [],
-            "source": "BBC World",
-            "title": "Ukraine's postal workers deliver lifeline under Russian fire",
-            "link": "https://www.bbc.co.uk/news/articles/c33kmred368o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-15T05:01:46+00:00",
-            "summary": "The state post service delivers pensions, medicine and letters to people just miles from the front."
-          }
-        ],
-        "all_headlines": [
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "russia",
-              "russian",
-              "ukraine"
-            ],
-            "esc_matched": [],
-            "source": "BBC World",
-            "title": "Ukraine's postal workers deliver lifeline under Russian fire",
-            "link": "https://www.bbc.co.uk/news/articles/c33kmred368o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-15T05:01:46+00:00",
-            "summary": "The state post service delivers pensions, medicine and letters to people just miles from the front."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "elevated",
-            "score": 4.0,
-            "matched": [
-              "russia",
-              "nato"
-            ],
-            "esc_matched": [
-              "drone"
-            ],
-            "source": "BBC World",
-            "title": "Nato jets down drone that entered Lithuanian airspace",
-            "link": "https://www.bbc.co.uk/news/articles/cjx2zgk7edlzo?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-15T02:22:07+00:00",
-            "summary": "The origin of the drone is currently unknown, but authorities say it likely entered Lithuania from neighbouring Belarus, an ally of Russia."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "russia",
-              "moscow"
-            ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "Russia resupplies military bases in Syria for first time under new deal",
-            "link": "https://www.aljazeera.com/news/2026/9/15/russia-resupplies-military-bases-in-syria-for-first-time-under-new-deal?traffic_source=rss",
-            "published": "2026-09-15T00:43:47+00:00",
-            "summary": "Moscow maintains military foothold in the Mediterranean following talks with Damascus"
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "putin"
-            ],
-            "esc_matched": [],
-            "source": "BBC World",
-            "title": "Donald Trump Jr and Bettina Trump say Putin ally paid for some wedding festivities as a 'gift'",
-            "link": "https://www.bbc.co.uk/news/articles/cmqjkg121kr9o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T22:56:44+00:00",
-            "summary": "An Instagram post from the couple said two nights of their wedding festivities in the Bahamas were partially funded by Umar Kremlev."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "severe",
-            "score": 8.0,
-            "matched": [
-              "russia",
-              "russian",
-              "ukraine"
-            ],
-            "esc_matched": [
-              "strike",
-              "casualties"
-            ],
-            "source": "BBC World",
-            "title": "Watch: Why a Russian strike on train near Ukraine-Poland border could mark an escalation",
-            "link": "https://www.bbc.co.uk/news/videos/cx2z5gjj838o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T01:12:20+00:00",
-            "summary": "No casualties were reported after a Russian drone struck a train shortly after Boris Johnson and top European officials left the area."
+            "source": "UN News",
+            "title": "Civilians bear the brunt, with deadly US strikes in Iran and thousands displaced in Yemen",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168328",
+            "published": "2026-09-14T12:00:00+00:00",
+            "summary": "Independent UN human rights investigators called for an immediate cessation of hostilities on Monday following a series of United States airstrikes on Iran in recent weeks that have killed civilians as tensions ripple through the region."
           }
         ]
       },
@@ -2089,26 +2207,35 @@
         "name": "China / Taiwan",
         "weight": 8,
         "state": "unbaselined",
-        "headlines": 5,
-        "events": 4,
+        "headlines": 9,
+        "events": 9,
         "severe": 1,
-        "elevated": 0,
+        "elevated": 3,
         "calming": 0,
-        "raw": 11.78,
-        "baseline": 13.4,
-        "mad": 11.86,
-        "baseline_days": 4,
+        "raw": 26.0,
+        "baseline": 11.78,
+        "mad": 10.35,
+        "baseline_days": 5,
         "baseline_ready": false,
-        "days_active": 5,
+        "days_active": 6,
         "sigma": null,
         "sigma_volume": null,
-        "novel_markers": [],
+        "novel_markers": [
+          "emergency meeting",
+          "escalat",
+          "strike",
+          "warns"
+        ],
         "markers": [
-          "attack"
+          "emergency meeting",
+          "escalat",
+          "killed",
+          "strike",
+          "warns"
         ],
         "burst": false,
-        "points": 19,
-        "escalation": 18.8,
+        "points": 36,
+        "escalation": 36,
         "backdrop": 18,
         "chain": [
           "Blockade risk",
@@ -2142,13 +2269,17 @@
           {
             "date": "2026-09-15",
             "score": 11.78
+          },
+          {
+            "date": "2026-09-16",
+            "score": 26.0
           }
         ],
         "why_gold": "Low frequency, very high severity. A genuine blockade or invasion scenario is the largest single tail risk in the gold market, because it would be a global supply-chain and reserve-currency event simultaneously.",
         "counterweight": "Routine incursions and drills are so frequent they carry almost no information. Gold ignores them, correctly.",
         "typical_duration": "Drills: nothing. A real blockade: a regime change in gold pricing, not a spike.",
         "escalation_markers": "Quarantine or blockade language, live-fire exercises encircling the island, US carrier movements, or semiconductor export emergencies.",
-        "summary": "5 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "summary": "9 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
         "top": [
           {
             "flashpoint": "china_taiwan",
@@ -2159,58 +2290,65 @@
               "pla"
             ],
             "esc_matched": [
-              "attack"
+              "strike",
+              "killed"
+            ],
+            "source": "UN News",
+            "title": "Six UN staff killed in Gaza school strike; Lebanon violations mount",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168333",
+            "published": "2026-09-14T12:00:00+00:00",
+            "summary": "Israeli strikes killed six UN workers and civilians at a school sheltering displaced families in Gaza as needs grow, according to the UN agency for Palestine refugees, UNRWA."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [
+              "warns"
             ],
             "source": "Al Jazeera",
-            "title": "Israeli attack targets Gaza displacement camp",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/14/israeli-attack-targets-gaza-displacement-camp?traffic_source=rss",
-            "published": "2026-09-14T21:37:04+00:00",
-            "summary": "Israeli attack targets Gaza displacement camp"
+            "title": "Algeria faces calls to drop death penalty plans after wildfires",
+            "link": "https://www.aljazeera.com/news/2026/9/15/algeria-faces-calls-to-drop-death-penalty-plans-after-wildfires?traffic_source=rss",
+            "published": "2026-09-15T22:01:27+00:00",
+            "summary": "Rights group warns Algeria could exploit proposed death penalty laws to suppress domestic political opposition."
           },
           {
             "flashpoint": "china_taiwan",
             "flashpoint_name": "China / Taiwan",
-            "tier": "background",
-            "score": 1.2,
+            "tier": "elevated",
+            "score": 4.0,
             "matched": [
               "pla"
             ],
-            "esc_matched": [],
-            "source": "BBC World",
-            "title": "Supreme Court blocks Trump's plan to restrict mail-in ballots",
-            "link": "https://www.bbc.co.uk/news/articles/c5yjpdy4gjlo?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-15T01:15:15+00:00",
-            "summary": "The Trump administration had asked the court to lift a federal judge's temporary block on new rules for mail-in ballots."
+            "esc_matched": [
+              "emergency meeting"
+            ],
+            "source": "UN News",
+            "title": "Security Council LIVE: Rising violence triggers emergency meeting on Yemen",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168343",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "Amid rising violence in Yemen, the Security Council met in emergency session on Tuesday to discuss the situation surrounding the critical Bab el-Mandeb Strait shipping route as UN agencies warn of rising displacement, including thousands of Yemenis fleeing to Djibouti. UN News app users can follow h"
           },
           {
             "flashpoint": "china_taiwan",
             "flashpoint_name": "China / Taiwan",
-            "tier": "background",
-            "score": 1.2,
+            "tier": "elevated",
+            "score": 4.0,
             "matched": [
               "pla"
             ],
-            "esc_matched": [],
-            "source": "BBC World",
-            "title": "US scraps limits on emissions from coal and gas power plants",
-            "link": "https://www.bbc.co.uk/news/articles/cmly433ke05vo?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T22:04:14+00:00",
-            "summary": "The Environment Protection Agency says the move will save the country billions of dollars and reduce energy prices."
-          },
-          {
-            "flashpoint": "china_taiwan",
-            "flashpoint_name": "China / Taiwan",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "pla"
+            "esc_matched": [
+              "escalat"
             ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "US repeals rules limiting greenhouse gas emissions by power plants",
-            "link": "https://www.aljazeera.com/news/2026/9/14/us-repeals-rules-limiting-greenhouse-gas-emissions-by-power-plants?traffic_source=rss",
-            "published": "2026-09-14T21:36:09+00:00",
-            "summary": "The Trump administration says it could save power plants more than $300bn and &#039;unleash&#039; American energy."
+            "source": "UN News",
+            "title": "Escalating conflict drives new displacement in Yemen",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168339",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "The escalating conflict in Yemen is choking off aid shipments and driving fresh displacement, including to nearby Djibouti, with UN agencies reporting on Tuesday that nearly 100,000 people have been displaced since fighting intensified earlier this month."
           }
         ],
         "all_headlines": [
@@ -2223,11 +2361,58 @@
               "pla"
             ],
             "esc_matched": [],
-            "source": "BBC World",
-            "title": "Supreme Court blocks Trump's plan to restrict mail-in ballots",
-            "link": "https://www.bbc.co.uk/news/articles/c5yjpdy4gjlo?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-15T01:15:15+00:00",
-            "summary": "The Trump administration had asked the court to lift a federal judge's temporary block on new rules for mail-in ballots."
+            "source": "CNBC World",
+            "title": "Grab aims for 'next level' in financial services with purchase of buy-now pay-later platform Atome",
+            "link": "https://www.cnbc.com/2026/09/16/grab-financial-services-atome-purchase-.html",
+            "published": "2026-09-16T04:31:46+00:00",
+            "summary": "Grab is betting $1.49 billion on Atome Financial as it looks to expand its consumer lending business in Southeast Asia."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Trump administration plans $2.8bn sale of 2,000-pound bombs to Israel",
+            "link": "https://www.aljazeera.com/news/2026/9/16/trump-administration-plans-2-8bn-sale-of-2000-pound-bombs-to-israel?traffic_source=rss",
+            "published": "2026-09-16T03:39:50+00:00",
+            "summary": "Trump administration pushes $2.8bn bomb sale to Israel amid criticism over mass targeting of civilians in the region."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Argentina steps up legal campaign against Falkland Islands oil firms",
+            "link": "https://www.aljazeera.com/economy/2026/9/15/argentina-intensifies-campaign-against-falklands-oil-companies?traffic_source=rss",
+            "published": "2026-09-15T23:03:52+00:00",
+            "summary": "Government says new legal complaints to be filed against firms exploring for oil near the Falkland Islands."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [
+              "warns"
+            ],
+            "source": "Al Jazeera",
+            "title": "Algeria faces calls to drop death penalty plans after wildfires",
+            "link": "https://www.aljazeera.com/news/2026/9/15/algeria-faces-calls-to-drop-death-penalty-plans-after-wildfires?traffic_source=rss",
+            "published": "2026-09-15T22:01:27+00:00",
+            "summary": "Rights group warns Algeria could exploit proposed death penalty laws to suppress domestic political opposition."
           },
           {
             "flashpoint": "china_taiwan",
@@ -2239,10 +2424,44 @@
             ],
             "esc_matched": [],
             "source": "BBC World",
-            "title": "US scraps limits on emissions from coal and gas power plants",
-            "link": "https://www.bbc.co.uk/news/articles/cmly433ke05vo?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T22:04:14+00:00",
-            "summary": "The Environment Protection Agency says the move will save the country billions of dollars and reduce energy prices."
+            "title": "Warning of space arms race as US confirms weapons in Earth's orbit",
+            "link": "https://www.bbc.co.uk/news/videos/cmn07yjqg5rwo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T17:35:02+00:00",
+            "summary": "The BBC's defence correspondent Jonathan Beale explains what an arms race in space might look like - and what it could mean for us on the ground."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [
+              "emergency meeting"
+            ],
+            "source": "UN News",
+            "title": "Security Council LIVE: Rising violence triggers emergency meeting on Yemen",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168343",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "Amid rising violence in Yemen, the Security Council met in emergency session on Tuesday to discuss the situation surrounding the critical Bab el-Mandeb Strait shipping route as UN agencies warn of rising displacement, including thousands of Yemenis fleeing to Djibouti. UN News app users can follow h"
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [
+              "escalat"
+            ],
+            "source": "UN News",
+            "title": "Escalating conflict drives new displacement in Yemen",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168339",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "The escalating conflict in Yemen is choking off aid shipments and driving fresh displacement, including to nearby Djibouti, with UN agencies reporting on Tuesday that nearly 100,000 people have been displaced since fighting intensified earlier this month."
           },
           {
             "flashpoint": "china_taiwan",
@@ -2253,43 +2472,270 @@
               "pla"
             ],
             "esc_matched": [
+              "strike",
+              "killed"
+            ],
+            "source": "UN News",
+            "title": "Six UN staff killed in Gaza school strike; Lebanon violations mount",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168333",
+            "published": "2026-09-14T12:00:00+00:00",
+            "summary": "Israeli strikes killed six UN workers and civilians at a school sheltering displaced families in Gaza as needs grow, according to the UN agency for Palestine refugees, UNRWA."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [],
+            "source": "UN News",
+            "title": "UN agencies warn humanitarian system in Sudan \u2018could collapse\u2019",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168331",
+            "published": "2026-09-14T12:00:00+00:00",
+            "summary": "UN aid agencies on Monday said they may be forced to scale back humanitarian aid in Sudan \u2013 home of the world\u2019s worst hunger and displacement crisis \u2013 due to funding shortfalls."
+          }
+        ]
+      },
+      {
+        "key": "russia_nato",
+        "name": "Russia / Ukraine / NATO",
+        "weight": 8,
+        "state": "unbaselined",
+        "headlines": 6,
+        "events": 6,
+        "severe": 1,
+        "elevated": 1,
+        "calming": 0,
+        "raw": 16.8,
+        "baseline": 15.6,
+        "mad": 3.56,
+        "baseline_days": 5,
+        "baseline_ready": false,
+        "days_active": 6,
+        "sigma": null,
+        "sigma_volume": null,
+        "novel_markers": [],
+        "markers": [
+          "attack",
+          "drone"
+        ],
+        "burst": false,
+        "points": 27,
+        "escalation": 26.9,
+        "backdrop": 18,
+        "chain": [
+          "Sanctions",
+          "Reserve diversification",
+          "Central bank buying",
+          "Gold"
+        ],
+        "drivers": {
+          "geopolitics": 1,
+          "supply_shock": 1
+        },
+        "spoken": "Russia, Ukraine and NATO",
+        "spoken_why": "The day to day headlines are priced, but sanctions on reserves are why central banks keep buying gold.",
+        "history": [
+          {
+            "date": "2026-09-09",
+            "score": 13.2
+          },
+          {
+            "date": "2026-09-10",
+            "score": 23.6
+          },
+          {
+            "date": "2026-09-11",
+            "score": 13.2
+          },
+          {
+            "date": "2026-09-14",
+            "score": 24.8
+          },
+          {
+            "date": "2026-09-15",
+            "score": 15.6
+          },
+          {
+            "date": "2026-09-16",
+            "score": 16.8
+          }
+        ],
+        "why_gold": "Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.",
+        "counterweight": "Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day's price action.",
+        "typical_duration": "Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.",
+        "escalation_markers": "Any Article 5 discussion, strikes on NATO territory, nuclear rhetoric or doctrine change, or new sanctions touching reserves or energy.",
+        "summary": "6 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "top": [
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "severe",
+            "score": 8.0,
+            "matched": [
+              "ukraine"
+            ],
+            "esc_matched": [
               "attack"
             ],
-            "source": "Al Jazeera",
-            "title": "Israeli attack targets Gaza displacement camp",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/14/israeli-attack-targets-gaza-displacement-camp?traffic_source=rss",
-            "published": "2026-09-14T21:37:04+00:00",
-            "summary": "Israeli attack targets Gaza displacement camp"
+            "source": "UN News",
+            "title": "Ukraine: Attacks on education threaten an entire generation, UNICEF warns",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168336",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "In an underground classroom in Sumy, Ukraine, children sit quietly at their desks, busy with the day\u2019s lessons. For the moment they are shielded from the horrors of nearly five years of war, but just barely."
           },
           {
-            "flashpoint": "china_taiwan",
-            "flashpoint_name": "China / Taiwan",
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "russia",
+              "nato"
+            ],
+            "esc_matched": [
+              "drone"
+            ],
+            "source": "BBC World",
+            "title": "Nato jets down drone that entered Lithuanian airspace",
+            "link": "https://www.bbc.co.uk/news/articles/cjx2zgk7edlzo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T09:07:35+00:00",
+            "summary": "The origin of the drone is currently unknown, but authorities say it likely entered Lithuania from neighbouring Belarus, an ally of Russia."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
             "tier": "background",
             "score": 1.2,
             "matched": [
-              "pla"
+              "russia",
+              "russian",
+              "kremlin"
             ],
             "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "US repeals rules limiting greenhouse gas emissions by power plants",
-            "link": "https://www.aljazeera.com/news/2026/9/14/us-repeals-rules-limiting-greenhouse-gas-emissions-by-power-plants?traffic_source=rss",
-            "published": "2026-09-14T21:36:09+00:00",
-            "summary": "The Trump administration says it could save power plants more than $300bn and &#039;unleash&#039; American energy."
+            "source": "BBC World",
+            "title": "Denmark says Russian warship fired flares at military helicopter",
+            "link": "https://www.bbc.co.uk/news/articles/cwn8mjl31p5yo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T11:40:00+00:00",
+            "summary": "The Danish prime minister has accused Russia of \"reckless\" behaviour, while the Kremlin is yet to comment."
           },
           {
-            "flashpoint": "china_taiwan",
-            "flashpoint_name": "China / Taiwan",
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
             "tier": "background",
             "score": 1.2,
             "matched": [
-              "pla"
+              "putin"
             ],
             "esc_matched": [],
-            "source": "CNBC World",
-            "title": "Trump administration repeals Biden era greenhouse gas requirements for power plants",
-            "link": "https://www.cnbc.com/2026/09/14/trump-epa-carbon-dioxide-power-plant-climate-change.html",
-            "published": "2026-09-14T20:45:52+00:00",
-            "summary": "President Donald Trump has systemically dismantled regulations implemented by the Obama and Biden administrations that sought to fight climate change."
+            "source": "BBC World",
+            "title": "Donald Trump Jr and Bettina Trump say Putin ally paid for some wedding festivities as a 'gift'",
+            "link": "https://www.bbc.co.uk/news/articles/cmqjkg121kr9o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-14T22:56:44+00:00",
+            "summary": "An Instagram post from the couple said two nights of their wedding festivities in the Bahamas were partially funded by Umar Kremlev."
+          }
+        ],
+        "all_headlines": [
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "nato"
+            ],
+            "esc_matched": [],
+            "source": "US Defense",
+            "title": "Hegseth, German Counterpart Agree to Advance Defense Industrial Cooperation",
+            "link": "https://www.war.gov/News/News-Stories/Article/Article/4602094/hegseth-german-counterpart-agree-to-advance-defense-industrial-cooperation/",
+            "published": "2026-09-15T20:38:00+00:00",
+            "summary": "Secretary of War Pete Hegseth and Boris Pistorius, Germany's defense minister, met at the Pentagon to discuss NATO 3.0, increased European defense spending and the defense industrial bases of both nations."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "severe",
+            "score": 8.0,
+            "matched": [
+              "ukraine"
+            ],
+            "esc_matched": [
+              "attack"
+            ],
+            "source": "UN News",
+            "title": "Ukraine: Attacks on education threaten an entire generation, UNICEF warns",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168336",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "In an underground classroom in Sumy, Ukraine, children sit quietly at their desks, busy with the day\u2019s lessons. For the moment they are shielded from the horrors of nearly five years of war, but just barely."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "russia",
+              "russian",
+              "kremlin"
+            ],
+            "esc_matched": [],
+            "source": "BBC World",
+            "title": "Denmark says Russian warship fired flares at military helicopter",
+            "link": "https://www.bbc.co.uk/news/articles/cwn8mjl31p5yo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T11:40:00+00:00",
+            "summary": "The Danish prime minister has accused Russia of \"reckless\" behaviour, while the Kremlin is yet to comment."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "russia",
+              "nato"
+            ],
+            "esc_matched": [
+              "drone"
+            ],
+            "source": "BBC World",
+            "title": "Nato jets down drone that entered Lithuanian airspace",
+            "link": "https://www.bbc.co.uk/news/articles/cjx2zgk7edlzo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T09:07:35+00:00",
+            "summary": "The origin of the drone is currently unknown, but authorities say it likely entered Lithuania from neighbouring Belarus, an ally of Russia."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "russia",
+              "russian",
+              "ukraine"
+            ],
+            "esc_matched": [],
+            "source": "BBC World",
+            "title": "Ukraine's postal workers deliver lifeline under Russian fire",
+            "link": "https://www.bbc.co.uk/news/articles/c33kmred368o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T05:01:46+00:00",
+            "summary": "The state post service delivers pensions, medicine and letters to people just miles from the front."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "putin"
+            ],
+            "esc_matched": [],
+            "source": "BBC World",
+            "title": "Donald Trump Jr and Bettina Trump say Putin ally paid for some wedding festivities as a 'gift'",
+            "link": "https://www.bbc.co.uk/news/articles/cmqjkg121kr9o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-14T22:56:44+00:00",
+            "summary": "An Instagram post from the couple said two nights of their wedding festivities in the Bahamas were partially funded by Umar Kremlev."
           }
         ]
       },
@@ -2298,28 +2744,30 @@
         "name": "Wider Middle East",
         "weight": 7,
         "state": "unbaselined",
-        "headlines": 3,
-        "events": 3,
-        "severe": 0,
-        "elevated": 1,
+        "headlines": 6,
+        "events": 6,
+        "severe": 2,
+        "elevated": 0,
         "calming": 0,
-        "raw": 5.6,
-        "baseline": 17.5,
-        "mad": 14.79,
-        "baseline_days": 4,
+        "raw": 18.2,
+        "baseline": 8.4,
+        "mad": 4.15,
+        "baseline_days": 5,
         "baseline_ready": false,
-        "days_active": 5,
+        "days_active": 6,
         "sigma": null,
         "sigma_volume": null,
-        "novel_markers": [],
+        "novel_markers": [
+          "bombard"
+        ],
         "markers": [
-          "threat",
-          "threaten"
+          "attack",
+          "bombard"
         ],
         "burst": false,
-        "points": 18,
-        "escalation": 7.8,
-        "backdrop": 18,
+        "points": 25,
+        "escalation": 25.5,
+        "backdrop": 12.9,
         "chain": [
           "Escalation",
           "Haven demand",
@@ -2350,32 +2798,52 @@
           {
             "date": "2026-09-15",
             "score": 5.6
+          },
+          {
+            "date": "2026-09-16",
+            "score": 18.2
           }
         ],
         "why_gold": "Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region's conflicts rarely touch US rate expectations directly.",
         "counterweight": "Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.",
         "typical_duration": "Hours to days. The shortest-lived of the major flashpoints unless it pulls Iran in directly.",
         "escalation_markers": "Direct Iranian involvement, Red Sea shipping disruption, or US forces taking casualties.",
-        "summary": "3 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "summary": "6 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
         "top": [
           {
             "flashpoint": "middle_east",
             "flashpoint_name": "Wider Middle East",
-            "tier": "elevated",
-            "score": 3.5,
+            "tier": "severe",
+            "score": 7.0,
+            "matched": [
+              "red sea"
+            ],
+            "esc_matched": [
+              "attack"
+            ],
+            "source": "Al Jazeera",
+            "title": "Saudi Arabia cancels oil to Europe over East-West pipeline blast",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/saudi-arabia-cancels-oil-to-europe-over-east-west-pipeline-blast?traffic_source=rss",
+            "published": "2026-09-16T01:53:27+00:00",
+            "summary": "Saudi Arabia has cancelled some oil deliveries to Europe after attacks shut down its export pipeline to the Red Sea."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "severe",
+            "score": 7.0,
             "matched": [
               "israel",
               "gaza"
             ],
             "esc_matched": [
-              "threaten",
-              "threat"
+              "bombard"
             ],
-            "source": "BBC World",
-            "title": "Israeli minister threatens to revoke filmmakers' citizenship over Gaza documentary",
-            "link": "https://www.bbc.co.uk/news/articles/c9vgy8d8256go?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T18:26:20+00:00",
-            "summary": "The film accuses the Israeli army of mass civilian killing in Gaza, and Israeli officials say it could be treasonous."
+            "source": "UN News",
+            "title": "Gaza remains recovery points to possible war crimes, says UN rights chief",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168335",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "Bodies are still being pulled from the rubble of Gaza, three years after Israeli bombardment flattened entire neighbourhoods \u2013 most of them women and children.&nbsp;&nbsp;"
           },
           {
             "flashpoint": "middle_east",
@@ -2383,30 +2851,29 @@
             "tier": "background",
             "score": 1.05,
             "matched": [
-              "israel"
-            ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "B\u2019Tselem: Israeli settler violence aims to eliminate Palestinian existence",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/15/15-09-reported-west-bank-report-btselem-ps?traffic_source=rss",
-            "published": "2026-09-15T01:23:53+00:00",
-            "summary": "Israeli rights group B\u2019Tselem says Israeli settler violence aims to eliminate Palestinian existence."
-          },
-          {
-            "flashpoint": "middle_east",
-            "flashpoint_name": "Wider Middle East",
-            "tier": "background",
-            "score": 1.05,
-            "matched": [
-              "israel",
               "gaza"
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "Israel probing Naza film on Gaza for treason, inciting anti-Semitism",
-            "link": "https://www.aljazeera.com/news/2026/9/14/israel-probing-naza-film-on-gaza-for-inciting-antisemitism?traffic_source=rss",
-            "published": "2026-09-14T21:12:07+00:00",
-            "summary": "Film alleges mass \u2060civilian deaths routinely built into military decisions amid Israel&#039;s genocidal war on Gaza."
+            "title": "At least 10 dead, dozens missing in Gaza building collapse",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/at-least-10-dead-dozens-missing-in-gaza-building-collapse?traffic_source=rss",
+            "published": "2026-09-16T05:06:52+00:00",
+            "summary": "At least 10 Palestinians are dead and up to 70 more are believed missing after a building collapsed in Gaza City."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "background",
+            "score": 1.05,
+            "matched": [
+              "gaza"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Gaza residential building collapses, six families reportedly trapped",
+            "link": "https://www.aljazeera.com/news/2026/9/16/gaza-residential-building-collapses-six-families-reportedly-trapped?traffic_source=rss",
+            "published": "2026-09-16T04:30:52+00:00",
+            "summary": "Rescue crews in Gaza pull survivors from a collapsed building as cries for help echo beneath the rubble, witnesses say."
           }
         ],
         "all_headlines": [
@@ -2416,14 +2883,61 @@
             "tier": "background",
             "score": 1.05,
             "matched": [
+              "gaza"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "At least 10 dead, dozens missing in Gaza building collapse",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/at-least-10-dead-dozens-missing-in-gaza-building-collapse?traffic_source=rss",
+            "published": "2026-09-16T05:06:52+00:00",
+            "summary": "At least 10 Palestinians are dead and up to 70 more are believed missing after a building collapsed in Gaza City."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "background",
+            "score": 1.05,
+            "matched": [
+              "gaza"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Gaza residential building collapses, six families reportedly trapped",
+            "link": "https://www.aljazeera.com/news/2026/9/16/gaza-residential-building-collapses-six-families-reportedly-trapped?traffic_source=rss",
+            "published": "2026-09-16T04:30:52+00:00",
+            "summary": "Rescue crews in Gaza pull survivors from a collapsed building as cries for help echo beneath the rubble, witnesses say."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "severe",
+            "score": 7.0,
+            "matched": [
+              "red sea"
+            ],
+            "esc_matched": [
+              "attack"
+            ],
+            "source": "Al Jazeera",
+            "title": "Saudi Arabia cancels oil to Europe over East-West pipeline blast",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/saudi-arabia-cancels-oil-to-europe-over-east-west-pipeline-blast?traffic_source=rss",
+            "published": "2026-09-16T01:53:27+00:00",
+            "summary": "Saudi Arabia has cancelled some oil deliveries to Europe after attacks shut down its export pipeline to the Red Sea."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "background",
+            "score": 1.05,
+            "matched": [
               "israel"
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "B\u2019Tselem: Israeli settler violence aims to eliminate Palestinian existence",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/15/15-09-reported-west-bank-report-btselem-ps?traffic_source=rss",
-            "published": "2026-09-15T01:23:53+00:00",
-            "summary": "Israeli rights group B\u2019Tselem says Israeli settler violence aims to eliminate Palestinian existence."
+            "title": "Israel started an anti-Qatar campaign, then scrapped it",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/israel-started-an-anti-qatar-campaign-then-scrapped-it?traffic_source=rss",
+            "published": "2026-09-16T01:41:40+00:00",
+            "summary": "Days after October 7, Israel began building a global campaign to pressure and isolate Qatar."
           },
           {
             "flashpoint": "middle_east",
@@ -2432,33 +2946,32 @@
             "score": 1.05,
             "matched": [
               "israel",
-              "gaza"
+              "west bank"
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "Israel probing Naza film on Gaza for treason, inciting anti-Semitism",
-            "link": "https://www.aljazeera.com/news/2026/9/14/israel-probing-naza-film-on-gaza-for-inciting-antisemitism?traffic_source=rss",
-            "published": "2026-09-14T21:12:07+00:00",
-            "summary": "Film alleges mass \u2060civilian deaths routinely built into military decisions amid Israel&#039;s genocidal war on Gaza."
+            "title": "Israeli soldiers rappel from helicopter in occupied West Bank",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/israeli-soldiers-rappel-from-helicopter-in-occupied-west-bank?traffic_source=rss",
+            "published": "2026-09-16T00:42:33+00:00",
+            "summary": "Israeli forces rappelled from a helicopter onto the roof of a residential building in Yatta, in the occupied West Bank."
           },
           {
             "flashpoint": "middle_east",
             "flashpoint_name": "Wider Middle East",
-            "tier": "elevated",
-            "score": 3.5,
+            "tier": "severe",
+            "score": 7.0,
             "matched": [
               "israel",
               "gaza"
             ],
             "esc_matched": [
-              "threaten",
-              "threat"
+              "bombard"
             ],
-            "source": "BBC World",
-            "title": "Israeli minister threatens to revoke filmmakers' citizenship over Gaza documentary",
-            "link": "https://www.bbc.co.uk/news/articles/c9vgy8d8256go?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-14T18:26:20+00:00",
-            "summary": "The film accuses the Israeli army of mass civilian killing in Gaza, and Israeli officials say it could be treasonous."
+            "source": "UN News",
+            "title": "Gaza remains recovery points to possible war crimes, says UN rights chief",
+            "link": "https://news.un.org/feed/view/en/story/2026/09/1168335",
+            "published": "2026-09-15T12:00:00+00:00",
+            "summary": "Bodies are still being pulled from the rubble of Gaza, three years after Israeli bombardment flattened entire neighbourhoods \u2013 most of them women and children.&nbsp;&nbsp;"
           }
         ]
       },
@@ -2467,25 +2980,25 @@
         "name": "Trade and tariffs",
         "weight": 5,
         "state": "unbaselined",
-        "headlines": 2,
-        "events": 2,
+        "headlines": 1,
+        "events": 1,
         "severe": 0,
         "elevated": 0,
         "calming": 0,
-        "raw": 1.5,
-        "baseline": 7.5,
-        "mad": 0.0,
-        "baseline_days": 3,
+        "raw": 0.75,
+        "baseline": 4.5,
+        "mad": 4.45,
+        "baseline_days": 4,
         "baseline_ready": false,
-        "days_active": 4,
+        "days_active": 5,
         "sigma": null,
         "sigma_volume": null,
         "novel_markers": [],
         "markers": [],
         "burst": false,
-        "points": 8,
-        "escalation": 1.5,
-        "backdrop": 8.2,
+        "points": 5,
+        "escalation": 0.8,
+        "backdrop": 5.0,
         "chain": [
           "Tariffs",
           "Inflation impulse",
@@ -2514,13 +3027,17 @@
           {
             "date": "2026-09-15",
             "score": 1.5
+          },
+          {
+            "date": "2026-09-16",
+            "score": 0.75
           }
         ],
         "why_gold": "Indirect but real. Tariffs are an inflation impulse and a growth drag at once, which is the hardest combination for the Fed and therefore raises uncertainty about the rate path.",
         "counterweight": "Also dollar-positive in the short run, which works against gold. The net effect is genuinely ambiguous and often small.",
         "typical_duration": "Weeks, when it changes the inflation outlook. Announcement headlines alone rarely stick.",
         "escalation_markers": "Rates above expectations, retaliation, or extension to critical minerals and energy.",
-        "summary": "2 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
+        "summary": "1 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
         "top": [
           {
             "flashpoint": "trade_tariffs",
@@ -2528,29 +3045,14 @@
             "tier": "background",
             "score": 0.75,
             "matched": [
-              "tariff"
+              "trade war"
             ],
             "esc_matched": [],
             "source": "BBC World",
-            "title": "Trump says he will remove all Irish whiskey tariffs as he ends two-day visit",
-            "link": "https://www.bbc.co.uk/news/articles/cx2z79n0eeno?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-13T19:34:36+00:00",
-            "summary": "Whiskey distilled in the Republic of Ireland faces the standard 15% tariff which applies to EU goods entering the US."
-          },
-          {
-            "flashpoint": "trade_tariffs",
-            "flashpoint_name": "Trade and tariffs",
-            "tier": "background",
-            "score": 0.75,
-            "matched": [
-              "tariff"
-            ],
-            "esc_matched": [],
-            "source": "CNBC World",
-            "title": "Warsh's credibility is on the line this week as Trump policies put pressure on Fed to hike",
-            "link": "https://www.cnbc.com/2026/09/14/warshs-credibility-is-on-the-line-this-week-as-trump-policies-put-pressure-on-fed-to-hike.html",
-            "published": "2026-09-14T20:49:03+00:00",
-            "summary": "With inflation above target and no visibility on lower oil prices or stability of tariffs, the Fed chairman needs to pass the test that has faced his predecessors"
+            "title": "Five takeaways from Canada's push to woo the world's richest investors",
+            "link": "https://www.bbc.co.uk/news/articles/cmq8jdgel128o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T22:46:20+00:00",
+            "summary": "A $1tn sales pitch, more than 160 projects on offer, pivot to the EU amid a bitter trade war with the US - takeaways from the first Canada Investment Summit."
           }
         ],
         "all_headlines": [
@@ -2560,37 +3062,76 @@
             "tier": "background",
             "score": 0.75,
             "matched": [
-              "tariff"
-            ],
-            "esc_matched": [],
-            "source": "CNBC World",
-            "title": "Warsh's credibility is on the line this week as Trump policies put pressure on Fed to hike",
-            "link": "https://www.cnbc.com/2026/09/14/warshs-credibility-is-on-the-line-this-week-as-trump-policies-put-pressure-on-fed-to-hike.html",
-            "published": "2026-09-14T20:49:03+00:00",
-            "summary": "With inflation above target and no visibility on lower oil prices or stability of tariffs, the Fed chairman needs to pass the test that has faced his predecessors"
-          },
-          {
-            "flashpoint": "trade_tariffs",
-            "flashpoint_name": "Trade and tariffs",
-            "tier": "background",
-            "score": 0.75,
-            "matched": [
-              "tariff"
+              "trade war"
             ],
             "esc_matched": [],
             "source": "BBC World",
-            "title": "Trump says he will remove all Irish whiskey tariffs as he ends two-day visit",
-            "link": "https://www.bbc.co.uk/news/articles/cx2z79n0eeno?at_medium=RSS&at_campaign=rss",
-            "published": "2026-09-13T19:34:36+00:00",
-            "summary": "Whiskey distilled in the Republic of Ireland faces the standard 15% tariff which applies to EU goods entering the US."
+            "title": "Five takeaways from Canada's push to woo the world's richest investors",
+            "link": "https://www.bbc.co.uk/news/articles/cmq8jdgel128o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-09-15T22:46:20+00:00",
+            "summary": "A $1tn sales pitch, more than 160 projects on offer, pivot to the EU amid a bitter trade war with the US - takeaways from the first Canada Investment Summit."
           }
         ]
       }
     ],
-    "headline_count": 27,
-    "event_count": 26,
+    "headline_count": 36,
+    "event_count": 35,
     "baseline_ready": false,
     "headlines": [
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "severe",
+        "score": 10.0,
+        "matched": [
+          "iran",
+          "hormuz",
+          "strait of hormuz"
+        ],
+        "esc_matched": [
+          "missile",
+          "attack"
+        ],
+        "source": "BBC World",
+        "title": "Two sailors missing after tanker attacked in Strait of Hormuz, Oman says",
+        "link": "https://www.bbc.co.uk/news/articles/c3n07ydqdzlvo?at_medium=RSS&at_campaign=rss",
+        "published": "2026-09-15T16:13:41+00:00",
+        "summary": "Iran says El Gaia caught fire after hitting mines, but the US says the oil tanker was struck by a missile and then a drone."
+      },
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "severe",
+        "score": 10.0,
+        "matched": [
+          "iran"
+        ],
+        "esc_matched": [
+          "attack"
+        ],
+        "source": "CNBC World",
+        "title": "Oil falls as U.S. crude inventories reportedly rise, traders weigh Saudi pipeline closure",
+        "link": "https://www.cnbc.com/2026/09/16/oil-prices-today-brent-wti-hormuz-iran-war.html",
+        "published": "2026-09-16T04:56:02+00:00",
+        "summary": "Oil fell Wednesday, as an unexpected increase in U.S. crude inventories outweighed worries over supply disruptions after an Iran-backed attack on Saudi Arabia's East-West pipeline."
+      },
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "severe",
+        "score": 10.0,
+        "matched": [
+          "iran"
+        ],
+        "esc_matched": [
+          "strike"
+        ],
+        "source": "CNBC World",
+        "title": "AWS says it can't restore service to Bahrain, UAE facilities 6 months after Iran strikes",
+        "link": "https://www.cnbc.com/2026/09/15/aws-cant-restore-service-to-bahrain-uae-6-months-after-iran-strikes.html",
+        "published": "2026-09-15T19:04:46+00:00",
+        "summary": "In March, two Amazon data centers in the UAE were struck by drones, while a site was also damaged by a nearby drone hit."
+      },
       {
         "flashpoint": "us_iran",
         "flashpoint_name": "US / Israel \u2013 Iran",
@@ -2601,14 +3142,13 @@
           "houthi"
         ],
         "esc_matched": [
-          "strike",
-          "attack"
+          "strike"
         ],
         "source": "CNBC World",
-        "title": "Oil extends gains following Houthi strikes on Saudi Arabia",
+        "title": "U.S. oil tops $105 as Saudi Arabia reportedly cancels some crude cargoes after pipeline closure",
         "link": "https://www.cnbc.com/2026/09/15/oil-extends-gains-following-houthi-strikes-on-saudi-arabia.html",
-        "published": "2026-09-15T04:41:36+00:00",
-        "summary": "Oil extended gains amid reports of fresh Houthi strikes on Saudi Arabia and attacks by Iran on ships in the Gulf."
+        "published": "2026-09-15T18:58:36+00:00",
+        "summary": "Iran-backed Houthi militants in Yemen, meanwhile, carried out renewed strikes on Saudi Arabia this week."
       },
       {
         "flashpoint": "us_iran",
@@ -2619,13 +3159,14 @@
           "iran"
         ],
         "esc_matched": [
-          "attack"
+          "strike",
+          "killed"
         ],
-        "source": "CNBC World",
-        "title": "Ukraine says it's open to halting attacks on Russian energy after Trump's claims of deal",
-        "link": "https://www.cnbc.com/2026/09/14/trump-ukraine-russia-energy-oil-iran.html",
-        "published": "2026-09-14T22:18:56+00:00",
-        "summary": "\"The World's Diesel price rise is mostly caused by the Russia/Ukraine War, not Iran,\" Trump said in a social media post."
+        "source": "UN News",
+        "title": "Civilians bear the brunt, with deadly US strikes in Iran and thousands displaced in Yemen",
+        "link": "https://news.un.org/feed/view/en/story/2026/09/1168328",
+        "published": "2026-09-14T12:00:00+00:00",
+        "summary": "Independent UN human rights investigators called for an immediate cessation of hostilities on Monday following a series of United States airstrikes on Iran in recent weeks that have killed civilians as tensions ripple through the region."
       },
       {
         "flashpoint": "russia_nato",
@@ -2633,19 +3174,16 @@
         "tier": "severe",
         "score": 8.0,
         "matched": [
-          "russia",
-          "russian",
           "ukraine"
         ],
         "esc_matched": [
-          "strike",
-          "casualties"
+          "attack"
         ],
-        "source": "BBC World",
-        "title": "Watch: Why a Russian strike on train near Ukraine-Poland border could mark an escalation",
-        "link": "https://www.bbc.co.uk/news/videos/cx2z5gjj838o?at_medium=RSS&at_campaign=rss",
-        "published": "2026-09-14T01:12:20+00:00",
-        "summary": "No casualties were reported after a Russian drone struck a train shortly after Boris Johnson and top European officials left the area."
+        "source": "UN News",
+        "title": "Ukraine: Attacks on education threaten an entire generation, UNICEF warns",
+        "link": "https://news.un.org/feed/view/en/story/2026/09/1168336",
+        "published": "2026-09-15T12:00:00+00:00",
+        "summary": "In an underground classroom in Sumy, Ukraine, children sit quietly at their desks, busy with the day\u2019s lessons. For the moment they are shielded from the horrors of nearly five years of war, but just barely."
       },
       {
         "flashpoint": "china_taiwan",
@@ -2656,13 +3194,49 @@
           "pla"
         ],
         "esc_matched": [
+          "strike",
+          "killed"
+        ],
+        "source": "UN News",
+        "title": "Six UN staff killed in Gaza school strike; Lebanon violations mount",
+        "link": "https://news.un.org/feed/view/en/story/2026/09/1168333",
+        "published": "2026-09-14T12:00:00+00:00",
+        "summary": "Israeli strikes killed six UN workers and civilians at a school sheltering displaced families in Gaza as needs grow, according to the UN agency for Palestine refugees, UNRWA."
+      },
+      {
+        "flashpoint": "middle_east",
+        "flashpoint_name": "Wider Middle East",
+        "tier": "severe",
+        "score": 7.0,
+        "matched": [
+          "red sea"
+        ],
+        "esc_matched": [
           "attack"
         ],
         "source": "Al Jazeera",
-        "title": "Israeli attack targets Gaza displacement camp",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/9/14/israeli-attack-targets-gaza-displacement-camp?traffic_source=rss",
-        "published": "2026-09-14T21:37:04+00:00",
-        "summary": "Israeli attack targets Gaza displacement camp"
+        "title": "Saudi Arabia cancels oil to Europe over East-West pipeline blast",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/9/16/saudi-arabia-cancels-oil-to-europe-over-east-west-pipeline-blast?traffic_source=rss",
+        "published": "2026-09-16T01:53:27+00:00",
+        "summary": "Saudi Arabia has cancelled some oil deliveries to Europe after attacks shut down its export pipeline to the Red Sea."
+      },
+      {
+        "flashpoint": "middle_east",
+        "flashpoint_name": "Wider Middle East",
+        "tier": "severe",
+        "score": 7.0,
+        "matched": [
+          "israel",
+          "gaza"
+        ],
+        "esc_matched": [
+          "bombard"
+        ],
+        "source": "UN News",
+        "title": "Gaza remains recovery points to possible war crimes, says UN rights chief",
+        "link": "https://news.un.org/feed/view/en/story/2026/09/1168335",
+        "published": "2026-09-15T12:00:00+00:00",
+        "summary": "Bodies are still being pulled from the rubble of Gaza, three years after Israeli bombardment flattened entire neighbourhoods \u2013 most of them women and children.&nbsp;&nbsp;"
       },
       {
         "flashpoint": "us_iran",
@@ -2670,16 +3244,34 @@
         "tier": "elevated",
         "score": 5.0,
         "matched": [
-          "iran"
+          "houthi"
         ],
         "esc_matched": [
-          "escalat"
+          "drone"
         ],
-        "source": "CNBC World",
-        "title": "Prediction market traders think gas prices will hit new highs for the year",
-        "link": "https://www.cnbc.com/2026/09/14/prediction-markets-traders-think-gas-prices-will-hit-new-highs-in-2026.html",
-        "published": "2026-09-14T15:49:39+00:00",
-        "summary": "Oil prices have marched higher in recent weeks, above $100 per barrel, as tensions between the U.S. and Iran have escalated again."
+        "source": "Al Jazeera",
+        "title": "Saudi-led coalition intercepts Houthi drone headed for Mecca",
+        "link": "https://www.aljazeera.com/news/2026/9/16/saudi-led-coalition-intercepts-drone-headed-for-mecca?traffic_source=rss",
+        "published": "2026-09-16T01:09:54+00:00",
+        "summary": "Saudi Arabia says it intercepted a drone before it entered Islam&#039;s holiest city, calling pilgrims&#039; security a &#039;red line&#039;"
+      },
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "elevated",
+        "score": 5.0,
+        "matched": [
+          "iran",
+          "houthi"
+        ],
+        "esc_matched": [
+          "drone"
+        ],
+        "source": "Al Jazeera",
+        "title": "Iran war live: Saudi coalition intercepts, destroys drone headed for Mecca",
+        "link": "https://www.aljazeera.com/news/liveblog/2026/9/16/iran-war-live-irans-top-diplomat-heads-to-china-as-war-drags-on?traffic_source=rss",
+        "published": "2026-09-16T00:00:00+00:00",
+        "summary": "Saudi Arabia has intercepted and destroyed a Houthi drone that was heading toward Mecca."
       },
       {
         "flashpoint": "us_iran",
@@ -2697,119 +3289,405 @@
         "link": "https://www.state.gov/releases/office-of-the-spokesman/2026/09/u-s-sanctions-vtb-bank-for-aiding-irans-sanctions-evasion/",
         "published": "2026-09-14T19:35:42+00:00",
         "summary": "Thomas &quot;Tommy&quot; Pigott, SpokesmanOffice of the Spokesman U.S. Sanctions VTB Bank for Aiding Iran&#8217;s Sanctions Evasion Press Statement"
-      },
-      {
-        "flashpoint": "russia_nato",
-        "flashpoint_name": "Russia / Ukraine / NATO",
-        "tier": "elevated",
-        "score": 4.0,
-        "matched": [
-          "russia",
-          "nato"
-        ],
-        "esc_matched": [
-          "drone"
-        ],
-        "source": "BBC World",
-        "title": "Nato jets down drone that entered Lithuanian airspace",
-        "link": "https://www.bbc.co.uk/news/articles/cjx2zgk7edlzo?at_medium=RSS&at_campaign=rss",
-        "published": "2026-09-15T02:22:07+00:00",
-        "summary": "The origin of the drone is currently unknown, but authorities say it likely entered Lithuania from neighbouring Belarus, an ally of Russia."
-      },
-      {
-        "flashpoint": "middle_east",
-        "flashpoint_name": "Wider Middle East",
-        "tier": "elevated",
-        "score": 3.5,
-        "matched": [
-          "israel",
-          "gaza"
-        ],
-        "esc_matched": [
-          "threaten",
-          "threat"
-        ],
-        "source": "BBC World",
-        "title": "Israeli minister threatens to revoke filmmakers' citizenship over Gaza documentary",
-        "link": "https://www.bbc.co.uk/news/articles/c9vgy8d8256go?at_medium=RSS&at_campaign=rss",
-        "published": "2026-09-14T18:26:20+00:00",
-        "summary": "The film accuses the Israeli army of mass civilian killing in Gaza, and Israeli officials say it could be treasonous."
-      },
-      {
-        "flashpoint": "us_iran",
-        "flashpoint_name": "US / Israel \u2013 Iran",
-        "tier": "background",
-        "score": 1.5,
-        "matched": [
-          "iran",
-          "irgc",
-          "hormuz"
-        ],
-        "esc_matched": [],
-        "source": "Al Jazeera",
-        "title": "Iran war live: CENTCOM disputes IRGC claim supertanker struck by Hormuz nav",
-        "link": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines?traffic_source=rss",
-        "published": "2026-09-15T00:00:00+00:00",
-        "summary": "CENTCOM disputes the IRGC claim that the Panama-flagged oil tanker El Gaia hit naval mines in the Strait of Hormuz."
-      },
-      {
-        "flashpoint": "us_iran",
-        "flashpoint_name": "US / Israel \u2013 Iran",
-        "tier": "background",
-        "score": 1.5,
-        "matched": [
-          "iran"
-        ],
-        "esc_matched": [],
-        "source": "Al Jazeera",
-        "title": "Why talks in Oman between Iran and Gulf Arab states were postponed",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/9/14/why-talks-in-oman-between-iran-and-gulf-arab-states-were-postponed?traffic_source=rss",
-        "published": "2026-09-14T21:20:00+00:00",
-        "summary": "Hopes for a breakthrough on the Iran war have taken a hit after talks in Oman between Iran-Gulf nations were postponed."
-      },
-      {
-        "flashpoint": "us_iran",
-        "flashpoint_name": "US / Israel \u2013 Iran",
-        "tier": "background",
-        "score": 1.5,
-        "matched": [
-          "iran"
-        ],
-        "esc_matched": [],
-        "source": "Al Jazeera",
-        "title": "US blocks Iran nuclear chief from attending IAEA conference in Vienna",
-        "link": "https://www.aljazeera.com/news/2026/9/14/us-blocks-iran-nuclear-chief-from-attending-key-vienna-conference?traffic_source=rss",
-        "published": "2026-09-14T21:19:41+00:00",
-        "summary": "Iran accuses US of pressuring Austria to revoke visa for Mohammad Eslami, calling it a violation of member state rights."
-      },
-      {
-        "flashpoint": "us_iran",
-        "flashpoint_name": "US / Israel \u2013 Iran",
-        "tier": "background",
-        "score": 1.5,
-        "matched": [
-          "iran",
-          "houthi"
-        ],
-        "esc_matched": [],
-        "source": "Al Jazeera",
-        "title": "What could stop the Houthis\u2019 advance across Yemen?",
-        "link": "https://www.aljazeera.com/video/inside-story/2026/9/14/what-could-stop-the-houthis-advance-across-yemen?traffic_source=rss",
-        "published": "2026-09-14T20:55:57+00:00",
-        "summary": "Iran-backed group seized areas on Red Sea coastline."
       }
     ],
     "caveat": "Each flashpoint is measured against its own trailing 30-day median, so a long-running conflict does not sit at maximum forever. This measures how loud a story is relative to its own normal - not what will happen."
   },
   "base_rates": {},
   "context": {
-    "ADP Weekly Employment Change": {
+    "Core Retail Sales m/m": {
+      "profile": {
+        "name": "Retail Sales",
+        "what": "Monthly change in receipts at retail stores. Released 13:30 UK.",
+        "who": "US Census Bureau, monthly",
+        "why_gold": "The cleanest read on whether the consumer - roughly 70% of the US economy - is still spending. Feeds growth expectations and therefore the rate path.",
+        "watch": "The control group, which strips autos, petrol, building materials and food services. That is the number that feeds GDP.",
+        "gotchas": "Not adjusted for inflation, so a hot print during high inflation can mean less than it looks.",
+        "prior_move_usd": "8-25",
+        "drivers": {
+          "growth": 1,
+          "rate_expectations": 1
+        }
+      },
+      "readings": null
+    },
+    "Retail Sales m/m": {
+      "profile": {
+        "name": "Retail Sales",
+        "what": "Monthly change in receipts at retail stores. Released 13:30 UK.",
+        "who": "US Census Bureau, monthly",
+        "why_gold": "The cleanest read on whether the consumer - roughly 70% of the US economy - is still spending. Feeds growth expectations and therefore the rate path.",
+        "watch": "The control group, which strips autos, petrol, building materials and food services. That is the number that feeds GDP.",
+        "gotchas": "Not adjusted for inflation, so a hot print during high inflation can mean less than it looks.",
+        "prior_move_usd": "8-25",
+        "drivers": {
+          "growth": 1,
+          "rate_expectations": 1
+        }
+      },
+      "readings": null
+    },
+    "Import Prices m/m": {
       "profile": null
     },
-    "Empire State Manufacturing Index": {
+    "Business Inventories m/m": {
       "profile": null
     },
-    "API Weekly Statistical Bulletin": {
+    "NAHB Housing Market Index": {
+      "profile": null
+    },
+    "Crude Oil Inventories": {
+      "profile": null
+    },
+    "Federal Funds Rate": {
+      "profile": {
+        "name": "FOMC Rate Decision",
+        "what": "The Federal Open Market Committee sets the target range for the federal funds rate. Announced at 19:00 UK (14:00 ET), followed 30 minutes later by the Chair's press conference.",
+        "who": "Federal Reserve, eight scheduled meetings a year",
+        "why_gold": "Gold pays no interest, so its opportunity cost is the real yield on cash and Treasuries. Anything that lowers expected real rates raises gold, and vice versa. This is the single most direct transmission channel there is.",
+        "watch": "The decision itself is usually priced in. The move comes from three other things: changes to the statement's language, the dot plot on projection meetings, and the tone of the press conference - which frequently reverses the initial statement reaction.",
+        "gotchas": "Two-leg event. Gold often moves one way on the 19:00 statement and the opposite way during the 19:30 presser. Judging the day on the first ten minutes is how people get caught.",
+        "prior_move_usd": "20-60 on the day, more on projection meetings",
+        "drivers": {
+          "rate_expectations": 1
+        }
+      },
+      "readings": null,
+      "fomc": {
+        "next": "2026-09-16",
+        "last": "2026-07-29",
+        "is_today": true,
+        "days_away": 0,
+        "has_projections": true
+      },
+      "fomc_gold_history": [
+        {
+          "date": "2026-09-16",
+          "range": 66.7,
+          "move": 31.7,
+          "next_day": null,
+          "held": null
+        },
+        {
+          "date": "2026-07-29",
+          "range": 121.4,
+          "move": 15.4,
+          "next_day": 63.8,
+          "held": true
+        },
+        {
+          "date": "2026-06-17",
+          "range": 166.2,
+          "move": 28.8,
+          "next_day": -135.5,
+          "held": false
+        },
+        {
+          "date": "2026-04-29",
+          "range": 102.1,
+          "move": -49.9,
+          "next_day": 68.1,
+          "held": false
+        },
+        {
+          "date": "2026-03-18",
+          "range": 212.7,
+          "move": -114.4,
+          "next_day": -290.5,
+          "held": true
+        },
+        {
+          "date": "2026-01-28",
+          "range": 260.4,
+          "move": 124.6,
+          "next_day": 14.8,
+          "held": true
+        },
+        {
+          "date": "2025-12-10",
+          "range": 61.0,
+          "move": -12.8,
+          "next_day": 88.3,
+          "held": false
+        },
+        {
+          "date": "2025-10-29",
+          "range": 116.2,
+          "move": 33.5,
+          "next_day": 15.2,
+          "held": true
+        }
+      ],
+      "fomc_gold_summary": {
+        "samples": 8,
+        "avg_abs_move": 51.39,
+        "avg_range": 138.34,
+        "biggest": 124.6,
+        "held_pct": 57
+      }
+    },
+    "FOMC Economic Projections": {
+      "profile": {
+        "name": "Summary of Economic Projections (dot plot)",
+        "what": "Every committee member's forecast for growth, unemployment, inflation and the appropriate policy rate. Published four times a year alongside the rate decision.",
+        "who": "Federal Reserve, March / June / September / December",
+        "why_gold": "The dot plot repriced the whole forward rate curve in one release. Gold trades the curve, not the current rate, so a shifted median dot moves it harder than the decision.",
+        "watch": "The median dot for the current and next year, and how many members moved. The longer-run dot matters for the real-rate anchor.",
+        "gotchas": "The dots are not a commitment and the Chair usually says so in the presser, which can unwind the initial move.",
+        "prior_move_usd": "30-70 on the day",
+        "drivers": {
+          "rate_expectations": 1
+        }
+      },
+      "readings": null,
+      "fomc": {
+        "next": "2026-09-16",
+        "last": "2026-07-29",
+        "is_today": true,
+        "days_away": 0,
+        "has_projections": true
+      },
+      "fomc_gold_history": [
+        {
+          "date": "2026-09-16",
+          "range": 66.7,
+          "move": 31.7,
+          "next_day": null,
+          "held": null
+        },
+        {
+          "date": "2026-07-29",
+          "range": 121.4,
+          "move": 15.4,
+          "next_day": 63.8,
+          "held": true
+        },
+        {
+          "date": "2026-06-17",
+          "range": 166.2,
+          "move": 28.8,
+          "next_day": -135.5,
+          "held": false
+        },
+        {
+          "date": "2026-04-29",
+          "range": 102.1,
+          "move": -49.9,
+          "next_day": 68.1,
+          "held": false
+        },
+        {
+          "date": "2026-03-18",
+          "range": 212.7,
+          "move": -114.4,
+          "next_day": -290.5,
+          "held": true
+        },
+        {
+          "date": "2026-01-28",
+          "range": 260.4,
+          "move": 124.6,
+          "next_day": 14.8,
+          "held": true
+        },
+        {
+          "date": "2025-12-10",
+          "range": 61.0,
+          "move": -12.8,
+          "next_day": 88.3,
+          "held": false
+        },
+        {
+          "date": "2025-10-29",
+          "range": 116.2,
+          "move": 33.5,
+          "next_day": 15.2,
+          "held": true
+        }
+      ],
+      "fomc_gold_summary": {
+        "samples": 8,
+        "avg_abs_move": 51.39,
+        "avg_range": 138.34,
+        "biggest": 124.6,
+        "held_pct": 57
+      }
+    },
+    "FOMC Statement": {
+      "profile": {
+        "name": "FOMC Rate Decision",
+        "what": "The Federal Open Market Committee sets the target range for the federal funds rate. Announced at 19:00 UK (14:00 ET), followed 30 minutes later by the Chair's press conference.",
+        "who": "Federal Reserve, eight scheduled meetings a year",
+        "why_gold": "Gold pays no interest, so its opportunity cost is the real yield on cash and Treasuries. Anything that lowers expected real rates raises gold, and vice versa. This is the single most direct transmission channel there is.",
+        "watch": "The decision itself is usually priced in. The move comes from three other things: changes to the statement's language, the dot plot on projection meetings, and the tone of the press conference - which frequently reverses the initial statement reaction.",
+        "gotchas": "Two-leg event. Gold often moves one way on the 19:00 statement and the opposite way during the 19:30 presser. Judging the day on the first ten minutes is how people get caught.",
+        "prior_move_usd": "20-60 on the day, more on projection meetings",
+        "drivers": {
+          "rate_expectations": 1
+        }
+      },
+      "readings": null,
+      "fomc": {
+        "next": "2026-09-16",
+        "last": "2026-07-29",
+        "is_today": true,
+        "days_away": 0,
+        "has_projections": true
+      },
+      "fomc_gold_history": [
+        {
+          "date": "2026-09-16",
+          "range": 66.7,
+          "move": 31.7,
+          "next_day": null,
+          "held": null
+        },
+        {
+          "date": "2026-07-29",
+          "range": 121.4,
+          "move": 15.4,
+          "next_day": 63.8,
+          "held": true
+        },
+        {
+          "date": "2026-06-17",
+          "range": 166.2,
+          "move": 28.8,
+          "next_day": -135.5,
+          "held": false
+        },
+        {
+          "date": "2026-04-29",
+          "range": 102.1,
+          "move": -49.9,
+          "next_day": 68.1,
+          "held": false
+        },
+        {
+          "date": "2026-03-18",
+          "range": 212.7,
+          "move": -114.4,
+          "next_day": -290.5,
+          "held": true
+        },
+        {
+          "date": "2026-01-28",
+          "range": 260.4,
+          "move": 124.6,
+          "next_day": 14.8,
+          "held": true
+        },
+        {
+          "date": "2025-12-10",
+          "range": 61.0,
+          "move": -12.8,
+          "next_day": 88.3,
+          "held": false
+        },
+        {
+          "date": "2025-10-29",
+          "range": 116.2,
+          "move": 33.5,
+          "next_day": 15.2,
+          "held": true
+        }
+      ],
+      "fomc_gold_summary": {
+        "samples": 8,
+        "avg_abs_move": 51.39,
+        "avg_range": 138.34,
+        "biggest": 124.6,
+        "held_pct": 57
+      }
+    },
+    "FOMC Press Conference": {
+      "profile": {
+        "name": "FOMC Rate Decision",
+        "what": "The Federal Open Market Committee sets the target range for the federal funds rate. Announced at 19:00 UK (14:00 ET), followed 30 minutes later by the Chair's press conference.",
+        "who": "Federal Reserve, eight scheduled meetings a year",
+        "why_gold": "Gold pays no interest, so its opportunity cost is the real yield on cash and Treasuries. Anything that lowers expected real rates raises gold, and vice versa. This is the single most direct transmission channel there is.",
+        "watch": "The decision itself is usually priced in. The move comes from three other things: changes to the statement's language, the dot plot on projection meetings, and the tone of the press conference - which frequently reverses the initial statement reaction.",
+        "gotchas": "Two-leg event. Gold often moves one way on the 19:00 statement and the opposite way during the 19:30 presser. Judging the day on the first ten minutes is how people get caught.",
+        "prior_move_usd": "20-60 on the day, more on projection meetings",
+        "drivers": {
+          "rate_expectations": 1
+        }
+      },
+      "readings": null,
+      "fomc": {
+        "next": "2026-09-16",
+        "last": "2026-07-29",
+        "is_today": true,
+        "days_away": 0,
+        "has_projections": true
+      },
+      "fomc_gold_history": [
+        {
+          "date": "2026-09-16",
+          "range": 66.7,
+          "move": 31.7,
+          "next_day": null,
+          "held": null
+        },
+        {
+          "date": "2026-07-29",
+          "range": 121.4,
+          "move": 15.4,
+          "next_day": 63.8,
+          "held": true
+        },
+        {
+          "date": "2026-06-17",
+          "range": 166.2,
+          "move": 28.8,
+          "next_day": -135.5,
+          "held": false
+        },
+        {
+          "date": "2026-04-29",
+          "range": 102.1,
+          "move": -49.9,
+          "next_day": 68.1,
+          "held": false
+        },
+        {
+          "date": "2026-03-18",
+          "range": 212.7,
+          "move": -114.4,
+          "next_day": -290.5,
+          "held": true
+        },
+        {
+          "date": "2026-01-28",
+          "range": 260.4,
+          "move": 124.6,
+          "next_day": 14.8,
+          "held": true
+        },
+        {
+          "date": "2025-12-10",
+          "range": 61.0,
+          "move": -12.8,
+          "next_day": 88.3,
+          "held": false
+        },
+        {
+          "date": "2025-10-29",
+          "range": 116.2,
+          "move": 33.5,
+          "next_day": 15.2,
+          "held": true
+        }
+      ],
+      "fomc_gold_summary": {
+        "samples": 8,
+        "avg_abs_move": 51.39,
+        "avg_range": 138.34,
+        "biggest": 124.6,
+        "held_pct": 57
+      }
+    },
+    "TIC Long-Term Purchases": {
       "profile": null
     }
   },
@@ -2817,79 +3695,79 @@
     "status": {
       "next": "2026-09-16",
       "last": "2026-07-29",
-      "is_today": false,
-      "days_away": 1,
+      "is_today": true,
+      "days_away": 0,
       "has_projections": true
     },
     "source": "federalreserve.gov",
     "gold_history": [
       {
+        "date": "2026-09-16",
+        "range": 66.7,
+        "move": 31.7,
+        "next_day": null,
+        "held": null
+      },
+      {
         "date": "2026-07-29",
-        "range": 16.8,
-        "move": 16.6,
-        "next_day": 65.4,
+        "range": 121.4,
+        "move": 15.4,
+        "next_day": 63.8,
         "held": true
       },
       {
         "date": "2026-06-17",
-        "range": 81.0,
-        "move": 19.9,
-        "next_day": -134.8,
+        "range": 166.2,
+        "move": 28.8,
+        "next_day": -135.5,
         "held": false
       },
       {
         "date": "2026-04-29",
-        "range": 85.9,
-        "move": -53.4,
-        "next_day": 69.5,
+        "range": 102.1,
+        "move": -49.9,
+        "next_day": 68.1,
         "held": false
       },
       {
         "date": "2026-03-18",
-        "range": 127.9,
-        "move": -59.7,
-        "next_day": -289.2,
+        "range": 212.7,
+        "move": -114.4,
+        "next_day": -290.5,
         "held": true
       },
       {
         "date": "2026-01-28",
-        "range": 0.0,
-        "move": 0.0,
-        "next_day": 16.8,
-        "held": null
+        "range": 260.4,
+        "move": 124.6,
+        "next_day": 14.8,
+        "held": true
       },
       {
         "date": "2025-12-10",
-        "range": 50.9,
-        "move": -12.6,
-        "next_day": 89.1,
+        "range": 61.0,
+        "move": -12.8,
+        "next_day": 88.3,
         "held": false
       },
       {
         "date": "2025-10-29",
-        "range": 0.0,
-        "move": 0.0,
-        "next_day": 17.6,
-        "held": null
-      },
-      {
-        "date": "2025-09-17",
-        "range": 23.6,
-        "move": 12.8,
-        "next_day": -38.1,
-        "held": false
+        "range": 116.2,
+        "move": 33.5,
+        "next_day": 15.2,
+        "held": true
       }
     ],
     "gold_summary": {
       "samples": 8,
-      "avg_abs_move": 21.88,
-      "avg_range": 48.26,
-      "biggest": 59.7,
-      "held_pct": 33
+      "avg_abs_move": 51.39,
+      "avg_range": 138.34,
+      "biggest": 124.6,
+      "held_pct": 57
     }
   },
   "calibration": {
-    "samples": 2,
+    "samples": 3,
     "ready": false
   },
   "health": {
@@ -2897,17 +3775,17 @@
       {
         "source": "ForexFactory calendar",
         "ok": true,
-        "detail": "104 entries this week"
+        "detail": "105 entries this week"
       },
       {
         "source": "Gold daily prices",
         "ok": true,
-        "detail": "GC=F, 503 bars"
+        "detail": "GC=F, 504 bars"
       },
       {
         "source": "GVZ implied volatility",
         "ok": true,
-        "detail": "GVZ 26.54, 55th pct"
+        "detail": "GVZ 26.9, 59th pct"
       },
       {
         "source": "Drivers (DXY, yields, TIPS)",
@@ -2922,7 +3800,7 @@
       {
         "source": "Asia session",
         "ok": true,
-        "detail": "10 assets, 5 indices, 7 overnight releases"
+        "detail": "10 assets, 5 indices, 6 overnight releases"
       },
       {
         "source": "Cross-asset prices",
@@ -2937,12 +3815,27 @@
       {
         "source": "USD news feeds",
         "ok": true,
-        "detail": "19 relevant headlines"
+        "detail": "18 relevant headlines"
       },
       {
         "source": "Geopolitical feeds",
         "ok": true,
-        "detail": "ELEVATED (42), 27 headlines, baseline building"
+        "detail": "ELEVATED (45), 36 headlines, baseline building"
+      },
+      {
+        "source": "FRED series RSAFS",
+        "ok": false,
+        "detail": "https://fred.stlouisfed.org/graph/fredgraph.csv: failed to fetch https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSAFS&cosd=2023-09-17: The read operation timed out; https://fred.stlouisfed.org/dat"
+      },
+      {
+        "source": "FRED series RSAFS",
+        "ok": false,
+        "detail": "https://fred.stlouisfed.org/graph/fredgraph.csv: failed to fetch https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSAFS&cosd=2023-09-17: The read operation timed out; https://fred.stlouisfed.org/dat"
+      },
+      {
+        "source": "FRED series DFEDTARU",
+        "ok": false,
+        "detail": "https://fred.stlouisfed.org/graph/fredgraph.csv: failed to fetch https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2023-09-17: The read operation timed out; https://fred.stlouisfed.org/"
       },
       {
         "source": "Event context / FOMC calendar",
@@ -2952,16 +3845,16 @@
       {
         "source": "Current affairs board",
         "ok": true,
-        "detail": "4 live stories, 0 pending releases"
+        "detail": "4 live stories, 2 pending releases"
       }
     ],
     "ok": 12,
-    "failed": 0,
-    "degraded": false
+    "failed": 3,
+    "degraded": true
   },
   "brief": {
-    "words": 223,
-    "seconds": 89,
-    "audio": "audio/2026-09-15.mp3"
+    "words": 234,
+    "seconds": 94,
+    "audio": "audio/2026-09-16.mp3"
   }
 }
