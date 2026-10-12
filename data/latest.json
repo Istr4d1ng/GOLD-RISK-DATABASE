@@ -1,21 +1,21 @@
 {
   "date": "2026-10-12",
-  "generated": "06:55 BST",
+  "generated": "14:20 BST",
   "risk": {
-    "score": 24,
-    "band": "LOW",
-    "band_note": "Quiet tape. Normal conditions, no scheduled shock.",
-    "expected_range_usd": 120.9,
+    "score": 41,
+    "band": "MODERATE",
+    "band_note": "Some scheduled risk. Expect intraday noise around releases.",
+    "expected_range_usd": 120.5,
     "range_source": "GVZ 22.79 (implied, 1 s.d.)",
-    "atr14": 78.41,
+    "atr14": 80.19,
     "vol_ratio": 0.23,
     "scheduled": 21,
-    "unscheduled": 22,
+    "unscheduled": 39,
     "components": {
       "headline_event": 21,
       "breadth": 0,
       "clustering": 0,
-      "geopolitical": 22,
+      "geopolitical": 39,
       "both_at_once": 7,
       "volatility": -5,
       "positioning": 0
@@ -58,36 +58,60 @@
   "yesterday_events": [],
   "news": [
     {
+      "source": "Yahoo Gold",
+      "title": "Gold Prices Decline as US Dollar Strengthens and Investors Assess Geopolitical Risks",
+      "link": "https://investorshub.advfn.com/market-news/article/37849/gold-prices-decline-as-us-dollar-strengthens-and-investors-assess-geopolitical-risks?.tsrc=rss",
+      "published": "2026-10-12T10:18:18+00:00",
+      "summary": "Gold prices fell on Monday as the US dollar strengthened, while investors assessed developments surrounding a proposed energy ceasefire between Russia and Ukraine, renewed attacks in the Middle East and the outlook for global inflation and interest rates. At 05:01 ET (09:01 GMT), spot gold (XAU/USD) declined 0.",
+      "relevance": 15
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "Gold dips as dollar firms, traders weigh energy truce, Mideast risks",
+      "link": "https://finance.yahoo.com/markets/commodities/articles/gold-edges-higher-near-4-014728122.html?.tsrc=rss",
+      "published": "2026-10-12T01:47:28+00:00",
+      "summary": "Investing.com -- Gold prices slid on Monday as a firmer U.S. dollar pressured bullion, while traders weighed hopes for an energy truce between Russia and Ukraine against renewed attacks in the Middle East that threatened to intensify inflation pressures.",
+      "relevance": 14
+    },
+    {
+      "source": "Yahoo Gold",
+      "title": "3 Penny Stocks With Revenue Up To 18%",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/3-penny-stocks-revenue-18-060852792.html?.tsrc=rss",
+      "published": "2026-10-12T06:08:52+00:00",
+      "summary": "Gold buying by China\u2019s central bank and local households has helped support bullion even as interest rates stay high. That kind of steady demand highlights how investors worldwide keep searching for assets that can hold their own when macro stories change fast. This is where low priced, financially solid small caps come in. In this article, three carefully screened penny stocks from the US market",
+      "relevance": 13
+    },
+    {
+      "source": "MarketWatch",
+      "title": "The bond market is doing the Fed\u2019s job, and that could be good news for stocks, says Morgan Stanley strategist",
+      "link": "https://www.marketwatch.com/story/the-bond-market-is-doing-the-feds-job-and-that-could-be-good-news-for-stocks-says-morgan-stanley-strategist-ec57b81a?mod=mw_rss_topstories",
+      "published": "2026-10-12T09:23:00+00:00",
+      "summary": "A stronger dollar, higher bond market yields and elevated gas prices are already tightening financial conditions in the U.S. to the point that Kevin Warsh may not even need to hike rates.",
+      "relevance": 13
+    },
+    {
+      "source": "CNBC Economy",
+      "title": "India\u2019s retail inflation jumps to 5.54% in September, above estimates",
+      "link": "https://www.cnbc.com/2026/10/12/india-inflation-oil-energy-iran-war.html",
+      "published": "2026-10-12T10:49:24+00:00",
+      "summary": "India inflations jumps for the 11-straight month, raising prospects of a further interest rate hike",
+      "relevance": 9
+    },
+    {
+      "source": "MarketWatch",
+      "title": "Fed officials want to hold off a rate hike this month. Will this week\u2019s inflation data let them?",
+      "link": "https://www.marketwatch.com/story/fed-officials-want-to-hold-off-a-rate-hike-this-month-will-this-weeks-inflation-data-let-them-a82754d1?mod=mw_rss_topstories",
+      "published": "2026-10-12T11:00:00+00:00",
+      "summary": "A troubling rise in prices might trigger an interest-rate move at the Fed\u2019s meeting in late October.",
+      "relevance": 9
+    },
+    {
       "source": "CNBC Top News",
       "title": "Why China is importing a record amount of gold \u2014 and what it means for prices",
       "link": "https://www.cnbc.com/2026/10/12/china-gold-buying-interest-rate-.html",
       "published": "2026-10-12T00:51:10+00:00",
       "summary": "Beijing\u2019s push to diversify away from the dollar and Chinese households\u2019 search for a safe place to put their savings has fueled China\u2019s record gold buying.",
       "relevance": 7
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Gold edges higher near $4,200 as traders weigh energy truce, Mideast risks",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/gold-edges-higher-near-4-014728122.html?.tsrc=rss",
-      "published": "2026-10-12T01:47:28+00:00",
-      "summary": "Investing.com -- Gold prices edged higher on Monday as traders assessed U.S. President Donald Trump\u2019s claim of an immediate energy ceasefire between Russia and Ukraine against renewed attacks in the Middle East that threatened to intensify inflation pressures.",
-      "relevance": 7
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "Veteran Trader Gives Critical Warning for Gold Price",
-      "link": "https://beincrypto.com/peter-brandt-gold-price-warning/?.tsrc=rss",
-      "published": "2026-10-10T18:37:35+00:00",
-      "summary": "Peter Brandt flags a gold price head-and-shoulders pattern with a possible $2,890 target as China keeps buying.",
-      "relevance": 6
-    },
-    {
-      "source": "Yahoo Gold",
-      "title": "UBS Sees Gold Support Near $4,000, Forecasts $5,400 by September 2027",
-      "link": "https://investorshub.advfn.com/market-news/article/37823/ubs-sees-gold-support-near-4000-forecasts-5400-by-september-2027?.tsrc=rss",
-      "published": "2026-10-11T11:00:00+00:00",
-      "summary": "UBS expects gold prices could retreat towards $4,000 per ounce in the near term as higher U. S.",
-      "relevance": 6
     },
     {
       "source": "Yahoo Gold",
@@ -98,20 +122,44 @@
       "relevance": 6
     },
     {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: Egypt's core inflation slows to 14.1% year-on-year in September from 14.9% in August: central bank",
-      "link": "https://www.financialjuice.com/News/9800520/Egypts-core-inflation-slows-to-141-year-on-year-in-September-from-149-in-August-central-bank.aspx?xy=rss",
-      "published": "2026-10-11T12:05:58+00:00",
-      "summary": "",
-      "relevance": 5
+      "source": "Yahoo Gold",
+      "title": "US Dollar Price Forecast: DXY Eyes 102.49, Can EUR/USD Hold 1.1180 Ahead of CPI?",
+      "link": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-price-forecast-dxy-072924993.html?.tsrc=rss",
+      "published": "2026-10-12T07:29:24+00:00",
+      "summary": "US dollar holds firm ahead of Wednesday\u2019s CPI report as DXY targets 102.49, EUR/USD risks a break below 1.1180, and GBP/USD struggles beneath 1.3284.",
+      "relevance": 6
     },
     {
-      "source": "MarketWatch",
-      "title": "We\u2019re about to get a huge read on whether earnings can keep propping up the stock market",
-      "link": "https://www.marketwatch.com/story/were-about-to-get-a-huge-read-on-whether-earnings-can-keep-propping-up-the-stock-market-459b565b?mod=mw_rss_topstories",
-      "published": "2026-10-11T14:00:00+00:00",
-      "summary": "High hopes for third-quarter earnings are outweighing concerns around interest rates and oil prices \u2014 but one expert warns markets have gotten \u201cextremely complacent.\u201d",
-      "relevance": 5
+      "source": "Financial Juice",
+      "title": "FinancialJuice: Goldman Sachs: Oil - FJElite",
+      "link": "https://www.financialjuice.com/News/9801242/Goldman-Sachs-Oil---FJElite.aspx?xy=rss",
+      "published": "2026-10-12T08:33:24+00:00",
+      "summary": "The outlook remains for oil prices to moderate as Middle Eastern supply continues to adapt, although renewed geopolitical escalation leaves risks skewed significantly to the upside. The Brent December 2026 forecast has been raised to $90/bbl from $85, as persistent supply risks are expected to slow the unwinding of the risk premium embedded in futures spreads. The 2027 average forecast remains $8",
+      "relevance": 6
+    },
+    {
+      "source": "Financial Juice",
+      "title": "FinancialJuice: Goldman Sachs: UK Growth - FJElite",
+      "link": "https://www.financialjuice.com/News/9801244/Goldman-Sachs-UK-Growth---FJElite.aspx?xy=rss",
+      "published": "2026-10-12T08:34:25+00:00",
+      "summary": "UK growth has proved more resilient than expected this year, supported by robust consumer spending, rising business investment and technology-related output, alongside stronger-than-anticipated global demand. Lower seasonal energy consumption, warm weather and promotions have helped households absorb higher energy costs, while utilities and ICT investment have provided a more structural boost.",
+      "relevance": 6
+    },
+    {
+      "source": "Financial Juice",
+      "title": "FinancialJuice: Fed Interest Rate Probabilities",
+      "link": "https://www.financialjuice.com/News/9801551/Fed-Interest-Rate-Probabilities.aspx?xy=rss",
+      "published": "2026-10-12T12:30:28+00:00",
+      "summary": "",
+      "relevance": 6
+    },
+    {
+      "source": "Financial Juice",
+      "title": "FinancialJuice: Deutsche Bank's View on CPI - FJElite",
+      "link": "https://www.financialjuice.com/News/9801599/Deutsche-Banks-View-on-CPI---FJElite.aspx?xy=rss",
+      "published": "2026-10-12T12:58:32+00:00",
+      "summary": "Going onto more detail on the week ahead, the main event is US CPI on Wednesday. Our economists expect headline CPI to rise +0.57% MoM in September, up from +0.40% in August, largely because seasonally adjusted motor-fuel prices are expected to jump 9.6%. That would lift headline inflation to around 3.64% YoY. The core picture should be much softer: our economists expect +0.16% MoM, down from +0.",
+      "relevance": 6
     },
     {
       "source": "Yahoo Gold",
@@ -122,11 +170,35 @@
       "relevance": 4
     },
     {
-      "source": "Yahoo Gold",
-      "title": "Pok\u00e9mon Cards Just Crushed Bitcoin, Gold and the S&P 500 With 150% Returns",
-      "link": "https://beincrypto.com/pokemon-cards-outperform-bitcoin-gold-sp500/?.tsrc=rss",
-      "published": "2026-10-11T13:48:41+00:00",
-      "summary": "Rare Pok\u00e9mon cards keep beating Bitcoin, gold and the S&P 500 with 150.7% returns since 2021 per the CardTrack 100 index.",
+      "source": "Financial Juice",
+      "title": "FinancialJuice: EU's Kallas: We would call our United States' partners to get the Russian sanctions in place so that we could actually finish the war",
+      "link": "https://www.financialjuice.com/News/9801073/EUs-Kallas-We-would-call-our-United-States-partners-to-get-the-Russian-sanctions-in-place-so-that-we-could-actually-finish-the-war.aspx?xy=rss",
+      "published": "2026-10-12T06:11:13+00:00",
+      "summary": "",
+      "relevance": 4
+    },
+    {
+      "source": "MarketWatch",
+      "title": "Here\u2019s why Goldman Sachs just flipped bullish on stocks for the rest of the year",
+      "link": "https://www.marketwatch.com/story/heres-why-goldman-sachs-just-flipped-bullish-on-stocks-for-the-rest-of-the-year-dfa3b0af?mod=mw_rss_topstories",
+      "published": "2026-10-12T09:14:00+00:00",
+      "summary": "Goldman Sachs is leaning more heavily into stocks for the remainder of the year. That\u2019s down to earnings and a market that is cheaper overall.",
+      "relevance": 4
+    },
+    {
+      "source": "CNBC Economy",
+      "title": "Nobel prize in economics awarded to Robert E. Hall and Michael Woodford",
+      "link": "https://www.cnbc.com/2026/10/12/nobel-economics-prize-winner-woodford-hall.html",
+      "published": "2026-10-12T12:38:25+00:00",
+      "summary": "The U.S. economists were awarded for work that underpins the models used by central banks and governments to stabilize the economy.",
+      "relevance": 4
+    },
+    {
+      "source": "Financial Juice",
+      "title": "FinancialJuice: Goldman Sachs on Euro Area: Financial Conditions Have Tightened - FJElite",
+      "link": "https://www.financialjuice.com/News/9801622/Goldman-Sachs-on-Euro-Area-Financial-Conditions-Have-Tightened---FJElite.aspx?xy=rss",
+      "published": "2026-10-12T13:03:30+00:00",
+      "summary": "",
       "relevance": 4
     },
     {
@@ -138,26 +210,26 @@
       "relevance": 3
     },
     {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: China PBOC likely to set yuan midpoint at 6.6977 per dollar: estimate",
-      "link": "https://www.financialjuice.com/News/9800784/China-PBOC-likely-to-set-yuan-midpoint-at-66977-per-dollar-estimate.aspx?xy=rss",
-      "published": "2026-10-12T00:24:54+00:00",
-      "summary": "",
+      "source": "MarketWatch",
+      "title": "Mired in their worst losing streak in years, small caps could be the best way for investors to play crucial CPI data",
+      "link": "https://www.marketwatch.com/story/mired-in-their-worst-losing-streak-in-years-small-caps-could-be-the-best-way-for-investors-to-play-crucial-cpi-data-40e2f716?mod=mw_rss_topstories",
+      "published": "2026-10-12T11:30:00+00:00",
+      "summary": "Stuart Kaiser, of Citigroup, recommends buying iShares Russell 2000 exchange-traded fund call options before the consumer-price index for September is released on Wednesday.",
       "relevance": 3
     },
     {
-      "source": "Financial Juice",
-      "title": "FinancialJuice: South Korean won reaches strongest level vs dollar since Oct. 4, 2024",
-      "link": "https://www.financialjuice.com/News/9800803/South-Korean-won-reaches-strongest-level-vs-dollar-since-Oct-4-2024.aspx?xy=rss",
-      "published": "2026-10-12T01:04:15+00:00",
-      "summary": "",
+      "source": "CNBC Top News",
+      "title": "Jim Cramer's top 10 things to watch in the stock market Monday",
+      "link": "https://www.cnbc.com/investingclub/2026/10/12/jim-cramers-top-10-things-to-watch-in-the-stock-market-monday.html",
+      "published": "2026-10-12T13:06:04+00:00",
+      "summary": "Salesforce landed a double-upgrade, and stock futures are muted to start a busy week of earnings and inflation data.",
       "relevance": 3
     }
   ],
   "gold": {
     "symbol": "GC=F",
-    "last": 4211.2001953125,
-    "change_pct": -0.12094987574959623
+    "last": 4195.10009765625,
+    "change_pct": -0.5028035958847396
   },
   "implied": {
     "gvz": 22.79,
@@ -165,26 +237,26 @@
     "daily_move_pct": 1.44,
     "year_low": 19.58,
     "year_high": 46.02,
-    "daily_move_usd": 60.5,
-    "one_sd_range_usd": 120.9
+    "daily_move_usd": 60.2,
+    "one_sd_range_usd": 120.5
   },
   "drivers": {
     "DXY": {
       "label": "Dollar index",
-      "last": 102.237,
-      "change_pct": 0.03,
-      "change_5d_pct": 0.07
+      "last": 102.401,
+      "change_pct": 0.19,
+      "change_5d_pct": 0.23
     },
     "US10Y": {
       "label": "US 10-year yield",
-      "last": 5.244,
-      "change_pct": 0.25,
-      "change_5d_pct": -0.63
+      "last": 5.24,
+      "change_pct": -0.08,
+      "change_5d_pct": -1.34
     }
   },
   "attribution": {
-    "channel": "idiosyncratic",
-    "note": "Neither yields nor the dollar explain this one - look to flows, positioning or physical demand."
+    "channel": "mixed",
+    "note": "No single driver dominates; the move has more than one cause."
   },
   "cot": {
     "as_of": "2026-10-06",
@@ -341,17 +413,17 @@
       {
         "symbol": "^VIX",
         "label": "VIX",
-        "last": 14.84,
-        "change_pct": -3.7,
-        "change_5d_pct": -3.07,
+        "last": 15.44,
+        "change_pct": 4.04,
+        "change_5d_pct": -0.52,
         "kind": "fear"
       },
       {
         "symbol": "^FTSE",
         "label": "FTSE 100",
-        "last": 10552.1,
-        "change_pct": 1.06,
-        "change_5d_pct": 0.86,
+        "last": 10625.51,
+        "change_pct": 0.7,
+        "change_5d_pct": 1.22,
         "kind": "risk"
       }
     ],
@@ -464,7 +536,7 @@
     "spread": 0.61,
     "appetite": "risk-on",
     "appetite_note": "Cyclicals are leading defensives by 0.61pp. A confident tape is a mild headwind for gold, since haven demand is the part of the bid that fades first.",
-    "miner_read": "Miners +2.46% on a flat day for gold - little to read into.",
+    "miner_read": "Miners +2.46% while gold went -0.50% - a divergence. Worth noting rather than acting on: equity factors move miners too, so this is not automatically a signal about gold.",
     "failed": []
   },
   "affairs": {
@@ -474,8 +546,8 @@
         "key": "us_iran",
         "title": "US / Israel \u2013 Iran",
         "easing": false,
-        "state": "steady",
-        "detail": "9 headlines, which is about its normal of 40.7 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "state": "flaring",
+        "detail": "Above its own baseline: 10 headlines against a normal of 40.7. That is a change, not just continuing coverage.",
         "chain": [
           "Escalation",
           "Oil supply risk",
@@ -498,9 +570,9 @@
             "name": "WTI crude",
             "expected": 1.5,
             "expected_dir": "up",
-            "observed": -1.85,
+            "observed": 1.28,
             "window": "overnight",
-            "verdict": "not following",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -508,9 +580,9 @@
             "name": "VIX",
             "expected": 1.05,
             "expected_dir": "up",
-            "observed": -3.7,
-            "window": "last close",
-            "verdict": "not following",
+            "observed": 0.32,
+            "window": "overnight",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -518,9 +590,9 @@
             "name": "Gold",
             "expected": 0.9,
             "expected_dir": "up",
-            "observed": 0.02,
+            "observed": -0.36,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -528,9 +600,9 @@
             "name": "S&P 500",
             "expected": -0.75,
             "expected_dir": "down",
-            "observed": 0.18,
+            "observed": -0.03,
             "window": "overnight",
-            "verdict": "not following",
+            "verdict": "flat",
             "conflict": false
           },
           {
@@ -538,9 +610,9 @@
             "name": "Nasdaq 100",
             "expected": -0.65,
             "expected_dir": "down",
-            "observed": 0.09,
+            "observed": -0.37,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -548,14 +620,14 @@
             "name": "Silver",
             "expected": 0.65,
             "expected_dir": "up",
-            "observed": 0.23,
+            "observed": -0.29,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           }
         ],
-        "read": "Mostly not following - WTI crude, VIX, S&P 500 and 1 others are all going the other way. Either this is already in the price, or something bigger is driving the tape today.",
-        "weight": 18
+        "read": "Broadly consistent, though Gold, Silver, USD/JPY are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
+        "weight": 33
       },
       {
         "kind": "geopolitical",
@@ -563,7 +635,7 @@
         "title": "China / Taiwan",
         "easing": false,
         "state": "steady",
-        "detail": "5 headlines, which is about its normal of 16.8 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "detail": "7 headlines, which is about its normal of 16.8 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
         "chain": [
           "Blockade risk",
           "Supply chains",
@@ -586,9 +658,9 @@
             "name": "S&P 500",
             "expected": -1.2,
             "expected_dir": "down",
-            "observed": 0.18,
+            "observed": -0.03,
             "window": "overnight",
-            "verdict": "not following",
+            "verdict": "flat",
             "conflict": false
           },
           {
@@ -596,9 +668,9 @@
             "name": "Nasdaq 100",
             "expected": -1.1,
             "expected_dir": "down",
-            "observed": 0.09,
+            "observed": -0.37,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -606,9 +678,9 @@
             "name": "VIX",
             "expected": 1.1,
             "expected_dir": "up",
-            "observed": -3.7,
-            "window": "last close",
-            "verdict": "not following",
+            "observed": 0.32,
+            "window": "overnight",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -616,9 +688,9 @@
             "name": "US 10-year yield",
             "expected": -1.0,
             "expected_dir": "down",
-            "observed": 0.25,
-            "window": "last close",
-            "verdict": "not following",
+            "observed": 0.0,
+            "window": "overnight",
+            "verdict": "flat",
             "conflict": false
           },
           {
@@ -626,9 +698,9 @@
             "name": "Gold",
             "expected": 0.8,
             "expected_dir": "up",
-            "observed": 0.02,
+            "observed": -0.36,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -636,14 +708,14 @@
             "name": "Copper",
             "expected": -0.8,
             "expected_dir": "down",
-            "observed": 0.52,
+            "observed": 1.01,
             "window": "overnight",
             "verdict": "not following",
             "conflict": false
           }
         ],
-        "read": "Mostly not following - S&P 500, VIX, US 10-year yield and 3 others are all going the other way. Either this is already in the price, or something bigger is driving the tape today.",
-        "weight": 18
+        "read": "Broadly consistent, though Gold, Copper, USD/JPY and 2 others are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
+        "weight": 25
       },
       {
         "kind": "geopolitical",
@@ -651,7 +723,7 @@
         "title": "Russia / Ukraine / NATO",
         "easing": false,
         "state": "steady",
-        "detail": "12 headlines, which is about its normal of 22.4 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "detail": "15 headlines, which is about its normal of 22.4 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
         "chain": [
           "Sanctions",
           "Reserve diversification",
@@ -674,9 +746,9 @@
             "name": "WTI crude",
             "expected": 1.5,
             "expected_dir": "up",
-            "observed": -1.85,
+            "observed": 1.28,
             "window": "overnight",
-            "verdict": "not following",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -684,9 +756,9 @@
             "name": "VIX",
             "expected": 1.05,
             "expected_dir": "up",
-            "observed": -3.7,
-            "window": "last close",
-            "verdict": "not following",
+            "observed": 0.32,
+            "window": "overnight",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -694,9 +766,9 @@
             "name": "Gold",
             "expected": 0.9,
             "expected_dir": "up",
-            "observed": 0.02,
+            "observed": -0.36,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "not following",
             "conflict": false
           },
           {
@@ -704,9 +776,9 @@
             "name": "S&P 500",
             "expected": -0.75,
             "expected_dir": "down",
-            "observed": 0.18,
+            "observed": -0.03,
             "window": "overnight",
-            "verdict": "not following",
+            "verdict": "flat",
             "conflict": false
           },
           {
@@ -714,9 +786,9 @@
             "name": "Nasdaq 100",
             "expected": -0.65,
             "expected_dir": "down",
-            "observed": 0.09,
+            "observed": -0.37,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "consistent",
             "conflict": false
           },
           {
@@ -724,29 +796,29 @@
             "name": "Silver",
             "expected": 0.65,
             "expected_dir": "up",
-            "observed": 0.23,
+            "observed": -0.29,
             "window": "overnight",
-            "verdict": "consistent",
+            "verdict": "not following",
             "conflict": false
           }
         ],
-        "read": "Mostly not following - WTI crude, VIX, S&P 500 and 1 others are all going the other way. Either this is already in the price, or something bigger is driving the tape today.",
+        "read": "Broadly consistent, though Gold, Silver, USD/JPY are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
         "weight": 18
       },
       {
         "kind": "geopolitical",
         "key": "middle_east",
         "title": "Wider Middle East",
-        "easing": false,
-        "state": "steady",
-        "detail": "5 headlines, which is about its normal of 12.4 after 22 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "easing": true,
+        "state": "de-escalating",
+        "detail": "Coverage is below its own normal and carrying de-escalation language. Any risk premium here should be fading.",
         "chain": [
           "Escalation",
           "Haven demand",
           "Gold"
         ],
         "drivers": {
-          "geopolitics": 1
+          "geopolitics": -1
         },
         "why": "Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region's conflicts rarely touch US rate expectations directly.",
         "counterweight": "Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.",
@@ -758,29 +830,29 @@
           {
             "key": "gold",
             "name": "Gold",
-            "expected": 0.7,
-            "expected_dir": "up",
-            "observed": 0.02,
+            "expected": -0.7,
+            "expected_dir": "down",
+            "observed": -0.36,
             "window": "overnight",
-            "verdict": "flat",
+            "verdict": "consistent",
             "conflict": false
           },
           {
             "key": "vix",
             "name": "VIX",
-            "expected": 0.65,
-            "expected_dir": "up",
-            "observed": -3.7,
-            "window": "last close",
+            "expected": -0.65,
+            "expected_dir": "down",
+            "observed": 0.32,
+            "window": "overnight",
             "verdict": "not following",
             "conflict": false
           },
           {
             "key": "oil",
             "name": "WTI crude",
-            "expected": 0.6,
-            "expected_dir": "up",
-            "observed": -1.85,
+            "expected": -0.6,
+            "expected_dir": "down",
+            "observed": 1.28,
             "window": "overnight",
             "verdict": "not following",
             "conflict": false
@@ -788,43 +860,145 @@
           {
             "key": "sp500",
             "name": "S&P 500",
-            "expected": -0.4,
-            "expected_dir": "down",
-            "observed": 0.18,
-            "window": "overnight",
-            "verdict": "not following",
-            "conflict": false
-          },
-          {
-            "key": "nasdaq",
-            "name": "Nasdaq 100",
-            "expected": -0.4,
-            "expected_dir": "down",
-            "observed": 0.09,
+            "expected": 0.4,
+            "expected_dir": "up",
+            "observed": -0.03,
             "window": "overnight",
             "verdict": "flat",
             "conflict": false
           },
           {
+            "key": "nasdaq",
+            "name": "Nasdaq 100",
+            "expected": 0.4,
+            "expected_dir": "up",
+            "observed": -0.37,
+            "window": "overnight",
+            "verdict": "not following",
+            "conflict": false
+          },
+          {
             "key": "us10y",
             "name": "US 10-year yield",
-            "expected": -0.4,
-            "expected_dir": "down",
-            "observed": 0.25,
-            "window": "last close",
-            "verdict": "not following",
+            "expected": 0.4,
+            "expected_dir": "up",
+            "observed": 0.0,
+            "window": "overnight",
+            "verdict": "flat",
             "conflict": false
           }
         ],
-        "read": "Mostly not following - VIX, WTI crude, S&P 500 and 1 others are all going the other way. Either this is already in the price, or something bigger is driving the tape today.",
+        "read": "Mostly not following - VIX, WTI crude, Nasdaq 100 and 3 others are all going the other way. Either this is already in the price, or something bigger is driving the tape today.",
         "weight": 18
+      },
+      {
+        "kind": "theme",
+        "key": "fed_policy",
+        "title": "Fed policy and the rate path",
+        "state": "pushes it up",
+        "detail": null,
+        "chain": null,
+        "drivers": {
+          "rate_expectations": 1
+        },
+        "link": "drivers/rate_expectations.html",
+        "headlines": [
+          {
+            "source": "MarketWatch",
+            "title": "The bond market is doing the Fed\u2019s job, and that could be good news for stocks, says Morgan Stanley strategist",
+            "link": "https://www.marketwatch.com/story/the-bond-market-is-doing-the-feds-job-and-that-could-be-good-news-for-stocks-says-morgan-stanley-strategist-ec57b81a?mod=mw_rss_topstories",
+            "published": "2026-10-12T09:23:00+00:00",
+            "summary": "A stronger dollar, higher bond market yields and elevated gas prices are already tightening financial conditions in the U.S. to the point that Kevin Warsh may not even need to hike rates.",
+            "relevance": 13
+          },
+          {
+            "source": "CNBC Economy",
+            "title": "India\u2019s retail inflation jumps to 5.54% in September, above estimates",
+            "link": "https://www.cnbc.com/2026/10/12/india-inflation-oil-energy-iran-war.html",
+            "published": "2026-10-12T10:49:24+00:00",
+            "summary": "India inflations jumps for the 11-straight month, raising prospects of a further interest rate hike",
+            "relevance": 9
+          },
+          {
+            "source": "MarketWatch",
+            "title": "Fed officials want to hold off a rate hike this month. Will this week\u2019s inflation data let them?",
+            "link": "https://www.marketwatch.com/story/fed-officials-want-to-hold-off-a-rate-hike-this-month-will-this-weeks-inflation-data-let-them-a82754d1?mod=mw_rss_topstories",
+            "published": "2026-10-12T11:00:00+00:00",
+            "summary": "A troubling rise in prices might trigger an interest-rate move at the Fed\u2019s meeting in late October.",
+            "relevance": 9
+          }
+        ],
+        "rows": [
+          {
+            "key": "us10y",
+            "name": "US 10-year yield",
+            "expected": 0.9,
+            "expected_dir": "up",
+            "observed": 0.0,
+            "window": "overnight",
+            "verdict": "flat",
+            "conflict": false
+          },
+          {
+            "key": "gold",
+            "name": "Gold",
+            "expected": -0.85,
+            "expected_dir": "down",
+            "observed": -0.36,
+            "window": "overnight",
+            "verdict": "consistent",
+            "conflict": false
+          },
+          {
+            "key": "nasdaq",
+            "name": "Nasdaq 100",
+            "expected": -0.85,
+            "expected_dir": "down",
+            "observed": -0.37,
+            "window": "overnight",
+            "verdict": "consistent",
+            "conflict": false
+          },
+          {
+            "key": "usdjpy",
+            "name": "USD/JPY",
+            "expected": 0.85,
+            "expected_dir": "up",
+            "observed": 0.2,
+            "window": "overnight",
+            "verdict": "consistent",
+            "conflict": false
+          },
+          {
+            "key": "dollar",
+            "name": "Dollar index",
+            "expected": 0.8,
+            "expected_dir": "up",
+            "observed": 0.12,
+            "window": "overnight",
+            "verdict": "consistent",
+            "conflict": false
+          },
+          {
+            "key": "eurusd",
+            "name": "EUR/USD",
+            "expected": -0.7,
+            "expected_dir": "down",
+            "observed": -0.18,
+            "window": "overnight",
+            "verdict": "consistent",
+            "conflict": false
+          }
+        ],
+        "read": "Broadly consistent, though Copper, WTI crude are not playing along. One asset out of line is usually its own story; several is a reason to doubt the read.",
+        "weight": 13
       }
     ],
     "pending": [],
     "caveat": "Expected direction is derived from the driver model; observed is what prices have actually done. Many things move at once, so this is a consistency check rather than attribution."
   },
   "asia": {
-    "cutoff": "06:55",
+    "cutoff": "14:20",
     "moves": [
       {
         "key": "gold",
@@ -832,12 +1006,12 @@
         "symbol": "GC=F",
         "decimals": 2,
         "open": 4211.1,
-        "last": 4211.8,
+        "last": 4196.0,
         "high": 4242.3,
-        "low": 4202.9,
-        "change_pct": 0.02,
-        "range_pct": 0.94,
-        "position": 23,
+        "low": 4178.1,
+        "change_pct": -0.36,
+        "range_pct": 1.52,
+        "position": 28,
         "primary": true
       },
       {
@@ -846,26 +1020,12 @@
         "symbol": "CL=F",
         "decimals": 2,
         "open": 92.4,
-        "last": 90.69,
-        "high": 92.47,
+        "last": 93.58,
+        "high": 93.91,
         "low": 89.61,
-        "change_pct": -1.85,
-        "range_pct": 3.1,
-        "position": 38,
-        "primary": false
-      },
-      {
-        "key": "copper",
-        "name": "Copper",
-        "symbol": "HG=F",
-        "decimals": 4,
-        "open": 6.698,
-        "last": 6.733,
-        "high": 6.749,
-        "low": 6.698,
-        "change_pct": 0.52,
-        "range_pct": 0.76,
-        "position": 69,
+        "change_pct": 1.28,
+        "range_pct": 4.65,
+        "position": 92,
         "primary": false
       },
       {
@@ -874,40 +1034,26 @@
         "symbol": "BTC-USD",
         "decimals": 0,
         "open": 83550.0,
-        "last": 83957.0,
-        "high": 84173.0,
-        "low": 83354.0,
-        "change_pct": 0.49,
-        "range_pct": 0.98,
-        "position": 74,
+        "last": 82516.0,
+        "high": 84262.0,
+        "low": 82466.0,
+        "change_pct": -1.24,
+        "range_pct": 2.15,
+        "position": 3,
         "primary": false
       },
       {
-        "key": "silver",
-        "name": "Silver",
-        "symbol": "SI=F",
-        "decimals": 3,
-        "open": 61.1,
-        "last": 61.24,
-        "high": 61.745,
-        "low": 61.015,
-        "change_pct": 0.23,
-        "range_pct": 1.19,
-        "position": 31,
-        "primary": false
-      },
-      {
-        "key": "sp500",
-        "name": "S&P 500",
-        "symbol": "ES=F",
-        "decimals": 2,
-        "open": 7868.25,
-        "last": 7882.75,
-        "high": 7887.0,
-        "low": 7867.75,
-        "change_pct": 0.18,
-        "range_pct": 0.24,
-        "position": 78,
+        "key": "copper",
+        "name": "Copper",
+        "symbol": "HG=F",
+        "decimals": 4,
+        "open": 6.698,
+        "last": 6.7655,
+        "high": 6.783,
+        "low": 6.698,
+        "change_pct": 1.01,
+        "range_pct": 1.27,
+        "position": 79,
         "primary": false
       },
       {
@@ -916,40 +1062,40 @@
         "symbol": "NQ=F",
         "decimals": 2,
         "open": 31188.0,
-        "last": 31216.5,
+        "last": 31072.5,
         "high": 31289.25,
-        "low": 31158.0,
-        "change_pct": 0.09,
-        "range_pct": 0.42,
-        "position": 45,
+        "low": 31017.25,
+        "change_pct": -0.37,
+        "range_pct": 0.87,
+        "position": 20,
         "primary": false
       },
       {
-        "key": "dollar",
-        "name": "Dollar index",
-        "symbol": "DX-Y.NYB",
+        "key": "vix",
+        "name": "VIX",
+        "symbol": "^VIX",
+        "decimals": 2,
+        "open": 15.39,
+        "last": 15.44,
+        "high": 15.53,
+        "low": 15.36,
+        "change_pct": 0.32,
+        "range_pct": 1.1,
+        "position": 47,
+        "primary": false
+      },
+      {
+        "key": "silver",
+        "name": "Silver",
+        "symbol": "SI=F",
         "decimals": 3,
-        "open": 102.278,
-        "last": 102.238,
-        "high": 102.278,
-        "low": 102.1,
-        "change_pct": -0.04,
-        "range_pct": 0.17,
-        "position": 78,
-        "primary": false
-      },
-      {
-        "key": "eurusd",
-        "name": "EUR/USD",
-        "symbol": "EURUSD=X",
-        "decimals": 4,
-        "open": 1.1199,
-        "last": 1.1204,
-        "high": 1.122,
-        "low": 1.1199,
-        "change_pct": 0.04,
-        "range_pct": 0.18,
-        "position": 25,
+        "open": 61.1,
+        "last": 60.925,
+        "high": 61.745,
+        "low": 60.68,
+        "change_pct": -0.29,
+        "range_pct": 1.74,
+        "position": 23,
         "primary": false
       },
       {
@@ -958,12 +1104,68 @@
         "symbol": "USDJPY=X",
         "decimals": 3,
         "open": 158.301,
-        "last": 158.344,
-        "high": 158.396,
+        "last": 158.613,
+        "high": 158.65,
         "low": 158.071,
-        "change_pct": 0.03,
-        "range_pct": 0.21,
-        "position": 84,
+        "change_pct": 0.2,
+        "range_pct": 0.37,
+        "position": 94,
+        "primary": false
+      },
+      {
+        "key": "eurusd",
+        "name": "EUR/USD",
+        "symbol": "EURUSD=X",
+        "decimals": 4,
+        "open": 1.1199,
+        "last": 1.1179,
+        "high": 1.122,
+        "low": 1.1177,
+        "change_pct": -0.18,
+        "range_pct": 0.38,
+        "position": 6,
+        "primary": false
+      },
+      {
+        "key": "dollar",
+        "name": "Dollar index",
+        "symbol": "DX-Y.NYB",
+        "decimals": 3,
+        "open": 102.278,
+        "last": 102.403,
+        "high": 102.449,
+        "low": 102.1,
+        "change_pct": 0.12,
+        "range_pct": 0.34,
+        "position": 87,
+        "primary": false
+      },
+      {
+        "key": "sp500",
+        "name": "S&P 500",
+        "symbol": "ES=F",
+        "decimals": 2,
+        "open": 7868.25,
+        "last": 7865.75,
+        "high": 7887.0,
+        "low": 7857.75,
+        "change_pct": -0.03,
+        "range_pct": 0.37,
+        "position": 27,
+        "primary": false
+      },
+      {
+        "key": "us10y",
+        "name": "US 10-year yield",
+        "symbol": "^TNX",
+        "decimals": 3,
+        "open": 5.24,
+        "last": 5.24,
+        "high": 5.24,
+        "low": 5.24,
+        "change_pct": 0.0,
+        "range_pct": 0.0,
+        "position": 50,
         "primary": false
       }
     ],
@@ -979,15 +1181,15 @@
         "symbol": "^HSI",
         "label": "Hang Seng",
         "country": "Hong Kong",
-        "last": 24239.03,
-        "change_pct": 0.11
+        "last": 24271.2,
+        "change_pct": 0.25
       },
       {
         "symbol": "000001.SS",
         "label": "Shanghai Composite",
         "country": "China",
-        "last": 3800.9,
-        "change_pct": -0.34
+        "last": 3797.24,
+        "change_pct": -0.43
       },
       {
         "symbol": "^AXJO",
@@ -1000,8 +1202,8 @@
         "symbol": "^KS11",
         "label": "KOSPI",
         "country": "South Korea",
-        "last": 6394.51,
-        "change_pct": -3.49
+        "last": 6384.24,
+        "change_pct": -3.65
       }
     ],
     "events": [
@@ -1015,13 +1217,10 @@
         "previous": ""
       }
     ],
-    "skipped": [
-      "us10y",
-      "vix"
-    ],
+    "skipped": [],
     "failed": [],
-    "read": "Asian equities are broadly lower, averaging -0.60%. Risk came off overnight, which normally gives gold a small bid into London. Gold moved +0.02% overnight in a 0.94% range, and comes into London near the bottom of it. Sitting on the lows into the open leaves it vulnerable to a flush if London sells it. 1 minor Asian releases overnight, none of them the kind that reaches gold.",
-    "caveat": "Measured from 00:00 UK to 06:55. Tokyo closes around 07:00 UK and Hong Kong around 09:00, so this is a session finishing rather than one that has finished."
+    "read": "Asian equities are broadly lower, averaging -0.62%. Risk came off overnight, which normally gives gold a small bid into London. Gold moved -0.36% overnight in a 1.52% range, and comes into London near the bottom of it. Sitting on the lows into the open leaves it vulnerable to a flush if London sells it. 1 minor Asian releases overnight, none of them the kind that reaches gold.",
+    "caveat": "Measured from 00:00 UK to 14:20. Tokyo closes around 07:00 UK and Hong Kong around 09:00, so this is a session finishing rather than one that has finished."
   },
   "board": [
     {
@@ -1030,10 +1229,10 @@
       "symbol": "GC=F",
       "unit": "usd",
       "decimals": 2,
-      "last": 4211.8,
-      "change_pct": -0.11,
-      "change_5d_pct": 1.32,
-      "change_20d_pct": -3.22,
+      "last": 4195.9,
+      "change_pct": -0.48,
+      "change_5d_pct": 0.94,
+      "change_20d_pct": -3.58,
       "primary": true
     },
     {
@@ -1066,10 +1265,10 @@
       "symbol": "CL=F",
       "unit": "usd",
       "decimals": 2,
-      "last": 90.68,
-      "change_pct": -1.27,
-      "change_5d_pct": 1.4,
-      "change_20d_pct": -10.56,
+      "last": 93.56,
+      "change_pct": 1.86,
+      "change_5d_pct": 4.62,
+      "change_20d_pct": -7.72,
       "primary": false
     },
     {
@@ -1078,10 +1277,10 @@
       "symbol": "DX-Y.NYB",
       "unit": "index",
       "decimals": 3,
-      "last": 102.237,
-      "change_pct": 0.03,
-      "change_5d_pct": 0.07,
-      "change_20d_pct": 2.79,
+      "last": 102.406,
+      "change_pct": 0.19,
+      "change_5d_pct": 0.23,
+      "change_20d_pct": 2.96,
       "primary": false
     },
     {
@@ -1090,10 +1289,10 @@
       "symbol": "^TNX",
       "unit": "pct",
       "decimals": 3,
-      "last": 5.244,
-      "change_pct": 0.25,
-      "change_5d_pct": -0.63,
-      "change_20d_pct": 5.41,
+      "last": 5.24,
+      "change_pct": -0.08,
+      "change_5d_pct": -1.34,
+      "change_20d_pct": 5.62,
       "primary": false
     },
     {
@@ -1102,10 +1301,10 @@
       "symbol": "SI=F",
       "unit": "usd",
       "decimals": 3,
-      "last": 61.24,
-      "change_pct": 0.94,
-      "change_5d_pct": 0.61,
-      "change_20d_pct": -3.58,
+      "last": 60.93,
+      "change_pct": 0.43,
+      "change_5d_pct": 0.1,
+      "change_20d_pct": -4.07,
       "primary": false
     },
     {
@@ -1114,10 +1313,10 @@
       "symbol": "HG=F",
       "unit": "usd",
       "decimals": 4,
-      "last": 6.733,
-      "change_pct": 1.36,
-      "change_5d_pct": 2.24,
-      "change_20d_pct": 6.37,
+      "last": 6.7655,
+      "change_pct": 1.85,
+      "change_5d_pct": 2.73,
+      "change_20d_pct": 6.88,
       "primary": false
     },
     {
@@ -1126,10 +1325,10 @@
       "symbol": "BTC-USD",
       "unit": "usd",
       "decimals": 0,
-      "last": 83920.0,
-      "change_pct": 1.22,
-      "change_5d_pct": -1.91,
-      "change_20d_pct": -3.1,
+      "last": 82525.0,
+      "change_pct": -1.38,
+      "change_5d_pct": -0.9,
+      "change_20d_pct": -4.23,
       "primary": false
     },
     {
@@ -1138,10 +1337,10 @@
       "symbol": "EURUSD=X",
       "unit": "fx",
       "decimals": 4,
-      "last": 1.1204,
-      "change_pct": -0.08,
-      "change_5d_pct": -0.44,
-      "change_20d_pct": -3.36,
+      "last": 1.1179,
+      "change_pct": -0.3,
+      "change_5d_pct": -0.67,
+      "change_20d_pct": -3.58,
       "primary": false
     },
     {
@@ -1150,10 +1349,10 @@
       "symbol": "USDJPY=X",
       "unit": "fx",
       "decimals": 3,
-      "last": 158.345,
-      "change_pct": 0.18,
-      "change_5d_pct": 0.39,
-      "change_20d_pct": 3.21,
+      "last": 158.613,
+      "change_pct": 0.35,
+      "change_5d_pct": 0.56,
+      "change_20d_pct": 3.38,
       "primary": false
     },
     {
@@ -1162,10 +1361,10 @@
       "symbol": "^VIX",
       "unit": "index",
       "decimals": 2,
-      "last": 14.84,
-      "change_pct": -3.7,
-      "change_5d_pct": -3.07,
-      "change_20d_pct": -6.31,
+      "last": 15.44,
+      "change_pct": 4.04,
+      "change_5d_pct": -0.52,
+      "change_20d_pct": -9.71,
       "primary": false
     }
   ],
@@ -1190,14 +1389,14 @@
         "gold": 1.0,
         "sp500": 0.39,
         "nasdaq": 0.33,
-        "oil": -0.1,
-        "dollar": -0.49,
+        "oil": -0.11,
+        "dollar": -0.5,
         "us10y": -0.29,
         "silver": 0.83,
-        "copper": 0.43,
+        "copper": 0.42,
         "bitcoin": 0.61,
-        "eurusd": 0.43,
-        "usdjpy": -0.41,
+        "eurusd": 0.44,
+        "usdjpy": -0.42,
         "vix": -0.48
       },
       "sp500": {
@@ -1206,10 +1405,10 @@
         "nasdaq": 0.91,
         "oil": -0.54,
         "dollar": -0.28,
-        "us10y": -0.36,
+        "us10y": -0.4,
         "silver": 0.42,
         "copper": 0.53,
-        "bitcoin": 0.37,
+        "bitcoin": 0.38,
         "eurusd": 0.14,
         "usdjpy": -0.38,
         "vix": -0.72
@@ -1220,55 +1419,55 @@
         "nasdaq": 1.0,
         "oil": -0.47,
         "dollar": -0.22,
-        "us10y": -0.23,
+        "us10y": -0.25,
         "silver": 0.45,
         "copper": 0.59,
-        "bitcoin": 0.37,
+        "bitcoin": 0.38,
         "eurusd": 0.09,
         "usdjpy": -0.34,
         "vix": -0.62
       },
       "oil": {
-        "gold": -0.1,
+        "gold": -0.11,
         "sp500": -0.54,
         "nasdaq": -0.47,
         "oil": 1.0,
-        "dollar": -0.03,
-        "us10y": 0.42,
+        "dollar": -0.02,
+        "us10y": 0.41,
         "silver": -0.12,
-        "copper": -0.38,
-        "bitcoin": -0.2,
-        "eurusd": 0.15,
-        "usdjpy": 0.13,
+        "copper": -0.36,
+        "bitcoin": -0.21,
+        "eurusd": 0.14,
+        "usdjpy": 0.14,
         "vix": 0.36
       },
       "dollar": {
-        "gold": -0.49,
+        "gold": -0.5,
         "sp500": -0.28,
         "nasdaq": -0.22,
-        "oil": -0.03,
+        "oil": -0.02,
         "dollar": 1.0,
-        "us10y": 0.23,
+        "us10y": 0.22,
         "silver": -0.39,
-        "copper": -0.26,
-        "bitcoin": -0.37,
+        "copper": -0.25,
+        "bitcoin": -0.38,
         "eurusd": -0.93,
         "usdjpy": 0.73,
         "vix": 0.38
       },
       "us10y": {
         "gold": -0.29,
-        "sp500": -0.36,
-        "nasdaq": -0.23,
-        "oil": 0.42,
-        "dollar": 0.23,
+        "sp500": -0.4,
+        "nasdaq": -0.25,
+        "oil": 0.41,
+        "dollar": 0.22,
         "us10y": 1.0,
         "silver": -0.29,
-        "copper": -0.25,
+        "copper": -0.26,
         "bitcoin": -0.27,
         "eurusd": -0.24,
         "usdjpy": 0.22,
-        "vix": 0.19
+        "vix": 0.18
       },
       "silver": {
         "gold": 0.83,
@@ -1278,67 +1477,67 @@
         "dollar": -0.39,
         "us10y": -0.29,
         "silver": 1.0,
-        "copper": 0.61,
-        "bitcoin": 0.58,
+        "copper": 0.6,
+        "bitcoin": 0.57,
         "eurusd": 0.37,
         "usdjpy": -0.28,
         "vix": -0.39
       },
       "copper": {
-        "gold": 0.43,
+        "gold": 0.42,
         "sp500": 0.53,
         "nasdaq": 0.59,
-        "oil": -0.38,
-        "dollar": -0.26,
-        "us10y": -0.25,
-        "silver": 0.61,
+        "oil": -0.36,
+        "dollar": -0.25,
+        "us10y": -0.26,
+        "silver": 0.6,
         "copper": 1.0,
-        "bitcoin": 0.26,
-        "eurusd": 0.23,
-        "usdjpy": -0.31,
-        "vix": -0.54
+        "bitcoin": 0.22,
+        "eurusd": 0.21,
+        "usdjpy": -0.29,
+        "vix": -0.51
       },
       "bitcoin": {
         "gold": 0.61,
-        "sp500": 0.37,
-        "nasdaq": 0.37,
-        "oil": -0.2,
-        "dollar": -0.37,
+        "sp500": 0.38,
+        "nasdaq": 0.38,
+        "oil": -0.21,
+        "dollar": -0.38,
         "us10y": -0.27,
-        "silver": 0.58,
-        "copper": 0.26,
+        "silver": 0.57,
+        "copper": 0.22,
         "bitcoin": 1.0,
-        "eurusd": 0.41,
-        "usdjpy": -0.24,
-        "vix": -0.24
+        "eurusd": 0.42,
+        "usdjpy": -0.25,
+        "vix": -0.25
       },
       "eurusd": {
-        "gold": 0.43,
+        "gold": 0.44,
         "sp500": 0.14,
         "nasdaq": 0.09,
-        "oil": 0.15,
+        "oil": 0.14,
         "dollar": -0.93,
         "us10y": -0.24,
         "silver": 0.37,
-        "copper": 0.23,
-        "bitcoin": 0.41,
+        "copper": 0.21,
+        "bitcoin": 0.42,
         "eurusd": 1.0,
         "usdjpy": -0.53,
         "vix": -0.22
       },
       "usdjpy": {
-        "gold": -0.41,
+        "gold": -0.42,
         "sp500": -0.38,
         "nasdaq": -0.34,
-        "oil": 0.13,
+        "oil": 0.14,
         "dollar": 0.73,
         "us10y": 0.22,
         "silver": -0.28,
-        "copper": -0.31,
-        "bitcoin": -0.24,
+        "copper": -0.29,
+        "bitcoin": -0.25,
         "eurusd": -0.53,
         "usdjpy": 1.0,
-        "vix": 0.41
+        "vix": 0.42
       },
       "vix": {
         "gold": -0.48,
@@ -1346,12 +1545,12 @@
         "nasdaq": -0.62,
         "oil": 0.36,
         "dollar": 0.38,
-        "us10y": 0.19,
+        "us10y": 0.18,
         "silver": -0.39,
-        "copper": -0.54,
-        "bitcoin": -0.24,
+        "copper": -0.51,
+        "bitcoin": -0.25,
         "eurusd": -0.22,
-        "usdjpy": 0.41,
+        "usdjpy": 0.42,
         "vix": 1.0
       }
     },
@@ -1369,7 +1568,7 @@
       {
         "asset": "dollar",
         "name": "Dollar index",
-        "corr": -0.49
+        "corr": -0.5
       },
       {
         "asset": "vix",
@@ -1377,12 +1576,12 @@
         "corr": -0.48
       },
       {
-        "asset": "copper",
-        "name": "Copper",
-        "corr": 0.43
+        "asset": "eurusd",
+        "name": "EUR/USD",
+        "corr": 0.44
       }
     ],
-    "regime": "Gold and the dollar are running at -0.49. That is the textbook inverse relationship, so dollar moves are doing real work on the price. Against the S&P it is +0.39. Gold is trading WITH risk assets rather than against them, so it is behaving as a liquidity asset right now, not a hedge - do not rely on it to offset an equity drawdown while that holds."
+    "regime": "Gold and the dollar are running at -0.50. That is the textbook inverse relationship, so dollar moves are doing real work on the price. Against the S&P it is +0.39. Gold is trading WITH risk assets rather than against them, so it is behaving as a liquidity asset right now, not a hedge - do not rely on it to offset an equity drawdown while that holds."
   },
   "coverage": {
     "rows": 218,
@@ -1391,37 +1590,37 @@
     "days": 8
   },
   "geo": {
-    "points": 22,
-    "band": "BACKGROUND",
-    "note": "Standing tension, but at or near its usual level - largely in the price already.",
+    "points": 39,
+    "band": "ELEVATED",
+    "note": "Something has genuinely changed rather than simply continued. Expect headline-driven moves.",
     "flashpoints": [
       {
         "key": "us_iran",
         "name": "US / Israel \u2013 Iran",
         "weight": 10,
-        "state": "steady",
-        "headlines": 9,
-        "events": 8,
-        "severe": 6,
+        "state": "flaring",
+        "headlines": 10,
+        "events": 10,
+        "severe": 7,
         "elevated": 0,
         "calming": 0,
-        "raw": 56.0,
+        "raw": 74.5,
         "baseline": 40.72,
         "mad": 24.05,
         "baseline_days": 23,
         "baseline_ready": true,
         "days_active": 24,
-        "sigma": 0.64,
-        "sigma_volume": 0.64,
+        "sigma": 1.4,
+        "sigma_volume": 1.4,
         "novel_markers": [],
         "markers": [
           "attack",
-          "killed",
+          "missile",
           "strike"
         ],
         "burst": false,
-        "points": 18,
-        "escalation": 14.8,
+        "points": 33,
+        "escalation": 32.8,
         "backdrop": 18,
         "chain": [
           "Escalation",
@@ -1530,14 +1729,14 @@
           },
           {
             "date": "2026-10-12",
-            "score": 56.0
+            "score": 74.5
           }
         ],
         "why_gold": "The one flashpoint that hits gold through every channel at once. Safe-haven bid on the headline, Treasuries bid so nominal and real yields fall, and - uniquely - a credible threat to the Strait of Hormuz spikes crude, which lifts inflation expectations. Roughly a fifth of seaborne oil passes through that strait.",
         "counterweight": "The dollar is also a haven, so risk-off bids the dollar too and cancels part of gold's gain. This is why some escalation days produce a far smaller gold move than the headlines imply.",
         "typical_duration": "Days. Gold spikes on the exchange of fire and gives most of it back within a week unless the oil disruption is real and sustained, because only then does it reach the Fed's reaction function.",
         "escalation_markers": "Direct state-on-state strikes rather than proxies; any interference with shipping in Hormuz; attacks on oil infrastructure; withdrawal from nuclear monitoring.",
-        "summary": "9 headlines, which is about its normal of 40.7 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "summary": "Above its own baseline: 10 headlines against a normal of 40.7. That is a change, not just continuing coverage.",
         "top": [
           {
             "flashpoint": "us_iran",
@@ -1545,37 +1744,16 @@
             "tier": "severe",
             "score": 10.0,
             "matched": [
-              "iran",
               "houthi"
             ],
             "esc_matched": [
-              "strike",
-              "attack",
-              "killed"
+              "attack"
             ],
             "source": "BBC World",
-            "title": "One killed, 11 injured in second Houthi strike on Riyadh airport in two days",
-            "link": "https://www.bbc.co.uk/news/articles/cr93znyk44e1o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-10-11T22:45:58+00:00",
-            "summary": "The Saudi capital has been hit by multiple attacks from the Iran-backed Yemeni group over the weekend."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "severe",
-            "score": 10.0,
-            "matched": [
-              "houthi"
-            ],
-            "esc_matched": [
-              "strike",
-              "killed"
-            ],
-            "source": "Al Jazeera",
-            "title": "Pakistani national killed in second Houthi strike on Riyadh airport",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/pakistani-national-killed-second-houthi-strike-riyadh-airport?traffic_source=rss",
-            "published": "2026-10-11T23:20:46+00:00",
-            "summary": "Saudi authorities say a Pakistani national was killed and several people injured in a second strike on Riyadh\u2019s Airport."
+            "title": "Saudi minister vows 'serious response' to Houthi attacks on airports",
+            "link": "https://www.bbc.co.uk/news/articles/cjly0zqq27e4o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-10-12T10:28:47+00:00",
+            "summary": "It comes after the armed group hit Riyadh's international airport and another facility, killing 13 people, in a significant escalation."
           },
           {
             "flashpoint": "us_iran",
@@ -1601,20 +1779,139 @@
             "score": 10.0,
             "matched": [
               "iran",
-              "tehran",
+              "houthi"
+            ],
+            "esc_matched": [
+              "strike"
+            ],
+            "source": "BBC World",
+            "title": "Who are the Houthis, and why are they so hard to fight?",
+            "link": "https://www.bbc.co.uk/news/videos/cmy56nzd6y69o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-10-12T12:15:01+00:00",
+            "summary": "Security correspondent Frank Gardner explains how the Iran-backed Houthis' precision strikes and guerrilla tactics have made it difficult for Saudi forces to gain the upper hand."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
               "houthi"
             ],
             "esc_matched": [
               "strike"
             ],
             "source": "Al Jazeera",
-            "title": "Iran\u2019s FM urges diplomacy in call with Saudi counterpart",
-            "link": "https://www.aljazeera.com/news/2026/10/12/irans-fm-urges-diplomacy-in-call-with-saudi-counterpart?traffic_source=rss",
-            "published": "2026-10-12T00:39:08+00:00",
-            "summary": "Tehran offers to facilitate talks between Saudi Arabia and Yemen&#039;s Houthis following deadly strikes on the kingdom."
+            "title": "Saudi Arabia vows resilience as Houthi strikes hit Riyadh airport",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/saudi-arabia-vows-resilience-as-houthi-strikes-hit-riyadh-airport?traffic_source=rss",
+            "published": "2026-10-12T11:17:02+00:00",
+            "summary": "New footage shows a Houthi strike on Riyadh\u2019s airport as Saudi Arabia reaffirms its resilience."
           }
         ],
         "all_headlines": [
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran",
+              "houthi"
+            ],
+            "esc_matched": [
+              "missile",
+              "attack"
+            ],
+            "source": "CNBC World",
+            "title": "Saudi Arabia says drones and missiles still targeting kingdom as Iran-backed Houthis step up attacks",
+            "link": "https://www.cnbc.com/2026/10/12/us-iran-war-trump-hormuz-saudi.html",
+            "published": "2026-10-12T13:01:49+00:00",
+            "summary": "The Saudi-led coalition responding to the attacks said Monday it was dealing with more drones and missiles heading toward the kingdom."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "iran",
+              "houthi"
+            ],
+            "esc_matched": [
+              "strike"
+            ],
+            "source": "BBC World",
+            "title": "Who are the Houthis, and why are they so hard to fight?",
+            "link": "https://www.bbc.co.uk/news/videos/cmy56nzd6y69o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-10-12T12:15:01+00:00",
+            "summary": "Security correspondent Frank Gardner explains how the Iran-backed Houthis' precision strikes and guerrilla tactics have made it difficult for Saudi forces to gain the upper hand."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "background",
+            "score": 1.5,
+            "matched": [
+              "houthi"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Giants Brigades lead southern Yemen fightback against the Houthis",
+            "link": "https://www.aljazeera.com/news/2026/10/12/giants-brigades-leads-southern-yemen-fightback-against-the-houthis?traffic_source=rss",
+            "published": "2026-10-12T11:30:30+00:00",
+            "summary": "Yemen&#039;s Southern Giants Brigades have emerged as one of the leading forces against the Houthis."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "houthi"
+            ],
+            "esc_matched": [
+              "strike"
+            ],
+            "source": "Al Jazeera",
+            "title": "Saudi Arabia vows resilience as Houthi strikes hit Riyadh airport",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/saudi-arabia-vows-resilience-as-houthi-strikes-hit-riyadh-airport?traffic_source=rss",
+            "published": "2026-10-12T11:17:02+00:00",
+            "summary": "New footage shows a Houthi strike on Riyadh\u2019s airport as Saudi Arabia reaffirms its resilience."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "houthi"
+            ],
+            "esc_matched": [
+              "attack"
+            ],
+            "source": "BBC World",
+            "title": "Saudi minister vows 'serious response' to Houthi attacks on airports",
+            "link": "https://www.bbc.co.uk/news/articles/cjly0zqq27e4o?at_medium=RSS&at_campaign=rss",
+            "published": "2026-10-12T10:28:47+00:00",
+            "summary": "It comes after the armed group hit Riyadh's international airport and another facility, killing 13 people, in a significant escalation."
+          },
+          {
+            "flashpoint": "us_iran",
+            "flashpoint_name": "US / Israel \u2013 Iran",
+            "tier": "severe",
+            "score": 10.0,
+            "matched": [
+              "houthi"
+            ],
+            "esc_matched": [
+              "attack"
+            ],
+            "source": "Al Jazeera",
+            "title": "Countries warn against travel to Saudi Arabia following Houthi attacks",
+            "link": "https://www.aljazeera.com/economy/2026/10/12/countries-warn-against-travel-to-saudi-arabia-following-houthi-attacks?traffic_source=rss",
+            "published": "2026-10-12T05:53:45+00:00",
+            "summary": "US, Australia, Canada, Japan, South Korea and New Zealand among countries urging citizens to avoid travel to the kingdom."
+          },
           {
             "flashpoint": "us_iran",
             "flashpoint_name": "US / Israel \u2013 Iran",
@@ -1629,96 +1926,6 @@
             "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/clashes-reported-in-yemen-as-houthis-advance-towards-taiz?traffic_source=rss",
             "published": "2026-10-12T05:27:22+00:00",
             "summary": "Heavy clashes have been reported between Houthi fighters and Yemeni- forces near the strategic southern city of Taiz."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "severe",
-            "score": 10.0,
-            "matched": [
-              "iran",
-              "tehran",
-              "houthi"
-            ],
-            "esc_matched": [
-              "strike"
-            ],
-            "source": "Al Jazeera",
-            "title": "Iran\u2019s FM urges diplomacy in call with Saudi counterpart",
-            "link": "https://www.aljazeera.com/news/2026/10/12/irans-fm-urges-diplomacy-in-call-with-saudi-counterpart?traffic_source=rss",
-            "published": "2026-10-12T00:39:08+00:00",
-            "summary": "Tehran offers to facilitate talks between Saudi Arabia and Yemen&#039;s Houthis following deadly strikes on the kingdom."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "background",
-            "score": 1.5,
-            "matched": [
-              "iran",
-              "tehran"
-            ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "Iran war live: Riyadh airport hit again; Tehran says US reply \u2018inadequate\u2019",
-            "link": "https://www.aljazeera.com/news/liveblog/2026/10/12/iran-war-live-riyadh-airport-hit-again-tehran-says-us-reply-inadequate?traffic_source=rss",
-            "published": "2026-10-12T00:00:00+00:00",
-            "summary": "Iran says US has accepted some of its peace terms but calls the reply &#039;inadequate&#039;, as Riyadh airport is hit again."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "severe",
-            "score": 10.0,
-            "matched": [
-              "houthi"
-            ],
-            "esc_matched": [
-              "strike",
-              "killed"
-            ],
-            "source": "Al Jazeera",
-            "title": "Pakistani national killed in second Houthi strike on Riyadh airport",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/pakistani-national-killed-second-houthi-strike-riyadh-airport?traffic_source=rss",
-            "published": "2026-10-11T23:20:46+00:00",
-            "summary": "Saudi authorities say a Pakistani national was killed and several people injured in a second strike on Riyadh\u2019s Airport."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "severe",
-            "score": 10.0,
-            "matched": [
-              "iran",
-              "houthi"
-            ],
-            "esc_matched": [
-              "strike",
-              "attack",
-              "killed"
-            ],
-            "source": "BBC World",
-            "title": "One killed, 11 injured in second Houthi strike on Riyadh airport in two days",
-            "link": "https://www.bbc.co.uk/news/articles/cr93znyk44e1o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-10-11T22:45:58+00:00",
-            "summary": "The Saudi capital has been hit by multiple attacks from the Iran-backed Yemeni group over the weekend."
-          },
-          {
-            "flashpoint": "us_iran",
-            "flashpoint_name": "US / Israel \u2013 Iran",
-            "tier": "severe",
-            "score": 10.0,
-            "matched": [
-              "houthi"
-            ],
-            "esc_matched": [
-              "strike"
-            ],
-            "source": "Al Jazeera",
-            "title": "CCTV shows moment of deadly Houthi strike on Riyadh airport",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/houthi-strike-riyadh-international-airport-cctv-footage?traffic_source=rss",
-            "published": "2026-10-11T22:24:07+00:00",
-            "summary": "CCTV footage released by Al Arabiya shows the moment of a Houthi strike on Riyadh\u2019s international airport on Saturday."
           },
           {
             "flashpoint": "us_iran",
@@ -1777,30 +1984,32 @@
         "name": "China / Taiwan",
         "weight": 8,
         "state": "steady",
-        "headlines": 5,
-        "events": 5,
+        "headlines": 7,
+        "events": 7,
         "severe": 1,
-        "elevated": 1,
+        "elevated": 2,
         "calming": 0,
-        "raw": 15.6,
+        "raw": 20.8,
         "baseline": 16.8,
         "mad": 7.44,
         "baseline_days": 23,
         "baseline_ready": true,
         "days_active": 24,
-        "sigma": 0.24,
-        "sigma_volume": -0.16,
+        "sigma": 1.34,
+        "sigma_volume": 0.54,
         "novel_markers": [
-          "assassinat"
+          "assassinat",
+          "evacuat"
         ],
         "markers": [
           "assassinat",
           "attack",
-          "sanction"
+          "deploy",
+          "evacuat"
         ],
         "burst": false,
-        "points": 18,
-        "escalation": 4.5,
+        "points": 25,
+        "escalation": 25.0,
         "backdrop": 18,
         "chain": [
           "Blockade risk",
@@ -1909,14 +2118,14 @@
           },
           {
             "date": "2026-10-12",
-            "score": 15.6
+            "score": 20.8
           }
         ],
         "why_gold": "Low frequency, very high severity. A genuine blockade or invasion scenario is the largest single tail risk in the gold market, because it would be a global supply-chain and reserve-currency event simultaneously.",
         "counterweight": "Routine incursions and drills are so frequent they carry almost no information. Gold ignores them, correctly.",
         "typical_duration": "Drills: nothing. A real blockade: a regime change in gold pricing, not a spike.",
         "escalation_markers": "Quarantine or blockade language, live-fire exercises encircling the island, US carrier movements, or semiconductor export emergencies.",
-        "summary": "5 headlines, which is about its normal of 16.8 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "summary": "7 headlines, which is about its normal of 16.8 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
         "top": [
           {
             "flashpoint": "china_taiwan",
@@ -1942,16 +2151,33 @@
             "tier": "elevated",
             "score": 4.0,
             "matched": [
-              "taiwan"
+              "pla"
             ],
             "esc_matched": [
-              "sanction"
+              "evacuat"
             ],
             "source": "Al Jazeera",
-            "title": "China sanctions Paraguay, Belize ministers over Taiwan ties",
-            "link": "https://www.aljazeera.com/news/2026/10/12/china-sanctions-paraguay-belize-ministers-over-taiwan-ties?traffic_source=rss",
-            "published": "2026-10-12T04:58:01+00:00",
-            "summary": "Chinese Foreign Ministry cites national sovereignty and Taiwan separatist activities as reasons behind the measures."
+            "title": "Gaza: Still Reporting",
+            "link": "https://www.aljazeera.com/video/witness/2026/10/12/gaza-still-reporting?traffic_source=rss",
+            "published": "2026-10-12T12:00:00+00:00",
+            "summary": "When Israel orders an evacuation of Gaza City, a journalist documents the displacement while living it with her family."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [
+              "deploy"
+            ],
+            "source": "Al Jazeera",
+            "title": "India opposition plans New Delhi protest to demand election chief resign",
+            "link": "https://www.aljazeera.com/news/2026/10/12/india-opposition-plans-new-delhi-protest-to-demand-election-chief-resign?traffic_source=rss",
+            "published": "2026-10-12T08:00:16+00:00",
+            "summary": "Thousands of security personnel have been deployed before a protest rally calling for the election chief&#039;s removal."
           },
           {
             "flashpoint": "china_taiwan",
@@ -1967,6 +2193,40 @@
             "link": "https://www.bbc.co.uk/news/articles/c680zyx8gkkjo?at_medium=RSS&at_campaign=rss",
             "published": "2026-10-11T23:33:24+00:00",
             "summary": "The band, who announced their reunion last week, say they are \"absolutely ecstatic\" to be playing together again."
+          }
+        ],
+        "all_headlines": [
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Which banners did Liverpool fans display at Anfield against Man City?",
+            "link": "https://www.aljazeera.com/sports/2026/10/12/which-banners-did-liverpool-fans-display-at-anfield-against-man-city?traffic_source=rss",
+            "published": "2026-10-12T12:21:56+00:00",
+            "summary": "From creative wordplay on song lyrics to simply calling Man City &#039;cheats&#039;, the Reds fans went all out at Anfield."
+          },
+          {
+            "flashpoint": "china_taiwan",
+            "flashpoint_name": "China / Taiwan",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "pla"
+            ],
+            "esc_matched": [
+              "evacuat"
+            ],
+            "source": "Al Jazeera",
+            "title": "Gaza: Still Reporting",
+            "link": "https://www.aljazeera.com/video/witness/2026/10/12/gaza-still-reporting?traffic_source=rss",
+            "published": "2026-10-12T12:00:00+00:00",
+            "summary": "When Israel orders an evacuation of Gaza City, a journalist documents the displacement while living it with her family."
           },
           {
             "flashpoint": "china_taiwan",
@@ -1977,30 +2237,28 @@
               "pla"
             ],
             "esc_matched": [],
-            "source": "CNBC World",
-            "title": "Why China is importing a record amount of gold \u2014 and what it means for prices",
-            "link": "https://www.cnbc.com/2026/10/12/china-gold-buying-interest-rate-.html",
-            "published": "2026-10-12T00:51:10+00:00",
-            "summary": "Beijing\u2019s push to diversify away from the dollar and Chinese households\u2019 search for a safe place to put their savings has fueled China\u2019s record gold buying."
-          }
-        ],
-        "all_headlines": [
+            "source": "BBC World",
+            "title": "Women's billion-dollar boom leaves players behind, says Fifpro",
+            "link": "https://www.bbc.co.uk/sport/football/articles/cmd7qn1g0xrxo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-10-12T10:04:50+00:00",
+            "summary": "Women's football is on course to become a billion-dollar industry, but many professional players are still earning low wages, working on insecure contracts and experiencing rising psychological stress, a Fifpro survey indicates."
+          },
           {
             "flashpoint": "china_taiwan",
             "flashpoint_name": "China / Taiwan",
             "tier": "elevated",
             "score": 4.0,
             "matched": [
-              "taiwan"
+              "pla"
             ],
             "esc_matched": [
-              "sanction"
+              "deploy"
             ],
             "source": "Al Jazeera",
-            "title": "China sanctions Paraguay, Belize ministers over Taiwan ties",
-            "link": "https://www.aljazeera.com/news/2026/10/12/china-sanctions-paraguay-belize-ministers-over-taiwan-ties?traffic_source=rss",
-            "published": "2026-10-12T04:58:01+00:00",
-            "summary": "Chinese Foreign Ministry cites national sovereignty and Taiwan separatist activities as reasons behind the measures."
+            "title": "India opposition plans New Delhi protest to demand election chief resign",
+            "link": "https://www.aljazeera.com/news/2026/10/12/india-opposition-plans-new-delhi-protest-to-demand-election-chief-resign?traffic_source=rss",
+            "published": "2026-10-12T08:00:16+00:00",
+            "summary": "Thousands of security personnel have been deployed before a protest rally calling for the election chief&#039;s removal."
           },
           {
             "flashpoint": "china_taiwan",
@@ -2049,21 +2307,6 @@
             "link": "https://www.bbc.co.uk/news/articles/c6n9rvynl5p5o?at_medium=RSS&at_campaign=rss",
             "published": "2026-10-11T17:27:24+00:00",
             "summary": "Police received credible information about possible attacks against Donald Tusk and his defence minister."
-          },
-          {
-            "flashpoint": "china_taiwan",
-            "flashpoint_name": "China / Taiwan",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "pla"
-            ],
-            "esc_matched": [],
-            "source": "CNBC World",
-            "title": "Vance says Microsoft replaced laid-off workers with foreign hires. Here\u2019s what the visa data shows",
-            "link": "https://www.cnbc.com/2026/10/10/vance-microsoft-h1b-layoffs-visa-data.html",
-            "published": "2026-10-10T14:22:23+00:00",
-            "summary": "The administration barred Microsoft and seven other firms from sponsoring green cards over claims they favor foreign workers. Here's what the visa data shows."
           }
         ]
       },
@@ -2072,25 +2315,26 @@
         "name": "Russia / Ukraine / NATO",
         "weight": 8,
         "state": "steady",
-        "headlines": 12,
+        "headlines": 15,
         "events": 11,
-        "severe": 2,
-        "elevated": 1,
-        "calming": 5,
-        "raw": 11.52,
+        "severe": 1,
+        "elevated": 2,
+        "calming": 7,
+        "raw": 11.44,
         "baseline": 22.4,
         "mad": 13.05,
         "baseline_days": 23,
         "baseline_ready": true,
         "days_active": 24,
-        "sigma": -0.83,
-        "sigma_volume": -0.83,
+        "sigma": -0.84,
+        "sigma_volume": -0.84,
         "novel_markers": [
           "escalat"
         ],
         "markers": [
           "attack",
           "ceasefire",
+          "drone",
           "escalat",
           "strike",
           "truce"
@@ -2206,14 +2450,14 @@
           },
           {
             "date": "2026-10-12",
-            "score": 11.52
+            "score": 11.44
           }
         ],
         "why_gold": "Two channels: haven demand, and the structural one - sanctions on Russian reserves in 2022 taught central banks that dollar reserves can be frozen, which is a large part of why official-sector gold buying has been so persistent since.",
         "counterweight": "Day-to-day headlines are largely priced. The structural bid shows up in central bank demand data, not in a day's price action.",
         "typical_duration": "Headlines: days. The reserve-diversification effect: years, and it is arguably the single biggest reason gold has re-rated.",
         "escalation_markers": "Any Article 5 discussion, strikes on NATO territory, nuclear rhetoric or doctrine change, or new sanctions touching reserves or energy.",
-        "summary": "12 headlines, which is about its normal of 22.4 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "summary": "15 headlines, which is about its normal of 22.4 after 23 days running. Continuing coverage rather than escalation - gold has priced this.",
         "top": [
           {
             "flashpoint": "russia_nato",
@@ -2238,21 +2482,20 @@
           {
             "flashpoint": "russia_nato",
             "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "severe",
-            "score": 8.0,
+            "tier": "elevated",
+            "score": 4.0,
             "matched": [
               "russia",
-              "russian",
-              "ukraine"
+              "russian"
             ],
             "esc_matched": [
-              "strike"
+              "drone"
             ],
             "source": "Al Jazeera",
-            "title": "Footage shows moment Russian strike hits Ukrainian grocery store",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/footage-shows-moment-russian-strike-hits-ukrainian-grocery-store?traffic_source=rss",
-            "published": "2026-10-11T22:49:23+00:00",
-            "summary": "CCTV footage shows the moment of a Russian strike on a residential street in Kharkiv, Ukraine."
+            "title": "Russia introduces drone classes in public schools",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/russia-introduces-drone-classes-in-public-schools?traffic_source=rss",
+            "published": "2026-10-12T08:47:43+00:00",
+            "summary": "Russian public schools are teaching children to assemble and fly drones as part of changes to the national curriculum."
           },
           {
             "flashpoint": "russia_nato",
@@ -2278,18 +2521,17 @@
             "score": -3.2,
             "matched": [
               "russia",
-              "moscow",
-              "ukraine"
+              "russian",
+              "moscow"
             ],
             "esc_matched": [
-              "ceasefire",
-              "truce"
+              "ceasefire"
             ],
-            "source": "BBC World",
-            "title": "Trump's 'energy ceasefire' claim welcomed by Zelensky but Russia silent",
-            "link": "https://www.bbc.co.uk/news/articles/c6pvg4jyz1m0o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-10-11T21:36:40+00:00",
-            "summary": "Ukraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement."
+            "source": "CNBC World",
+            "title": "CNBC Daily Open: Trump's Russian roulette",
+            "link": "https://www.cnbc.com/2026/10/12/trump-russia-ukraine-saudi-oil.html",
+            "published": "2026-10-12T06:22:54+00:00",
+            "summary": "Oil prices fall, but questions remain over an \"energy ceasefire\" between Ukraine and Russia, and whether Moscow can meet the supply demands of Trump's deal."
           }
         ],
         "all_headlines": [
@@ -2307,10 +2549,114 @@
               "ceasefire"
             ],
             "source": "CNBC World",
-            "title": "Oil falls after Trump declares 'energy ceasefire' between Russia and Ukraine",
+            "title": "Brent tops $106 after deadly Saudi airport attack, Ukraine says Russia violated energy ceasefire",
             "link": "https://www.cnbc.com/2026/10/12/oil-prics-today-iran-us-saudi-arabia-crude-.html",
-            "published": "2026-10-12T05:57:29+00:00",
-            "summary": "Ukrainian President Volodymyr Zelenskyy said in a post on social media that \"Ukraine supports the ceasefire, and it is important that Russia support it as well.\""
+            "published": "2026-10-12T12:54:58+00:00",
+            "summary": "Ukrainian President Volodymyr Zelenskyy said that \"Ukraine supports the ceasefire, and it is important that Russia support it as well.\""
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "de_escalation",
+            "score": -3.2,
+            "matched": [
+              "russia",
+              "ukraine"
+            ],
+            "esc_matched": [
+              "ceasefire"
+            ],
+            "source": "CNBC World",
+            "title": "Zelenskyy accuses Russia of violating Trump\u2019s energy ceasefire as drone attacks continue",
+            "link": "https://www.cnbc.com/2026/10/12/russia-ukraine-energy-ceasefire-trump.html",
+            "published": "2026-10-12T12:36:21+00:00",
+            "summary": "If Russia doesn't agree to Trump's energy ceasefire, Ukraine will respond, Zelenskyy said Monday morning."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "ukraine"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "Trump thinks Ukraine needs a new president. Who could replace Zelenskyy?",
+            "link": "https://www.aljazeera.com/news/2026/10/12/trump-thinks-ukraine-needs-a-new-president-who-could-replace-zelenskyy?traffic_source=rss",
+            "published": "2026-10-12T12:30:09+00:00",
+            "summary": "Popular former general Zaluzhnyi leads potential challengers, alongside intelligence chief Budanov and reformer Fedorov."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "de_escalation",
+            "score": -3.2,
+            "matched": [
+              "russia",
+              "russian"
+            ],
+            "esc_matched": [
+              "ceasefire",
+              "truce"
+            ],
+            "source": "Al Jazeera",
+            "title": "\u2018Energy ceasefire\u2019: What\u2019s behind Trump\u2019s love-hate ties to Russian oil?",
+            "link": "https://www.aljazeera.com/news/2026/10/12/energy-ceasefire-whats-behind-trumps-love-hate-ties-to-russian-oil?traffic_source=rss",
+            "published": "2026-10-12T11:30:54+00:00",
+            "summary": "Trump&#039;s energy truce sparks criticism over aiding Russia&#039;s war finances amid diesel shortages and rising consumer costs."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "de_escalation",
+            "score": -3.2,
+            "matched": [
+              "russia",
+              "ukraine"
+            ],
+            "esc_matched": [
+              "ceasefire"
+            ],
+            "source": "Al Jazeera",
+            "title": "Ukraine\u2019s Zelenskyy accuses Russia of violating Trump\u2019s \u2018energy ceasefire\u2019",
+            "link": "https://www.aljazeera.com/news/2026/10/12/ukraines-zelenskyy-accuses-russia-of-violating-trumps-energy-ceasefire?traffic_source=rss",
+            "published": "2026-10-12T10:35:51+00:00",
+            "summary": "The EU also announced that it officially added almost 1,600 new sanctions on Russia&#039;s military industrial complex."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "background",
+            "score": 1.2,
+            "matched": [
+              "russia",
+              "russian"
+            ],
+            "esc_matched": [],
+            "source": "CNBC World",
+            "title": "Trump turns to Russian diesel ahead of midterms, but analysts see little price relief",
+            "link": "https://www.cnbc.com/2026/10/12/russia-ukraine-energy-ceasefire-diesel-prices.html",
+            "published": "2026-10-12T09:31:22+00:00",
+            "summary": "President Donald Trump's latest effort to ease a diesel supply crunch ahead of November's midterm elections is unlikely to make a dent on prices."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "elevated",
+            "score": 4.0,
+            "matched": [
+              "russia",
+              "russian"
+            ],
+            "esc_matched": [
+              "drone"
+            ],
+            "source": "Al Jazeera",
+            "title": "Russia introduces drone classes in public schools",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/russia-introduces-drone-classes-in-public-schools?traffic_source=rss",
+            "published": "2026-10-12T08:47:43+00:00",
+            "summary": "Russian public schools are teaching children to assemble and fly drones as part of changes to the national curriculum."
           },
           {
             "flashpoint": "russia_nato",
@@ -2323,10 +2669,29 @@
             ],
             "esc_matched": [],
             "source": "BBC World",
-            "title": "Documents falsified to evade tax on Abramovich's wealth",
-            "link": "https://www.bbc.co.uk/news/articles/c64g1l5389kvo?at_medium=RSS&at_campaign=rss",
-            "published": "2026-10-12T05:00:52+00:00",
-            "summary": "Backdated paperwork also made the Russian oligarch\u2019s yachts and mansions disappear from accounts, BBC finds."
+            "title": "Watch: How did Roman Abramovich's advisors help hide his wealth?",
+            "link": "https://www.bbc.co.uk/news/videos/c9rkynp1m01mo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-10-12T06:35:02+00:00",
+            "summary": "Working with the Bureau of Investigative Journalism, BBC Panorama reveals how the Russian billionaire hid his wealth with the help of Deloitte."
+          },
+          {
+            "flashpoint": "russia_nato",
+            "flashpoint_name": "Russia / Ukraine / NATO",
+            "tier": "de_escalation",
+            "score": -3.2,
+            "matched": [
+              "russia",
+              "russian",
+              "moscow"
+            ],
+            "esc_matched": [
+              "ceasefire"
+            ],
+            "source": "CNBC World",
+            "title": "CNBC Daily Open: Trump's Russian roulette",
+            "link": "https://www.cnbc.com/2026/10/12/trump-russia-ukraine-saudi-oil.html",
+            "published": "2026-10-12T06:22:54+00:00",
+            "summary": "Oil prices fall, but questions remain over an \"energy ceasefire\" between Ukraine and Russia, and whether Moscow can meet the supply demands of Trump's deal."
           },
           {
             "flashpoint": "russia_nato",
@@ -2334,14 +2699,15 @@
             "tier": "background",
             "score": 1.2,
             "matched": [
-              "russia"
+              "russia",
+              "russian"
             ],
             "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "UK PM Andy Burnham says it is \u2018clear\u2019 Russia interfered in 2016 Brexit vote",
-            "link": "https://www.aljazeera.com/news/2026/10/12/uk-pm-andy-burnham-says-it-is-clear-russia-interfered-in-2016-brexit-vote?traffic_source=rss",
-            "published": "2026-10-12T01:12:35+00:00",
-            "summary": "Claim marks the first time a UK prime minister has publicly acknowledged Russia&#039;s interference in the vote to leave EU."
+            "source": "BBC World",
+            "title": "Documents falsified to evade tax on Abramovich's wealth, BBC finds",
+            "link": "https://www.bbc.co.uk/news/articles/c64g1l5389kvo?at_medium=RSS&at_campaign=rss",
+            "published": "2026-10-12T05:00:52+00:00",
+            "summary": "Backdated paperwork also made the Russian oligarch\u2019s yachts and mansions disappear from accounts, investigation finds."
           },
           {
             "flashpoint": "russia_nato",
@@ -2378,45 +2744,6 @@
           {
             "flashpoint": "russia_nato",
             "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "severe",
-            "score": 8.0,
-            "matched": [
-              "russia",
-              "russian",
-              "ukraine"
-            ],
-            "esc_matched": [
-              "strike"
-            ],
-            "source": "Al Jazeera",
-            "title": "Footage shows moment Russian strike hits Ukrainian grocery store",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/footage-shows-moment-russian-strike-hits-ukrainian-grocery-store?traffic_source=rss",
-            "published": "2026-10-11T22:49:23+00:00",
-            "summary": "CCTV footage shows the moment of a Russian strike on a residential street in Kharkiv, Ukraine."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "de_escalation",
-            "score": -3.2,
-            "matched": [
-              "russia",
-              "moscow",
-              "ukraine"
-            ],
-            "esc_matched": [
-              "ceasefire",
-              "truce"
-            ],
-            "source": "BBC World",
-            "title": "Trump's 'energy ceasefire' claim welcomed by Zelensky but Russia silent",
-            "link": "https://www.bbc.co.uk/news/articles/c6pvg4jyz1m0o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-10-11T21:36:40+00:00",
-            "summary": "Ukraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
             "tier": "de_escalation",
             "score": -3.2,
             "matched": [
@@ -2431,24 +2758,6 @@
             "link": "https://www.bbc.co.uk/news/videos/cwvgde9vrdd9o?at_medium=RSS&at_campaign=rss",
             "published": "2026-10-11T20:55:02+00:00",
             "summary": "The US president made the announcement in a social media post, which was an apparent surprise to Ukraine and Russia is yet to comment."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "de_escalation",
-            "score": -3.2,
-            "matched": [
-              "russia",
-              "ukraine"
-            ],
-            "esc_matched": [
-              "ceasefire"
-            ],
-            "source": "Al Jazeera",
-            "title": "Zelenskyy welcomes US-announced energy ceasefire",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/zelenskyy-welcomes-us-announced-energy-ceasefire?traffic_source=rss",
-            "published": "2026-10-11T20:28:46+00:00",
-            "summary": "President Zelenskyy has responded to Donald Trump\u2019s announcement that Russia and Ukraine agreed to an energy ceasefire"
           },
           {
             "flashpoint": "russia_nato",
@@ -2488,21 +2797,6 @@
             "link": "https://www.bbc.co.uk/news/articles/cw0k0g57mk3zo?at_medium=RSS&at_campaign=rss",
             "published": "2026-10-11T14:38:10+00:00",
             "summary": "It is the third time this week that Ukraine has targeted Russian tech giant Yandex, forcing the company to suspend its operations."
-          },
-          {
-            "flashpoint": "russia_nato",
-            "flashpoint_name": "Russia / Ukraine / NATO",
-            "tier": "background",
-            "score": 1.2,
-            "matched": [
-              "ukraine"
-            ],
-            "esc_matched": [],
-            "source": "BBC World",
-            "title": "Watch: 'Time for Ukraine to get a new president', says Trump",
-            "link": "https://www.bbc.co.uk/news/videos/cwkg50dgpml7o?at_medium=RSS&at_campaign=rss",
-            "published": "2026-10-10T19:25:03+00:00",
-            "summary": "The US president's said President Volodymyr Zelensky \"wants to make problems for the world\"."
           }
         ]
       },
@@ -2510,20 +2804,20 @@
         "key": "middle_east",
         "name": "Wider Middle East",
         "weight": 7,
-        "state": "steady",
-        "headlines": 5,
+        "state": "de-escalating",
+        "headlines": 4,
         "events": 4,
         "severe": 0,
         "elevated": 0,
         "calming": 1,
-        "raw": 0.51,
+        "raw": 0.35,
         "baseline": 12.43,
         "mad": 11.93,
         "baseline_days": 22,
         "baseline_ready": true,
         "days_active": 23,
-        "sigma": -1.0,
-        "sigma_volume": -1.0,
+        "sigma": -1.01,
+        "sigma_volume": -1.01,
         "novel_markers": [],
         "markers": [
           "ceasefire"
@@ -2633,14 +2927,14 @@
           },
           {
             "date": "2026-10-12",
-            "score": 0.51
+            "score": 0.35
           }
         ],
         "why_gold": "Haven demand, mostly. Moves gold hard on the first day of a genuine escalation and then fades, because the region's conflicts rarely touch US rate expectations directly.",
         "counterweight": "Heavily discounted by markets through repetition - a headline that would have moved gold $40 in the first month of a conflict moves it $5 in the ninth.",
         "typical_duration": "Hours to days. The shortest-lived of the major flashpoints unless it pulls Iran in directly.",
         "escalation_markers": "Direct Iranian involvement, Red Sea shipping disruption, or US forces taking casualties.",
-        "summary": "5 headlines, which is about its normal of 12.4 after 22 days running. Continuing coverage rather than escalation - gold has priced this.",
+        "summary": "Coverage is below its own normal and carrying de-escalation language. Any risk premium here should be fading.",
         "top": [
           {
             "flashpoint": "middle_east",
@@ -2649,16 +2943,16 @@
             "score": -2.8,
             "matched": [
               "israel",
-              "lebanon"
+              "gaza"
             ],
             "esc_matched": [
               "ceasefire"
             ],
             "source": "Al Jazeera",
-            "title": "Two killed near Israeli-occupied area in south Lebanon",
-            "link": "https://www.aljazeera.com/news/2026/10/11/two-killed-near-israeli-occupied-area-in-south-lebanon?traffic_source=rss",
-            "published": "2026-10-11T20:46:45+00:00",
-            "summary": "Despite ceasefire reached between Israel and Lebanon in June, Israeli attacks continue."
+            "title": "Maps show how Israel\u2019s \u2018Yellow Line\u2019 keeps squeezing Palestinians in Gaza",
+            "link": "https://www.aljazeera.com/news/2026/10/12/maps-show-how-israels-yellow-line-keeps-squeezing-palestinians-in-gaza?traffic_source=rss",
+            "published": "2026-10-12T09:27:12+00:00",
+            "summary": "A year into a &#039;ceasefire&#039;, Israel restricts access to 65 percent of Gaza and crams 2.1 million people into the rest."
           },
           {
             "flashpoint": "middle_east",
@@ -2681,14 +2975,14 @@
             "tier": "background",
             "score": 1.05,
             "matched": [
-              "yemen"
+              "gaza"
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "At least 139 dead as migrant boat from Djibouti to Yemen capsizes",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/at-least-139-dead-as-migrant-boat-from-djibouti-to-yemen-capsizes?traffic_source=rss",
-            "published": "2026-10-12T03:09:11+00:00",
-            "summary": "At least 139 migrants, including 15 children, have died and 84 remain missing after a migrant boat capsized."
+            "title": "Photos: Gaza mothers endure endless lines as famine fears persist",
+            "link": "https://www.aljazeera.com/gallery/2026/10/12/photos-gaza-mothers-endure-endless-lines-as-famine-fears-persist?traffic_source=rss",
+            "published": "2026-10-12T08:46:41+00:00",
+            "summary": "Hunger grips Gaza, with over 1.4 million people acutely short of food as aid remains insufficient to meet basic needs."
           },
           {
             "flashpoint": "middle_east",
@@ -2696,49 +2990,18 @@
             "tier": "background",
             "score": 1.05,
             "matched": [
-              "israel",
-              "gaza"
+              "gaza",
+              "west bank"
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "Netanyahu demands probe into sources for award-winning Gaza film NAZA",
-            "link": "https://www.aljazeera.com/news/2026/10/12/netanyahu-demands-probe-into-sources-for-award-winning-gaza-film-naza?traffic_source=rss",
-            "published": "2026-10-12T04:24:18+00:00",
-            "summary": "Documentary draws on 24 anonymous Israeli sources accusing military of killing Palestinians in Gaza using AI systems."
+            "title": "If Netanyahu goes, does anything really change for Palestinians?",
+            "link": "https://www.aljazeera.com/news/2026/10/12/if-netanyahu-goes-does-anything-really-change-for-palestinians?traffic_source=rss",
+            "published": "2026-10-12T07:27:14+00:00",
+            "summary": "Analysts say opposition win in polls may bring only marginal change and no fundamental shift on Gaza, West Bank."
           }
         ],
         "all_headlines": [
-          {
-            "flashpoint": "middle_east",
-            "flashpoint_name": "Wider Middle East",
-            "tier": "background",
-            "score": 1.05,
-            "matched": [
-              "israel",
-              "gaza"
-            ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "Netanyahu demands probe into sources for award-winning Gaza film NAZA",
-            "link": "https://www.aljazeera.com/news/2026/10/12/netanyahu-demands-probe-into-sources-for-award-winning-gaza-film-naza?traffic_source=rss",
-            "published": "2026-10-12T04:24:18+00:00",
-            "summary": "Documentary draws on 24 anonymous Israeli sources accusing military of killing Palestinians in Gaza using AI systems."
-          },
-          {
-            "flashpoint": "middle_east",
-            "flashpoint_name": "Wider Middle East",
-            "tier": "background",
-            "score": 1.05,
-            "matched": [
-              "yemen"
-            ],
-            "esc_matched": [],
-            "source": "Al Jazeera",
-            "title": "At least 139 dead as migrant boat from Djibouti to Yemen capsizes",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/at-least-139-dead-as-migrant-boat-from-djibouti-to-yemen-capsizes?traffic_source=rss",
-            "published": "2026-10-12T03:09:11+00:00",
-            "summary": "At least 139 migrants, including 15 children, have died and 84 remain missing after a migrant boat capsized."
-          },
           {
             "flashpoint": "middle_east",
             "flashpoint_name": "Wider Middle East",
@@ -2746,16 +3009,16 @@
             "score": -2.8,
             "matched": [
               "israel",
-              "lebanon"
+              "gaza"
             ],
             "esc_matched": [
               "ceasefire"
             ],
             "source": "Al Jazeera",
-            "title": "Two killed near Israeli-occupied area in south Lebanon",
-            "link": "https://www.aljazeera.com/news/2026/10/11/two-killed-near-israeli-occupied-area-in-south-lebanon?traffic_source=rss",
-            "published": "2026-10-11T20:46:45+00:00",
-            "summary": "Despite ceasefire reached between Israel and Lebanon in June, Israeli attacks continue."
+            "title": "Maps show how Israel\u2019s \u2018Yellow Line\u2019 keeps squeezing Palestinians in Gaza",
+            "link": "https://www.aljazeera.com/news/2026/10/12/maps-show-how-israels-yellow-line-keeps-squeezing-palestinians-in-gaza?traffic_source=rss",
+            "published": "2026-10-12T09:27:12+00:00",
+            "summary": "A year into a &#039;ceasefire&#039;, Israel restricts access to 65 percent of Gaza and crams 2.1 million people into the rest."
           },
           {
             "flashpoint": "middle_east",
@@ -2763,15 +3026,30 @@
             "tier": "background",
             "score": 1.05,
             "matched": [
-              "israel",
-              "syria"
+              "gaza"
             ],
             "esc_matched": [],
             "source": "Al Jazeera",
-            "title": "Syrian families demand release of detainees held by Israel",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/syrian-families-demand-release-of-detainees-held-by-israel?traffic_source=rss",
-            "published": "2026-10-11T20:24:19+00:00",
-            "summary": "Syrian families demand release of detainees held by Israel"
+            "title": "Photos: Gaza mothers endure endless lines as famine fears persist",
+            "link": "https://www.aljazeera.com/gallery/2026/10/12/photos-gaza-mothers-endure-endless-lines-as-famine-fears-persist?traffic_source=rss",
+            "published": "2026-10-12T08:46:41+00:00",
+            "summary": "Hunger grips Gaza, with over 1.4 million people acutely short of food as aid remains insufficient to meet basic needs."
+          },
+          {
+            "flashpoint": "middle_east",
+            "flashpoint_name": "Wider Middle East",
+            "tier": "background",
+            "score": 1.05,
+            "matched": [
+              "gaza",
+              "west bank"
+            ],
+            "esc_matched": [],
+            "source": "Al Jazeera",
+            "title": "If Netanyahu goes, does anything really change for Palestinians?",
+            "link": "https://www.aljazeera.com/news/2026/10/12/if-netanyahu-goes-does-anything-really-change-for-palestinians?traffic_source=rss",
+            "published": "2026-10-12T07:27:14+00:00",
+            "summary": "Analysts say opposition win in polls may bring only marginal change and no fundamental shift on Gaza, West Bank."
           },
           {
             "flashpoint": "middle_east",
@@ -2787,120 +3065,12 @@
             "link": "https://www.bbc.co.uk/news/articles/cwy7lxx60dg5o?at_medium=RSS&at_campaign=rss",
             "published": "2026-10-11T15:32:23+00:00",
             "summary": "The boat was travelling from Djibouti to Yemen with 305 people on board, when it capsized near the port town of Obock on Thursday night."
-          }
-        ]
-      },
-      {
-        "key": "korea",
-        "name": "Korean peninsula",
-        "weight": 5,
-        "state": "unbaselined",
-        "headlines": 1,
-        "events": 1,
-        "severe": 1,
-        "elevated": 0,
-        "calming": 0,
-        "raw": 5.0,
-        "baseline": 0.75,
-        "mad": 0.0,
-        "baseline_days": 5,
-        "baseline_ready": false,
-        "days_active": 6,
-        "sigma": null,
-        "sigma_volume": null,
-        "novel_markers": [
-          "missile"
-        ],
-        "markers": [
-          "missile"
-        ],
-        "burst": false,
-        "points": 5,
-        "escalation": 5.0,
-        "backdrop": 0.8,
-        "chain": [
-          "Provocation",
-          "Haven demand",
-          "Gold"
-        ],
-        "drivers": {
-          "geopolitics": 1
-        },
-        "spoken": "the Korean peninsula",
-        "spoken_why": "Classic haven headline risk, and one the market has learned to ignore almost entirely.",
-        "history": [
-          {
-            "date": "2026-09-17",
-            "score": 2.5
-          },
-          {
-            "date": "2026-09-18",
-            "score": 2.5
-          },
-          {
-            "date": "2026-09-24",
-            "score": 0.75
-          },
-          {
-            "date": "2026-09-29",
-            "score": 0.75
-          },
-          {
-            "date": "2026-09-30",
-            "score": 0.75
-          },
-          {
-            "date": "2026-10-12",
-            "score": 5.0
-          }
-        ],
-        "why_gold": "Classic haven headline risk, heavily desensitised by decades of repetition.",
-        "counterweight": "Markets have learned to fade it almost entirely.",
-        "typical_duration": "Hours, unless a test is genuinely novel in capability.",
-        "escalation_markers": "A nuclear test, an ICBM over Japan, or any exchange of fire across the DMZ.",
-        "summary": "1 headlines. Not enough history yet to say whether that is unusual - the baseline needs 7 days.",
-        "top": [
-          {
-            "flashpoint": "korea",
-            "flashpoint_name": "Korean peninsula",
-            "tier": "severe",
-            "score": 5.0,
-            "matched": [
-              "north korea"
-            ],
-            "esc_matched": [
-              "missile"
-            ],
-            "source": "Al Jazeera",
-            "title": "North Korea fires multiple ballistic missiles towards the sea",
-            "link": "https://www.aljazeera.com/news/2026/10/12/north-korea-fires-multiple-ballistic-missiles-towards-the-sea?traffic_source=rss",
-            "published": "2026-10-12T03:37:12+00:00",
-            "summary": "Latest missile launch appears to be a show of force since South Korea&#039;s hypersonic missile test-fire, Seoul says."
-          }
-        ],
-        "all_headlines": [
-          {
-            "flashpoint": "korea",
-            "flashpoint_name": "Korean peninsula",
-            "tier": "severe",
-            "score": 5.0,
-            "matched": [
-              "north korea"
-            ],
-            "esc_matched": [
-              "missile"
-            ],
-            "source": "Al Jazeera",
-            "title": "North Korea fires multiple ballistic missiles towards the sea",
-            "link": "https://www.aljazeera.com/news/2026/10/12/north-korea-fires-multiple-ballistic-missiles-towards-the-sea?traffic_source=rss",
-            "published": "2026-10-12T03:37:12+00:00",
-            "summary": "Latest missile launch appears to be a show of force since South Korea&#039;s hypersonic missile test-fire, Seoul says."
           }
         ]
       }
     ],
-    "headline_count": 32,
-    "event_count": 29,
+    "headline_count": 36,
+    "event_count": 32,
     "baseline_ready": true,
     "headlines": [
       {
@@ -2909,19 +3079,16 @@
         "tier": "severe",
         "score": 10.0,
         "matched": [
-          "iran",
           "houthi"
         ],
         "esc_matched": [
-          "strike",
-          "attack",
-          "killed"
+          "attack"
         ],
         "source": "BBC World",
-        "title": "One killed, 11 injured in second Houthi strike on Riyadh airport in two days",
-        "link": "https://www.bbc.co.uk/news/articles/cr93znyk44e1o?at_medium=RSS&at_campaign=rss",
-        "published": "2026-10-11T22:45:58+00:00",
-        "summary": "The Saudi capital has been hit by multiple attacks from the Iran-backed Yemeni group over the weekend."
+        "title": "Saudi minister vows 'serious response' to Houthi attacks on airports",
+        "link": "https://www.bbc.co.uk/news/articles/cjly0zqq27e4o?at_medium=RSS&at_campaign=rss",
+        "published": "2026-10-12T10:28:47+00:00",
+        "summary": "It comes after the armed group hit Riyadh's international airport and another facility, killing 13 people, in a significant escalation."
       },
       {
         "flashpoint": "us_iran",
@@ -2947,35 +3114,16 @@
         "score": 10.0,
         "matched": [
           "iran",
-          "tehran",
           "houthi"
         ],
         "esc_matched": [
           "strike"
         ],
-        "source": "Al Jazeera",
-        "title": "Iran\u2019s FM urges diplomacy in call with Saudi counterpart",
-        "link": "https://www.aljazeera.com/news/2026/10/12/irans-fm-urges-diplomacy-in-call-with-saudi-counterpart?traffic_source=rss",
-        "published": "2026-10-12T00:39:08+00:00",
-        "summary": "Tehran offers to facilitate talks between Saudi Arabia and Yemen&#039;s Houthis following deadly strikes on the kingdom."
-      },
-      {
-        "flashpoint": "us_iran",
-        "flashpoint_name": "US / Israel \u2013 Iran",
-        "tier": "severe",
-        "score": 10.0,
-        "matched": [
-          "houthi"
-        ],
-        "esc_matched": [
-          "strike",
-          "killed"
-        ],
-        "source": "Al Jazeera",
-        "title": "Pakistani national killed in second Houthi strike on Riyadh airport",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/pakistani-national-killed-second-houthi-strike-riyadh-airport?traffic_source=rss",
-        "published": "2026-10-11T23:20:46+00:00",
-        "summary": "Saudi authorities say a Pakistani national was killed and several people injured in a second strike on Riyadh\u2019s Airport."
+        "source": "BBC World",
+        "title": "Who are the Houthis, and why are they so hard to fight?",
+        "link": "https://www.bbc.co.uk/news/videos/cmy56nzd6y69o?at_medium=RSS&at_campaign=rss",
+        "published": "2026-10-12T12:15:01+00:00",
+        "summary": "Security correspondent Frank Gardner explains how the Iran-backed Houthis' precision strikes and guerrilla tactics have made it difficult for Saudi forces to gain the upper hand."
       },
       {
         "flashpoint": "us_iran",
@@ -2989,10 +3137,46 @@
           "strike"
         ],
         "source": "Al Jazeera",
-        "title": "CCTV shows moment of deadly Houthi strike on Riyadh airport",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/houthi-strike-riyadh-international-airport-cctv-footage?traffic_source=rss",
-        "published": "2026-10-11T22:24:07+00:00",
-        "summary": "CCTV footage released by Al Arabiya shows the moment of a Houthi strike on Riyadh\u2019s international airport on Saturday."
+        "title": "Saudi Arabia vows resilience as Houthi strikes hit Riyadh airport",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/saudi-arabia-vows-resilience-as-houthi-strikes-hit-riyadh-airport?traffic_source=rss",
+        "published": "2026-10-12T11:17:02+00:00",
+        "summary": "New footage shows a Houthi strike on Riyadh\u2019s airport as Saudi Arabia reaffirms its resilience."
+      },
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "severe",
+        "score": 10.0,
+        "matched": [
+          "houthi"
+        ],
+        "esc_matched": [
+          "attack"
+        ],
+        "source": "Al Jazeera",
+        "title": "Countries warn against travel to Saudi Arabia following Houthi attacks",
+        "link": "https://www.aljazeera.com/economy/2026/10/12/countries-warn-against-travel-to-saudi-arabia-following-houthi-attacks?traffic_source=rss",
+        "published": "2026-10-12T05:53:45+00:00",
+        "summary": "US, Australia, Canada, Japan, South Korea and New Zealand among countries urging citizens to avoid travel to the kingdom."
+      },
+      {
+        "flashpoint": "us_iran",
+        "flashpoint_name": "US / Israel \u2013 Iran",
+        "tier": "severe",
+        "score": 10.0,
+        "matched": [
+          "iran",
+          "houthi"
+        ],
+        "esc_matched": [
+          "missile",
+          "attack"
+        ],
+        "source": "CNBC World",
+        "title": "Saudi Arabia says drones and missiles still targeting kingdom as Iran-backed Houthis step up attacks",
+        "link": "https://www.cnbc.com/2026/10/12/us-iran-war-trump-hormuz-saudi.html",
+        "published": "2026-10-12T13:01:49+00:00",
+        "summary": "The Saudi-led coalition responding to the attacks said Monday it was dealing with more drones and missiles heading toward the kingdom."
       },
       {
         "flashpoint": "us_iran",
@@ -3051,40 +3235,39 @@
         "summary": "It is the third time this week that Ukraine has targeted Russian tech giant Yandex, forcing the company to suspend its operations."
       },
       {
-        "flashpoint": "russia_nato",
-        "flashpoint_name": "Russia / Ukraine / NATO",
-        "tier": "severe",
-        "score": 8.0,
+        "flashpoint": "china_taiwan",
+        "flashpoint_name": "China / Taiwan",
+        "tier": "elevated",
+        "score": 4.0,
         "matched": [
-          "russia",
-          "russian",
-          "ukraine"
+          "pla"
         ],
         "esc_matched": [
-          "strike"
+          "evacuat"
         ],
         "source": "Al Jazeera",
-        "title": "Footage shows moment Russian strike hits Ukrainian grocery store",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/10/11/footage-shows-moment-russian-strike-hits-ukrainian-grocery-store?traffic_source=rss",
-        "published": "2026-10-11T22:49:23+00:00",
-        "summary": "CCTV footage shows the moment of a Russian strike on a residential street in Kharkiv, Ukraine."
+        "title": "Gaza: Still Reporting",
+        "link": "https://www.aljazeera.com/video/witness/2026/10/12/gaza-still-reporting?traffic_source=rss",
+        "published": "2026-10-12T12:00:00+00:00",
+        "summary": "When Israel orders an evacuation of Gaza City, a journalist documents the displacement while living it with her family."
       },
       {
-        "flashpoint": "korea",
-        "flashpoint_name": "Korean peninsula",
-        "tier": "severe",
-        "score": 5.0,
+        "flashpoint": "russia_nato",
+        "flashpoint_name": "Russia / Ukraine / NATO",
+        "tier": "elevated",
+        "score": 4.0,
         "matched": [
-          "north korea"
+          "russia",
+          "russian"
         ],
         "esc_matched": [
-          "missile"
+          "drone"
         ],
         "source": "Al Jazeera",
-        "title": "North Korea fires multiple ballistic missiles towards the sea",
-        "link": "https://www.aljazeera.com/news/2026/10/12/north-korea-fires-multiple-ballistic-missiles-towards-the-sea?traffic_source=rss",
-        "published": "2026-10-12T03:37:12+00:00",
-        "summary": "Latest missile launch appears to be a show of force since South Korea&#039;s hypersonic missile test-fire, Seoul says."
+        "title": "Russia introduces drone classes in public schools",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/10/12/russia-introduces-drone-classes-in-public-schools?traffic_source=rss",
+        "published": "2026-10-12T08:47:43+00:00",
+        "summary": "Russian public schools are teaching children to assemble and fly drones as part of changes to the national curriculum."
       },
       {
         "flashpoint": "china_taiwan",
@@ -3092,33 +3275,16 @@
         "tier": "elevated",
         "score": 4.0,
         "matched": [
-          "taiwan"
+          "pla"
         ],
         "esc_matched": [
-          "sanction"
+          "deploy"
         ],
         "source": "Al Jazeera",
-        "title": "China sanctions Paraguay, Belize ministers over Taiwan ties",
-        "link": "https://www.aljazeera.com/news/2026/10/12/china-sanctions-paraguay-belize-ministers-over-taiwan-ties?traffic_source=rss",
-        "published": "2026-10-12T04:58:01+00:00",
-        "summary": "Chinese Foreign Ministry cites national sovereignty and Taiwan separatist activities as reasons behind the measures."
-      },
-      {
-        "flashpoint": "russia_nato",
-        "flashpoint_name": "Russia / Ukraine / NATO",
-        "tier": "elevated",
-        "score": 4.0,
-        "matched": [
-          "ukraine"
-        ],
-        "esc_matched": [
-          "escalat"
-        ],
-        "source": "CNBC World",
-        "title": "CNBC Daily Open: Will America open another front in the Middle East? Trump is considering",
-        "link": "https://www.cnbc.com/2026/10/12/tensions-middle-east-and-ukraine-wars-imf-world-bank.html",
-        "published": "2026-10-12T01:05:16+00:00",
-        "summary": "Tensions escalate in the Middle East and Ukraine wars."
+        "title": "India opposition plans New Delhi protest to demand election chief resign",
+        "link": "https://www.aljazeera.com/news/2026/10/12/india-opposition-plans-new-delhi-protest-to-demand-election-chief-resign?traffic_source=rss",
+        "published": "2026-10-12T08:00:16+00:00",
+        "summary": "Thousands of security personnel have been deployed before a protest rally calling for the election chief&#039;s removal."
       }
     ],
     "caveat": "Each flashpoint is measured against its own trailing 30-day median, so a long-running conflict does not sit at maximum forever. This measures how loud a story is relative to its own normal - not what will happen."
@@ -3376,7 +3542,7 @@
       {
         "source": "Asia session",
         "ok": true,
-        "detail": "10 assets, 5 indices, 1 overnight releases"
+        "detail": "12 assets, 5 indices, 1 overnight releases"
       },
       {
         "source": "Cross-asset prices",
@@ -3391,12 +3557,12 @@
       {
         "source": "USD news feeds",
         "ok": true,
-        "detail": "12 relevant headlines"
+        "detail": "21 relevant headlines"
       },
       {
         "source": "Geopolitical feeds",
         "ok": true,
-        "detail": "BACKGROUND (22), 32 headlines, baseline ready"
+        "detail": "ELEVATED (39), 36 headlines, baseline ready"
       },
       {
         "source": "Event context / FOMC calendar",
@@ -3406,7 +3572,7 @@
       {
         "source": "Current affairs board",
         "ok": true,
-        "detail": "4 live stories, 0 pending releases"
+        "detail": "5 live stories, 0 pending releases"
       }
     ],
     "ok": 12,
@@ -3414,8 +3580,8 @@
     "degraded": false
   },
   "brief": {
-    "words": 247,
-    "seconds": 99,
+    "words": 259,
+    "seconds": 104,
     "audio": "audio/2026-10-12.mp3"
   }
 }
